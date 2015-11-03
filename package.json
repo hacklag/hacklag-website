@@ -1,8 +1,9 @@
 {
   "name": "react-app-template",
   "version": "0.0.1",
-  "license": "MIT",
-  "description": "React app template with React.js",
+  "license": "UNLICENSED",
+  "description": "Simple web template using ReactJS",
+  "main": "js/app.jsx",
   "repository": {
     "type": "git",
     "url": "https://github.com/eyedea-io/react-app-template.git"

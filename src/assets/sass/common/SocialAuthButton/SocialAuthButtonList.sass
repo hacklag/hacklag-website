@@ -1,0 +1,12 @@
+@import 'config'
+@import 'compass/css3/flexbox.scss'
+@import 'compass/typography/vertical_rhythm.scss'
+@import 'lists'
+
+.social-auth-button-list
+  @extend .list--flex
+  @extend .list--bordered
+  +margin-trailer(3)
+
+  > li
+    +display-flex

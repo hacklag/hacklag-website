@@ -1,0 +1,23 @@
++establish-baseline()
+
+*, *:after, *:before
+  box-sizing: border-box
+
+a,
+a:visited
+  color: $blue
+  text-decoration: none
+  cursor: pointer
+
+p
+  margin-top: 0
+
+html
+  +adjust-leading-to(2)
+
+body
+  background-color: #fafafa
+  overflow-x: hidden
+
+input:-webkit-autofill
+  -webkit-box-shadow: 0 0 0px 1000px white inset
