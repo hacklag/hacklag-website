@@ -7,10 +7,12 @@ import AppPage from './pages/app.react';
 import NotFoundPage from './pages/notfound.react';
 import CounterPage from './pages/counter.react';
 import TemperaturePage from './pages/temperature.react.jsx';
+import TestPage from './pages/test.react.jsx';
 
 // Apps
 import Counter from './apps/Counter';
 import Temperature from './apps/Temperature';
+import Test from './apps/Test';
 
 const Route = Router.Route;
 const Redirect = Router.Redirect;
@@ -48,6 +50,13 @@ export default (
         path="temperature"
         >
         <DefaultRoute handler={Temperature}/>
+      </Route>
+      <Route
+        name="test"
+        handler={TestPage}
+        path="test"
+        >
+        <DefaultRoute handler={Test}/>
       </Route>
 
       <DefaultRoute handler={CounterPage}/>
