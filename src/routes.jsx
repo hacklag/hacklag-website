@@ -26,7 +26,7 @@ export default (
     path="/"
     >
     <NotFoundRoute handler={NotFoundPage}/>
-    
+
     {/* Example created page */}
       <Route
         name="counter"
