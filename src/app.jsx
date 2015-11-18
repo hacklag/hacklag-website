@@ -1,6 +1,5 @@
 import 'babel-core/polyfill';
 import 'normalize.css';
-import './raven';
 import './app.sass';
 
 import React from 'react';
