@@ -5,9 +5,6 @@ import Router from 'react-router-old';
 // Pages
 import AppPage from './pages/app.react';
 import NotFoundPage from './pages/notfound.react';
-import CounterPage from './pages/counter.react';
-import TemperaturePage from './pages/temperature.react.jsx';
-import TestPage from './pages/test.react.jsx';
 
 // Apps
 import Counter from './apps/Counter';
@@ -27,38 +24,15 @@ export default (
     >
     <NotFoundRoute handler={NotFoundPage}/>
 
-    {/* Example created page */}
-      <Route
-        name="counter"
-        handler={CounterPage}
-        >
-        <NotFoundRoute handler={NotFoundPage}/>
-        <Route
-          name="Forward"
-          handler={Counter.Forward}
-          />
-          <Route
-          name="Reverse"
-          handler={Counter.Reverse}
-          />
-        <DefaultRoute handler={CounterPage}/>
-      </Route>
-	{/* Temperature */}
-      <Route
-        name="temperature"
-        handler={TemperaturePage}
-        path="temperature"
-        >
-        <DefaultRoute handler={Temperature}/>
-      </Route>
+    {/* Test app */}
       <Route
         name="test"
-        handler={TestPage}
+        handler={Test}
         path="test"
         >
         <DefaultRoute handler={Test}/>
       </Route>
 
-      <DefaultRoute handler={CounterPage}/>
+      <DefaultRoute handler={AppPage}/>
   </Route>
 );
