@@ -7,16 +7,16 @@ var path       = require('path'),
 
 module.exports = function() {
 
-  var aws = {
-    region: 'us-west-2',
-    distributionId: 'E264182EUP50UN',
-    params: {Bucket: 'dashboard-syncano-rocks'},
+    var aws = {
+    region: env.AWS_REGION,
+    //distributionId: 'E264182EUP50UN',
+    params: {Bucket: env.AWS_DEFAULT_BUCKET},
     patternIndex: /^\/index-[a-f0-9]{10}\.html(\.gz)*$/gi
   };
 
   if (ENV === 'production') {
     aws.params.Bucket  = 'dashboard-syncano-io';
-    aws.distributionId = 'E1OU9ET0QZIL4X';
+    //aws.distributionId = 'E1OU9ET0QZIL4X';
   }
 
   var src       = ['./dist/**/*', '!./dist/rev-manifest.json'],
@@ -46,8 +46,8 @@ module.exports = function() {
       }
     }))
     .pipe(publisher.publish())
-    .pipe(awspublish.reporter())
-    .pipe(cloudfront(aws));
+    .pipe(awspublish.reporter());
+    //.pipe(cloudfront(aws));
 };
 
 module.exports.dependencies = ['clean', 'build', 'revision-index'];
