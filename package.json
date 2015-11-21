@@ -9,6 +9,7 @@
     "url": "https://github.com/eyedea-io/react-app-template.git"
   },
   "dependencies": {
+    "history": "^1.13.1",
     "lodash": "3.10.1",
     "moment": "2.10.6",
     "normalize.css": "3.0.3",
@@ -17,6 +18,7 @@
     "react-dom": "^0.14.0",
     "react-dropzone": "2.2.3",
     "react-onclickoutside": "^4.0.1",
+    "react-router": "^1.0.0",
     "react-tap-event-plugin": "0.2.1",
     "react-zeroclipboard": "2.0.1",
     "urijs": "1.16.1"
@@ -57,14 +59,14 @@
     "react-addons-transition-group": "0.14.0",
     "react-addons-update": "0.14.0",
     "react-hot-loader": "1.2.9",
-    "react-router-old": "git@github.com:Syncano/react-router-old",
     "react-script-loader": "0.0.1",
     "sass-loader": "3.0.0",
     "style-loader": "0.13.0",
     "superagent": "1.4.0",
     "through2": "2.0.0",
     "webpack": "1.12.2",
-    "webpack-dev-server": "1.12.1"
+    "webpack-dev-server": "1.12.1",
+    "node-sass": "3.4.1"
   },
   "scripts": {
     "start": "gulp webpack-dev-server",

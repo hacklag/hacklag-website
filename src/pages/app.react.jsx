@@ -21,6 +21,7 @@ export default React.createClass({
   render() {
     return (
       <div>
+        Here you can put your header!
         <Router.RouteHandler/>
       </div>
     );

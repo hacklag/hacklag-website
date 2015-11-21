@@ -26,11 +26,8 @@ export default (
       <Route
         name="test"
         handler={Test}
-        path="test"
-        >
-        <DefaultRoute handler={Test}/>
-      </Route>
+        path="test" />
 
-      <DefaultRoute handler={AppPage}/>
+      <DefaultRoute handler={Test}/>
   </Route>
 );
