@@ -13,9 +13,9 @@ module.exports = function() {
   }
 
   var aws = {
-    region: env.AWS_REGION,
+    region: process.env.AWS_REGION,
     //distributionId: 'E264182EUP50UN',
-    params: {Bucket: env.AWS_DEFAULT_BUCKET}
+    params: {Bucket: process.env.AWS_DEFAULT_BUCKET}
   };
 
   var src       = ['./dist/**/*', '!./dist/rev-manifest.json'],

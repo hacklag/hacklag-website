@@ -8,9 +8,9 @@ var path       = require('path'),
 module.exports = function() {
 
     var aws = {
-    region: env.AWS_REGION,
+    region: process.env.AWS_REGION,
     //distributionId: 'E264182EUP50UN',
-    params: {Bucket: env.AWS_DEFAULT_BUCKET},
+    params: {Bucket: process.env.AWS_DEFAULT_BUCKET},
     patternIndex: /^\/index-[a-f0-9]{10}\.html(\.gz)*$/gi
   };
 
