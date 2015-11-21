@@ -9,8 +9,8 @@ module.exports = function(cb) {
   gulp.src([paths.assets + '/icons/*.svg'])
     .pipe(iconfontCss({
       fontName: fontName,
-      path: paths.assets + '/templates/synicons.css',
-      targetPath: '../../css/synicons.css',
+      path: paths.assets + '/templates/icons.css',
+      targetPath: '../../css/icons.css',
       fontPath: '/fonts/icons/'
     }))
     .pipe(iconfont({
