@@ -7,8 +7,6 @@ import AppPage from './pages/app.react';
 import NotFoundPage from './pages/notfound.react';
 
 // Apps
-import Counter from './apps/Counter';
-import Temperature from './apps/Temperature';
 import Test from './apps/Test';
 
 const Route = Router.Route;
