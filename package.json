@@ -9,11 +9,14 @@
     "url": "https://github.com/eyedea-io/react-app-template.git"
   },
   "dependencies": {
+    "d.js": "^0.7.3",
     "history": "^1.13.1",
     "lodash": "3.10.1",
+    "material-ui": "^0.13.3",
     "moment": "2.10.6",
     "normalize.css": "3.0.3",
     "radium": "^0.15.3",
+    "raven-js": "^2.0.0-rc1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-dropzone": "2.2.3",
@@ -21,7 +24,10 @@
     "react-router": "^1.0.0",
     "react-tap-event-plugin": "0.2.1",
     "react-zeroclipboard": "2.0.1",
-    "urijs": "1.16.1"
+    "reflux": "^0.3.0",
+    "urijs": "1.16.1",
+    "validate.js": "^0.9.0",
+    "syncano": "github:mkucharz/syncano-js-lib#master"
   },
   "devDependencies": {
     "async": "^1.5.0",

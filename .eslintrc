@@ -85,15 +85,12 @@
         "rendering"
       ]
     }],
-    "no-unused-vars": [2, {
+    "no-unused-vars": [1, {
       "vars": "local",
       "args": "after-used"
     }],
     "no-undefined": 2,
-    "spaced-comment": [2, "always",  {
-      "exceptions": ["-", "+"],
-      "markers": ["=", "!"]
-    }],
+    "spaced-comment": 0,
     "react/no-multi-comp": 2,
     "no-undef": 2,
     "no-return-assign": [2, "always"],
@@ -112,7 +109,7 @@
     "no-console": 0,
     "no-constant-condition": 2,
     "no-control-regex": 2,
-    "no-debugger": 2,
+    "no-debugger": 0,
     "no-dupe-args": 2,
     "no-dupe-keys": 2,
     "no-duplicate-case": 2,
