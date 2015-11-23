@@ -39,7 +39,11 @@ export default (
     <Route path="password/update" component={Account.PasswordUpdate}/>
     <Route path="password/reset" component={Account.PasswordReset}/>
     <Route path="password/reset/:uid/:token" component={Account.PasswordResetConfirm}/>
-    <Route path="test" component={NoMatch} onEnter={requireAuth} />
-    <Route path="*" component={NoMatch}/>
+
+    <Route path="dashboard" component={DashboardPage} onEnter={requireAuth} />
+      <Route path="test" component={Test} />
+      <Route path="*" component={Test}/>
+    </Route>
+
   </Route>
 );

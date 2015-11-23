@@ -16,28 +16,11 @@ export default React.createClass({
 
   displayName: 'Dashboard',
 
-  contextTypes: {
-    router: React.PropTypes.func
-  },
-
-  mixins: [
-    Router.State,
-    Router.Navigation
-  ],
-
-  statics: {
-    willTransitionTo(transition) {
-      if (!SessionStore.isAuthenticated()) {
-        transition.redirect(AuthConstants.LOGIN_URL, {}, {next: transition.path});
-      }
-    }
-  },
-
   render() {
     return (
       <div>
         Header
-        <Router.RouteHandler />
+        {this.props.children}
       </div>
     );
   }

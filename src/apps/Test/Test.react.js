@@ -4,7 +4,7 @@ export default React.createClass({
   displayName: 'Test',
 
   componentDidMount() {
-    console.log('XXX');
+
   },
   render() {
     return (

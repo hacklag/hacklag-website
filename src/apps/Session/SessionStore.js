@@ -1,11 +1,10 @@
 import Reflux from 'reflux';
-import Raven from '../../framework/raven';
-import Connection from './Connection';
 import _ from 'lodash';
 
-import SessionActions from './SessionActions';
+import Raven from '../../framework/raven';
+import Connection from './Connection';
 
-import Colors from 'syncano-material-ui/lib/styles/colors';
+import SessionActions from './SessionActions';
 import Theme from '../../common/Theme';
 
 export default Reflux.createStore({
@@ -17,7 +16,6 @@ export default Reflux.createStore({
     this.userId = localStorage.getItem('userId') || null;
     this.user = null;
     this.instance = null;
-    this.router = null;
     this.theme = null;
     this.signUpMode = null;
 
@@ -44,10 +42,6 @@ export default Reflux.createStore({
 
   getInstance(empty) {
     return this.instance || empty || null;
-  },
-
-  getRouter(empty) {
-    return this.router || empty || null;
   },
 
   getSignUpMode() {
@@ -142,11 +136,6 @@ export default Reflux.createStore({
     this.trigger(this);
   },
 
-  setRouter(router) {
-    console.info('SessionStore::setRouter');
-    this.router = router;
-  },
-
   setSignUpMode() {
     this.signUpMode = true;
   },
@@ -186,30 +175,14 @@ export default Reflux.createStore({
     this.signUpMode = null;
   },
 
-  makePalette(mainColor, accentColor) {
-    return {
-      primary1Color: Colors[mainColor + '700'],
-      primary2Color: Colors[mainColor + '500'],
-      primary3Color: Colors[mainColor + '100'],
-
-      accent1Color: Colors[accentColor + '700'],
-      accent2Color: Colors[accentColor + '300'],
-      accent3Color: Colors[accentColor + '200']
-    };
-  },
-
   onLogin(payload) {
     console.info('SessionStore::onLogin');
-
-    console.log('TTT', payload);
 
     if (typeof payload === 'undefined' || typeof payload.user_key === 'undefined') {
       return;
     }
 
-
     this.token = payload.user_key;
-    //this.connection.setApiKey(this.token);
     localStorage.setItem('token', this.token);
     SessionActions.setUser(payload);
   },

@@ -59,7 +59,11 @@ export default React.createClass({
     console.log(this.props.params);
 
     if (SessionStore.isAuthenticated()) {
-      this.history.pushState(null, this.props.location.state.nextPathname);
+      if (this.props.location.state && this.props.location.state.nextPathname) {
+        this.history.pushState(null, this.props.location.state.nextPathname);
+      } else {
+        this.history.pushState(null, '/dashboard');
+      }
     }
 
     //let invKey = this.getQuery().invitation_key || null;
