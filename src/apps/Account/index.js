@@ -7,7 +7,7 @@ import Signup from './AccountSignup.react';
 import Actions from './AuthActions';
 import Store from './AuthStore';
 import Constants from './AuthConstants';
-import Hello from './Hello';
+import Hello from '../../framework/hello';
 
 export default {
   Activate,
