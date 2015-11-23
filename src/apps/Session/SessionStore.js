@@ -1,5 +1,5 @@
 import Reflux from 'reflux';
-import Raven from '../../raven';
+import Raven from '../../framework/raven';
 import Connection from './Connection';
 import _ from 'lodash';
 
@@ -103,8 +103,6 @@ export default Reflux.createStore({
 
     this.user = user;
 
-    debugger;
-
     if (typeof this.user.user_key === 'undefined') {
       this.user.user_key = this.token;
     } else {
@@ -114,12 +112,12 @@ export default Reflux.createStore({
       localStorage.setItem('userId', this.user.id);
     }
 
-    //Raven.setUserContext({
-    //  email: user.email,
-    //  id: user.id
-    //});
+    Raven.setUserContext({
+      email: user.username,
+      id: user.id
+    });
 
-    //this.setAnalyticsIdentifying(user);
+    this.setAnalyticsIdentifying(user);
     this.trigger(this);
   },
 
@@ -140,14 +138,6 @@ export default Reflux.createStore({
   setInstance(instance) {
     console.info('SessionStore::setInstance');
 
-    // Let's go back to this topic later
-    // let colorName       = instance.metadata.color,
-    //    secondColorName = 'indigo';
-    //
-    // if (ColorStore.getColorByName(colorName)) {
-    //   this.theme.setPalette(this.makePalette(colorName, secondColorName));
-    // }
-
     this.instance = instance;
     this.trigger(this);
   },
@@ -164,17 +154,6 @@ export default Reflux.createStore({
   setTheme(theme) {
     console.info('SessionStore::setTheme');
     this.theme = theme;
-  },
-
-  hasFriendlyUser() {
-    if (this.getUser()) {
-      let email = this.getUser({}).email;
-      let endings = ['syncano.rocks', 'syncano.io', 'syncano.com', 'chimeraprime.com'];
-
-      return _.some(endings, (ending) => _.endsWith(email, ending));
-    }
-
-    return false;
   },
 
   onFetchInstanceCompleted(payload) {

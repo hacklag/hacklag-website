@@ -25,9 +25,9 @@
     "react-tap-event-plugin": "0.2.1",
     "react-zeroclipboard": "2.0.1",
     "reflux": "^0.3.0",
+    "syncano": "github:mkucharz/syncano-js-lib#master",
     "urijs": "1.16.1",
-    "validate.js": "^0.9.0",
-    "syncano": "github:mkucharz/syncano-js-lib#master"
+    "validate.js": "^0.9.0"
   },
   "devDependencies": {
     "async": "^1.5.0",

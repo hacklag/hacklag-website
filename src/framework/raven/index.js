@@ -1,10 +1,10 @@
-var Raven = require('raven-js');
+let Raven = require('raven-js');
 
-if (SENTRY_DSN !== undefined && SENTRY_DSN.length > 0) {
+if (SENTRY_DSN && SENTRY_DSN.length > 0) {
   require('raven-js/plugins/console');
   require('raven-js/plugins/native');
 
-  var ravenOptions = {
+  let ravenOptions = {
     tags: {
       environment: ENV,
       version: VERSION
@@ -44,7 +44,8 @@ if (SENTRY_DSN !== undefined && SENTRY_DSN.length > 0) {
       /extensions\//i,
       /^chrome:\/\//i,
       // Other plugins
-      /127\.0\.0\.1:4001\/isrunning/i,  // Cacaoweb
+      // Cacaoweb
+      /127\.0\.0\.1:4001\/isrunning/i,
       /localhost/i,
       /webappstoolbarba\.texthelp\.com\//i,
       /metrics\.itunes\.apple\.com\.edgesuite\.net\//i

@@ -2,6 +2,10 @@ import 'babel-core/polyfill';
 import 'normalize.css';
 import './app.sass';
 
+// Frameworks
+import './framework/raven';
+import './framework/segment';
+
 import React from 'react';
 import {render} from 'react-dom';
 import {Router, Route, History} from 'react-router';

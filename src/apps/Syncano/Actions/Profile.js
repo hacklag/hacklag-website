@@ -22,7 +22,6 @@ export default {
   },
 
   getUser(userId) {
-    debugger;
     this.Connection
       .user(userId)
       .detail()
