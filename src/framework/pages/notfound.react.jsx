@@ -1,13 +1,18 @@
 import React from 'react';
 
-export default React.createClass({
-
-  displayName: 'NotFound',
+class PageNotFound extends React.Component {
+  constructor() {
+    super();
+    this.displayName = 'NotFound';
+  }
 
   render() {
     return (
       <div>Not found</div>
     );
   }
-});
+
+}
+
+export default PageNotFound;
 
