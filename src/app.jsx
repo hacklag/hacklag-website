@@ -56,7 +56,7 @@ render(
       <Route path="password/reset" component={Account.PasswordReset}/>
       <Route path="password/reset/:uid/:token" component={Account.PasswordResetConfirm}/>
       <Route path="test" component={NoMatch} onEnter={requireAuth}/>
-      <Route path="*" component={NoMatch}/>
+      <Route path="*" component={NotFoundPage}/>
     </Route>
   </Router>,
   document.getElementById('app')
