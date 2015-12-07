@@ -7,7 +7,7 @@
 		url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
 }
 
-[class*="synicon-"]:before {
+[class*="icon-"]:before {
 	font-family: "<%= fontName %>";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -21,7 +21,7 @@
 }
 
 <% _.each(glyphs, function(glyph) { %>
-.synicon-<%= glyph.fileName %>:before {
+.icon-<%= glyph.fileName %>:before {
 	content: "\<%= glyph.codePoint %>";
 }
 <% }); %>

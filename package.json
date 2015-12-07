@@ -9,6 +9,7 @@
     "url": "https://github.com/eyedea-io/react-app-template.git"
   },
   "dependencies": {
+    "classnames": "^2.2.1",
     "d.js": "^0.7.3",
     "history": "^1.13.1",
     "lodash": "3.10.1",
@@ -20,12 +21,15 @@
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-dropzone": "2.2.3",
+    "react-inline-grid": "^0.5.3",
+    "react-inlinesvg": "^0.4.2",
     "react-onclickoutside": "^4.0.1",
     "react-router": "^1.0.0",
     "react-tap-event-plugin": "0.2.1",
     "react-zeroclipboard": "2.0.1",
     "reflux": "^0.3.0",
     "syncano": "github:mkucharz/syncano-js-lib#master",
+    "syncano-react": "github:mkucharz/syncano-react#master",
     "urijs": "1.16.1",
     "validate.js": "^0.9.0"
   },
@@ -50,14 +54,17 @@
     "gulp-git": "1.5.0",
     "gulp-iconfont": "5.0.0",
     "gulp-iconfont-css": "2.0.0",
+    "gulp-real-favicon": "^0.1.0",
     "gulp-rename": "1.2.2",
     "gulp-rev": "6.0.1",
     "gulp-rev-css-url": "0.1.0",
     "gulp-rev-replace": "0.4.2",
     "gulp-sequence": "0.4.1",
     "gulp-strip-debug": "1.0.2",
+    "gulp-task-listing": "^1.0.1",
     "gulp-task-loader": "1.2.3",
     "gulp-util": "3.0.7",
+    "node-sass": "3.4.1",
     "react-addons-create-fragment": "0.14.0",
     "react-addons-linked-state-mixin": "0.14.0",
     "react-addons-pure-render-mixin": "0.14.0",
@@ -71,8 +78,7 @@
     "superagent": "1.4.0",
     "through2": "2.0.0",
     "webpack": "1.12.2",
-    "webpack-dev-server": "1.12.1",
-    "node-sass": "3.4.1"
+    "webpack-dev-server": "1.12.1"
   },
   "scripts": {
     "start": "gulp webpack-dev-server",
