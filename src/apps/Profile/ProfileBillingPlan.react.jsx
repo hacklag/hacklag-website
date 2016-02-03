@@ -11,7 +11,7 @@ import Actions from './ProfileBillingPlanActions.js';
 import PlanDialogStore from './ProfileBillingPlanDialogStore';
 import PlanDialogActions from './ProfileBillingPlanDialogActions';
 
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 import Common from '../../common';
 import PlanDialog from './ProfileBillingPlanDialog';
 import Limits from './Limits';

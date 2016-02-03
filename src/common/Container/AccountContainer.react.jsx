@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 import Common from '../';
 
 

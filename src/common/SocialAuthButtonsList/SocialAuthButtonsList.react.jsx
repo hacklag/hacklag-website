@@ -5,7 +5,7 @@ import SessionStore from '../../apps/Session/SessionStore';
 import AuthActions from '../../apps/Account/AuthActions';
 import AuthConstants from '../../apps/Account/AuthConstants';
 
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 
 export default Radium(React.createClass({
 
@@ -56,16 +56,15 @@ export default Radium(React.createClass({
     let buttons = [];
 
     AuthConstants.SOCIAL_NETWORKS.map((network, index) => {
+      let leftIcon = <MUI.FontIcon style = {styles.listItemIcon} className = {`icon-${network}`} />;
+
       buttons.push(
         <MUI.ListItem
           key={`network-${index}`}
           style={styles.listItem}
           primaryText={buttonLabel + network}
           onTouchTap={this.handleSocialSignup.bind(null, network)}
-          leftIcon={<MUI.FontIcon
-                         style = {styles.listItemIcon}
-                         className = {`synicon-${network}`}
-                         />}
+          leftIcon={leftIcon}
           />
       );
       if (index < lastListItemIndex) {

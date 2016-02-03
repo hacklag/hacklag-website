@@ -5,7 +5,7 @@ import SessionStore from '../Session/SessionStore';
 import Actions from './ProfileActions';
 import Store from './ProfileBillingInvoicesStore';
 
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 import Common from '../../common';
 import EmptyContainer from '../../common/Container/EmptyContainer.react';
 

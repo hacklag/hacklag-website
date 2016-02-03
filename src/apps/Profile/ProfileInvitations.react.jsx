@@ -9,8 +9,8 @@ import Actions from './ProfileInvitationsActions';
 import Store from './ProfileInvitationsStore';
 
 // Components
-import MUI from 'syncano-material-ui';
-import MenuItem from 'syncano-material-ui/lib/menus/menu-item';
+import MUI from 'material-ui';
+import MenuItem from 'material-ui/lib/menus/menu-item';
 import Common from '../../common';
 import Container from '../../common/Container/Container.react';
 import EmptyContainer from '../../common/Container/EmptyContainer.react';

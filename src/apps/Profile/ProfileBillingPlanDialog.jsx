@@ -7,7 +7,7 @@ import Mixins from '../../mixins';
 import Store from './ProfileBillingPlanDialogStore';
 import Actions from './ProfileBillingPlanDialogActions';
 
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 import Common from '../../common';
 import SliderSection from './SliderSection';
 

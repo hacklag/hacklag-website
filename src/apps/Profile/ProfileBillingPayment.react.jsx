@@ -2,7 +2,7 @@ import React from 'react';
 import Reflux from 'reflux';
 import Radium from 'radium';
 import _ from 'lodash';
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 
 import Mixins from '../../mixins';
 import Common from '../../common';

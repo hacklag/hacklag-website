@@ -25,10 +25,11 @@ export default {
   },
 
   passwordSignUp(payload) {
+    //debugger;
     this.Connection
-      .Accounts
-      .create({
-        email: payload.email,
+      .user()
+      .add({
+        username: payload.email,
         password: payload.password
       })
       .then(this.completed)

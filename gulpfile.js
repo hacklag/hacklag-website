@@ -21,3 +21,4 @@ gulp.task('deployment-master', gulpSequence(
 ));
 gulp.task('deployment-devel', gulpSequence('publish', 'clean'));
 gulp.task('deployment-branch', gulpSequence('publish-branch', 'clean'));
+gulp.task('favicon', gulpSequence('generate-favicon', 'inject-favicon-markups'));

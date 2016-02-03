@@ -1,5 +1,5 @@
-import Colors from 'syncano-material-ui/lib/styles/colors';
-import ColorManipulator from 'syncano-material-ui/lib/utils/color-manipulator';
+import Colors from 'material-ui/lib/styles/colors';
+import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
 
 import Spacing from './Spacing';
 

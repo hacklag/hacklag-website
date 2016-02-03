@@ -20,6 +20,7 @@ import NotFoundPage from './pages/notfound.react';
 // Apps
 import SessionStore from './apps/Session/SessionStore';
 import Test from './apps/Test';
+import SyncanoTest from './apps/Test2';
 import Account from './apps/Account';
 
 tapPlugin();
@@ -37,17 +38,19 @@ const history = useBasename(createHistory)({
 
 render(
   <Router>
-    <Route path="/" component={AppPage}>
-      <Route path="login" component={Account.Login}/>
-      <Route path="signup" component={Account.Signup}/>
-      <Route path="activate/:uid/:token" component={Account.Activate}/>
-      <Route path="password/update" component={Account.PasswordUpdate}/>
-      <Route path="password/reset" component={Account.PasswordReset}/>
-      <Route path="password/reset/:uid/:token" component={Account.PasswordResetConfirm}/>
+    <Route path="login" component={Account.Login}/>
+    <Route path="signup" component={Account.Signup}/>
+    <Route path="activate/:uid/:token" component={Account.Activate}/>
+    <Route path="password/update" component={Account.PasswordUpdate}/>
+    <Route path="password/reset" component={Account.PasswordReset}/>
+    <Route path="password/reset/:uid/:token" component={Account.PasswordResetConfirm}/>
 
-      <Route path="dashboard" component={DashboardPage} onEnter={requireAuth} >
-        <IndexRoute component={Test} />
-        <Route path="test" component={Test} />
+    <Route path="/" component={AppPage}>
+      <Route path="test" component={SyncanoTest}/>
+
+      <Route path="dashboard" component={DashboardPage} onEnter={requireAuth}>
+        <IndexRoute component={Test}/>
+        <Route path="test" component={Test}/>
       </Route>
 
       <Route path="*" component={NotFoundPage}/>

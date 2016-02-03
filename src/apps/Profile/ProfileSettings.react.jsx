@@ -6,7 +6,7 @@ import FormMixin from '../../mixins/FormMixin';
 import Actions from './ProfileActions';
 import Store from './ProfileSettingsStore';
 
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 
 export default React.createClass({
 

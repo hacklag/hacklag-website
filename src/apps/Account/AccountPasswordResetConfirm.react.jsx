@@ -10,7 +10,7 @@ import Store from './AuthStore';
 import Actions from './AuthActions';
 
 // Components
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 import Container from '../../common/Container/AccountContainer.react';
 
 export default React.createClass({

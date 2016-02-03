@@ -5,7 +5,7 @@ import {Router, Route} from 'react-router';
 import Store from './AuthStore';
 import Constants from './AuthConstants';
 
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 import Container from '../../common/Container/AccountContainer.react';
 
 export default React.createClass({

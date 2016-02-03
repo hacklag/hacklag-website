@@ -7,7 +7,7 @@ import FormMixin from '../../mixins/FormMixin';
 import Store from './ProfileAuthenticationStore';
 import Actions from './ProfileActions';
 
-import MUI from 'syncano-material-ui';
+import MUI from 'material-ui';
 import {Clipboard} from '../../common';
 
 export default Radium(React.createClass({
