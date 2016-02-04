@@ -5,11 +5,11 @@ var version = require('./_common')().version,
 module.exports = function(cb) {
   async.series([
     function(callback) {
-      git.exec({args: 'config --global user.email "ci@syncano.com"'}, callback);
+      git.exec({args: 'config --global user.email "circleci@eyedea.io"'}, callback);
     },
 
     function(callback) {
-      git.exec({args: 'config --global user.name "CI"'}, callback);
+      git.exec({args: 'config --global user.name "CircleCI"'}, callback);
     },
 
     function(callback) {

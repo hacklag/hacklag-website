@@ -7,11 +7,11 @@ var _        = require('lodash'),
 
 module.exports = function(cb) {
   var s3Client = new AWS.S3();
-  var params = {bucket: 'dashboard-syncano-rocks'};
+  var params = {Bucket: process.env.AWS_DEFAULT_BUCKET};
   var pattern = /(.*)-[a-f0-9]{10}.*(\.[a-z0-9]{2,5})$/gi;
 
   if (ENV === 'production') {
-    params.bucket = 'dashboard-syncano-io'
+    params.bucket = 'hacklag.org'
   }
 
   listKeys(s3Client, params, function (err, keys) {

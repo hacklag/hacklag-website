@@ -9,14 +9,12 @@ module.exports = function() {
 
     var aws = {
     region: process.env.AWS_REGION,
-    //distributionId: 'E264182EUP50UN',
     params: {Bucket: process.env.AWS_DEFAULT_BUCKET},
     patternIndex: /^\/index-[a-f0-9]{10}\.html(\.gz)*$/gi
   };
 
   if (ENV === 'production') {
-    aws.params.Bucket  = 'dashboard-syncano-io';
-    //aws.distributionId = 'E1OU9ET0QZIL4X';
+    aws.params.Bucket  = 'hacklag.org';
   }
 
   var src       = ['./dist/**/*', '!./dist/rev-manifest.json'],

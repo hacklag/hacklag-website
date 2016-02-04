@@ -14,7 +14,6 @@ module.exports = function() {
 
   var aws = {
     region: process.env.AWS_REGION,
-    //distributionId: 'E264182EUP50UN',
     params: {Bucket: process.env.AWS_DEFAULT_BUCKET}
   };
 
