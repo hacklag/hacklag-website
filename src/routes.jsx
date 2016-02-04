@@ -1,64 +1,49 @@
 /* eslint-disable */
 import React from 'react';
-import Router from 'react-router-old';
+import {Router, Route, History} from 'react-router';
 
 // Pages
 import AppPage from './pages/app.react';
+import DashboardPage from './pages/dashboard.react';
 import NotFoundPage from './pages/notfound.react';
-import CounterPage from './pages/counter.react';
-import TemperaturePage from './pages/temperature.react.jsx';
-import TestPage from './pages/test.react.jsx';
 
 // Apps
-import Counter from './apps/Counter';
-import Temperature from './apps/Temperature';
+import SessionStore from './apps/Session/SessionStore';
 import Test from './apps/Test';
+import Account from './apps/Account';
 
-const Route = Router.Route;
-const Redirect = Router.Redirect;
-const NotFoundRoute = Router.NotFoundRoute;
-const DefaultRoute = Router.DefaultRoute;
+
+const NoMatch = React.createClass({
+
+  mixins: [History],
+
+  render() {
+    return (
+      <div>
+        <h2>NO</h2>
+      </div>
+    )
+  }
+});
+
+function requireAuth(nextState, replaceState) {
+  if (!SessionStore.isAuthenticated())
+    replaceState({nextPathname: nextState.location.pathname}, '/login')
+}
 
 export default (
-  <Route
-    name="app"
-    handler={AppPage}
-    path="/"
-    >
-    <NotFoundRoute handler={NotFoundPage}/>
+  <Route path="/" component={AppPage}>
+    <Route path="login" component={Account.Login}/>
+    <Route path="signup" component={Account.Signup}/>
+    <Route path="activate/:uid/:token" component={Account.Activate}/>
+    <Route path="password/update" component={Account.PasswordUpdate}/>
+    <Route path="password/reset" component={Account.PasswordReset}/>
+    <Route path="password/reset/:uid/:token" component={Account.PasswordResetConfirm}/>
 
-    {/* Example created page */}
-      <Route
-        name="counter"
-        handler={CounterPage}
-        >
-        <NotFoundRoute handler={NotFoundPage}/>
-        <Route
-          name="Forward"
-          handler={Counter.Forward}
-          />
-          <Route
-          name="Reverse"
-          handler={Counter.Reverse}
-          />
-        <DefaultRoute handler={CounterPage}/>
-      </Route>
-	{/* Temperature */}
-      <Route
-        name="temperature"
-        handler={TemperaturePage}
-        path="temperature"
-        >
-        <DefaultRoute handler={Temperature}/>
-      </Route>
-      <Route
-        name="test"
-        handler={TestPage}
-        path="test"
-        >
-        <DefaultRoute handler={Test}/>
-      </Route>
+    <Route path="dashboard" component={DashboardPage} onEnter={requireAuth} />
+      <Route path="test" component={Test} />
+      <Route path="*" component={Test}/>
+    </Route>
 
-      <DefaultRoute handler={CounterPage}/>
   </Route>
 );

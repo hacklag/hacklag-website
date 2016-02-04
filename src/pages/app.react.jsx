@@ -1,5 +1,11 @@
 import React from 'react';
-import Router from 'react-router-old';
+
+import {History} from 'react-router';
+
+// Stores and Action
+import SessionStore from '../apps/Session/SessionStore';
+import AuthConstants from '../apps/Account/AuthConstants';
+
 
 export default React.createClass({
 
@@ -9,19 +15,17 @@ export default React.createClass({
     router: React.PropTypes.func
   },
 
-
   childContextTypes: {
     muiTheme: React.PropTypes.object
   },
 
-  mixins: [
-    Router.State
-  ],
+  mixins: [History],
 
   render() {
     return (
       <div>
-        <Router.RouteHandler/>
+        <div>Hello world!</div>
+        {this.props.children}
       </div>
     );
   }

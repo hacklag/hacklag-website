@@ -13,9 +13,9 @@ module.exports = function() {
   }
 
   var aws = {
-    region: 'us-west-2',
-    distributionId: 'E264182EUP50UN',
-    params: {Bucket: 'dashboard-syncano-rocks'}
+    region: process.env.AWS_REGION,
+    //distributionId: 'E264182EUP50UN',
+    params: {Bucket: process.env.AWS_DEFAULT_BUCKET}
   };
 
   var src       = ['./dist/**/*', '!./dist/rev-manifest.json'],

@@ -15,7 +15,7 @@ module.exports = function() {
       js: './src/assets/js/**/*',
       fonts: './src/assets/fonts/**/*'
     },
-    fontName: 'Syncano Icons',
+    fontName: 'Icons',
     version: {
       major: versionTypes[0],
       minor: versionTypes[1],

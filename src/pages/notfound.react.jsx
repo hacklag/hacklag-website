@@ -1,12 +1,16 @@
 import React from 'react';
+import DefaultPageNotFound from '../framework/pages/notfound.react';
 
-export default React.createClass({
 
-  displayName: 'NotFound',
+class PageNotFound extends DefaultPageNotFound {
+  //
+  // Here you can put your implementation of the DefaultPageNotFound
+  //
+  //render() {
+  //  return (
+  //    <div>My Not found</div>
+  //  );
+  //}
+}
 
-  render() {
-    return (
-      <div>Not found</div>
-    );
-  }
-});
+export default PageNotFound;
