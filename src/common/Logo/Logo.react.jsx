@@ -3,18 +3,25 @@ import Isvg from 'react-inlinesvg';
 
 import './Logo.sass';
 
-export default React.createClass({
 
+export default React.createClass({
   displayName: 'Logo',
 
+  getStyles() {
+    return {
+      text: {
+        color: '#2C93D1',
+        fontSize: '1em',
+        minWidth: 224
+      }
+    };
+  },
+
   render() {
+    let styles = this.getStyles();
+
     return (
-      <Isvg
-        wrapper={React.DOM.div}
-        wrapperStyle={this.props.style}
-        src="/img/logo.svg"
-        className={this.props.className}
-        />
+      <div style={styles.text}>HACKLAG</div>
     );
   }
 });
