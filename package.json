@@ -1,8 +1,8 @@
 {
-  "name": "react-app-template",
+  "name": "hacklag-main-website",
   "version": "0.0.1",
   "license": "UNLICENSED",
-  "description": "Simple web template using ReactJS",
+  "description": "Hacklag main website",
   "main": "js/app.jsx",
   "repository": {
     "type": "git",
@@ -34,13 +34,13 @@
   },
   "devDependencies": {
     "async": "^1.5.0",
-    "autoprefixer-loader": "3.1.0",
+    "autoprefixer-loader": "3.2.0",
     "aws-sdk": "2.2.17",
     "babel-core": "^5.8.25",
     "babel-eslint": "^4.1.3",
     "babel-loader": "^5.3.2",
     "compass-mixins": "0.12.7",
-    "css-loader": "0.20.2",
+    "css-loader": "0.23.1",
     "del": "1.2.1",
     "eslint": "1.9.0",
     "eslint-friendly-formatter": "1.2.2",
@@ -63,7 +63,7 @@
     "gulp-task-listing": "^1.0.1",
     "gulp-task-loader": "1.2.3",
     "gulp-util": "3.0.7",
-    "node-sass": "3.4.1",
+    "node-sass": "3.4.2",
     "react-addons-create-fragment": "0.14.0",
     "react-addons-linked-state-mixin": "0.14.0",
     "react-addons-pure-render-mixin": "0.14.0",
@@ -74,10 +74,10 @@
     "react-script-loader": "0.0.1",
     "sass-loader": "3.0.0",
     "style-loader": "0.13.0",
-    "superagent": "1.4.0",
+    "superagent": "1.7.2",
     "through2": "2.0.0",
-    "webpack": "1.12.2",
-    "webpack-dev-server": "1.12.1"
+    "webpack": "1.12.13",
+    "webpack-dev-server": "1.14.1"
   },
   "scripts": {
     "start": "gulp webpack-dev-server",
