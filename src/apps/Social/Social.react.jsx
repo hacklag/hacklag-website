@@ -68,21 +68,46 @@ export default React.createClass({
           />
         </div>
         <div id="social-icons-menu">
-          <a href="https://www.facebook.com/Hacklag-1536319733349471/">
-            <img style={styles.socialIcon} src={"/img/social/facebook.svg"} alt="Facebook"/>
-          </a>
-          <a href="https://github.com/hacklag">
-            <img style={styles.socialIcon} src={"/img/social/github.svg"} alt="GitHub"/>
-          </a>
-          <a href="">
-            <img style={styles.socialIcon} src={"/img/social/twitter.svg"} alt="Twitter"/>
-          </a>
-          <a href="https://plus.google.com/communities/108215770973618388169">
-            <img style={styles.socialIcon} src={"/img/social/googleplus.svg"} alt="GooglePlus"/>
-          </a>
-          <a href="https://www.linkedin.com/grps/Hacklag-8476061">
-            <img style={styles.socialIcon} src={"/img/social/linkedin.svg"} alt="LinkedIn"/>
-          </a>
+        <MUI.IconButton
+            styles={styles.socialIcon}
+            tooltip="Facebook"
+            tooltipPosition="top-center"
+            linkButton={true}
+            href="https://www.facebook.com/Hacklag-1536319733349471/">
+            <img src={"/img/social/facebook.svg"} alt="Facebook"/>
+          </MUI.IconButton>
+          <MUI.IconButton
+            styles={styles.socialIcon}
+            tooltip="Github"
+            tooltipPosition="top-center"
+            linkButton={true}
+            href="https://github.com/hacklag/">
+            <img src={"/img/social/github.svg"} alt="GitHub"/>
+          </MUI.IconButton>
+          <MUI.IconButton
+            styles={styles.socialIcon}
+            tooltip="Twitter"
+            tooltipPosition="top-center"
+            linkButton={true}
+            href="https://twitter.com/">
+            <img src={"/img/social/twitter.svg"} alt="Twitter"/>
+          </MUI.IconButton>
+          <MUI.IconButton
+            styles={styles.socialIcon}
+            tooltip="GooglePlus"
+            tooltipPosition="top-center"
+            linkButton={true}
+            href="https://plus.google.com/communities/108215770973618388169">
+            <img src={"/img/social/googleplus.svg"} alt="GooglePlus"/>
+          </MUI.IconButton>
+          <MUI.IconButton
+            styles={styles.socialIcon}
+            tooltip="LinkedIn"
+            tooltipPosition="top-center"
+            linkButton={true}
+            href="https://www.linkedin.com/grps/Hacklag-8476061">
+            <img src={"/img/social/linkedin.svg"} alt="LinkedIn"/>
+          </MUI.IconButton>
         </div>
       </div>
     );
