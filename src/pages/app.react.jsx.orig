@@ -1,9 +1,12 @@
 import React from 'react';
 import Logo from '../common/Logo';
 import Grommet from 'grommet';
+<<<<<<< HEAD
 import Menu from '../apps/Menu';
+=======
 import Social from '../apps/Social';
 import Footer from '../apps/Footer';
+>>>>>>> devel
 
 import {History} from 'react-router';
 
@@ -40,11 +43,27 @@ export default React.createClass({
     let styles = this.getStyles();
 
     return (
+<<<<<<< HEAD
+      <Grommet.App>
+        <Grommet.Header direction="row" large={true} pad={{horizontal: 'medium'}}>
+          <Grommet.Title><Logo/></Grommet.Title>
+          <Menu/>
+        </Grommet.Header>
+        <Grommet.Box direction="row" align="center" colorIndex="neutral-1" justify="between" tag="aside">
+        <Grommet.Box colorIndex='grey-1' pad='large'>Social Bar</Grommet.Box>
+        <Grommet.Box colorIndex='grey-2' pad='large'>Main content</Grommet.Box>
+        <Grommet.Box colorIndex='grey-3' pad='large'>Sponsors bar</Grommet.Box>
+        </Grommet.Box>
+        <Grommet.Footer>
+          Footer
+        </Grommet.Footer>
+      </Grommet.App>
+=======
       <div style={styles.mainDiv}>
         <div style={styles.mainView}>
           <Grommet.Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
             <Grommet.Title><Logo/></Grommet.Title>
-          <Menu/>
+            Navigation bar
           </Grommet.Header>
           <Grommet.Box direction="row" align="center" justify="between" tag="aside">
           <Grommet.Box pad='medium' style={styles.socialColumn}>
@@ -56,6 +75,7 @@ export default React.createClass({
             <Footer/>
         </div>
       </div>
+>>>>>>> devel
     );
   }
 });

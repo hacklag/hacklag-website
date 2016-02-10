@@ -1,11 +1,17 @@
 import Test from './Test';
+<<<<<<< HEAD
 import Menu from './Menu.react';
+
+export default {
+  Test,
+  Menu
+=======
 import Social from './Social';
 import Footer from './Footer';
 
 export default {
   Test,
-  Menu
   Social,
   Footer
+>>>>>>> devel
 };
