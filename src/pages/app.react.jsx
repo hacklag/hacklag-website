@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../common/Logo';
 import Grommet from 'grommet';
+import Menu from '../apps/Menu';
 
 import {History} from 'react-router';
 
@@ -21,9 +22,9 @@ export default React.createClass({
   render() {
     return (
       <Grommet.App>
-        <Grommet.Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
+        <Grommet.Header direction="row" large={true} pad={{horizontal: 'medium'}}>
           <Grommet.Title><Logo/></Grommet.Title>
-          Navigation bar
+          <Menu/>
         </Grommet.Header>
         <Grommet.Box direction="row" align="center" colorIndex="neutral-1" justify="between" tag="aside">
         <Grommet.Box colorIndex='grey-1' pad='large'>Social Bar</Grommet.Box>
