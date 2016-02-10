@@ -1,7 +1,6 @@
 import React from 'react';
-import Logo from '../common/Logo';
+import Header from '../apps/Header';
 import Grommet from 'grommet';
-import Menu from '../apps/Menu';
 import Social from '../apps/Social';
 import Footer from '../apps/Footer';
 
@@ -42,10 +41,7 @@ export default React.createClass({
     return (
       <div style={styles.mainDiv}>
         <div style={styles.mainView}>
-          <Grommet.Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
-            <Grommet.Title><Logo/></Grommet.Title>
-          <Menu/>
-          </Grommet.Header>
+          <Header/>
           <Grommet.Box direction="row" align="center" justify="between" tag="aside">
           <Grommet.Box pad='medium' style={styles.socialColumn}>
             <Social/>

@@ -15,7 +15,8 @@ export default React.createClass({
         borderTop: '1px solid #eceff2',
         color: '#565a5f',
         fontSize: 12,
-        textAlign: 'center'
+        textAlign: 'center',
+        margin: '0 -9999rem'
       }
     };
   },
