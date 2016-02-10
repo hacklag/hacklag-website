@@ -74,7 +74,7 @@
     "react-script-loader": "0.0.1",
     "sass-loader": "3.0.0",
     "style-loader": "0.13.0",
-    "superagent": "1.4.0",
+    "superagent": "1.7.2",
     "through2": "2.0.0",
     "webpack": "1.12.13",
     "webpack-dev-server": "1.14.1"
