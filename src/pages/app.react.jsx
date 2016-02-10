@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../common/Logo';
 import Grommet from 'grommet';
 import Social from '../apps/Social';
+import Footer from '../apps/Footer';
 
 import {History} from 'react-router';
 
@@ -39,7 +40,7 @@ export default React.createClass({
 
     return (
       <div style={styles.mainDiv}>
-        <Grommet.App style={styles.mainView}>
+        <div style={styles.mainView}>
           <Grommet.Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
             <Grommet.Title><Logo/></Grommet.Title>
             Navigation bar
@@ -51,10 +52,8 @@ export default React.createClass({
           <Grommet.Box colorIndex='grey-2' pad='large'>Main content</Grommet.Box>
           <Grommet.Box colorIndex='grey-3' pad='large'>Sponsors bar</Grommet.Box>
           </Grommet.Box>
-          <Grommet.Footer>
-            Footer
-          </Grommet.Footer>
-        </Grommet.App>
+            <Footer/>
+        </div>
       </div>
     );
   }
