@@ -27,12 +27,12 @@ export default React.createClass({
 
     return (
       <div style={styles.mainFotter}>
-        <Link to="app">Home </Link>
+        <Link to="/">Home </Link>
         <Link to="events">Events </Link>
         <Link to="community">Community </Link>
-        <Link to="donate">Donate </Link>
-        <Link to="sponsors">Sponsors </Link>
-        <Link to="faq">FAQ </Link>
+        <Link to="partners/donate">Donate </Link>
+        <Link to="partners">Sponsors </Link>
+        <Link to="about/faq">FAQ </Link>
         <Link to="about">About </Link><br/>
         2016 ® Hacklag
       </div>
