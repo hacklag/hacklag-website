@@ -5,11 +5,10 @@ import Hydepark from './Hydepark';
 import Join from './Join';
 import Slack from './Slack';
 
-export default {
-  Agreement,
-  Clubs,
-  Community,
-  Hydepark,
-  Join,
-  Slack
-};
+Community.Agreement = Agreement;
+Community.Clubs = Clubs;
+Community.Hydepark = Hydepark;
+Community.Join = Join;
+Community.Slack = Slack;
+
+export default Community;

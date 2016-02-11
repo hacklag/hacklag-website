@@ -3,9 +3,7 @@ import Contact from './Contact';
 import FAQ from './FAQ';
 import Place from './Place';
 
-export default {
-  About,
-  Contact,
-  FAQ,
-  Place
-};
+About.Contact = Contact;
+About.FAQ = FAQ;
+About.Place = Place;
+export default About;

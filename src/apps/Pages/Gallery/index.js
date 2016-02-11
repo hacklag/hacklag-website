@@ -1,5 +1,3 @@
 import Gallery from './Gallery';
 
-export default {
-  Gallery
-};
+export default Gallery;
