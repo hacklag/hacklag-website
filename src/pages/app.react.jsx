@@ -6,12 +6,13 @@ import Footer from '../apps/Footer';
 
 import {History, State, RouteHandler} from 'react-router';
 
+
 export default React.createClass({
 
   displayName: 'App',
 
-  contextTypes: {
-    router: React.PropTypes.func
+  propTypes: {
+    children: React.PropTypes.element.isRequired
   },
 
   childContextTypes: {
@@ -50,7 +51,7 @@ export default React.createClass({
             <Social/>
           </Grommet.Box>
           <Grommet.Box colorIndex='grey-2' pad='large'>
-            <RouteHandler/>
+            {this.props.children}
           </Grommet.Box>
           <Grommet.Box colorIndex='grey-3' pad='large'>Sponsors bar</Grommet.Box>
           </Grommet.Box>

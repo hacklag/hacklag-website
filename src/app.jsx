@@ -3,8 +3,8 @@ import 'normalize.css';
 import './app.sass';
 
 import React from 'react';
-import Router from 'react-router';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
+import {Router, Route, History, IndexRoute} from 'react-router';
 import {createHistory, useBasename} from 'history';
 
 // Frameworks
@@ -55,25 +55,21 @@ const history = useBasename(createHistory)({
   basename: '/dashboard'
 });
 
-let routes = (
-  <Router.Route name="app" path="/" handler={AppPage}>
-    <Router.Route name="events" path="/events" handler={Events}/>
-    <Router.Route name="blog" path="/blog" handler={Blog}/>
-    <Router.Route name="gallery" path="/gallery" handler={Gallery}/>
-    <Router.Route name="community" path="/community" handler={Community}/>
-    <Router.Route name="partners" path="/partners" handler={Partners}/>
-    <Router.Route name="donate" path="/donate" handler={Donate}/>
-    <Router.Route name="faq" path="/faq" handler={FAQ}/>
-    <Router.Route name="about" path="/about" handler={About}/>
-    <Router.Route name="sponsors" path="/sponsors" handler={Partners}/>
-    <Router.DefaultRoute handler={Home}/>
-  </Router.Route>
+render(
+  <Router>
+    <Route component={AppPage}>
+      <Route path="/" component={Home}/>
+      <Route path="events" component={Events}/>
+      <Route path="blog" component={Blog}/>
+      <Route path="gallery" component={Gallery}/>
+      <Route path="community" component={Community}/>
+      <Route path="partners" component={Partners}/>
+      <Route path="donate" component={Donate}/>
+      <Route path="faq" component={FAQ}/>
+      <Route path="about" component={About}/>
+      <Route path="sponsors" component={Partners}/>
+      <Route path="*" component={NotFoundPage}/>
+    </Route>
+  </Router>,
+  document.getElementById('app')
 );
-
-Router.run(routes, function(Handler) {
-  ReactDOM.render(
-    <Handler/>, document.getElementById('app')
-  );
-});
-
-
