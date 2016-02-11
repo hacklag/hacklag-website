@@ -39,30 +39,34 @@ render(
       <Route path="/" component={Home}/>
       <Route path="news" component={Home.News}/>
       <Route path="becomeamember" component={Home.BecomeAMember}/>
-      <Route path="agreement_building" component={Home.Agreement}/>
+      <Route path="agreement" component={Home.Agreement}/>
 
-      <Route path="about" component={About}/>
-      <Route path="contact" component={About.Contact}/>
-      <Route path="faq" component={About.FAQ}/>
-      <Route path="place" component={About.Place}/>
+      <Route path="about" component={About}>
+        <Route path="contact" component={About.Contact}/>
+        <Route path="faq" component={About.FAQ}/>
+        <Route path="place" component={About.Place}/>
+      </Route>
 
       <Route path="blog" component={Blog}/>
 
-      <Route path="agreement" component={Community.Agreement}/>
-      <Route path="clubs" component={Community.Clubs}/>
-      <Route path="community" component={Community}/>
-      <Route path="hydepark" component={Community.Hydepark}/>
-      <Route path="join" component={Community.Join}/>
-      <Route path="slack" component={Community.Slack}/>
+      <Route path="community" component={Community}>
+        <Route path="agreement" component={Community.Agreement}/>
+        <Route path="clubs" component={Community.Clubs}/>
+        <Route path="hydepark" component={Community.Hydepark}/>
+        <Route path="join" component={Community.Join}/>
+        <Route path="slack" component={Community.Slack}/>
+      </Route>
 
-      <Route path="calendar" component={Events.Calendar}/>
-      <Route path="events" component={Events}/>
+      <Route path="events" component={Events}>
+        <Route path="calendar" component={Events.Calendar}/>
+      </Route>
 
       <Route path="gallery" component={Gallery}/>
 
-      <Route path="partners" component={Partners}/>
-      <Route path="donate" component={Partners.Donate}/>
-      <Route path="agreement_partners" component={Partners.Agreement}/>
+      <Route path="partners" component={Partners}>
+        <Route path="donate" component={Partners.Donate}/>
+        <Route path="agreement" component={Partners.Agreement}/>
+      </Route>
 
       <Route path="*" component={NotFoundPage}/>
     </Route>
