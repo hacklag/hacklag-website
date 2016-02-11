@@ -1,5 +1,6 @@
 import React from 'react';
 import MUI from 'material-ui';
+import {Link} from 'react-router';
 
 export default React.createClass({
   displayName: 'Social',
@@ -26,13 +27,13 @@ export default React.createClass({
 
     return (
       <div style={styles.mainFotter}>
-        <a href="">Home </a>
-        <a href="">Events </a>
-        <a href="">Community </a>
-        <a href="">Donate </a>
-        <a href="">Sponsors </a>
-        <a href="">FAQ </a>
-        <a href="">About </a><br/>
+        <Link to="/">Home </Link>
+        <Link to="events">Events </Link>
+        <Link to="community">Community </Link>
+        <Link to="partners/donate">Donate </Link>
+        <Link to="partners">Sponsors </Link>
+        <Link to="about/faq">FAQ </Link>
+        <Link to="about">About </Link><br/>
         2016 ® Hacklag
       </div>
     );

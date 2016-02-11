@@ -4,21 +4,25 @@ import Grommet from 'grommet';
 import Social from '../apps/Social';
 import Footer from '../apps/Footer';
 
-import {History} from 'react-router';
+import {History, State, RouteHandler} from 'react-router';
+
 
 export default React.createClass({
 
   displayName: 'App',
 
-  contextTypes: {
-    router: React.PropTypes.func
+  propTypes: {
+    children: React.PropTypes.element.isRequired
   },
 
   childContextTypes: {
     muiTheme: React.PropTypes.object
   },
 
-  mixins: [History],
+  mixins: [
+    History,
+    State
+  ],
 
   getStyles() {
     return {
@@ -46,7 +50,9 @@ export default React.createClass({
           <Grommet.Box pad='medium' style={styles.socialColumn}>
             <Social/>
           </Grommet.Box>
-          <Grommet.Box colorIndex='grey-2' pad='large'>Main content</Grommet.Box>
+          <Grommet.Box colorIndex='grey-2' pad='large'>
+            {this.props.children}
+          </Grommet.Box>
           <Grommet.Box colorIndex='grey-3' pad='large'>Sponsors bar</Grommet.Box>
           </Grommet.Box>
             <Footer/>

@@ -25,25 +25,25 @@ export default Radium(React.createClass({
 
     return (
       <Grommet.Menu direction="row" size="large" dropAlign={{right: 'right'}}>
-        <Grommet.Anchor href="#" tag="div">
+        <Grommet.Anchor href="#">
           <span key="home" style={styles.menuText}>Home</span>
         </Grommet.Anchor>
-        <Grommet.Anchor href="#">
+        <Grommet.Anchor href="/#/events">
           <span key="events" style={styles.menuText}>Events</span>
         </Grommet.Anchor>
-        <Grommet.Anchor href="#">
+        <Grommet.Anchor href="/#/blog">
           <span key="blog" style={styles.menuText}>Blog</span>
         </Grommet.Anchor>
-        <Grommet.Anchor href="#">
+        <Grommet.Anchor href="/#/gallery">
           <span key="gallery" style={styles.menuText}>Gallery</span>
         </Grommet.Anchor>
-        <Grommet.Anchor href="#">
+        <Grommet.Anchor href="/#/community">
           <span key="community" style={styles.menuText}>Community</span>
         </Grommet.Anchor>
-        <Grommet.Anchor href="#">
+        <Grommet.Anchor href="/#/partners">
           <span key="partners" style={styles.menuText}>Partners</span>
         </Grommet.Anchor>
-        <Grommet.Anchor href="#">
+        <Grommet.Anchor href="/#/about">
           <span key="about" style={styles.menuText}>About</span>
         </Grommet.Anchor>
       </Grommet.Menu>
