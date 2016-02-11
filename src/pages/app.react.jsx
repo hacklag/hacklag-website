@@ -3,6 +3,7 @@ import Header from '../apps/Header';
 import Grommet from 'grommet';
 import Social from '../apps/Social';
 import Footer from '../apps/Footer';
+import SponsorsBar from '../common/SponsorsBar';
 
 import {History, State, RouteHandler} from 'react-router';
 
@@ -53,7 +54,9 @@ export default React.createClass({
           <Grommet.Box colorIndex='grey-2' pad='large'>
             {this.props.children}
           </Grommet.Box>
-          <Grommet.Box colorIndex='grey-3' pad='large'>Sponsors bar</Grommet.Box>
+          <Grommet.Box pad='medium'>
+            <SponsorsBar/>
+          </Grommet.Box>
           </Grommet.Box>
             <Footer/>
         </div>
