@@ -7,7 +7,7 @@ export default React.createClass({
   render() {
     return (
       <div>
-        Slack
+        <a href="https://hacklag.slack.com/">Slack</a>
       </div>
     );
   }

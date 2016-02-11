@@ -15,38 +15,41 @@ import './framework/segment';
 import AppPage from './pages/app.react';
 import NotFoundPage from './pages/notfound.react';
 
-// Home
-import Home from './apps/Pages/Home/Home';
-import News from './apps/Pages/Home/News';
-import BecomeAMember from './apps/Pages/Home/BecomeAMember';
+// Page components
+import {
+  // Home
+  Home,
+  News,
+  BecomeAMember,
 
-// About
-import About from './apps/Pages/About/About';
-import Contact from './apps/Pages/About/Contact';
-import FAQ from './apps/Pages/About/FAQ';
-import Place from './apps/Pages/About/Place';
+  // About
+  About,
+  Contact,
+  FAQ,
+  Place,
 
-// Blog
-import Blog from './apps/Pages/Blog/Blog';
+  // Blog
+  Blog,
 
-// Community
-import Agreement from './apps/Pages/Community/Agreement';
-import Clubs from './apps/Pages/Community/Clubs';
-import Community from './apps/Pages/Community/Community';
-import Hydepark from './apps/Pages/Community/Hydepark';
-import Join from './apps/Pages/Community/Join';
-import Slack from './apps/Pages/Community/Slack';
+  // Community
+  Agreement,
+  Clubs,
+  Community,
+  Hydepark,
+  Join,
+  Slack,
 
-// Events
-import Calendar from './apps/Pages/Events/Calendar';
-import Events from './apps/Pages/Events/Events';
+  // Events
+  Calendar,
+  Events,
 
-// Gallery
-import Gallery from './apps/Pages/Gallery/Gallery';
+  // Gallery
+  Gallery,
 
-// Partners
-import Donate from './apps/Pages/Partners/Donate';
-import Partners from './apps/Pages/Partners/Partners';
+  // Partners
+  Donate,
+  Partners
+} from './apps/Pages';
 
 // Apps
 import Test from './apps/Test';
@@ -59,15 +62,31 @@ render(
   <Router>
     <Route component={AppPage}>
       <Route path="/" component={Home}/>
-      <Route path="events" component={Events}/>
+      <Route path="news" component={News}/>
+      <Route path="becomeamember" component={BecomeAMember}/>
+
+      <Route path="about" component={About}/>
+      <Route path="contact" component={Contact}/>
+      <Route path="faq" component={FAQ}/>
+      <Route path="place" component={Place}/>
+
       <Route path="blog" component={Blog}/>
-      <Route path="gallery" component={Gallery}/>
+
+      <Route path="agreement" component={Agreement}/>
+      <Route path="clubs" component={Clubs}/>
       <Route path="community" component={Community}/>
+      <Route path="hydepark" component={Hydepark}/>
+      <Route path="join" component={Join}/>
+      <Route path="slack" component={Slack}/>
+
+      <Route path="calendar" component={Calendar}/>
+      <Route path="events" component={Events}/>
+
+      <Route path="gallery" component={Gallery}/>
+
       <Route path="partners" component={Partners}/>
       <Route path="donate" component={Donate}/>
-      <Route path="faq" component={FAQ}/>
-      <Route path="about" component={About}/>
-      <Route path="sponsors" component={Partners}/>
+
       <Route path="*" component={NotFoundPage}/>
     </Route>
   </Router>,
