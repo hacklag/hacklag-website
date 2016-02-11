@@ -17,11 +17,10 @@ export default React.createClass({
         margin: 16,
         borderBottom: '1px solid #eceff2'
       },
-      modifiers: [{
-        lastChild: {
-          margin: 100
-        }
-      }]
+      mainUl: {
+        listStyleType: 'none',
+        marginLeft: 0
+      }
     };
   },
 
@@ -30,7 +29,7 @@ export default React.createClass({
 
     return (
       <div>
-          <ul style={{listStyleType: 'none', marginLeft: 0}}>
+          <ul style={styles.mainUl}>
             {this.props.list.map(function(listValue) {
               return (
                 <li>

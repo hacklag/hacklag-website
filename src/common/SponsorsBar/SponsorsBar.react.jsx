@@ -24,6 +24,14 @@ export default React.createClass({
       partnerBoxTop: {
         padding: 8,
         borderTop: '1px solid #eceff2'
+      },
+      partnersText: {
+        fontWeight: 600,
+        fontSize: 24
+      },
+      partnersDesc: {
+        display: 'block',
+        fontSize: 14
       }
     };
   },
@@ -34,8 +42,8 @@ export default React.createClass({
     return (
       <div style={styles.componentBody}>
         <div style={styles.partnerBox}>
-          <div style={{fontWeight: 600, fontSize: 24}}>Partners</div>
-          <div style={{display: 'block', fontSize: 14}}>Developers connector</div>
+          <div style={styles.partnersText}>Partners</div>
+          <div style={styles.partnersDesc}>Developers connector</div>
         </div>
         <div style={{textAlign: 'center'}}>
           <SponsorsBarListRender
