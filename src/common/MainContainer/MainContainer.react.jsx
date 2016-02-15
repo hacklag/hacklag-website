@@ -4,7 +4,7 @@ export default React.createClass({
   displayName: 'MainContainer',
 
   propTypes: {
-    contentComponent: React.PropTypes.element.isRequired
+    children: React.PropTypes.element.isRequired
   },
 
   getStyles() {
@@ -27,7 +27,7 @@ export default React.createClass({
 
     return (
       <div style={styles.componentBody}>
-        {this.props.contentComponent}
+        {this.props.children}
       </div>
     );
   }
