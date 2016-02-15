@@ -4,6 +4,7 @@ import Grommet from 'grommet';
 import Social from '../apps/Social';
 import Footer from '../apps/Footer';
 import SponsorsBar from '../common/SponsorsBar';
+import MainContainer from '../common/MainContainer';
 
 import {History, State, RouteHandler} from 'react-router';
 
@@ -36,6 +37,11 @@ export default React.createClass({
       mainDiv: {
         color: '#565a5f',
         backgroundColor: '#f5f8f9'
+      },
+      mainContainer: {
+        display: 'flex',
+        width: '54%',
+        marginTop: 24
       }
     };
   },
@@ -47,18 +53,24 @@ export default React.createClass({
       <div style={styles.mainDiv}>
         <div style={styles.mainView}>
           <Header/>
-          <Grommet.Box direction="row" align="center" justify="between" tag="aside">
-          <Grommet.Box pad='medium' style={styles.socialColumn}>
-            <Social/>
+          <Grommet.Box
+            direction="row"
+            align="start"
+            justify="center"
+            tag="aside">
+            <Grommet.Box pad='medium'>
+              <Social/>
+            </Grommet.Box>
+            <div style={styles.mainContainer}>
+              <MainContainer>
+                {this.props.children}
+              </MainContainer>
+            </div>
+            <Grommet.Box pad='medium'>
+              <SponsorsBar/>
+            </Grommet.Box>
           </Grommet.Box>
-          <Grommet.Box colorIndex='grey-2' pad='large'>
-            {this.props.children}
-          </Grommet.Box>
-          <Grommet.Box pad='medium'>
-            <SponsorsBar/>
-          </Grommet.Box>
-          </Grommet.Box>
-            <Footer/>
+          <Footer/>
         </div>
       </div>
     );
