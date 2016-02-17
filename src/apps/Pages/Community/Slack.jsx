@@ -31,7 +31,7 @@ export default React.createClass({
   },
 
   handleButtonPress() {
-    let account = new Syncano({accountKey: '802e2576b7a83f5a12982381de9b7fd117b07099'});
+    let account = new Syncano({accountKey: SYNCANO_API_KEY});
     let payload = '{"email": "' + this.state.textFieldValue + '"}';
 
     account.instance('silent-rain-3110').webhook('slackregistrator').run(payload)

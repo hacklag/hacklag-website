@@ -20,7 +20,8 @@
     "ENV": true,
     "CIRCLE_BRANCH": true,
     "CIRCLE_SHA1": true,
-    "VERSION": true
+    "VERSION": true,
+    "SYNCANO_API_KEY": true
   },
   "ecmaFeatures": {
     "arrowFunctions": true,

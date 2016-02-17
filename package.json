@@ -1,12 +1,12 @@
 {
-  "name": "hacklag-main-website",
+  "name": "hacklag-website",
   "version": "0.0.1",
   "license": "UNLICENSED",
-  "description": "Hacklag main website",
+  "description": "Hacklag website",
   "main": "js/app.jsx",
   "repository": {
     "type": "git",
-    "url": "git@github.com:hacklag/hacklag-main-website.git"
+    "url": "git@github.com:hacklag/hacklag-website.git"
   },
   "dependencies": {
     "classnames": "^2.2.1",
