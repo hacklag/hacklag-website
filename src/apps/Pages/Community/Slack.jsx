@@ -31,16 +31,16 @@ export default React.createClass({
   },
 
   handleButtonPress() {
-    let account = new Syncano({accountKey: SYNCANO_API_KEY});
-    let payload = '{"email": "' + this.state.textFieldValue + '"}';
+    let emailPayload = '{"email": "' + this.state.textFieldValue + '"}';
+    const {Webhook} = Syncano({accountKey: SYNCANO_API_KEY});
 
-    account.instance('silent-rain-3110').webhook('slackregistrator').run(payload)
-      .then(function(res) {
-        console.log(res);
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
+    Webhook.please().runPublic({
+      instanceName: 'silent-rain-3110',
+      public_link: '391f2e566770e4350451464fbaca51ef35865994',
+      payload: {emailPayload}
+    }).then((trace) => {
+      console.log(trace);
+    });
   },
 
   render() {
