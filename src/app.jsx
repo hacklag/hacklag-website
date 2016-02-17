@@ -13,6 +13,7 @@ import './framework/segment';
 
 // Pages
 import AppPage from './pages/app.react';
+import LandingPage from './pages/landingpage.react';
 import NotFoundPage from './pages/notfound.react';
 
 // Page components
@@ -28,6 +29,7 @@ import {
 
 // Apps
 import Test from './apps/Test';
+import LandingRegister from './apps/LandingRegister';
 
 const history = useBasename(createHistory)({
   basename: '/dashboard'
@@ -35,8 +37,12 @@ const history = useBasename(createHistory)({
 
 render(
   <Router>
+    <Route component={LandingPage}>
+      <Route path="/" component={LandingRegister}/>
+    </Route>
+
     <Route component={AppPage}>
-      <Route path="/" component={Home}/>
+      <Route path="/home" component={Home}/>
       <Route path="news" component={Home.News}/>
       <Route path="becomeamember" component={Home.BecomeAMember}/>
       <Route path="agreement" component={Home.Agreement}/>
