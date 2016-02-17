@@ -3,7 +3,7 @@ import {TextField, RaisedButton} from 'material-ui';
 import Syncano from 'syncano';
 
 export default React.createClass({
-  displayName: 'Slack',
+  displayName: 'Registration',
 
   getInitialState() {
     return {
@@ -33,7 +33,7 @@ export default React.createClass({
 
   handleButtonPress() {
     const {Webhook} = Syncano({accountKey: SYNCANO_API_KEY});
-    const SLACK_PUBLIC_WEBHOOK = '391f2e566770e4350451464fbaca51ef35865994';
+    const SLACK_PUBLIC_WEBHOOK = '95f37de28a7f95f07b2128677e97d116fcf8813b';
     let payload = JSON.stringify({email: this.state.textFieldValue});
 
     Webhook.please().runPublic({

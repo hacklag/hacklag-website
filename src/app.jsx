@@ -54,7 +54,7 @@ render(
         <Route path="clubs" component={Community.Clubs}/>
         <Route path="hydepark" component={Community.Hydepark}/>
         <Route path="join" component={Community.Join}/>
-        <Route path="slack" component={Community.Slack}/>
+        <Route path="registration" component={Community.Registration}/>
       </Route>
 
       <Route path="events" component={Events}>
