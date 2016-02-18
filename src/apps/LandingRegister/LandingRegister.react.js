@@ -1,15 +1,18 @@
 import React from 'react';
 import Radium from 'radium';
 import {TextField, RaisedButton, IconButton, Colors} from 'material-ui';
+import LinkedStateMixin from 'react-addons-linked-state-mixin';
 
 import LeftBar from './LeftBar.react';
 
 export default Radium(React.createClass({
   displayName: 'LandingRegister',
 
+  mixins: [LinkedStateMixin],
+
   getInitialState() {
     return {
-      textFieldValue: ''
+      emailAddress: ''
     };
   },
 
@@ -74,6 +77,7 @@ export default Radium(React.createClass({
         <div style={styles.contentBar}>
           <div style={styles.headlineText}>
             We hope to start first <strong><ins>Hackerspace</ins></strong> in <strong>Białystok</strong><br/><br/>
+
           </div>
           <p>
             We are <strong>working hard</strong> to make it real. To be part of this <strong>initiative</strong>
@@ -87,8 +91,8 @@ export default Radium(React.createClass({
             <TextField
               floatingLabelText='Your Email'
               style={styles.emailTextfield}
-              value={this.state.textFieldValue}
               type='email'
+              valueLink={this.linkState('emailAddress')}
             /><br/>
             <RaisedButton
               style={styles.inviteButton}
