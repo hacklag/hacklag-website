@@ -65,6 +65,12 @@ export default Radium(React.createClass({
     };
   },
 
+  handleTextFieldChange(event) {
+    this.setState({
+      textFieldValue: event.target.value
+    });
+  },
+
   render() {
     let styles = this.getStyles();
 
@@ -89,6 +95,7 @@ export default Radium(React.createClass({
               style={styles.emailTextfield}
               value={this.state.textFieldValue}
               type='email'
+              onChange={this.handleTextFieldChange}
             /><br/>
             <RaisedButton
               style={styles.inviteButton}
