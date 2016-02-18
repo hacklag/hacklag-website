@@ -4,7 +4,8 @@ machine:
 
 dependencies:
   post:
-    - cd ./node_modules/syncano/ && npm i
+    - cd ./node_modules/syncano/
+    - npm install
 
 deployment:
   production:
