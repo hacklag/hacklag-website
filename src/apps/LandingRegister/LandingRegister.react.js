@@ -1,6 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
-import {TextField, RaisedButton, IconButton} from 'material-ui';
+import {TextField, RaisedButton, IconButton, Colors} from 'material-ui';
 
 import LeftBar from './LeftBar.react';
 
@@ -31,7 +31,7 @@ export default Radium(React.createClass({
         flexDirection: 'column',
         width: 554,
         paddingLeft: 38,
-        fontSize: 18
+        fontSize: 14
       },
       hacklagLogo: {
         width: 324,
@@ -56,6 +56,9 @@ export default Radium(React.createClass({
         backgroundColor: '#ec018c',
         width: '50%'
       },
+      headlineText: {
+        fontSize: 18
+      },
       smallerText: {
         fontSize: 12
       }
@@ -69,32 +72,35 @@ export default Radium(React.createClass({
       <div style={styles.componentBody}>
         <LeftBar/>
         <div style={styles.contentBar}>
-          We hope to start first Hackerspace in Białystok<br/><br/>
-
-          We are working hard to make it real. To be part of this initiative
-          or just be up to date with the progress please type in your email
-          and we will send you invitation to our Forum and Chat.<br/><br/>
-
-          Demonstrating size and engagement of the community is
-          extremly important to gather founds and start operating -
-          please sign up!
-
-          <TextField
-            floatingLabelText='Your Email'
-            style={styles.emailTextfield}
-            value={this.state.textFieldValue}
-            type='email'
-          /><br/>
-          <RaisedButton
-            style={styles.inviteButton}
-            primary={true}
-            label='Cool, let me in!'
-          /><br/>
-          <div style={styles.smallerText}>
-            On our forum you can find information for members, volunteers, partners,
-            sponsors. We are sharing there information about potential property and the
-            whole process of adopting place for Hacklag.
+          <div style={styles.headlineText}>
+            We hope to start first <strong><ins>Hackerspace</ins></strong> in <strong>Białystok</strong><br/><br/>
           </div>
+          <p>
+            We are <strong>working hard</strong> to make it real. To be part of this <strong>initiative</strong>
+            or just be <strong>up to date</strong> with the progress please type in your email
+            and we will send you invitation to <strong>our Forum</strong> and <strong>Chat</strong>.<br/><br/>
+
+            Demonstrating size and engagement of the <strong>community</strong> is
+            <strong> extremly</strong> important to gather founds and start operating -
+            please sign up!
+
+            <TextField
+              floatingLabelText='Your Email'
+              style={styles.emailTextfield}
+              value={this.state.textFieldValue}
+              type='email'
+            /><br/>
+            <RaisedButton
+              style={styles.inviteButton}
+              primary={true}
+              label='Cool, let me in!'
+            /><br/>
+            <div style={styles.smallerText}>
+              On our forum you can find information for <strong>members, volunteers, partners,
+              sponsors</strong>. We are sharing there information about potential property and the
+              whole process of adopting place for <strong>Hacklag</strong>.
+            </div>
+          </p>
         </div>
         </div>
     );

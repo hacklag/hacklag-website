@@ -7,8 +7,13 @@ export default Radium(React.createClass({
   getStyles() {
     return {
       footerDiv: {
+        display: 'flex',
         justifyContent: 'center',
-        display: 'flex'
+        position: 'absolute',
+        bottom: 0,
+        height: 40,
+        marginTop: 40,
+        width: '100%'
       }
     };
   },

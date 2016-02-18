@@ -19,7 +19,8 @@ export default React.createClass({
         backgroundColor: '#fafafa',
         margin: 'auto',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        fontFamily: 'Roboto'
       },
       develBackgroundImage: {
         backgroundImage: 'url(/img/form.png)',

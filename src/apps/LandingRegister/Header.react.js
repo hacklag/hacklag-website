@@ -29,10 +29,8 @@ export default Radium(React.createClass({
           tooltipPosition="bottom-center"
           linkButton={true}
           style={styles.iconStyler}
-          href="https://github.com/hacklag/">
-          <img src={"/img/social/github.svg"}
-            alt="GitHub"/>
-        </IconButton>
+          iconClassName="icon-github"
+          href="https://github.com/hacklag/"/>
       </div>
     );
   }
