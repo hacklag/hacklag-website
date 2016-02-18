@@ -40,6 +40,14 @@ export default React.createClass({
       container: {
         marginTop: 24
       },
+      boxColumns: {
+        display: 'flex',
+        flexDirection: 'column'
+      },
+      boxRows: {
+        display: 'flex',
+        flexDirection: 'row'
+      },
       xlSide: {
         width: '25%'
       },
@@ -63,7 +71,7 @@ export default React.createClass({
         <div style={styles.mainView}>
           <Header/>
           <div style={styles.container}>
-            <MediaQuery orientation='portrait'>
+            <MediaQuery orientation='portrait' style={styles.boxColumns}>
               <div style={styles.sSide}>
                 <Social/>
               </div>
@@ -77,7 +85,7 @@ export default React.createClass({
               </div>
             </MediaQuery>
             <MediaQuery orientation='landscape' >
-                <MediaQuery minWidth={768} style={{display: 'flex'}}>
+                <MediaQuery minWidth={768} style={styles.boxRows}>
                   <div style={styles.xlSide}>
                     <Social/>
                   </div>
@@ -90,7 +98,7 @@ export default React.createClass({
                     <SponsorsBar/>
                   </div>
                 </MediaQuery>
-                <MediaQuery maxWidth={768}>
+                <MediaQuery maxWidth={768} style={styles.boxColumns}>
                   <div style={styles.sSide}>
                     <Social/>
                   </div>
