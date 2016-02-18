@@ -13,13 +13,27 @@ export default React.createClass({
     return {
       mainDiv: {
         color: '5d5d5d',
-        backgroundColor: '#fafafa',
-        margin: 'auto'
+        //backgroundColor: '#fafafa',
+        margin: 'auto',
+        display: 'flex',
+        flexDirection: 'column'
       },
       footerDiv: {
         justifyContent: 'center',
-        display: 'flex',
-        alignContent: 'flex-end'
+        display: 'flex'
+      },
+      headerDiv: {
+        justifyContent: 'flex-end',
+        display: 'flex'
+      },
+      develBackgroundImage: {
+        backgroundImage: 'url(/img/form.png)',
+        backgroundSize: '100%'
+      },
+      githubLogo: {
+        width: 52,
+        height: 52,
+        margin: 32
       }
     };
   },
@@ -28,13 +42,20 @@ export default React.createClass({
     let styles = this.getStyles();
 
     return (
-      <div style={styles.mainDiv}>
-      <div>
-        {this.props.children}
-      </div>
-      <div style={styles.footerDiv}>
-        2016 Hacklag Foundation
-      </div>
+      <div style={styles.develBackgroundImage}>
+        <div style={styles.mainDiv}>
+          <div style={styles.headerDiv}>
+            <a href="https://github.com/hacklag">
+              <img style={styles.githubLogo} src={"/img/social/github.svg"} alt="GitHub" />
+            </a>
+          </div>
+          <div>
+            {this.props.children}
+          </div>
+          <div style={styles.footerDiv}>
+            2016 Hacklag Foundation
+          </div>
+        </div>
       </div>
     );
   }

@@ -7,7 +7,8 @@ export default Radium(React.createClass({
 
   getInitialState() {
     return {
-      textFieldValue: ''
+      textFieldValue: '',
+      hover: false
     };
   },
 
@@ -18,11 +19,7 @@ export default Radium(React.createClass({
         flexDirection: 'row',
         fontSize: 24,
         justifyContent: 'center',
-        paddingTop: 194
-      },
-      develBackgroundImage: {
-        backgroundImage: 'url(/img/form.png)',
-        backgroundSize: '100%'
+        paddingTop: 76
       },
       logoBar: {
         display: 'flex',
@@ -30,29 +27,29 @@ export default Radium(React.createClass({
         maxWidth: 324
       },
       contentBar: {
-        border: '1px solid green',
         display: 'flex',
         flexDirection: 'column',
         width: 554,
         paddingLeft: 38
       },
       hacklagLogo: {
-        width: 314,
-        height: 314,
-        margin: 20
+        width: 324,
+        height: 324,
+        padding: 20
       },
       hacklagLogoDialog: {
         position: 'relative',
-        left: -54,
-        top: -364,
-        width: 144,
-        height: 94
+        left: -76,
+        top: -404,
+        width: 164,
+        height: 114
       },
       socialBar: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        display: 'flex'
+        display: 'flex',
+        marginTop: -24
       },
       socialLogo: {
         width: 48,
@@ -65,22 +62,57 @@ export default Radium(React.createClass({
       },
       smallerText: {
         fontSize: 14
+      },
+      hacklagLogoDivHidden: {
+        visibility: 'hidden',
+        opacity: 0,
+        transition: 'visibility 2s, opacity 2s linear'
+      },
+      hacklagLogoDivVisible: {
+        visibility: 'visible',
+        opacity: 1,
+        transition: 'visibility 0.5s, opacity 1s linear'
       }
     };
+  },
+
+  mouseOver() {
+    this.setState({hover: true});
+  },
+
+  mouseOut() {
+    this.setState({hover: false});
   },
 
   render() {
     let styles = this.getStyles();
 
     return (
-      <div style={styles.develBackgroundImage}>
         <div style={styles.componentBody}>
           <div style={styles.logoBar}>
-            <img style={styles.hacklagLogo} src={"/img/hacklag_sketch.png"} alt="Hacklag logo" />
-            <img style={styles.hacklagLogoDialog} src={"/img/hackbat_hi.png"} alt="Hi! I`m Hackabat!" />
+            <a href="#">
+              <img style={styles.hacklagLogo}
+                src={"/img/hacklag_sketch.png"}
+                onMouseOver={this.mouseOver}
+                onMouseOut={this.mouseOut}
+                alt="Hacklag logo" />
+            </a>
             <div style={styles.socialBar}>
-              <img style={styles.socialLogo} src={"/img/icons/discourse.png"} alt="Discourse logo" />
-              <img style={styles.socialLogo} src={"/img/icons/slack.png"} alt="Slack logo" />
+              <a href="https://forum.hacklag.org/">
+                <img style={styles.socialLogo}
+                  src={"/img/icons/discourse.png"}
+                  alt="Discourse logo" />
+              </a>
+              <a href="https://hacklag.slack.com/">
+                <img style={styles.socialLogo}
+                  src={"/img/icons/slack.png"}
+                  alt="Slack logo" />
+              </a>
+            </div>
+            <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
+                  <img style={styles.hacklagLogoDialog}
+                    src={"/img/hackbat_hi.png"}
+                    alt="Hi! I`m Hackabat!" />
             </div>
           </div>
           <div style={styles.contentBar}>
@@ -110,7 +142,6 @@ export default Radium(React.createClass({
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }));
