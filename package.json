@@ -94,6 +94,7 @@
     "deployment-master": "gulp deployment-master",
     "deployment-devel": "gulp deployment-devel",
     "deployment-branch": "gulp deployment-branch",
-    "bump": "gulp bump"
+    "bump": "gulp bump",
+    "test": "echo \"Error: no test specified\" && exit 0"
   }
 }
