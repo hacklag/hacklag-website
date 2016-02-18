@@ -5,6 +5,7 @@ import Social from '../apps/Social';
 import Footer from '../apps/Footer';
 import SponsorsBar from '../common/SponsorsBar';
 import MainContainer from '../common/MainContainer';
+import MediaQuery from 'react-responsive';
 
 import {History, State, RouteHandler} from 'react-router';
 
@@ -32,16 +33,24 @@ export default React.createClass({
         maxWidth: 1320,
         margin: 'auto'
       },
-      socialColumn: {
-      },
       mainDiv: {
         color: '#565a5f',
         backgroundColor: '#f5f8f9'
       },
-      mainContainer: {
-        display: 'flex',
-        width: '54%',
+      container: {
         marginTop: 24
+      },
+      xlSide: {
+        width: '25%'
+      },
+      xlCenter: {
+        width: '50%'
+      },
+      sSide: {
+        width: '100%'
+      },
+      sCenter: {
+        width: '100%'
       }
     };
   },
@@ -53,23 +62,49 @@ export default React.createClass({
       <div style={styles.mainDiv}>
         <div style={styles.mainView}>
           <Header/>
-          <Grommet.Box
-            direction="row"
-            align="start"
-            justify="center"
-            tag="aside">
-            <Grommet.Box pad='medium'>
-              <Social/>
-            </Grommet.Box>
-            <div style={styles.mainContainer}>
-              <MainContainer>
-                {this.props.children}
-              </MainContainer>
-            </div>
-            <Grommet.Box pad='medium'>
-              <SponsorsBar/>
-            </Grommet.Box>
-          </Grommet.Box>
+          <div style={styles.container}>
+            <MediaQuery orientation='portrait'>
+              <div style={styles.sSide}>
+                <Social/>
+              </div>
+              <div style={styles.sCenter}>
+                <MainContainer>
+                  {this.props.children}
+                </MainContainer>
+              </div>
+              <div style={styles.sSide}>
+                <SponsorsBar/>
+              </div>
+            </MediaQuery>
+            <MediaQuery orientation='landscape' >
+                <MediaQuery minWidth={768} style={{display: 'flex'}}>
+                  <div style={styles.xlSide}>
+                    <Social/>
+                  </div>
+                  <div style={styles.xlCenter}>
+                    <MainContainer>
+                      {this.props.children}
+                    </MainContainer>
+                  </div>
+                  <div style={styles.xlSide}>
+                    <SponsorsBar/>
+                  </div>
+                </MediaQuery>
+                <MediaQuery maxWidth={768}>
+                  <div style={styles.sSide}>
+                    <Social/>
+                  </div>
+                  <div style={styles.sCenter}>
+                    <MainContainer>
+                      {this.props.children}
+                    </MainContainer>
+                  </div>
+                  <div style={styles.sSide}>
+                    <SponsorsBar/>
+                  </div>
+                </MediaQuery>
+            </MediaQuery>
+          </div>
           <Footer/>
         </div>
       </div>
