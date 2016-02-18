@@ -1,6 +1,9 @@
 import React from 'react';
 import {History, State, RouteHandler} from 'react-router';
 
+//Apps
+import LandingRegister from '../apps/LandingRegister';
+
 export default React.createClass({
 
   displayName: 'App',
@@ -13,27 +16,14 @@ export default React.createClass({
     return {
       mainDiv: {
         color: '5d5d5d',
-        //backgroundColor: '#fafafa',
+        backgroundColor: '#fafafa',
         margin: 'auto',
         display: 'flex',
         flexDirection: 'column'
       },
-      footerDiv: {
-        justifyContent: 'center',
-        display: 'flex'
-      },
-      headerDiv: {
-        justifyContent: 'flex-end',
-        display: 'flex'
-      },
       develBackgroundImage: {
         backgroundImage: 'url(/img/form.png)',
         backgroundSize: '100%'
-      },
-      githubLogo: {
-        width: 52,
-        height: 52,
-        margin: 32
       }
     };
   },
@@ -44,17 +34,9 @@ export default React.createClass({
     return (
       <div style={styles.develBackgroundImage}>
         <div style={styles.mainDiv}>
-          <div style={styles.headerDiv}>
-            <a href="https://github.com/hacklag">
-              <img style={styles.githubLogo} src={"/img/social/github.svg"} alt="GitHub" />
-            </a>
-          </div>
-          <div>
-            {this.props.children}
-          </div>
-          <div style={styles.footerDiv}>
-            2016 Hacklag Foundation
-          </div>
+          <LandingRegister.Header/>
+          <LandingRegister/>
+          <LandingRegister.Footer/>
         </div>
       </div>
     );
