@@ -15,7 +15,7 @@ export default React.createClass({
   getStyles() {
     return {
       mainDiv: {
-        color: '5d5d5d',
+        color: '#5d5d5d',
         backgroundColor: '#fafafa',
         margin: 'auto',
         display: 'flex',
