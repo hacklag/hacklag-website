@@ -1,12 +1,12 @@
 {
-  "name": "hacklag-main-website",
+  "name": "hacklag-website",
   "version": "0.0.1",
   "license": "UNLICENSED",
-  "description": "Hacklag main website",
+  "description": "Hacklag website",
   "main": "js/app.jsx",
   "repository": {
     "type": "git",
-    "url": "git@github.com:hacklag/hacklag-main-website.git"
+    "url": "git@github.com:hacklag/hacklag-website.git"
   },
   "dependencies": {
     "classnames": "^2.2.1",
@@ -29,6 +29,7 @@
     "react-tap-event-plugin": "0.2.1",
     "react-zeroclipboard": "2.0.1",
     "reflux": "^0.3.0",
+    "syncano": "git+https://github.com/Syncano/syncano-js.git#release/1.0.0",
     "urijs": "1.16.1",
     "validate.js": "^0.9.0"
   },

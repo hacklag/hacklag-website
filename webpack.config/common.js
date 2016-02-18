@@ -15,7 +15,9 @@ envVars = [
   'ANALYTICS_WRITE_KEY',
   'STRIPE_PUBLISHABLE_KEY',
   'CIRCLE_BRANCH',
-  'CIRCLE_SHA1'
+  'CIRCLE_SHA1',
+  'SYNCANO_API_KEY',
+  'SYNCANO_INSTANCE_NAME'
 ];
 
 // We want to check env variables like this: DEVELOPMENT_FACEBOOK_ID or FACEBOOK_ID or null
