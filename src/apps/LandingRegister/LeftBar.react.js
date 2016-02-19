@@ -1,8 +1,7 @@
 import React from 'react';
-import Radium from 'radium';
 import {TextField, RaisedButton, IconButton} from 'material-ui';
 
-export default Radium(React.createClass({
+export default React.createClass({
   displayName: 'LeftBar',
 
   getInitialState() {
@@ -108,4 +107,4 @@ export default Radium(React.createClass({
       </div>
     );
   }
-}));
+});

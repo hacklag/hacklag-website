@@ -1,16 +1,9 @@
 import React from 'react';
-import {History, State, RouteHandler} from 'react-router';
-
-//Apps
 import LandingRegister from '../apps/LandingRegister';
 
 export default React.createClass({
 
-  displayName: 'App',
-
-  propTypes: {
-    children: React.PropTypes.element.isRequired
-  },
+  displayName: 'LandingPage',
 
   getStyles() {
     return {

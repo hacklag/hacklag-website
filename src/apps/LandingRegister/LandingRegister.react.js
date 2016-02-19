@@ -1,11 +1,10 @@
 import React from 'react';
-import Radium from 'radium';
 import {TextField, RaisedButton, IconButton, Colors} from 'material-ui';
 import LinkedStateMixin from 'react-addons-linked-state-mixin';
 
 import LeftBar from './LeftBar.react';
 
-export default Radium(React.createClass({
+export default React.createClass({
   displayName: 'LandingRegister',
 
   mixins: [LinkedStateMixin],
@@ -109,4 +108,4 @@ export default Radium(React.createClass({
         </div>
     );
   }
-}));
+});
