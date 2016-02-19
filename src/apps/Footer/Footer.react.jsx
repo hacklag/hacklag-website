@@ -27,7 +27,7 @@ export default React.createClass({
 
     return (
       <div style={styles.mainFotter}>
-        <Link to="/">Home </Link>
+        <Link to="home">Home </Link>
         <Link to="events">Events </Link>
         <Link to="blog">Blog </Link>
         <Link to="about">About </Link><br/>

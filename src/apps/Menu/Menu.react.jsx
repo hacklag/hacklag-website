@@ -25,7 +25,7 @@ export default Radium(React.createClass({
 
     return (
       <Grommet.Menu direction="row" size="large" dropAlign={{right: 'right'}}>
-        <Grommet.Anchor href="#">
+        <Grommet.Anchor href="/#/home">
           <span key="home" style={styles.menuText}>Home</span>
         </Grommet.Anchor>
         <Grommet.Anchor href="/#/events">
