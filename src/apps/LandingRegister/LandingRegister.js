@@ -79,7 +79,7 @@ export default Radium(React.createClass({
           </div>
           <p>
             We are <strong>working hard</strong> to make it real. To be part of this <strong>initiative </strong>
-            or just be <strong>up to date</strong> with the progress please type in your email
+            or just to be <strong>up to date</strong> with the progress please type in your email
             and we will send you an invitation to our <strong>Forum</strong> and <strong>Chat</strong>.<br/><br/>
 
             Demonstrating size and engagement of the <strong>community</strong> is
@@ -90,13 +90,13 @@ export default Radium(React.createClass({
               floatingLabelText="Your Email"
               style={styles.emailTextfield}
               type="email"
-              valueLink={this.linkState('emailAddress')}
-            /><br/>
+              valueLink={this.linkState('emailAddress')} />
+            <br/>
             <RaisedButton
               style={styles.inviteButton}
               primary={true}
-              label="Cool, let me in!"
-            /><br/>
+              label="Cool, let me in!" />
+            <br/>
             <div style={styles.smallerText}>
               On our forum, you can find information for <strong>members, volunteers, partners,
               sponsors</strong>. We are sharing there information about the potential property and the
