@@ -1,13 +1,10 @@
 import React from 'react';
 import Header from '../apps/Header';
-import Grommet from 'grommet';
 import Social from '../apps/Social';
 import Footer from '../apps/Footer';
 import SponsorsBar from '../common/SponsorsBar';
 import MainContainer from '../common/MainContainer';
-import MediaQuery from 'react-responsive';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-
 import {History, State, RouteHandler} from 'react-router';
 
 
