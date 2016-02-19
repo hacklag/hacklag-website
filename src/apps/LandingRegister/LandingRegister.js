@@ -74,62 +74,88 @@ export default Radium(React.createClass({
     });
   },
 
-  render() {
-    let styles = this.getStyles();
-    let content = '';
+  contentForm() {
+    const styles = this.getStyles();
 
-    if (this.state.registerState === null) {
-      content = (
-        <div style={styles.contentBar}>
-          <div style={styles.headlineText}>
-            We hope to start first <strong><ins>Hackerspace</ins></strong> in <strong>Białystok</strong><br/><br/>
+    return (
+      <div style={styles.contentBar}>
+        <div>
+          We hope to start first <strong><ins>Hackerspace</ins></strong> in <strong>Białystok</strong>
+          <br/>
+          <br/>
+        </div>
+        <p>
+          We are <strong>working hard</strong> to make it real. To be part of this <strong>initiative </strong>
+          or just to be <strong>up to date</strong> with the progress please type in your email
+          and we will send you an invitation to our <strong>Forum</strong> and <strong>Chat</strong>.
+          <br/>
+          <br/>
+
+          Demonstrating size and engagement of the <strong>community</strong> is
+          <strong> extremely</strong> important to gather founds and start operating -
+          please sign up!
+
+          <TextField
+            floatingLabelText="Your Email"
+            style={styles.emailTextfield}
+            type="email"
+            valueLink={this.linkState('emailAddress')} />
+          <br/>
+          <RaisedButton
+            style={styles.inviteButton}
+            primary={true}
+            onClick={this.handleButtonPress}
+            label="Cool, let me in!" />
+          <br/>
+          <div style={styles.smallerText}>
+            On our forum, you can find information for <strong>members, volunteers, partners,
+            sponsors</strong>. We are sharing there information about the potential property and the
+            whole process of adopting place for <strong>Hacklag</strong>.
           </div>
-          <p>
-            We are <strong>working hard</strong> to make it real. To be part of this <strong>initiative </strong>
-            or just to be <strong>up to date</strong> with the progress please type in your email
-            and we will send you an invitation to our <strong>Forum</strong> and <strong>Chat</strong>.<br/><br/>
+        </p>
+      </div>
+    );
+  },
 
-            Demonstrating size and engagement of the <strong>community</strong> is
-            <strong> extremely</strong> important to gather founds and start operating -
-            please sign up!
+  contentSuccess() {
+    return (
+      <div>
+        Invitation was successfull!
+      </div>
+    );
+  },
 
-            <TextField
-              floatingLabelText="Your Email"
-              style={styles.emailTextfield}
-              type="email"
-              valueLink={this.linkState('emailAddress')} />
-            <br/>
-            <RaisedButton
-              style={styles.inviteButton}
-              primary={true}
-              onClick={this.handleButtonPress}
-              label="Cool, let me in!" />
-            <br/>
-            <div style={styles.smallerText}>
-              On our forum, you can find information for <strong>members, volunteers, partners,
-              sponsors</strong>. We are sharing there information about the potential property and the
-              whole process of adopting place for <strong>Hacklag</strong>.
-            </div>
-          </p>
-        </div>);
-    } else if (this.state.registerState === true) {
-      content = (
-        <div style={styles.contentBar}>
-          Invitation was successfull!
-        </div>
-      );
-    } else if (this.state.registerState === false) {
-      content = (
-        <div style={styles.contentBar}>
-          Invitation was declined! Contact support!
-        </div>
-      );
+  contentFailure() {
+    return (
+      <div>
+        Invitation was declined! Contact support!
+      </div>
+    );
+  },
+
+  renderContent() {
+    const {registerState} = this.state;
+
+    if (registerState) {
+      return this.contentSuccess();
     }
+
+    if (registerState === false) {
+      return this.contentFailure();
+    }
+
+    return this.contentForm();
+  },
+
+  render() {
+    const styles = this.getStyles();
 
     return (
       <div style={styles.componentBody}>
         <LeftBar/>
-        {content}
+        <div style={styles.contentBar}>
+          {this.renderContent()}
+        </div>
       </div>
     );
   }
