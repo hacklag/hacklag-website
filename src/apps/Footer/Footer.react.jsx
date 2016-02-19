@@ -27,12 +27,9 @@ export default React.createClass({
 
     return (
       <div style={styles.mainFotter}>
-        <Link to="/">Home </Link>
+        <Link to="home">Home </Link>
         <Link to="events">Events </Link>
-        <Link to="community">Community </Link>
-        <Link to="partners/donate">Donate </Link>
-        <Link to="partners">Sponsors </Link>
-        <Link to="about/faq">FAQ </Link>
+        <Link to="blog">Blog </Link>
         <Link to="about">About </Link><br/>
         2016 ® Hacklag
       </div>
