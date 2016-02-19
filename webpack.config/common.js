@@ -50,6 +50,11 @@ module.exports = {
       {test: /\.css$/, loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 2 version'},
       {test: /\.styl/, loader: 'style-loader!stylus-loader!autoprefixer-loader?browsers=last 2 version'},
       {
+        test: /\.scss$/,
+        loaders: ['style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[local]', 'sass?sourceMap'],
+        include: path.resolve(__dirname, '../node_modules/react-flexbox-grid/lib')
+      },
+      {
         test: /\.sass$/,
         loader: "style!css!sass?sourceMap&indentedSyntax&outputStyle=expanded&precision=8&" +
           "includePaths[]=" + (path.resolve(__dirname, "../node_modules/compass-mixins/lib")) + "&" +

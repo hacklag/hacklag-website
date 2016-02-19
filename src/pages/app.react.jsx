@@ -1,11 +1,10 @@
 import React from 'react';
 import Header from '../apps/Header';
-import Grommet from 'grommet';
 import Social from '../apps/Social';
 import Footer from '../apps/Footer';
 import SponsorsBar from '../common/SponsorsBar';
 import MainContainer from '../common/MainContainer';
-
+import {Grid, Row, Col} from 'react-flexbox-grid';
 import {History, State, RouteHandler} from 'react-router';
 
 
@@ -32,15 +31,11 @@ export default React.createClass({
         maxWidth: 1320,
         margin: 'auto'
       },
-      socialColumn: {
-      },
       mainDiv: {
         color: '#565a5f',
         backgroundColor: '#f5f8f9'
       },
-      mainContainer: {
-        display: 'flex',
-        width: '54%',
+      mainGrid: {
         marginTop: 24
       }
     };
@@ -53,23 +48,21 @@ export default React.createClass({
       <div style={styles.mainDiv}>
         <div style={styles.mainView}>
           <Header/>
-          <Grommet.Box
-            direction="row"
-            align="start"
-            justify="center"
-            tag="aside">
-            <Grommet.Box pad='medium'>
-              <Social/>
-            </Grommet.Box>
-            <div style={styles.mainContainer}>
-              <MainContainer>
-                {this.props.children}
-              </MainContainer>
-            </div>
-            <Grommet.Box pad='medium'>
-              <SponsorsBar/>
-            </Grommet.Box>
-          </Grommet.Box>
+          <Grid fluid={true} style={styles.mainGrid}>
+            <Row>
+              <Col xs={12} sm={4} md={3}>
+                <Social/>
+              </Col>
+              <Col xs={12} sm={8} md={6}>
+                <MainContainer>
+                  {this.props.children}
+                </MainContainer>
+              </Col>
+              <Col xs={12} sm={12} md={3}>
+                <SponsorsBar/>
+              </Col>
+            </Row>
+          </Grid>
           <Footer/>
         </div>
       </div>
