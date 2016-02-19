@@ -1,6 +1,5 @@
 import React from 'react';
 import Radium from 'radium';
-import _ from 'lodash';
 
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import HacklagTheme from '../common/HacklagTheme';

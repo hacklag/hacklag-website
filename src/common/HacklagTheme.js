@@ -1,11 +1,10 @@
 import Colors from 'material-ui/lib/styles/colors';
 import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
-
 import Spacing from './Spacing';
 
 export default {
   spacing: Spacing,
-  contentFontFamily: 'Roboto, sans-serif',
+  contentFontFamily: 'Avenir, sans-serif',
   palette: {
     primary1Color: '#EC018C',
     primary2Color: Colors.cyan700,
