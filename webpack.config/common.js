@@ -51,7 +51,7 @@ module.exports = {
       {test: /\.styl/, loader: 'style-loader!stylus-loader!autoprefixer-loader?browsers=last 2 version'},
       {
         test: /\.scss$/,
-        loaders: ['style', 'css?modules', 'sass'],
+        loaders: ['style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[local]', 'sass?sourceMap'],
         include: path.resolve(__dirname, '../node_modules/react-flexbox-grid/lib')
       },
       {

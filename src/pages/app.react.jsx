@@ -38,28 +38,8 @@ export default React.createClass({
         color: '#565a5f',
         backgroundColor: '#f5f8f9'
       },
-      container: {
+      mainGrid: {
         marginTop: 24
-      },
-      boxColumns: {
-        display: 'flex',
-        flexDirection: 'column'
-      },
-      boxRows: {
-        display: 'flex',
-        flexDirection: 'row'
-      },
-      xlSide: {
-        width: '25%'
-      },
-      xlCenter: {
-        width: '50%'
-      },
-      sSide: {
-        width: '100%'
-      },
-      sCenter: {
-        width: '100%'
       }
     };
   },
@@ -71,54 +51,21 @@ export default React.createClass({
       <div style={styles.mainDiv}>
         <div style={styles.mainView}>
           <Header/>
-          <Grid>
+          <Grid fluid={true} style={styles.mainGrid}>
             <Row>
-              <Col xs={12} md={3} lg={2}>Hello, world!</Col>
-            </Row>
-          </Grid>
-          <div style={styles.container}>
-            <MediaQuery orientation='portrait' style={styles.boxColumns}>
-              <div style={styles.sSide}>
+              <Col xs={12} sm={4} md={3}>
                 <Social/>
-              </div>
-              <div style={styles.sCenter}>
+              </Col>
+              <Col xs={12} sm={8} md={6}>
                 <MainContainer>
                   {this.props.children}
                 </MainContainer>
-              </div>
-              <div style={styles.sSide}>
+              </Col>
+              <Col xs={12} sm={12} md={3}>
                 <SponsorsBar/>
-              </div>
-            </MediaQuery>
-            <MediaQuery orientation='landscape' >
-                <MediaQuery minWidth={768} style={styles.boxRows}>
-                  <div style={styles.xlSide}>
-                    <Social/>
-                  </div>
-                  <div style={styles.xlCenter}>
-                    <MainContainer>
-                      {this.props.children}
-                    </MainContainer>
-                  </div>
-                  <div style={styles.xlSide}>
-                    <SponsorsBar/>
-                  </div>
-                </MediaQuery>
-                <MediaQuery maxWidth={768} style={styles.boxColumns}>
-                  <div style={styles.sSide}>
-                    <Social/>
-                  </div>
-                  <div style={styles.sCenter}>
-                    <MainContainer>
-                      {this.props.children}
-                    </MainContainer>
-                  </div>
-                  <div style={styles.sSide}>
-                    <SponsorsBar/>
-                  </div>
-                </MediaQuery>
-            </MediaQuery>
-          </div>
+              </Col>
+            </Row>
+          </Grid>
           <Footer/>
         </div>
       </div>
