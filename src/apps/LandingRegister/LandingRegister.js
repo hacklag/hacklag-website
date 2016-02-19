@@ -11,7 +11,8 @@ export default Radium(React.createClass({
 
   getInitialState() {
     return {
-      emailAddress: ''
+      emailAddress: '',
+      registerState: null
     };
   },
 
@@ -67,12 +68,18 @@ export default Radium(React.createClass({
     };
   },
 
+  handleButtonPress() {
+    this.setState({
+      registerState: true
+    });
+  },
+
   render() {
     let styles = this.getStyles();
+    let content = '';
 
-    return (
-      <div style={styles.componentBody}>
-        <LeftBar/>
+    if (this.state.registerState === null) {
+      content = (
         <div style={styles.contentBar}>
           <div style={styles.headlineText}>
             We hope to start first <strong><ins>Hackerspace</ins></strong> in <strong>Białystok</strong><br/><br/>
@@ -95,6 +102,7 @@ export default Radium(React.createClass({
             <RaisedButton
               style={styles.inviteButton}
               primary={true}
+              onClick={this.handleButtonPress}
               label="Cool, let me in!" />
             <br/>
             <div style={styles.smallerText}>
@@ -103,8 +111,26 @@ export default Radium(React.createClass({
               whole process of adopting place for <strong>Hacklag</strong>.
             </div>
           </p>
+        </div>);
+    } else if (this.state.registerState === true) {
+      content = (
+        <div style={styles.contentBar}>
+          Invitation was successfull!
         </div>
+      );
+    } else if (this.state.registerState === false) {
+      content = (
+        <div style={styles.contentBar}>
+          Invitation was declined! Contact support!
         </div>
+      );
+    }
+
+    return (
+      <div style={styles.componentBody}>
+        <LeftBar/>
+        {content}
+      </div>
     );
   }
 }));
