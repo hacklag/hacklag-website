@@ -1,7 +1,7 @@
-import LandingRegister from './LandingRegister.react';
-import Header from './Header.react';
-import Footer from './Footer.react';
-import LeftBar from './LeftBar.react';
+import LandingRegister from './LandingRegister';
+import Header from './Header';
+import Footer from './Footer';
+import LeftBar from './LeftBar';
 
 LandingRegister.Header = Header;
 LandingRegister.Footer = Footer;
