@@ -1,6 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
-import {IconButton, FontIcon} from 'material-ui';
+import {IconButton} from 'material-ui';
 
 export default Radium(React.createClass({
   displayName: 'Header',
