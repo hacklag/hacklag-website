@@ -55,7 +55,6 @@ export default Radium(React.createClass({
         marginTop: -24
       },
       inviteButton: {
-        backgroundColor: '#ec018c',
         width: '50%'
       },
       headlineText: {
@@ -88,8 +87,8 @@ export default Radium(React.createClass({
 
             <TextField
               floatingLabelText="Your Email"
-              style={styles.emailTextfield}
               type="email"
+              fullWidth="true"
               valueLink={this.linkState('emailAddress')} />
             <br/>
             <RaisedButton
