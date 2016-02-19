@@ -11,10 +11,13 @@ export default Radium(React.createClass({
         justifyContent: 'flex-end',
         display: 'flex'
       },
-      iconStyler: {
-        width: 64,
-        height: 64,
-        margin: 22
+      iconStyle: {
+        fontSize: 42,
+        color: 'black'
+      },
+      buttonStyle: {
+        margin: 22,
+        padding: 0
       }
     };
   },
@@ -28,8 +31,9 @@ export default Radium(React.createClass({
           tooltip="Hacklag GitHub"
           tooltipPosition="bottom-center"
           linkButton={true}
-          style={styles.iconStyler}
-          iconClassName="icon-github"
+          iconClassName='icon-github'
+          iconStyle={styles.iconStyle}
+          style={styles.buttonStyle}
           href="https://github.com/hacklag/"/>
       </div>
     );
