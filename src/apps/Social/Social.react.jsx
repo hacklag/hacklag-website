@@ -1,12 +1,9 @@
 import React from 'react';
-import MUI from 'material-ui';
+import Radium from 'radium';
+import {RaisedButton, FontIcon, IconButton} from 'material-ui';
 
-export default React.createClass({
+export default Radium(React.createClass({
   displayName: 'Social',
-
-  componentDidMount() {
-
-  },
 
   getStyles() {
     return {
@@ -56,45 +53,45 @@ export default React.createClass({
           <div style={{fontWeight: 600, fontSize: 24}}>Hacklag</div>
           <div style={{display: 'block', fontSize: 14}}>Developers connector</div>
           <div style={{fontSize: 12, color: '#9a9ea3'}}>
-            <MUI.FontIcon style={{fontSize: 12, color: 'gray'}} className="material-icons">place</MUI.FontIcon>
+            <FontIcon style={{fontSize: 12, color: 'gray'}} className="material-icons">place</FontIcon>
             Bialystok, Poland
           </div>
-          <MUI.RaisedButton
+          <RaisedButton
             label="Follow"
             style={styles.socialMainButton}
             linkButton={true}
             href="https://github.com/hacklag"
             secondary={true}
-            icon={<MUI.FontIcon style={{fontSize: 16, color: 'gray'}} className="material-icons">place</MUI.FontIcon>}
+            icon={<FontIcon style={{fontSize: 16, color: 'gray'}} className="material-icons">place</FontIcon>}
           />
         </div>
         <div id="social-icons-menu">
-          <MUI.IconButton
+          <IconButton
               styles={styles.socialIcon}
               tooltip="Facebook"
               tooltipPosition="top-center"
               linkButton={true}
               href="https://www.facebook.com/Hacklag-1536319733349471/">
               <img src={"/img/social/facebook.svg"} alt="Facebook"/>
-            </MUI.IconButton>
-            <MUI.IconButton
+            </IconButton>
+            <IconButton
               styles={styles.socialIcon}
               tooltip="Github"
               tooltipPosition="top-center"
               linkButton={true}
               href="https://github.com/hacklag/">
               <img src={"/img/social/github.svg"} alt="GitHub"/>
-            </MUI.IconButton>
-            <MUI.IconButton
+            </IconButton>
+            <IconButton
               styles={styles.socialIcon}
               tooltip="Twitter"
               tooltipPosition="top-center"
               linkButton={true}
               href="https://twitter.com/HacklagHQ/">
               <img src={"/img/social/twitter.svg"} alt="Twitter"/>
-            </MUI.IconButton>
+            </IconButton>
         </div>
       </div>
     );
   }
-});
+}));
