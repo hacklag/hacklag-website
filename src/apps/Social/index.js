@@ -1,3 +1,3 @@
-import Social from './Social.react';
+import Social from './Social';
 
 export default Social;
