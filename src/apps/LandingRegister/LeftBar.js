@@ -75,20 +75,23 @@ export default Radium(React.createClass({
 
     return (
       <div style={styles.logoBar}>
-        <img style={styles.hacklagLogo}
+        <img
+          style={styles.hacklagLogo}
           src={"/img/hacklag_sketch.png"}
           onMouseOver={this.mouseOver}
           onMouseOut={this.mouseOut}
-          alt="Hacklag logo"/>
-        <div style={styles.socialBar}>
+          alt="Hacklag logo" />
+        <div
+          style={styles.socialBar}>
           <IconButton
             tooltip="Hacklag Discourse"
             tooltipPosition="bottom-center"
             style={styles.socialLogo}
             linkButton={true}
             href="https://forum.hacklag.org/">
-            <img src={"/img/icons/discourse.png"}
-              alt="Discourse logo"/>
+            <img
+              src={"/img/icons/discourse.png"}
+              alt="Discourse logo" />
           </IconButton>
           <IconButton
             tooltip="Hacklag Slack"
@@ -96,14 +99,16 @@ export default Radium(React.createClass({
             linkButton={true}
             style={styles.socialLogo}
             href="https://hacklag.slack.com/">
-            <img src={"/img/icons/slack.png"}
-              alt="Slack logo"/>
+            <img
+              src={"/img/icons/slack.png"}
+              alt="Slack logo" />
           </IconButton>
         </div>
         <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
-          <img style={styles.hacklagLogoDialog}
+          <img
+            style={styles.hacklagLogoDialog}
             src={"/img/hackbat_hi.png"}
-            alt="Hi! I`m Hackabat!"/>
+            alt="Hi! I`m Hackabat!" />
         </div>
       </div>
     );

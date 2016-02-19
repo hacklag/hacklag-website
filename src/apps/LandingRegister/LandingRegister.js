@@ -2,8 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import {TextField, RaisedButton, IconButton, Colors} from 'material-ui';
 import LinkedStateMixin from 'react-addons-linked-state-mixin';
-
-import LeftBar from './LeftBar.react';
+import LeftBar from './LeftBar';
 
 export default Radium(React.createClass({
   displayName: 'LandingRegister',
@@ -88,15 +87,15 @@ export default Radium(React.createClass({
             please sign up!
 
             <TextField
-              floatingLabelText='Your Email'
+              floatingLabelText="Your Email"
               style={styles.emailTextfield}
-              type='email'
+              type="email"
               valueLink={this.linkState('emailAddress')}
             /><br/>
             <RaisedButton
               style={styles.inviteButton}
               primary={true}
-              label='Cool, let me in!'
+              label="Cool, let me in!"
             /><br/>
             <div style={styles.smallerText}>
               On our forum, you can find information for <strong>members, volunteers, partners,
