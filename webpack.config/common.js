@@ -55,6 +55,11 @@ module.exports = {
           "includePaths[]=" + (path.resolve(__dirname, "../node_modules/compass-mixins/lib")) + "&" +
           "includePaths[]=" + (path.resolve(__dirname, "../src/assets/sass")) + "&" +
           "includePaths[]=" + (path.resolve(__dirname, "../node_modules"))
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass?sourceMap&indentedSyntax&outputStyle=expanded&precision=8&' +
+        'includePaths[]=' + (path.resolve(__dirname, '../node_modules/react-flexbox-grid'))
       }
     ]
   },

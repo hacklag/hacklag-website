@@ -6,6 +6,7 @@ import Footer from '../apps/Footer';
 import SponsorsBar from '../common/SponsorsBar';
 import MainContainer from '../common/MainContainer';
 import MediaQuery from 'react-responsive';
+import {Grid, Row, Col} from 'react-flexbox-grid';
 
 import {History, State, RouteHandler} from 'react-router';
 
@@ -70,6 +71,11 @@ export default React.createClass({
       <div style={styles.mainDiv}>
         <div style={styles.mainView}>
           <Header/>
+          <Grid>
+            <Row>
+              <Col xs={12} md={3} lg={2}>Hello, world!</Col>
+            </Row>
+          </Grid>
           <div style={styles.container}>
             <MediaQuery orientation='portrait' style={styles.boxColumns}>
               <div style={styles.sSide}>
