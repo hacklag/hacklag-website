@@ -1,6 +1,7 @@
 import React from 'react';
+import Radium from 'radium';
 
-export default React.createClass({
+export default Radium(React.createClass({
   displayName: 'Footer',
 
   getStyles() {
@@ -26,4 +27,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}));

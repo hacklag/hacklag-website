@@ -1,7 +1,8 @@
 import React from 'react';
+import Radium from 'radium';
 import {IconButton} from 'material-ui';
 
-export default React.createClass({
+export default Radium(React.createClass({
   displayName: 'Header',
 
   getStyles() {
@@ -37,4 +38,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}));

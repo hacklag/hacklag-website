@@ -1,7 +1,8 @@
 import React from 'react';
+import Radium from 'radium';
 import LandingRegister from '../apps/LandingRegister';
 
-export default React.createClass({
+export default Radium(React.createClass({
 
   displayName: 'LandingPage',
 
@@ -14,10 +15,6 @@ export default React.createClass({
         display: 'flex',
         flexDirection: 'column',
         fontFamily: 'Roboto'
-      },
-      develBackgroundImage: {
-        backgroundImage: 'url(/img/form.png)',
-        backgroundSize: '100%'
       }
     };
   },
@@ -26,13 +23,11 @@ export default React.createClass({
     let styles = this.getStyles();
 
     return (
-      <div style={styles.develBackgroundImage}>
-        <div style={styles.mainDiv}>
-          <LandingRegister.Header/>
-          <LandingRegister/>
-          <LandingRegister.Footer/>
-        </div>
+      <div style={styles.mainDiv}>
+        <LandingRegister.Header/>
+        <LandingRegister/>
+        <LandingRegister.Footer/>
       </div>
     );
   }
-});
+}));
