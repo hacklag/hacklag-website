@@ -14,11 +14,11 @@ export default React.createClass({
 
   componentDidMount() {
     const {DataObject} = Syncano({accountKey: SYNCANO_API_KEY});
-    const ClassName = 'meetup';
+    const className = 'meetup';
 
     DataObject.please().list({
       instanceName: SYNCANO_INSTANCE_NAME,
-      className: ClassName
+      className: className
     }).then((dataobjects) => {
       this.setState({
         events: JSON.parse(dataobjects[0].events).results
