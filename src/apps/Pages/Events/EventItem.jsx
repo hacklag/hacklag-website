@@ -15,7 +15,7 @@ export default React.createClass({
         marginBottom: 24
       },
       cardTitleStyle: {
-        background: '#E0393E',
+        background: '#e0393e',
         fontSize: 38,
         fontWeight: 700
       },
@@ -35,8 +35,18 @@ export default React.createClass({
       <Card style={styles.cardStyle}>
         <CardTitle
           style={styles.cardTitleStyle}
-          title={<a style={styles.titleStyle} href={event.event_url} >{event.name}</a>}
-          subtitle={<span style={styles.titleStyle} >{event_time}</span>} />
+          title={
+            <a
+              style={styles.titleStyle}
+              href={event.event_url} >
+                {event.name}
+            </a>
+          }
+          subtitle={
+            <span style={styles.titleStyle}>
+              {event_time}
+            </span>
+          } />
         <CardText>
           {event_desc}
         </CardText>

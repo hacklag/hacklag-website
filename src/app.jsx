@@ -64,9 +64,8 @@ render(
         <Route path="registration" component={Community.Registration}/>
       </Route>
 
-      <Route path="events" component={MainContainer}>
+      <Route path="events" component={Events}>
         <Route path="calendar" component={Events.Calendar}/>
-        <IndexRoute component={Events}/>
       </Route>
 
       <Route path="gallery" component={Gallery}/>

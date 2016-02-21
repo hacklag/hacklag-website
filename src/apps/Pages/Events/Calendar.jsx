@@ -18,7 +18,7 @@ export default React.createClass({
 
     DataObject.please().list({
       instanceName: SYNCANO_INSTANCE_NAME,
-      className: className
+      className
     }).then((dataobjects) => {
       this.setState({
         events: JSON.parse(dataobjects[0].events).results
@@ -40,7 +40,9 @@ export default React.createClass({
 
     this.state.events.forEach(function(event) {
       events.push(
-        <EventItem key={event.id} event={event}/>
+        <EventItem
+          key={event.id}
+          event={event} />
       );
     });
 
