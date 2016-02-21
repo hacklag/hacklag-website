@@ -88,7 +88,7 @@ export default Radium(React.createClass({
             <TextField
               floatingLabelText="Your Email"
               type="email"
-              fullWidth="true"
+              fullWidth={true}
               valueLink={this.linkState('emailAddress')} />
             <br/>
             <RaisedButton
