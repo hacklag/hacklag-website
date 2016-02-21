@@ -17,6 +17,7 @@ import LandingPage from './pages/landingpage.react';
 import NotFoundPage from './pages/notfound.react';
 
 // Page components
+import MainContainer from './common/MainContainer';
 import {
   Home,
   About,
@@ -63,8 +64,9 @@ render(
         <Route path="registration" component={Community.Registration}/>
       </Route>
 
-      <Route path="events" component={Events}>
+      <Route path="events" component={MainContainer}>
         <Route path="calendar" component={Events.Calendar}/>
+        <IndexRoute component={Events}/>
       </Route>
 
       <Route path="gallery" component={Gallery}/>
