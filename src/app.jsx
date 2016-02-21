@@ -4,8 +4,7 @@ import './app.sass';
 
 import React from 'react';
 import {render} from 'react-dom';
-import {Router, Route, History, IndexRoute} from 'react-router';
-import {createHistory, useBasename} from 'history';
+import {Router, Route, Link, browserHistory} from 'react-router';
 
 // Frameworks
 import './framework/raven';
@@ -31,12 +30,9 @@ import {
 import Test from './apps/Test';
 import LandingRegister from './apps/LandingRegister';
 
-const history = useBasename(createHistory)({
-  basename: '/dashboard'
-});
 
 render(
-  <Router>
+  <Router history={browserHistory}>
     <Route component={LandingPage}>
       <Route path="/" component={LandingRegister}/>
     </Route>
