@@ -14,10 +14,11 @@ export default React.createClass({
 
   componentDidMount() {
     const {DataObject} = Syncano({accountKey: SYNCANO_API_KEY});
+    const ClassName = 'meetup';
 
     DataObject.please().list({
-      instanceName: SYNCANO_MEETUP_INSTANCE_NAME,
-      className: 'meetup'
+      instanceName: SYNCANO_INSTANCE_NAME,
+      className: ClassName
     }).then((dataobjects) => {
       this.setState({
         events: JSON.parse(dataobjects[0].events).results
@@ -34,14 +35,14 @@ export default React.createClass({
   },
 
   render() {
-    let styles = this.getStyles();
+    const styles = this.getStyles();
     let events = [];
 
-    for (let event of this.state.events) {
+    this.state.events.forEach(function(event) {
       events.push(
-        <EventItem key={event.id} EventItem={event}/>
+        <EventItem key={event.id} event={event}/>
       );
-    }
+    });
 
     return (
       <div style={styles.componentStyle}>

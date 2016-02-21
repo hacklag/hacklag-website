@@ -6,16 +6,13 @@ export default React.createClass({
   displayName: 'React Item',
 
   propTypes: {
-    EventItem: React.PropTypes.object.isRequired
+    event: React.PropTypes.object.isRequired
   },
 
   getStyles() {
     return {
       cardStyle: {
         marginBottom: 24
-      },
-      textStyle: {
-        float: 'left'
       },
       cardTitleStyle: {
         background: '#E0393E',
@@ -29,18 +26,19 @@ export default React.createClass({
   },
 
   render() {
-    let styles = this.getStyles();
-    let event = this.props.EventItem;
+    const styles = this.getStyles();
+    const event = this.props.event;
+    const event_time = new Date(event.time).toLocaleString();
+    const event_desc = event.description.substring(3, event.description.length - 4);
 
     return (
       <Card style={styles.cardStyle}>
         <CardTitle
           style={styles.cardTitleStyle}
           title={<a style={styles.titleStyle} href={event.event_url} >{event.name}</a>}
-          subtitle={<span style={styles.titleStyle} >{new Date(event.time).toLocaleString()}</span>}
-        />
-        <CardText style={styles.textStyle}>
-          {event.description.substring(3, event.description.length - 4)}
+          subtitle={<span style={styles.titleStyle} >{event_time}</span>} />
+        <CardText>
+          {event_desc}
         </CardText>
       </Card>
     );

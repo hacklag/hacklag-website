@@ -22,8 +22,7 @@
     "CIRCLE_SHA1": true,
     "VERSION": true,
     "SYNCANO_API_KEY": true,
-    "SYNCANO_INSTANCE_NAME": true,
-    "SYNCANO_MEETUP_INSTANCE_NAME": true
+    "SYNCANO_INSTANCE_NAME": true
   },
   "ecmaFeatures": {
     "arrowFunctions": true,

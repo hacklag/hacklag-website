@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default React.createClass({
+const EventComponent = React.createClass({
 
   displayName: 'Events',
 
@@ -12,3 +12,6 @@ export default React.createClass({
     );
   }
 });
+
+
+export default EventComponent;
