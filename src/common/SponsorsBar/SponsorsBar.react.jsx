@@ -2,20 +2,24 @@ import React from 'react';
 import {RaisedButton} from 'material-ui';
 import SponsorsBarListRender from './SponsorsBarListRender.react';
 import {Link} from 'react-router';
+import Radium from 'radium';
 
-export default React.createClass({
+export default Radium(React.createClass({
   displayName: 'SponsorsBar',
 
   getStyles() {
     return {
       componentBody: {
-        maxWidth: 300,
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: '#fff',
         textAlign: 'center',
         color: '#565a5f',
-        boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+        boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+        '@media (min-width: 48em)': {
+          marginRight: 24,
+          marginLeft: 24
+        }
       },
       partnerBox: {
         padding: '16px 16px 16px 8px',
@@ -65,4 +69,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}));
