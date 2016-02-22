@@ -23,7 +23,7 @@ import {
   About,
   Blog,
   Community,
-  Events,
+  Calendar,
   Gallery,
   Partners
 } from './apps/Pages';
@@ -64,9 +64,7 @@ render(
         <Route path="registration" component={Community.Registration}/>
       </Route>
 
-      <Route path="events" component={Events}>
-        <Route path="calendar" component={Events.Calendar}/>
-      </Route>
+      <Route path="calendar" component={Calendar}/>
 
       <Route path="gallery" component={Gallery}/>
 
