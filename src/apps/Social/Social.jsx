@@ -5,14 +5,17 @@ import {RaisedButton, FontIcon, IconButton} from 'material-ui';
 export default Radium(() => {
   const styles = {
     componentBody: {
-      maxWidth: 300,
       display: 'flex',
       flexDirection: 'column',
       backgroundColor: '#fff',
       textAlign: 'center',
       color: '#565a5f',
       boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
-      fontSize: 12
+      fontSize: 12,
+      '@media (min-width: 48em)': {
+        marginRight: 24,
+        marginLeft: 24
+      }
     },
     socialIcon: {
       height: 32,
