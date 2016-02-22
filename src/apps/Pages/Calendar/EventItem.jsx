@@ -3,7 +3,7 @@ import {Card, CardHeader, CardTitle, CardText, CardActions, FlatButton} from 'ma
 
 export default React.createClass({
 
-  displayName: 'React Item',
+  displayName: 'Event Item',
 
   propTypes: {
     event: React.PropTypes.object.isRequired

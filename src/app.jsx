@@ -17,7 +17,6 @@ import LandingPage from './pages/landingpage.react';
 import NotFoundPage from './pages/notfound.react';
 
 // Page components
-import MainContainer from './common/MainContainer';
 import {
   Home,
   About,
