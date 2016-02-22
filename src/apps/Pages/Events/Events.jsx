@@ -4,7 +4,7 @@ import EventItem from './EventItem';
 
 export default React.createClass({
 
-  displayName: 'Calendar',
+  displayName: 'Events',
 
   getInitialState() {
     return {
