@@ -68,6 +68,7 @@ render(
       <Route path="partners" component={Partners}>
         <Route path="donate" component={Partners.Donate}/>
         <Route path="agreement" component={Partners.Agreement}/>
+        <Route path="sponsors" component={Partners.Sponsors}/>
       </Route>
 
       <Route path="*" component={NotFoundPage}/>
