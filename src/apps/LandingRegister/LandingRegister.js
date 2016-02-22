@@ -56,7 +56,6 @@ export default Radium(React.createClass({
         marginTop: -24
       },
       inviteButton: {
-        backgroundColor: '#ec018c',
         width: '50%'
       },
       headlineText: {
