@@ -1,7 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import ActionHome from 'material-ui/lib/svg-icons/navigation/menu';
+import NavigationMenu from 'material-ui/lib/svg-icons/navigation/menu';
 import IconButton from 'material-ui/lib/icon-button';
 
 export default Radium(React.createClass({
@@ -137,7 +137,7 @@ export default Radium(React.createClass({
           style={styles.toggle}
           onClick={this.handleClick}>
             <IconButton>
-              <ActionHome />
+              <NavigationMenu />
             </IconButton>
         </div>
       </div>
