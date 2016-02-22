@@ -65,12 +65,13 @@ export default Radium(React.createClass({
     };
   },
 
-  handleClick(event) {
+  handleClick() {
     this.setState({toggle: !this.state.toggle});
   },
 
   render() {
-    let styles = this.getStyles();
+    const styles = this.getStyles();
+    const menuItemStyle = this.state.toggle ? styles.menuItemSlideDown : styles.menuItem;
 
     return (
       <div>
@@ -85,7 +86,7 @@ export default Radium(React.createClass({
                 xs={12}
                 sm={2}
                 md={1}
-                style={this.state.toggle ? styles.menuItemSlideDown : styles.menuItem}>
+                style={menuItemStyle}>
                   <a
                     href="/#/home"
                     key="home"
@@ -97,7 +98,7 @@ export default Radium(React.createClass({
                 xs={12}
                 sm={2}
                 md={1}
-                style={this.state.toggle ? styles.menuItemSlideDown : styles.menuItem}>
+                style={menuItemStyle}>
                   <a
                     href="/#/events"
                     key="events"
@@ -109,7 +110,7 @@ export default Radium(React.createClass({
                 xs={12}
                 sm={2}
                 md={1}
-                style={this.state.toggle ? styles.menuItemSlideDown : styles.menuItem}>
+                style={menuItemStyle}>
                   <a
                     href="/#/blog"
                     key="blog"
@@ -121,7 +122,7 @@ export default Radium(React.createClass({
                 xs={12}
                 sm={2}
                 md={1}
-                style={this.state.toggle ? styles.menuItemSlideDown : styles.menuItem}>
+                style={menuItemStyle}>
                   <a
                     href="/#/about"
                     key="about"
