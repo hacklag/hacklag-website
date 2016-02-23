@@ -39,11 +39,11 @@ render(
         <Route
           path="/events"
           component={Events} />
-        <Route
-          path="*"
-          component={NotFoundPage} />
       </Route>
     </Route>
+    <Route
+      path="*"
+      component={NotFoundPage} />
   </Router>,
   document.getElementById('app')
 );
