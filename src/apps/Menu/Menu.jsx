@@ -3,6 +3,7 @@ import Radium from 'radium';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import NavigationMenu from 'material-ui/lib/svg-icons/navigation/menu';
 import IconButton from 'material-ui/lib/icon-button';
+import {Link} from 'react-router';
 
 export default Radium(React.createClass({
   displayName: 'Menu',
@@ -77,6 +78,7 @@ export default Radium(React.createClass({
   render() {
     const styles = this.getStyles();
     const menuItemStyle = this.state.toggle ? styles.menuItemSlideDown : styles.menuItem;
+    const RadiumLink = Radium(Link);
 
     return (
       <div style={styles.menuFontStyles}>
@@ -92,48 +94,48 @@ export default Radium(React.createClass({
                 sm={2}
                 md={1}
                 style={menuItemStyle}>
-                  <a
-                    href="/#/home"
+                  <RadiumLink
+                    to="home"
                     key="home"
                     style={styles.menuText}>
                       Home
-                  </a>
+                  </RadiumLink>
               </Col>
               <Col
                 xs={12}
                 sm={2}
                 md={1}
                 style={menuItemStyle}>
-                  <a
-                    href="/#/events"
+                  <RadiumLink
+                    to="events"
                     key="events"
                     style={styles.menuText}>
                       Events
-                    </a>
+                    </RadiumLink>
               </Col>
               <Col
                 xs={12}
                 sm={2}
                 md={1}
                 style={menuItemStyle}>
-                  <a
-                    href="/#/blog"
+                  <RadiumLink
+                    to="blog"
                     key="blog"
                     style={styles.menuText}>
                       Blog
-                    </a>
+                    </RadiumLink>
               </Col>
               <Col
                 xs={12}
                 sm={2}
                 md={1}
                 style={menuItemStyle}>
-                  <a
-                    href="/#/about"
+                  <RadiumLink
+                    to="about"
                     key="about"
                     style={styles.menuText}>
                       About
-                    </a>
+                    </RadiumLink>
               </Col>
             </Row>
           </Grid>
