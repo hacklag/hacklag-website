@@ -28,8 +28,8 @@ export default Radium(React.createClass({
   getStyles() {
     return {
       mainDiv: {
-        color: '#5d5d5d',
-        backgroundColor: '#fafafa',
+        color: '#4A4A4A',
+        backgroundColor: '#FAFAFA',
         margin: 'auto',
         display: 'flex',
         flexDirection: 'column'
