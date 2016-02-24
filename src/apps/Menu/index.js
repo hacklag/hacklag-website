@@ -1,3 +1,3 @@
-import Menu from './Menu.react';
+import Menu from './Menu';
 
 export default Menu;

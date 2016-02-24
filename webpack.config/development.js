@@ -41,6 +41,7 @@ config.devServer = {
   https: true,
   hot: true,
   noInfo: false,
+  historyApiFallback: true,
   stats: {
     assets: false,
     colors: true,
