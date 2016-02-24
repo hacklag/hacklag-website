@@ -19,7 +19,7 @@ export default React.createClass({
       },
       mainUl: {
         listStyleType: 'none',
-        marginLeft: 0
+        paddingLeft: 0
       }
     };
   },

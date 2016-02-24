@@ -1,3 +1,3 @@
-import Footer from './Footer.react';
+import Footer from './Footer';
 
 export default Footer;

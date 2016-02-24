@@ -1,6 +1,6 @@
 import React from 'react';
 import {RaisedButton} from 'material-ui';
-import SponsorsBarListRender from './SponsorsBarListRender.react';
+import SponsorsBarListRender from './SponsorsBarListRender';
 import {Link} from 'react-router';
 import Radium from 'radium';
 
@@ -18,7 +18,8 @@ export default Radium(React.createClass({
         boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
         '@media (min-width: 48em)': {
           marginRight: 24,
-          marginLeft: 24
+          marginLeft: 24,
+          minWidth: 220
         }
       },
       partnerBox: {
@@ -36,12 +37,17 @@ export default Radium(React.createClass({
       partnersDesc: {
         display: 'block',
         fontSize: 14
+      },
+      sponsorsList: {
+        textAlign: 'center',
+        display: 'flex',
+        justifyContent: 'center'
       }
     };
   },
 
   render() {
-    let styles = this.getStyles();
+    const styles = this.getStyles();
 
     return (
       <div style={styles.componentBody}>
@@ -49,7 +55,7 @@ export default Radium(React.createClass({
           <div style={styles.partnersText}>Partners</div>
           <div style={styles.partnersDesc}>Developers connector</div>
         </div>
-        <div style={{textAlign: 'center'}}>
+        <div style={styles.sponsorsList}>
           <SponsorsBarListRender
             list={[
               ['http://hacklag.org/', 'logo.jpg'],
