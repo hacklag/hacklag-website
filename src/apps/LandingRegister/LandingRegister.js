@@ -20,21 +20,14 @@ export default Radium(React.createClass({
     return {
       componentBody: {
         display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        paddingTop: 76
-      },
-      logoBar: {
-        display: 'flex',
-        flexDirection: 'column',
-        maxWidth: 324
+        paddingTop: 63,
+        justifyContent: 'center'
       },
       contentBar: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: 554,
-        paddingLeft: 38,
-        fontSize: 14
+        marginLeft: 40
+      },
+      contentText: {
+        width: 554
       },
       hacklagLogo: {
         width: 324,
@@ -48,20 +41,15 @@ export default Radium(React.createClass({
         width: 164,
         height: 114
       },
-      socialBar: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        display: 'flex',
-        marginTop: -24
-      },
       inviteButton: {
         width: '50%',
         marginTop: 16,
         marginBottom: 16
       },
       headlineText: {
-        fontSize: 18
+        fontSize: 23,
+        textAlign: 'justify',
+        lineHeight: '23px'
       },
       smallerText: {
         fontSize: 12
@@ -79,9 +67,10 @@ export default Radium(React.createClass({
     const styles = this.getStyles();
 
     return (
-      <div style={styles.contentBar}>
+      <div style={styles.contentText}>
         <div style={styles.headlineText}>
-          We hope to start first <strong><ins>Hackerspace</ins></strong> in <strong>Białystok</strong>
+          <strong>Hacklag</strong> is a <strong>community</strong> aiming to connect developers, designers,
+          entrepreneurs and everyone interested <strong>in new technologies</strong>
           <br/>
           <br/>
         </div>
