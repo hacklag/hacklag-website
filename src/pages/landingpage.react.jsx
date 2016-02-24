@@ -32,14 +32,13 @@ export default Radium(React.createClass({
         backgroundColor: '#fafafa',
         margin: 'auto',
         display: 'flex',
-        flexDirection: 'column',
-        fontFamily: 'Roboto'
+        flexDirection: 'column'
       }
     };
   },
 
   render() {
-    let styles = this.getStyles();
+    const styles = this.getStyles();
 
     return (
       <div style={styles.mainDiv}>
