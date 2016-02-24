@@ -34,7 +34,10 @@ export default Radium(() => {
     hacklagLogo: {
       height: 128,
       width: 128,
-      margin: '10px auto 20px',
+      marginTop: 10,
+      marginBottom: 20,
+      marginLeft: 'auto',
+      marginRight: 'auto',
       display: 'block',
       '@media (max-width: 48em)': {
         marginRight: 30
