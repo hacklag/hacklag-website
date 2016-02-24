@@ -6,15 +6,21 @@ export default Radium(() => {
   const styles = {
     componentBody: {
       display: 'flex',
-      flexDirection: 'column',
       backgroundColor: '#fff',
       textAlign: 'center',
       color: '#565a5f',
       boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
       fontSize: 12,
+      justifyContent: 'center',
       '@media (min-width: 48em)': {
         marginRight: 24,
-        marginLeft: 24
+        marginLeft: 24,
+        minWidth: 200,
+        flexDirection: 'column'
+      },
+      '@media (max-width: 48em)': {
+        borderBottom: '1px solid #eceff2',
+        flexDirection: 'row'
       }
     },
     iconStyle: {
@@ -25,15 +31,17 @@ export default Radium(() => {
       width: 'auto',
       height: 'auto'
     },
-    socialIconsBar: {
-      textAlign: 'center',
-      padding: '16px 16px 16px 8px'
-    },
     hacklagLogo: {
       height: 128,
       width: 128,
       margin: '10px auto 20px',
-      display: 'block'
+      display: 'block',
+      '@media (max-width: 48em)': {
+        marginRight: 30
+      },
+      '@media (max-width: 38em)': {
+        display: 'none'
+      }
     },
     socialMainButton: {
       width: 152,
@@ -41,8 +49,21 @@ export default Radium(() => {
       backgroundColor: '#38b7ea'
     },
     logoBox: {
-      padding: '16px 16px 16px 8px',
-      borderBottom: '1px solid #eceff2'
+      padding: 16,
+      borderBottom: '1px solid #eceff2',
+      '@media (max-width: 48em)': {
+        display: 'flex'
+      }
+    },
+    socialBarHeaderName: {
+      fontWeight: 600,
+      fontSize: 24,
+      lineHeight: '24px'
+    },
+    socialBarDescription: {
+      display: 'block',
+      fontSize: 14,
+      lineHeight: '20px'
     }
   };
 
@@ -50,29 +71,31 @@ export default Radium(() => {
     <div style={styles.componentBody}>
       <div style={styles.logoBox}>
         <img
-          src={"/img/logo.png"}
+          src={"/img/hacklag_sketch.png"}
           style={styles.hacklagLogo}
           alt="Hacklag logo" />
-        <div style={{fontWeight: 600, fontSize: 24}}>
-          Hacklag
+        <div>
+          <div style={styles.socialBarHeaderName}>
+            Hacklag
+          </div>
+          <div style={styles.socialBarDescription}>
+            Developers connector
+          </div>
+          <div style={{color: '#9a9ea3'}}>
+            <FontIcon
+              style={{fontSize: 12, color: 'gray'}}
+              className="material-icons">
+              place
+            </FontIcon>
+            Bialystok, Poland
+          </div>
+          <RaisedButton
+            label="Follow"
+            style={styles.socialMainButton}
+            linkButton={true}
+            href="https://github.com/hacklag"
+            secondary={true} />
         </div>
-        <div style={{display: 'block', fontSize: 14}}>
-          Developers connector
-        </div>
-        <div style={{color: '#9a9ea3'}}>
-          <FontIcon
-            style={{fontSize: 12, color: 'gray'}}
-            className="material-icons">
-            place
-          </FontIcon>
-          Bialystok, Poland
-        </div>
-        <RaisedButton
-          label="Follow"
-          style={styles.socialMainButton}
-          linkButton={true}
-          href="https://github.com/hacklag"
-          secondary={true} />
       </div>
       <div id="social-icons-menu">
         <IconButton
