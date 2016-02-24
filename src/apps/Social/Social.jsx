@@ -27,7 +27,7 @@ export default Radium(() => {
       fontSize: 38,
       color: '#929292'
     },
-    buttonStyle: {
+    iconButtonStyle: {
       width: 'auto',
       height: 'auto'
     },
@@ -103,7 +103,7 @@ export default Radium(() => {
       <div id="social-icons-menu">
         <IconButton
           iconStyle={styles.iconStyle}
-          style={styles.buttonStyle}
+          style={styles.iconButtonStyle}
           tooltip="Facebook"
           tooltipPosition="top-center"
           linkButton={true}
@@ -111,7 +111,7 @@ export default Radium(() => {
           href="https://www.facebook.com/Hacklag-1536319733349471/" />
         <IconButton
           iconStyle={styles.iconStyle}
-          style={styles.buttonStyle}
+          style={styles.iconButtonStyle}
           tooltip="GitHub"
           tooltipPosition="top-center"
           linkButton={true}
@@ -119,7 +119,7 @@ export default Radium(() => {
           href="https://github.com/hacklag/" />
         <IconButton
           iconStyle={styles.iconStyle}
-          style={styles.buttonStyle}
+          style={styles.iconButtonStyle}
           tooltip="Twitter"
           tooltipPosition="top-center"
           linkButton={true}

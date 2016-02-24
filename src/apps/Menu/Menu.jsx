@@ -51,7 +51,7 @@ export default Radium(React.createClass({
         backgroundColor: '#FFFFFF',
         width: '100%',
         transition: '0.5s ease',
-        zIndex: 99999
+        zIndex: 2
       },
       toggle: {
         display: 'none',
