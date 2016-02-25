@@ -36,10 +36,8 @@ export default React.createClass({
 
   render() {
     const styles = this.getStyles();
-    let events = [];
-
-    this.state.events.forEach(function(event) {
-      events.push(
+    let events = this.state.events.map(function(event) {
+      return (
         <EventItem
           key={event.id}
           event={event} />
