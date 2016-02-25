@@ -16,6 +16,10 @@ export default Radium(React.createClass({
 
   getStyles() {
     return {
+      menuFontStyles: {
+        fontSize: '1.5rem',
+        lineHeight: 'inherit'
+      },
       menuText: {
         color: '#565A5F',
         whiteSpace: 'nowrap',
@@ -46,7 +50,8 @@ export default Radium(React.createClass({
         left: 0,
         backgroundColor: '#FFFFFF',
         width: '100%',
-        transition: '0.5s ease'
+        transition: '0.5s ease',
+        zIndex: 2
       },
       toggle: {
         display: 'none',
@@ -76,7 +81,7 @@ export default Radium(React.createClass({
     const RadiumLink = Radium(Link);
 
     return (
-      <div>
+      <div style={styles.menuFontStyles}>
         <div
           key="menu"
           style={this.state.toggle ? styles.menuSlideDown : styles.menu}>
