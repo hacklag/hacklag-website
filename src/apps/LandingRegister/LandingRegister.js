@@ -11,7 +11,8 @@ export default Radium(React.createClass({
 
   getInitialState() {
     return {
-      emailAddress: ''
+      emailAddress: '',
+      registerState: null
     };
   },
 
@@ -19,21 +20,14 @@ export default Radium(React.createClass({
     return {
       componentBody: {
         display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        paddingTop: 76
-      },
-      logoBar: {
-        display: 'flex',
-        flexDirection: 'column',
-        maxWidth: 324
+        paddingTop: 63,
+        justifyContent: 'center'
       },
       contentBar: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: 554,
-        paddingLeft: 38,
-        fontSize: 14
+        marginLeft: 40
+      },
+      contentText: {
+        width: 554
       },
       hacklagLogo: {
         width: 324,
@@ -47,19 +41,15 @@ export default Radium(React.createClass({
         width: 164,
         height: 114
       },
-      socialBar: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        display: 'flex',
-        marginTop: -24
-      },
       inviteButton: {
-        backgroundColor: '#ec018c',
-        width: '50%'
+        width: '50%',
+        marginTop: 16,
+        marginBottom: 16
       },
       headlineText: {
-        fontSize: 18
+        fontSize: 23,
+        textAlign: 'justify',
+        lineHeight: '23px'
       },
       smallerText: {
         fontSize: 12
@@ -67,44 +57,97 @@ export default Radium(React.createClass({
     };
   },
 
+  handleButtonPress() {
+    this.setState({
+      registerState: true
+    });
+  },
+
+  contentForm() {
+    const styles = this.getStyles();
+
+    return (
+      <div style={styles.contentText}>
+        <div style={styles.headlineText}>
+          <strong>Hacklag</strong> is a <strong>community</strong> aiming to connect developers, designers,
+          entrepreneurs and everyone interested <strong>in new technologies</strong>
+          <br/>
+          <br/>
+        </div>
+        <div>
+          We are <strong>working hard</strong> to make it real. To be part of this <strong>initiative </strong>
+          or just to be <strong>up to date</strong> with the progress please type in your email
+          and we will send you an invitation to our <strong>Forum</strong> and <strong>Chat</strong>.
+          <br/>
+          <br/>
+
+          Demonstrating size and engagement of the <strong>community</strong> is
+          <strong> extremely</strong> important to gather founds and start operating -
+          please sign up!
+          <br/>
+          <br/>
+
+          <TextField
+            floatingLabelText="Your Email"
+            style={styles.emailTextfield}
+            type="email"
+            fullWidth={true}
+            valueLink={this.linkState('emailAddress')} />
+          <RaisedButton
+            style={styles.inviteButton}
+            primary={true}
+            onClick={this.handleButtonPress}
+            label="Cool, let me in!" />
+          <div style={styles.smallerText}>
+            On our forum, you can find information for <strong>members, volunteers, partners,
+            sponsors</strong>. We are sharing there information about the potential property and the
+            whole process of adopting place for <strong>Hacklag</strong>.
+          </div>
+        </div>
+      </div>
+    );
+  },
+
+  contentSuccess() {
+    return (
+      <div>
+        Invitation was successfull!
+      </div>
+    );
+  },
+
+  contentFailure() {
+    return (
+      <div>
+        Invitation was declined! Contact support!
+      </div>
+    );
+  },
+
+  renderContent() {
+    const {registerState} = this.state;
+
+    if (registerState) {
+      return this.contentSuccess();
+    }
+
+    if (registerState === false) {
+      return this.contentFailure();
+    }
+
+    return this.contentForm();
+  },
+
   render() {
-    let styles = this.getStyles();
+    const styles = this.getStyles();
 
     return (
       <div style={styles.componentBody}>
         <LeftBar/>
         <div style={styles.contentBar}>
-          <div style={styles.headlineText}>
-            We hope to start first <strong><ins>Hackerspace</ins></strong> in <strong>Białystok</strong><br/><br/>
-          </div>
-          <p>
-            We are <strong>working hard</strong> to make it real. To be part of this <strong>initiative </strong>
-            or just to be <strong>up to date</strong> with the progress please type in your email
-            and we will send you an invitation to our <strong>Forum</strong> and <strong>Chat</strong>.<br/><br/>
-
-            Demonstrating size and engagement of the <strong>community</strong> is
-            <strong> extremely</strong> important to gather founds and start operating -
-            please sign up!
-
-            <TextField
-              floatingLabelText="Your Email"
-              style={styles.emailTextfield}
-              type="email"
-              valueLink={this.linkState('emailAddress')} />
-            <br/>
-            <RaisedButton
-              style={styles.inviteButton}
-              primary={true}
-              label="Cool, let me in!" />
-            <br/>
-            <div style={styles.smallerText}>
-              On our forum, you can find information for <strong>members, volunteers, partners,
-              sponsors</strong>. We are sharing there information about the potential property and the
-              whole process of adopting place for <strong>Hacklag</strong>.
-            </div>
-          </p>
+          {this.renderContent()}
         </div>
-        </div>
+      </div>
     );
   }
 }));

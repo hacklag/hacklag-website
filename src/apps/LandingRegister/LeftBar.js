@@ -1,6 +1,5 @@
 import React from 'react';
 import Radium from 'radium';
-import {TextField, RaisedButton, IconButton} from 'material-ui';
 
 export default Radium(React.createClass({
   displayName: 'LeftBar',
@@ -19,12 +18,6 @@ export default Radium(React.createClass({
         flexDirection: 'column',
         maxWidth: 324
       },
-      contentBar: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: 554,
-        paddingLeft: 38
-      },
       hacklagLogo: {
         width: 324,
         height: 324,
@@ -36,18 +29,6 @@ export default Radium(React.createClass({
         top: -404,
         width: 164,
         height: 114
-      },
-      socialBar: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        display: 'flex',
-        marginTop: -24
-      },
-      socialLogo: {
-        width: 64,
-        height: 64,
-        margin: 12
       },
       hacklagLogoDivHidden: {
         visibility: 'hidden',
@@ -71,7 +52,7 @@ export default Radium(React.createClass({
   },
 
   render() {
-    let styles = this.getStyles();
+    const styles = this.getStyles();
 
     return (
       <div style={styles.logoBar}>
@@ -81,29 +62,6 @@ export default Radium(React.createClass({
           onMouseOver={this.mouseOver}
           onMouseOut={this.mouseOut}
           alt="Hacklag logo" />
-        <div
-          style={styles.socialBar}>
-          <IconButton
-            tooltip="Hacklag Discourse"
-            tooltipPosition="bottom-center"
-            style={styles.socialLogo}
-            linkButton={true}
-            href="https://forum.hacklag.org/">
-            <img
-              src={"/img/icons/discourse.png"}
-              alt="Discourse logo" />
-          </IconButton>
-          <IconButton
-            tooltip="Hacklag Slack"
-            tooltipPosition="bottom-center"
-            linkButton={true}
-            style={styles.socialLogo}
-            href="https://hacklag.slack.com/">
-            <img
-              src={"/img/icons/slack.png"}
-              alt="Slack logo" />
-          </IconButton>
-        </div>
         <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
           <img
             style={styles.hacklagLogoDialog}

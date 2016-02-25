@@ -1,4 +1,3 @@
-import SponsorsBar from './SponsorsBar.react';
-import SponsorsBarListRender from './SponsorsBarListRender.react';
+import SponsorsBar from './SponsorsBar';
 
 export default SponsorsBar;
