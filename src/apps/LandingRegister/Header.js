@@ -6,16 +6,18 @@ export default Radium(() => {
   const styles = {
     headerDiv: {
       justifyContent: 'flex-end',
-      display: 'flex'
+      display: 'flex',
+      marginTop: 21
     },
     iconStyle: {
-      fontSize: 38.5,
-      color: '#454545',
-      margin: '-4px 0px 0px -7px'
+      fontSize: 25.5,
+      color: '#454545'
     },
     buttonStyle: {
-      margin: '28px 7px 28px 0px',
-      padding: 0
+      padding: '0px 15px 0px 0px',
+      width: 'auto',
+      height: 'auto',
+      margin: 0
     }
   };
 
@@ -28,8 +30,8 @@ export default Radium(() => {
         style={styles.buttonStyle}
         href="https://forum.hacklag.org/">
         <img
-          width="34"
-          height="34"
+          width="25"
+          height="25"
           src={"/img/icons/discourse.png"}
           alt="Discourse logo" />
       </IconButton>
@@ -40,8 +42,8 @@ export default Radium(() => {
         style={styles.buttonStyle}
         href="https://hacklag.slack.com/">
         <img
-          width="34"
-          height="34"
+          width="25"
+          height="25"
           src={"/img/icons/slack.png"}
           alt="Slack logo" />
       </IconButton>

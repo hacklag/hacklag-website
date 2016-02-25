@@ -16,21 +16,22 @@ export default Radium(React.createClass({
       logoBar: {
         display: 'flex',
         flexDirection: 'column',
-        maxWidth: 324
+        marginTop: 53.8
       },
       hacklagLogo: {
-        width: 324,
-        height: 324,
-        padding: 20
+        width: 165.3,
+        height: 158.2
       },
       hacklagLogoDialog: {
         position: 'relative',
-        left: -76,
-        top: -404,
-        width: 164,
-        height: 114
+        left: -91,
+        top: -207,
+        width: 118,
+        height: 76
       },
       hacklagLogoDivHidden: {
+        width: 0,
+        height: 0,
         visibility: 'hidden',
         opacity: 0,
         transition: 'visibility 2s, opacity 2s linear'

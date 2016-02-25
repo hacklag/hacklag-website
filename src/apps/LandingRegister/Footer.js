@@ -6,11 +6,7 @@ export default Radium(() => {
     footerDiv: {
       display: 'flex',
       justifyContent: 'center',
-      position: 'absolute',
-      bottom: 0,
-      height: 40,
-      marginTop: 40,
-      width: '100%'
+      height: 40
     }
   };
 
