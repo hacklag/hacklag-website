@@ -3,7 +3,6 @@ import Syncano from 'syncano';
 import EventItem from './EventItem';
 
 export default React.createClass({
-
   displayName: 'Events',
 
   getInitialState() {
@@ -12,7 +11,7 @@ export default React.createClass({
     };
   },
 
-  componentDidMount() {
+  componentWillMount() {
     const {DataObject} = Syncano({accountKey: SYNCANO_API_KEY});
     const className = 'meetup';
 
@@ -36,17 +35,11 @@ export default React.createClass({
 
   render() {
     const styles = this.getStyles();
-    let events = this.state.events.map(function(event) {
-      return (
-        <EventItem
-          key={event.id}
-          event={event} />
-      );
-    });
+    const {events} = this.state;
 
     return (
       <div style={styles.componentStyle}>
-        {events}
+        {events.map((event) => <EventItem key={event.id} event={event} />)}
       </div>
     );
   }
