@@ -15,9 +15,6 @@ export default Radium(() => {
         marginBottom: 40
       }
     },
-    headerIcons: {
-
-    },
     headerLogo: {
       display: 'none',
       '@media (max-width: 750px)': {
@@ -49,7 +46,7 @@ export default Radium(() => {
     <div style={styles.header}>
       <div style={styles.headerLogo}>
         <img
-          src={"/img/hackbat/hackabt_square.png"}
+          src={"/img/hackbat/hackabt_square_bialystok.png"}
           alt="Hacklag logo"
           style={styles.headerLogoImg} />
       </div>

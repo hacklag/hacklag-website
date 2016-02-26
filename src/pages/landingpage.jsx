@@ -30,12 +30,11 @@ export default Radium(React.createClass({
       mainDiv: {
         color: '#4A4A4A',
         backgroundColor: '#FAFAFA',
-        margin: 'auto',
+        margin: 'auto auto -40px auto',
         display: 'flex',
         minHeight: '100%',
         flexDirection: 'column',
-        maxWidth: 1440,
-        marginBottom: '-40px'
+        maxWidth: 1440
       }
     };
   },
