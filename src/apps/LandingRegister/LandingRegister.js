@@ -23,7 +23,12 @@ export default Radium(React.createClass({
         justifyContent: 'center'
       },
       contentBar: {
-        marginLeft: 72
+        marginLeft: 72,
+        '@media (max-width: 750px)': {
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          padding: 16
+        }
       },
       content: {
         maxWidth: 450,
@@ -32,18 +37,6 @@ export default Radium(React.createClass({
         lineHeight: 1.6,
         textAlign: 'justify',
         fontSize: 16
-      },
-      hacklagLogo: {
-        width: 324,
-        height: 324,
-        padding: 20
-      },
-      hacklagLogoDialog: {
-        position: 'relative',
-        left: -74,
-        top: -404,
-        width: 119,
-        height: 77
       },
       inviteButton: {
         width: 175,
@@ -54,11 +47,6 @@ export default Radium(React.createClass({
         fontSize: 16,
         lineHeight: 1.2,
         fontWeight: 400
-      },
-      headlineText: {
-        fontSize: 23,
-        textAlign: 'justify',
-        lineHeight: '23px'
       },
       headerText: {
         fontSize: 22,
@@ -103,7 +91,7 @@ export default Radium(React.createClass({
           <br/>
           <br/>
           Demonstrating size and <strong>engagement</strong> of the <strong>community</strong> is
-          <strong>extremely</strong> important to gather founds and start operating -
+          <strong> extremely</strong> important to gather founds and start operating -
           <strong>please sign up!</strong>
         </div>
         <div>

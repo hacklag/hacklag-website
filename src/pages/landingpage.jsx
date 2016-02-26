@@ -45,12 +45,12 @@ export default Radium(React.createClass({
 
     return (
       <div style={{height: '100%'}}>
-      <div style={styles.mainDiv}>
-        <LandingRegister.Header/>
-        <LandingRegister/>
-        <div style={{height: 40}}></div>
-      </div>
-      <LandingRegister.Footer/>
+        <div style={styles.mainDiv}>
+          <LandingRegister.Header/>
+          <LandingRegister/>
+          <div style={{height: 40}}></div>
+        </div>
+        <LandingRegister.Footer/>
       </div>
     );
   }

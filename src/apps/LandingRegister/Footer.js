@@ -6,7 +6,8 @@ export default Radium(() => {
     footerDiv: {
       display: 'flex',
       justifyContent: 'center',
-      height: 40
+      height: 40,
+      alignItems: 'center'
     }
   };
 

@@ -16,7 +16,10 @@ export default Radium(React.createClass({
       logoBar: {
         display: 'flex',
         flexDirection: 'column',
-        width: 200
+        maxWidth: 200,
+        '@media (max-width: 750px)': {
+          display: 'none'
+        }
       },
       hacklagLogo: {
         marginRight: 'auto',
