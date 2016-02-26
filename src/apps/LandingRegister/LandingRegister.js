@@ -39,7 +39,7 @@ export default Radium(React.createClass({
         fontSize: 16
       },
       inviteButton: {
-        width: 175,
+        width: 190,
         marginBottom: 24
       },
       buttonLabelStyle: {

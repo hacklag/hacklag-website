@@ -6,7 +6,7 @@ export default Radium(() => {
   const styles = {
     header: {
       marginTop: 21,
-      marginBottom: 91,
+      marginBottom: 71,
       width: '100%',
       display: 'flex',
       justifyContent: 'flex-end',
@@ -24,7 +24,11 @@ export default Radium(() => {
     },
     headerLogoImg: {
       width: 175,
-      height: 37
+      height: 37,
+      '@media (max-width: 330px)': {
+        width: 130,
+        height: 27
+      }
     },
     iconStyle: {
       fontSize: 30,
