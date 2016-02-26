@@ -25,7 +25,7 @@
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-dropzone": "2.2.3",
-    "react-flexbox-grid": "^0.9.4",
+    "react-flexbox-grid": "0.9.4",
     "react-inline-grid": "^0.5.3",
     "react-inlinesvg": "^0.4.2",
     "react-onclickoutside": "^4.0.1",
