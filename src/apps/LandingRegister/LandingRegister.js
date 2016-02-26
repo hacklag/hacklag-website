@@ -24,7 +24,7 @@ export default Radium(React.createClass({
         justifyContent: 'center'
       },
       contentBar: {
-        marginLeft: 83.7
+        marginLeft: 79
       },
       content: {
         maxWidth: 427,
@@ -41,15 +41,15 @@ export default Radium(React.createClass({
       },
       hacklagLogoDialog: {
         position: 'relative',
-        left: -76,
+        left: -74,
         top: -404,
-        width: 164,
-        height: 114
+        width: 119,
+        height: 77
       },
       inviteButton: {
         width: 175,
-        marginTop: 33,
-        marginBottom: 33
+        marginTop: 24,
+        marginBottom: 24
       },
       headlineText: {
         fontSize: 23,
@@ -57,14 +57,15 @@ export default Radium(React.createClass({
         lineHeight: '23px'
       },
       headerText: {
-        fontSize: 20
+        fontSize: 22,
+        lineHeight: 1.1
       },
       smallText: {
         fontSize: 12,
         lineHeight: 1.8
       },
       mainTextContainer: {
-        marginBottom: 21
+        marginBottom: 10
       }
     };
   },

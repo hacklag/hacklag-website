@@ -16,18 +16,18 @@ export default Radium(React.createClass({
       logoBar: {
         display: 'flex',
         flexDirection: 'column',
-        marginTop: 53.8
+        width: 200
       },
       hacklagLogo: {
-        width: 165.3,
-        height: 158.2
+        marginRight: 'auto',
+        marginLeft: 'auto'
       },
       hacklagLogoDialog: {
         position: 'relative',
-        left: -91,
-        top: -207,
-        width: 118,
-        height: 76
+        left: -74,
+        top: -53,
+        width: 119,
+        height: 77
       },
       hacklagLogoDivHidden: {
         width: 0,
@@ -37,6 +37,8 @@ export default Radium(React.createClass({
         transition: 'visibility 2s, opacity 2s linear'
       },
       hacklagLogoDivVisible: {
+        width: 0,
+        height: 0,
         visibility: 'visible',
         opacity: 1,
         transition: 'visibility 0.5s, opacity 1s linear'
@@ -57,18 +59,18 @@ export default Radium(React.createClass({
 
     return (
       <div style={styles.logoBar}>
+      <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
+          <img
+            style={styles.hacklagLogoDialog}
+            src={"/img/hackbat/hackbat_cloud.png"}
+            alt="Hi! I`m Hackabat!" />
+        </div>
         <img
           style={styles.hacklagLogo}
-          src={"/img/hacklag_sketch.png"}
+          src={"/img/hackbat/hackbat_bialystok.png"}
           onMouseOver={this.mouseOver}
           onMouseOut={this.mouseOut}
           alt="Hacklag logo" />
-        <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
-          <img
-            style={styles.hacklagLogoDialog}
-            src={"/img/hackbat_hi.png"}
-            alt="Hi! I`m Hackabat!" />
-        </div>
       </div>
     );
   }
