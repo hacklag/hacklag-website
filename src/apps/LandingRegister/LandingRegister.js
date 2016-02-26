@@ -1,18 +1,17 @@
 import React from 'react';
 import Radium from 'radium';
-import {TextField, RaisedButton} from 'material-ui';
-import LinkedStateMixin from 'react-addons-linked-state-mixin';
+import {RaisedButton} from 'material-ui';
 import LeftBar from './LeftBar';
+import {Form} from 'formsy-react';
+import {FormsyText} from 'formsy-material-ui';
 
 export default Radium(React.createClass({
   displayName: 'LandingRegister',
 
-  mixins: [LinkedStateMixin],
-
   getInitialState() {
     return {
-      emailAddress: '',
-      registerState: null
+      registerState: null,
+      canSubmit: false
     };
   },
 
@@ -44,9 +43,7 @@ export default Radium(React.createClass({
       },
       buttonLabelStyle: {
         fontFamily: 'Roboto',
-        fontSize: 16,
-        lineHeight: 1.2,
-        fontWeight: 400
+        fontSize: 16
       },
       headerText: {
         fontSize: 22,
@@ -66,10 +63,9 @@ export default Radium(React.createClass({
     };
   },
 
-  handleButtonPress() {
-    this.setState({
-      registerState: true
-    });
+  submitForm(model) {
+    console.debug('Model: ', model);
+    this.setState({registerState: true});
   },
 
   contentForm() {
@@ -94,20 +90,27 @@ export default Radium(React.createClass({
           <strong> extremely</strong> important to gather founds and start operating -
           <strong>please sign up!</strong>
         </div>
-        <div>
-          <TextField
-            floatingLabelText="Your Email"
-            style={styles.emailTextfield}
-            type="email"
-            fullWidth={true}
-            valueLink={this.linkState('emailAddress')} />
-          <RaisedButton
-            style={styles.inviteButton}
-            labelStyle={styles.buttonLabelStyle}
-            primary={true}
-            onClick={this.handleButtonPress}
-            label="Cool, let me in!" />
-        </div>
+          <Form
+            ref="form"
+            onValid={this.setState({canSubmit: true})}
+            onInvalid={() => this.setState({canSubmit: false})}
+            onValidSubmit={this.submitForm}
+            noValidate>
+            <FormsyText
+              name="email"
+              validations="isEmail"
+              validationError="You have to type valid email"
+              floatingLabelText="Your Email"
+              required={true}
+              fullWidth={true} />
+            <RaisedButton
+              style={styles.inviteButton}
+              labelStyle={styles.buttonLabelStyle}
+              primary={true}
+              label="Cool, let me in!"
+              onClick={() => this.refs.form.validateForm()}
+              type="submit" />
+          </Form>
         <div style={styles.smallText}>
           On our forum, you can find information for <strong>members, volunteers, partners,
           sponsors</strong>. We are sharing there information about the potential property and the
