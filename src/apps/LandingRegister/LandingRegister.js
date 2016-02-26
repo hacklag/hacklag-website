@@ -105,15 +105,12 @@ export default Radium(React.createClass({
             ref="form"
             onValid={this.enableSubmit}
             onInvalid={this.disableSubmit}
-            onValidSubmit={this.submitForm}>
+            onValidSubmit={this.submitForm}
+            noValidate>
             <FormsyText
               name="email"
-              validations={{
-                isEmail: true
-              }}
-              validationErrors={{
-                isEmail: 'You have to type valid email'
-              }}
+              validations="isEmail"
+              validationError="You have to type valid email"
               floatingLabelText="Your Email"
               required={true}
               fullWidth={true} />
