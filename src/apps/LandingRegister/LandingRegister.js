@@ -56,22 +56,6 @@ export default Radium(React.createClass({
     };
   },
 
-  handleButtonPress() {
-    this.refs.form.validateForm();
-  },
-
-  enableSubmit() {
-    this.setState({
-      canSubmit: true
-    });
-  },
-
-  disableSubmit() {
-    this.setState({
-      canSubmit: false
-    });
-  },
-
   submitForm(model) {
     console.log('Model: ', model);
     this.setState({registerState: true});
@@ -103,8 +87,8 @@ export default Radium(React.createClass({
 
           <Form
             ref="form"
-            onValid={this.enableSubmit}
-            onInvalid={this.disableSubmit}
+            onValid={() => this.setState({canSubmit: true})}
+            onInvalid={() => this.setState({canSubmit: false})}
             onValidSubmit={this.submitForm}
             noValidate>
             <FormsyText
@@ -118,7 +102,7 @@ export default Radium(React.createClass({
               style={styles.inviteButton}
               primary={true}
               label="Cool, let me in!"
-              onClick={this.handleButtonPress}
+              onClick={() => this.refs.form.validateForm()}
               type="submit" />
           </Form>
           <div style={styles.smallerText}>
