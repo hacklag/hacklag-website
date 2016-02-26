@@ -56,22 +56,20 @@ export default Radium(React.createClass({
     };
   },
 
-  enableButton() {
+  handleButtonPress() {
+    this.refs.form.validateForm();
+  },
+
+  enableSubmit() {
     this.setState({
       canSubmit: true
     });
   },
 
-  disableButton() {
+  disableSubmit() {
     this.setState({
       canSubmit: false
     });
-  },
-
-  errorMessages() {
-    return {
-      emailError: 'This is not a valid email'
-    };
   },
 
   submitForm(model) {
@@ -81,7 +79,6 @@ export default Radium(React.createClass({
 
   contentForm() {
     const styles = this.getStyles();
-    const {emailError} = this.errorMessages();
 
     return (
       <div style={styles.contentText}>
@@ -105,23 +102,27 @@ export default Radium(React.createClass({
           <br/>
 
           <Form
-            onValid={this.enableButton}
-            onInvalid={this.disableButton}
+            ref="form"
+            onValid={this.enableSubmit}
+            onInvalid={this.disableSubmit}
             onValidSubmit={this.submitForm}>
             <FormsyText
               name="email"
-              validations="isEmail"
-              validationError={emailError}
+              validations={{
+                isEmail: true
+              }}
+              validationErrors={{
+                isEmail: 'You have to type valid email'
+              }}
               floatingLabelText="Your Email"
               required={true}
               fullWidth={true} />
             <RaisedButton
               style={styles.inviteButton}
-              disabledBackgroundColor="#EC018C"
               primary={true}
               label="Cool, let me in!"
-              type="submit"
-              disabled={!this.state.canSubmit} />
+              onClick={this.handleButtonPress}
+              type="submit" />
           </Form>
           <div style={styles.smallerText}>
             On our forum, you can find information for <strong>members, volunteers, partners,
