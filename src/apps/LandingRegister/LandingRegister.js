@@ -1,18 +1,17 @@
 import React from 'react';
 import Radium from 'radium';
-import {TextField, RaisedButton, IconButton, Colors} from 'material-ui';
-import LinkedStateMixin from 'react-addons-linked-state-mixin';
+import {RaisedButton} from 'material-ui';
 import LeftBar from './LeftBar';
+import {Form} from 'formsy-react';
+import {FormsyText} from 'formsy-material-ui';
 
 export default Radium(React.createClass({
   displayName: 'LandingRegister',
 
-  mixins: [LinkedStateMixin],
-
   getInitialState() {
     return {
-      emailAddress: '',
-      registerState: null
+      registerState: null,
+      canSubmit: false
     };
   },
 
@@ -57,14 +56,32 @@ export default Radium(React.createClass({
     };
   },
 
-  handleButtonPress() {
+  enableButton() {
     this.setState({
-      registerState: true
+      canSubmit: true
     });
+  },
+
+  disableButton() {
+    this.setState({
+      canSubmit: false
+    });
+  },
+
+  errorMessages() {
+    return {
+      emailError: 'This is not a valid email'
+    };
+  },
+
+  submitForm(model) {
+    console.log('Model: ', model);
+    this.setState({registerState: true});
   },
 
   contentForm() {
     const styles = this.getStyles();
+    const {emailError} = this.errorMessages();
 
     return (
       <div style={styles.contentText}>
@@ -87,17 +104,25 @@ export default Radium(React.createClass({
           <br/>
           <br/>
 
-          <TextField
-            floatingLabelText="Your Email"
-            style={styles.emailTextfield}
-            type="email"
-            fullWidth={true}
-            valueLink={this.linkState('emailAddress')} />
-          <RaisedButton
-            style={styles.inviteButton}
-            primary={true}
-            onClick={this.handleButtonPress}
-            label="Cool, let me in!" />
+          <Form
+            onValid={this.enableButton}
+            onInvalid={this.disableButton}
+            onValidSubmit={this.submitForm}>
+            <FormsyText
+              name="email"
+              validations="isEmail"
+              validationError={emailError}
+              floatingLabelText="Your Email"
+              required={true}
+              fullWidth={true} />
+            <RaisedButton
+              style={styles.inviteButton}
+              disabledBackgroundColor="#EC018C"
+              primary={true}
+              label="Cool, let me in!"
+              type="submit"
+              disabled={!this.state.canSubmit} />
+          </Form>
           <div style={styles.smallerText}>
             On our forum, you can find information for <strong>members, volunteers, partners,
             sponsors</strong>. We are sharing there information about the potential property and the
