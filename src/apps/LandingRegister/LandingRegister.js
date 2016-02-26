@@ -57,7 +57,7 @@ export default Radium(React.createClass({
   },
 
   submitForm(model) {
-    console.log('Model: ', model);
+    console.debug('Model: ', model);
     this.setState({registerState: true});
   },
 
@@ -87,7 +87,7 @@ export default Radium(React.createClass({
 
           <Form
             ref="form"
-            onValid={() => this.setState({canSubmit: true})}
+            onValid={this.setState({canSubmit: true})}
             onInvalid={() => this.setState({canSubmit: false})}
             onValidSubmit={this.submitForm}
             noValidate>
