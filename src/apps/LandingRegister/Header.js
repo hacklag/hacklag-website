@@ -7,7 +7,8 @@ export default Radium(() => {
     headerDiv: {
       justifyContent: 'flex-end',
       display: 'flex',
-      marginTop: 21
+      marginTop: 21,
+      marginBottom: 95
     },
     iconStyle: {
       fontSize: 25.5,

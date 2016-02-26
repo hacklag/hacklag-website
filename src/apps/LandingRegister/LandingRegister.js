@@ -20,19 +20,18 @@ export default Radium(React.createClass({
     return {
       componentBody: {
         display: 'flex',
-        marginTop: 68,
         justifyContent: 'center'
       },
       contentBar: {
-        marginLeft: 79
+        marginLeft: 72
       },
       content: {
-        maxWidth: 427,
+        maxWidth: 450,
         fontFamily: 'Raleway',
         fontWeight: 300,
-        lineHeight: 1.3,
+        lineHeight: 1.6,
         textAlign: 'justify',
-        fontSize: 15
+        fontSize: 16
       },
       hacklagLogo: {
         width: 324,
@@ -48,8 +47,13 @@ export default Radium(React.createClass({
       },
       inviteButton: {
         width: 175,
-        marginTop: 24,
         marginBottom: 24
+      },
+      buttonLabelStyle: {
+        fontFamily: 'Roboto',
+        fontSize: 16,
+        lineHeight: 1.2,
+        fontWeight: 400
       },
       headlineText: {
         fontSize: 23,
@@ -58,7 +62,8 @@ export default Radium(React.createClass({
       },
       headerText: {
         fontSize: 22,
-        lineHeight: 1.1
+        lineHeight: 1.1,
+        marginBottom: 24
       },
       smallText: {
         fontSize: 12,
@@ -66,6 +71,9 @@ export default Radium(React.createClass({
       },
       mainTextContainer: {
         marginBottom: 10
+      },
+      emailTextfield: {
+        marginBottom: 24
       }
     };
   },
@@ -88,8 +96,6 @@ export default Radium(React.createClass({
             <br/>
             <br/>
             We are also hope to start first <strong>Hackerspace</strong> in <strong>Białystok</strong>
-            <br/>
-            <br/>
           </div>
           We are <strong>working hard</strong> to make it real. To be part of this initiative
           or just to be <strong>up to date</strong> with the progress please type in your email
@@ -109,6 +115,7 @@ export default Radium(React.createClass({
             valueLink={this.linkState('emailAddress')} />
           <RaisedButton
             style={styles.inviteButton}
+            labelStyle={styles.buttonLabelStyle}
             primary={true}
             onClick={this.handleButtonPress}
             label="Cool, let me in!" />
