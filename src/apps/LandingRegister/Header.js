@@ -18,27 +18,19 @@ export default Radium(() => {
     headerLogo: {
       display: 'none',
       '@media (max-width: 750px)': {
-        display: 'flex',
+        display: 'block',
         paddingLeft: 16
       }
     },
     headerLogoImg: {
       width: 175,
-      height: 37,
-      '@media (max-width: 330px)': {
-        width: 130,
-        height: 27
+      '@media (max-width: 350px)': {
+        width: 120
       }
     },
     iconStyle: {
       fontSize: 30,
       color: '#454545'
-    },
-    buttonStyle: {
-      padding: '0px 15px 0px 0px',
-      width: 'auto',
-      height: 'auto',
-      margin: 0
     },
     iconImg: {
       width: 25,
@@ -70,7 +62,6 @@ export default Radium(() => {
           tooltip="Hacklag Slack"
           tooltipPosition="bottom-center"
           linkButton={true}
-          style={styles.buttonStyle}
           href="https://hacklag.slack.com/"
           iconStyle={styles.iconImg}>
           <img
@@ -83,7 +74,6 @@ export default Radium(() => {
           linkButton={true}
           iconClassName="icon-github"
           iconStyle={styles.iconStyle}
-          style={styles.buttonStyle}
           href="https://github.com/hacklag/" />
       </div>
     </div>
