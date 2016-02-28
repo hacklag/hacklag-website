@@ -31,6 +31,7 @@ export default Radium(React.createClass({
         color: '#4A4A4A',
         backgroundColor: '#FAFAFA',
         margin: 'auto auto -40px auto',
+        paddingBottom: 40,
         display: 'flex',
         minHeight: '100%',
         flexDirection: 'column',
@@ -47,7 +48,6 @@ export default Radium(React.createClass({
         <div style={styles.mainDiv}>
           <LandingRegister.Header/>
           <LandingRegister/>
-          <div style={{height: 40}}></div>
         </div>
         <LandingRegister.Footer/>
       </div>

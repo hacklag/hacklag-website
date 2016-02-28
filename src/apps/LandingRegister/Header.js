@@ -29,8 +29,8 @@ export default Radium(() => {
       }
     },
     iconStyle: {
-      fontSize: 30,
-      color: '#454545'
+      fontSize: 25,
+      color: '#444444'
     },
     iconImg: {
       width: 25,
@@ -46,7 +46,7 @@ export default Radium(() => {
           alt="Hacklag logo"
           style={styles.headerLogoImg} />
       </div>
-      <div style={styles.headerIcons}>
+      <div>
         <IconButton
           tooltip="Hacklag Discourse"
           tooltipPosition="bottom-center"
