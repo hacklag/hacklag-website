@@ -29,12 +29,10 @@ export default Radium(() => {
       }
     },
     iconStyle: {
-      fontSize: 25,
       color: '#444444'
     },
     iconImg: {
-      width: 25,
-      height: 25
+      width: '100%',
     }
   };
 
@@ -70,7 +68,7 @@ export default Radium(() => {
         </IconButton>
         <IconButton
           tooltip="Hacklag GitHub"
-          tooltipPosition="bottom-center"
+          tooltipPosition="bottom-left"
           linkButton={true}
           iconClassName="icon-github"
           iconStyle={styles.iconStyle}
