@@ -74,7 +74,7 @@ export default Radium(() => {
     <div style={styles.componentBody}>
       <div style={styles.logoBox}>
         <img
-          src={"/img/hacklag_sketch.png"}
+          src={"/img/hackbat/hackbat_bialystok.png"}
           style={styles.hacklagLogo}
           alt="Hacklag logo" />
         <div>
