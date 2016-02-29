@@ -14,7 +14,12 @@ export default Radium(() => {
     header: {
       display: 'flex',
       justifyContent: 'space-around',
-      height: 50
+      height: 50,
+      alignItems: 'center',
+      '@media (max-width: 48em)': {
+        justifyContent: 'space-between',
+        paddingLeft: 24
+      }
     }
   };
 
