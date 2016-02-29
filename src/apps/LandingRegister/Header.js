@@ -32,7 +32,7 @@ export default Radium(() => {
       color: '#444444'
     },
     iconImg: {
-      width: '100%',
+      width: '100%'
     }
   };
 

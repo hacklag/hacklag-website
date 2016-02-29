@@ -1,9 +1,10 @@
 import React from 'react';
 import Radium from 'radium';
-import {RaisedButton} from 'material-ui';
+import {RaisedButton, FontIcon} from 'material-ui';
 import LeftBar from './LeftBar';
 import {Form} from 'formsy-react';
 import {FormsyText} from 'formsy-material-ui';
+import {ShareButtons} from 'react-share';
 
 export default Radium(React.createClass({
   displayName: 'LandingRegister',
@@ -59,6 +60,30 @@ export default Radium(React.createClass({
       },
       emailTextfield: {
         marginBottom: 24
+      },
+      confirmBody: {
+        width: 450,
+        fontSize: 19,
+        lineHeight: 1.1,
+        color: '#4a4a4a',
+        textAlign: 'justify'
+      },
+      confirmTwitterButtonStyle: {
+        width: 210,
+        marginRight: 30
+      },
+      confirmFacebookButtonStyle: {
+        width: 210
+      },
+      confirmButtonLabelStyle: {
+        fontWeight: 'bold'
+      },
+      confirmShareButtonStyle: {
+        display: 'inline'
+      },
+      confirmFooterStyle: {
+        margin: 'auto',
+        width: 230
       }
     };
   },
@@ -121,9 +146,61 @@ export default Radium(React.createClass({
   },
 
   contentSuccess() {
+    const {FacebookShareButton, TwitterShareButton} = ShareButtons;
+    const pageUrl = 'http://hacklag.org/';
+    const pageTitle = 'Hacklag';
+    const styles = this.getStyles();
+
     return (
-      <div>
-        Invitation was successfull!
+      <div style={styles.confirmBody}>
+        <div style={styles.headlineText}>
+          <strong>Thank you for signing up</strong>
+          <br/>
+          <br/>
+        </div>
+        <div>
+          Please check your inbox to find invitation for <strong>Chat</strong> and <strong>Forum</strong>.
+          In the meantime please help us spread the word and share some info on social media:
+          <br/>
+          <br/>
+          <br/>
+        </div>
+        <div>
+          <TwitterShareButton
+            title={pageTitle}
+            url={pageUrl}
+            style={styles.confirmShareButtonStyle}>
+            <RaisedButton
+              label="TWITTER"
+              labelPosition="after"
+              style={styles.confirmTwitterButtonStyle}
+              backgroundColor="#0693E3"
+              labelColor="white"
+              labelStyle={styles.confirmButtonLabelStyle}
+              icon={
+                <FontIcon className="icon-twitter"/>
+              } />
+          </TwitterShareButton>
+          <FacebookShareButton
+            title={pageTitle}
+            url={pageUrl}
+            style={styles.confirmShareButtonStyle}>
+            <RaisedButton
+              label="FACEBOOK"
+              labelPosition="after"
+              style={styles.confirmFacebookButtonStyle}
+              backgroundColor="#425CAE"
+              labelColor="white"
+              labelStyle={styles.confirmButtonLabelStyle}
+              icon={
+                <FontIcon className="icon-facebook-box"/>
+              } />
+          </FacebookShareButton>
+        </div>
+        <br/>
+        <div style={styles.confirmFooterStyle}>
+          Thank you for your help!
+        </div>
       </div>
     );
   },
