@@ -4,7 +4,7 @@ import Spacing from './Spacing';
 
 export default {
   spacing: Spacing,
-  contentFontFamily: 'Raleway, sans-serif !important',
+  contentFontFamily: 'Raleway, sans-serif',
   palette: {
     primary1Color: '#EC018C',
     primary2Color: Colors.cyan700,
