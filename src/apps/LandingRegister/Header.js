@@ -5,7 +5,7 @@ import {IconButton} from 'material-ui';
 export default Radium(() => {
   const styles = {
     header: {
-      marginTop: 21,
+      marginTop: 9,
       marginBottom: 71,
       width: '100%',
       display: 'flex',
