@@ -43,7 +43,6 @@ export default Radium(React.createClass({
         marginBottom: 24
       },
       buttonLabelStyle: {
-        fontFamily: 'Roboto',
         fontSize: 16
       },
       headerText: {

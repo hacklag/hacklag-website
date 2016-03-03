@@ -11,8 +11,7 @@ export default React.createClass({
     return {
       text: {
         color: '#2C93D1',
-        fontSize: '1.3em',
-        minWidth: 224
+        fontSize: '1.3em'
       }
     };
   },
