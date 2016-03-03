@@ -54,35 +54,40 @@ export default Radium(React.createClass({
         fontSize: 12,
         lineHeight: 1.8
       },
+      successHeadlineText: {
+        fontSize: 20,
+        fontWeight: 400
+      },
+      successText: {
+        fontSize: 18,
+        lineHeight: '21px',
+        marginBottom: 24
+      },
+      successBottomText: {
+        fontSize: 20,
+        lineHeight: '21px',
+        textAlign: 'center'
+      },
       mainTextContainer: {
         marginBottom: 10
       },
       emailTextfield: {
         marginBottom: 24
       },
-      confirmBody: {
-        width: 450,
-        fontSize: 19,
-        lineHeight: 1.1,
-        color: '#4a4a4a',
-        textAlign: 'justify'
+      socialButtons: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginBottom: 24
       },
-      confirmTwitterButtonStyle: {
-        width: 210,
-        marginRight: 30
+      shareButton: {
+        minWidth: 210,
+        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.26), 0 2px 10px rgba(0, 0, 0, 0.16)'
       },
-      confirmFacebookButtonStyle: {
-        width: 210
-      },
-      confirmButtonLabelStyle: {
-        fontWeight: 'bold'
-      },
-      confirmShareButtonStyle: {
-        display: 'inline'
-      },
-      confirmFooterStyle: {
-        margin: 'auto',
-        width: 230
+      labelShareButton: {
+        fontWeight: 400,
+        fontSize: 16,
+        lineHeight: '19px',
+        verticalAlign: 'text-bottom'
       }
     };
   },
@@ -151,33 +156,28 @@ export default Radium(React.createClass({
     const styles = this.getStyles();
 
     return (
-      <div style={styles.confirmBody}>
-        <div style={styles.headlineText}>
-          <strong>Thank you for signing up</strong>
+      <div style={styles.content}>
+        <div style={styles.successText}>
+          <span style={styles.successHeadlineText}>Thank you for signing up</span>
           <br/>
           <br/>
-        </div>
-        <div>
           Please check your inbox to find invitation for <strong>Chat</strong> and <strong>Forum</strong>.
           In the meantime please help us spread the word and share some info on social media:
           <br/>
           <br/>
-          <br/>
         </div>
-        <div>
+        <div style={styles.socialButtons}>
           <TwitterShareButton
             title={pageTitle}
-            url={pageUrl}
-            style={styles.confirmShareButtonStyle}>
+            url={pageUrl}>
             <RaisedButton
-              label="TWITTER"
-              labelPosition="after"
-              style={styles.confirmTwitterButtonStyle}
+              label="twitter"
+              labelStyle={styles.labelShareButton}
+              style={styles.shareButton}
               backgroundColor="#0693E3"
-              labelColor="white"
-              labelStyle={styles.confirmButtonLabelStyle}
+              labelColor='#FFFFFF'
               icon={
-                <FontIcon className="icon-twitter"/>
+                <FontIcon className="icon-twitter" style={styles.shareIcon}/>
               } />
           </TwitterShareButton>
           <FacebookShareButton
@@ -185,19 +185,17 @@ export default Radium(React.createClass({
             url={pageUrl}
             style={styles.confirmShareButtonStyle}>
             <RaisedButton
-              label="FACEBOOK"
-              labelPosition="after"
-              style={styles.confirmFacebookButtonStyle}
+              label="facebook"
+              labelStyle={styles.labelShareButton}
+              style={styles.shareButton}
               backgroundColor="#425CAE"
-              labelColor="white"
-              labelStyle={styles.confirmButtonLabelStyle}
+              labelColor='#FFFFFF'
               icon={
-                <FontIcon className="icon-facebook-box"/>
+                <FontIcon className="icon-facebook-box" style={styles.shareIcon} />
               } />
           </FacebookShareButton>
         </div>
-        <br/>
-        <div style={styles.confirmFooterStyle}>
+        <div style={styles.successBottomText}>
           Thank you for your help!
         </div>
       </div>
