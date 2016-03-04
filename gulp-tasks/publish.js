@@ -1,51 +1,33 @@
-var path       = require('path'),
-    ENV        = require('./_common')().ENV,
-    gulp       = require('gulp'),
-    awspublish = require('gulp-awspublish'),
-    cloudfront = require('gulp-cloudfront'),
-    through    = require('through2');
+var rsync = require('gulp-rsync'),
+  ENV = require('./_common')().ENV,
+  gulp = require('gulp'),
+  gutil = require('gulp-util');
 
 module.exports = function() {
-
-    var aws = {
-    region: process.env.AWS_REGION,
-    params: {Bucket: process.env.AWS_DEFAULT_BUCKET},
-    patternIndex: /^\/index-[a-f0-9]{10}\.html(\.gz)*$/gi
+  var ec2 = {
+    host: process.env.EC_HOSTNAME,
+    username: process.env.EC_USERNAME,
+    path: 'hacklag-dev'
   };
 
   if (ENV === 'production') {
-    aws.params.Bucket  = 'hacklag.org';
+    ec2.path = 'hacklag-prod';
   }
 
-  var src       = ['./dist/**/*', '!./dist/rev-manifest.json'],
-      publisher = awspublish.create(aws);
+  var src = ['./dist/**', '!./dist/rev-manifest.json'];
 
   return gulp.src(src)
-    .pipe(awspublish.gzip())
-    .pipe(through.obj(function(file, enc, cb) {
-      // Do nothing if no contents
-      if (file.isNull()) return cb();
-
-      // streams not supported
-      if (file.isStream()) {
-        this.emit('error',
-          new gutil.PluginError('publish', 'Stream content is not supported'));
-        return cb();
-      }
-
-      // check if file.contents is a `Buffer`
-      if (file.isBuffer()) {
-        file.s3.headers['Cache-Control'] = 'max-age=315360000, no-transform, public';
-
-        if (path.basename(file.path).indexOf('index-') === 0) {
-          file.s3.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
-        }
-        cb(null, file);
-      }
-    }))
-    .pipe(publisher.publish())
-    .pipe(awspublish.reporter());
-    //.pipe(cloudfront(aws));
+    .pipe(rsync({
+      root: 'dist',
+      username: ec2.username,
+      hostname: ec2.host,
+      destination: ec2.path,
+      recursive: true,
+      progress: true,
+      incremental: true
+    }, function(error, stdout, stderr, cmd) {
+      gutil.log(stdout);
+    }));
 };
 
 module.exports.dependencies = ['clean', 'build', 'revision-index'];
