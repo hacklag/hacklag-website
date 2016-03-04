@@ -27,7 +27,7 @@ render(
         <IndexRoute component={LandingRegister}/>
       </Route>
       <Route
-        path="/landing"
+        path="landing"
         component={LandingPage}>
         <IndexRoute component={LandingRegister}/>
         <Route
