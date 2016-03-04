@@ -70,7 +70,7 @@ export default Radium(React.createClass({
       <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
           <img
             style={styles.hacklagLogoDialog}
-            src={'/img/hackbat/hackbat_cloud.png'}
+            src={"/img/hackbat/hackbat_cloud.png"}
             alt="Hi! I`m Hackabat!" />
         </div>
         <img
