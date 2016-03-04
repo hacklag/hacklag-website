@@ -49,6 +49,7 @@ module.exports = {
       {test: /\.js(|x)$/, exclude: /node_modules/, loader: 'babel'},
       {test: /\.css$/, loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 2 version'},
       {test: /\.styl/, loader: 'style-loader!stylus-loader!autoprefixer-loader?browsers=last 2 version'},
+      {test: /\.png$/, loader: "url-loader?mimetype=image/png"},
       {
         test: /\.scss$/,
         loaders: ['style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[local]', 'sass?sourceMap'],
@@ -70,6 +71,7 @@ module.exports = {
   externals: {
     'analyticsjs': 'window.analytics',
     'hellojs': 'hello',
-    'stripejs': 'Stripe'
+    'stripejs': 'Stripe',
+    'fs': 'empty'
   }
 };

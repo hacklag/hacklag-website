@@ -229,7 +229,7 @@ export default Radium(React.createClass({
 
     return (
       <div style={styles.componentBody}>
-        <LeftBar/>
+        <LeftBar logo='hackbat_general.png' />
         <div style={styles.contentBar}>
           {this.renderContent()}
         </div>

@@ -4,6 +4,10 @@ import Radium from 'radium';
 export default Radium(React.createClass({
   displayName: 'LeftBar',
 
+  propTypes: {
+    logo: React.PropTypes.element.isRequired
+  },
+
   getInitialState() {
     return {
       textFieldValue: '',
@@ -59,18 +63,19 @@ export default Radium(React.createClass({
 
   render() {
     const styles = this.getStyles();
+    const img = require('../../assets/img/hackbat/' + this.props.logo);
 
     return (
       <div style={styles.logoBar}>
       <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
           <img
             style={styles.hacklagLogoDialog}
-            src={"/img/hackbat/hackbat_cloud.png"}
+            src={'/img/hackbat/hackbat_cloud.png'}
             alt="Hi! I`m Hackabat!" />
         </div>
         <img
           style={styles.hacklagLogo}
-          src={"/img/hackbat/hackbat_bialystok.png"}
+          src={img}
           onMouseOver={this.mouseOver}
           onMouseOut={this.mouseOut}
           alt="Hacklag logo" />
