@@ -9,6 +9,10 @@ import LandingRegister from '../apps/LandingRegister';
 export default Radium(React.createClass({
   displayName: 'LandingPage',
 
+  propTypes: {
+    children: React.PropTypes.element.isRequired
+  },
+
   childContextTypes: {
     muiTheme: React.PropTypes.object
   },
@@ -42,12 +46,13 @@ export default Radium(React.createClass({
 
   render() {
     const styles = this.getStyles();
+    const {children} = this.props;
 
     return (
       <div style={{height: '100%'}}>
         <div style={styles.mainDiv}>
           <LandingRegister.Header/>
-          <LandingRegister/>
+          {children}
         </div>
         <LandingRegister.Footer/>
       </div>

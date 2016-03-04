@@ -26,18 +26,29 @@ render(
       <Route component={LandingPage}>
         <IndexRoute component={LandingRegister}/>
       </Route>
+      <Route
+        path="/landing"
+        component={LandingPage}>
+        <IndexRoute component={LandingRegister}/>
+        <Route
+          path="bialystok"
+          component={LandingRegister.Bialystok} />
+         <Route
+          path="explorerhq"
+          component={LandingRegister.ExplorerHQ} />
+      </Route>
       <Route component={AppPage}>
         <Route
-          path="/home"
+          path="home"
           component={Home} />
         <Route
-          path="/about"
+          path="about"
           component={About} />
         <Route
-          path="/blog"
+          path="blog"
           component={Blog} />
         <Route
-          path="/events"
+          path="events"
           component={Events} />
       </Route>
     </Route>
