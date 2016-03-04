@@ -25,6 +25,10 @@ export default React.createClass({
     });
   },
 
+  componentDidMount() {
+    window.analytics.page();
+  },
+
   getStyles() {
     return {
       componentStyle: {

@@ -15,6 +15,10 @@ export default Radium(React.createClass({
     };
   },
 
+  componentDidMount() {
+    window.analytics.page();
+  },
+
   getStyles() {
     return {
       componentBody: {
