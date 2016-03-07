@@ -3,6 +3,7 @@ import Radium from 'radium';
 import {RaisedButton, FontIcon} from 'material-ui';
 import LeftBar from './LeftBar';
 import Declined from './LandingDeclined';
+import Success from './LandingSuccess';
 import {Form} from 'formsy-react';
 import {FormsyText} from 'formsy-material-ui';
 import {ShareButtons} from 'react-share';
@@ -59,40 +60,11 @@ export default Radium(React.createClass({
         fontSize: 12,
         lineHeight: 1.8
       },
-      successHeadlineText: {
-        fontSize: 20,
-        fontWeight: 400
-      },
-      successText: {
-        fontSize: 18,
-        lineHeight: '21px',
-        marginBottom: 24
-      },
-      successBottomText: {
-        fontSize: 20,
-        lineHeight: '21px',
-        textAlign: 'center'
-      },
       mainTextContainer: {
         marginBottom: 10
       },
       emailTextfield: {
         marginBottom: 24
-      },
-      socialButtons: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        marginBottom: 24
-      },
-      shareButton: {
-        minWidth: 210,
-        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.26), 0 2px 10px rgba(0, 0, 0, 0.16)'
-      },
-      labelShareButton: {
-        fontWeight: 400,
-        fontSize: 16,
-        lineHeight: '19px',
-        verticalAlign: 'text-bottom'
       }
     };
   },
@@ -155,64 +127,11 @@ export default Radium(React.createClass({
     );
   },
 
-  contentSuccess() {
-    const {FacebookShareButton, TwitterShareButton} = ShareButtons;
-    const pageUrl = 'http://hacklag.org/';
-    const pageTitle = 'Hacklag';
-    const styles = this.getStyles();
-
-    return (
-      <div style={styles.content}>
-        <div style={styles.successText}>
-          <span style={styles.successHeadlineText}>Thank you for signing up</span>
-          <br/>
-          <br/>
-          Please check your inbox to find invitation for <strong>Chat</strong> and <strong>Forum</strong>.
-          In the meantime please help us spread the word and share some info on social media:
-          <br/>
-          <br/>
-        </div>
-        <div style={styles.socialButtons}>
-          <TwitterShareButton
-            title={pageTitle}
-            url={pageUrl}>
-            <RaisedButton
-              label="twitter"
-              labelStyle={styles.labelShareButton}
-              style={styles.shareButton}
-              backgroundColor="#0693E3"
-              labelColor='#FFFFFF'
-              icon={
-                <FontIcon className="icon-twitter" style={styles.shareIcon}/>
-              } />
-          </TwitterShareButton>
-          <FacebookShareButton
-            title={pageTitle}
-            url={pageUrl}
-            style={styles.confirmShareButtonStyle}>
-            <RaisedButton
-              label="facebook"
-              labelStyle={styles.labelShareButton}
-              style={styles.shareButton}
-              backgroundColor="#425CAE"
-              labelColor='#FFFFFF'
-              icon={
-                <FontIcon className="icon-facebook-box" style={styles.shareIcon} />
-              } />
-          </FacebookShareButton>
-        </div>
-        <div style={styles.successBottomText}>
-          Thank you for your help!
-        </div>
-      </div>
-    );
-  },
-
   renderContent() {
     const {registerState} = this.state;
 
     if (registerState) {
-      return this.contentSuccess();
+      return <Success/>;
     }
 
     if (registerState === false) {
