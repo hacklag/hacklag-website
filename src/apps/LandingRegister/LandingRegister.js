@@ -70,11 +70,9 @@ export default Radium(React.createClass({
             entrepreneurs and everyone interested <strong>in new technologies</strong>
             <br/>
             <br/>
-            We are also hope to start first <strong>Hackerspace</strong> in <strong>Białystok</strong>
           </div>
-          We are <strong>working hard</strong> to make it real. To be part of this initiative
-          or just to be <strong>up to date</strong> with the progress please type in your email
-          and we will send you an invitation to our <strong>Forum</strong> and <strong>Chat</strong>.
+          Please <strong>sign up </strong>and we will send you an invitation to
+           our <strong>Forum</strong> and <strong>Chat</strong>.
           <br/>
           <br/>
           Demonstrating size and <strong>engagement</strong> of the <strong>community</strong> is
@@ -82,11 +80,6 @@ export default Radium(React.createClass({
           <strong>please sign up!</strong>
         </div>
         <LandingForm onFormSubmit={this.onFormSubmit} />
-        <div style={styles.smallText}>
-          On our forum, you can find information for <strong>members, volunteers, partners,
-          sponsors</strong>. We are sharing there information about the potential property and the
-          whole process of adopting place for <strong>Hacklag</strong>.
-        </div>
       </div>
     );
   },

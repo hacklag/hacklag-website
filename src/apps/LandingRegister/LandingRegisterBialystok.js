@@ -66,7 +66,6 @@ export default Radium(React.createClass({
       <div style={styles.content}>
         <div style={styles.mainTextContainer}>
           <div style={styles.headerText}>
-            Białystok
             <strong>Hacklag</strong> is a <strong>community</strong> aiming to connect developers, designers,
             entrepreneurs and everyone interested <strong>in new technologies</strong>
             <br/>
