@@ -30,9 +30,11 @@ export default Radium(() => {
         <HackbatBar logo="hackbat_lord.png" />
         <div style={styles.contentBar}>
           <div style={styles.content}>
-            I’m HackBat!
+            <span>I’m HackBat!</span>
+            <br/>
             Lord of the Hacklag
-
+            <br/>
+            <br/>
             I was born in the darkness. During the day I’m guarding Hacklag and helping it’s members.
             During the night I’m usually coding or playing board games.
             I’m always availabe on Slack and reading every post on Hacklag Forum.

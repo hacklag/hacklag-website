@@ -20,7 +20,6 @@ export default Radium(React.createClass({
       logoBar: {
         display: 'flex',
         flexDirection: 'column',
-        maxWidth: 200,
         '@media (max-width: 750px)': {
           display: 'none'
         }
@@ -31,10 +30,8 @@ export default Radium(React.createClass({
       },
       hacklagLogoDialog: {
         position: 'relative',
-        left: -74,
-        top: -53,
-        width: 119,
-        height: 77
+        left: -94,
+        top: -27.5
       },
       hacklagLogoDivHidden: {
         width: 0,
@@ -58,7 +55,7 @@ export default Radium(React.createClass({
   },
 
   mouseOut() {
-    this.setState({hover: false});
+    this.setState({hover: true});
   },
 
   render() {
@@ -70,7 +67,7 @@ export default Radium(React.createClass({
       <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
           <img
             style={styles.hacklagLogoDialog}
-            src={"/img/hackbat/hackbat_cloud.png"}
+            src={"/img/hackbat/hackbat_cloud_big.png"}
             alt="Hi! I`m Hackabat!" />
         </div>
         <img

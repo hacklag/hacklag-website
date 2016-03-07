@@ -11,6 +11,7 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import AppPage from './pages/app';
 import LandingPage from './pages/landingpage';
 import NotFoundPage from './pages/notfound';
+import HackbatPage from './pages/hackbat';
 
 // Page components
 import LandingRegister from './apps/LandingRegister';
@@ -30,7 +31,7 @@ render(
       </Route>
       <Route
         path="hackbat"
-        component={LandingPage}>
+        component={HackbatPage}>
         <IndexRoute component={Hackbat}/>
       </Route>
       <Route
