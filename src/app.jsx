@@ -1,6 +1,7 @@
 import 'babel-core/polyfill';
 import 'normalize.css';
 import './app.sass';
+import './segment';
 
 import React from 'react';
 import {render} from 'react-dom';

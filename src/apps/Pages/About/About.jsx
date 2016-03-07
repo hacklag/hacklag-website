@@ -8,6 +8,10 @@ export default React.createClass({
     children: React.PropTypes.element.isRequired
   },
 
+  componentDidMount() {
+    window.analytics.page();
+  },
+
   render() {
     return (
       <div>
