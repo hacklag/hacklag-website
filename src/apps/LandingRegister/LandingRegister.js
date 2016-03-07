@@ -1,20 +1,14 @@
 import React from 'react';
 import Radium from 'radium';
-import {RaisedButton, FontIcon} from 'material-ui';
 import LeftBar from './LeftBar';
 import Declined from './LandingDeclined';
 import Success from './LandingSuccess';
-import {Form} from 'formsy-react';
-import {FormsyText} from 'formsy-material-ui';
-
+import LandingForm from './LandingForm';
 
 export default Radium(React.createClass({
-  displayName: 'LandingRegister',
-
   getInitialState() {
     return {
-      registerState: null,
-      canSubmit: false
+      registerState: null
     };
   },
 
@@ -43,13 +37,6 @@ export default Radium(React.createClass({
         textAlign: 'justify',
         fontSize: 16
       },
-      inviteButton: {
-        width: 190,
-        marginBottom: 24
-      },
-      buttonLabelStyle: {
-        fontSize: 16
-      },
       headerText: {
         fontSize: 22,
         lineHeight: 1.1,
@@ -68,9 +55,8 @@ export default Radium(React.createClass({
     };
   },
 
-  submitForm(model) {
-    console.debug('Model: ', model);
-    this.setState({registerState: true});
+  onFormSubmit(props) {
+    this.setState({registerState: props});
   },
 
   contentForm() {
@@ -95,27 +81,7 @@ export default Radium(React.createClass({
           <strong> extremely</strong> important to gather founds and start operating -
           <strong>please sign up!</strong>
         </div>
-          <Form
-            ref="form"
-            onValid={() => this.setState({canSubmit: true})}
-            onInvalid={() => this.setState({canSubmit: false})}
-            onValidSubmit={this.submitForm}
-            noValidate>
-            <FormsyText
-              name="email"
-              validations="isEmail"
-              validationError="You have to type valid email"
-              floatingLabelText="Your Email"
-              required={true}
-              fullWidth={true} />
-            <RaisedButton
-              style={styles.inviteButton}
-              labelStyle={styles.buttonLabelStyle}
-              primary={true}
-              label="Cool, let me in!"
-              onClick={() => this.refs.form.validateForm()}
-              type="submit" />
-          </Form>
+        <LandingForm onFormSubmit={this.onFormSubmit} />
         <div style={styles.smallText}>
           On our forum, you can find information for <strong>members, volunteers, partners,
           sponsors</strong>. We are sharing there information about the potential property and the
@@ -144,7 +110,7 @@ export default Radium(React.createClass({
 
     return (
       <div style={styles.componentBody}>
-        <LeftBar logo='hackbat_general.png' />
+        <LeftBar logo="hackbat_general.png" />
         <div style={styles.contentBar}>
           {this.renderContent()}
         </div>
