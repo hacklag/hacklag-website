@@ -55,7 +55,7 @@ export default Radium(React.createClass({
     };
   },
 
-  onChildChange(props) {
+  onFormSubmit(props) {
     this.setState({registerState: props});
   },
 
@@ -82,7 +82,7 @@ export default Radium(React.createClass({
           <strong> extremely</strong> important to gather founds and start operating -
           <strong>please sign up!</strong>
         </div>
-        <LandingForm onChildChange={this.onChildChange} />
+        <LandingForm onFormSubmit={this.onFormSubmit} />
         <div style={styles.smallText}>
           On our forum, you can find information for <strong>members, volunteers, partners,
           sponsors</strong>. We are sharing there information about the potential property and the
