@@ -14,6 +14,7 @@ import NotFoundPage from './pages/notfound';
 
 // Page components
 import LandingRegister from './apps/LandingRegister';
+import Hackbat from './apps/Hackbat';
 import {
   Home,
   About,
@@ -27,9 +28,10 @@ render(
       <Route component={LandingPage}>
         <IndexRoute component={LandingRegister}/>
       </Route>
-      <Route path="hackbat">
-      <Route component={LandingPage}>
-        <IndexRoute component={LandingRegister.Hackbat}/>
+      <Route
+        path="hackbat"
+        component={LandingPage}>
+        <IndexRoute component={Hackbat}/>
       </Route>
       <Route
         path="landing"
