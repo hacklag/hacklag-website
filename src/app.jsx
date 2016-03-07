@@ -27,6 +27,10 @@ render(
       <Route component={LandingPage}>
         <IndexRoute component={LandingRegister}/>
       </Route>
+      <Route path="hackbat">
+      <Route component={LandingPage}>
+        <IndexRoute component={LandingRegister.Hackbat}/>
+      </Route>
       <Route
         path="landing"
         component={LandingPage}>
