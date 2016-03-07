@@ -3,6 +3,7 @@ import Radium from 'radium';
 import {Form} from 'formsy-react';
 import {FormsyText} from 'formsy-material-ui';
 import {RaisedButton} from 'material-ui';
+import Syncano from 'syncano';
 
 export default Radium(React.createClass({
   propTypes: {
@@ -28,8 +29,19 @@ export default Radium(React.createClass({
   },
 
   submitForm(model) {
-    console.debug('Model: ', model.email);
-    this.props.onChildChange(true);
+    const {Webhook} = Syncano({accountKey: SYNCANO_API_KEY});
+    const COMMUNITY_REGISTER_WEBHOOK = '95f37de28a7f95f07b2128677e97d116fcf8813b';
+    const payload = JSON.stringify({email: model.email});
+
+    Webhook.please().runPublic({
+      instanceName: SYNCANO_INSTANCE_NAME,
+      public_link: COMMUNITY_REGISTER_WEBHOOK},
+      {payload}
+    ).then((trace) => {
+      const data = JSON.parse(trace.result.stdout);
+
+      this.props.onChildChange(data.status);
+    });
   },
 
   render() {
