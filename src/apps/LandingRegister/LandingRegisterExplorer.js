@@ -2,6 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import {RaisedButton, FontIcon} from 'material-ui';
 import LeftBar from './LeftBar';
+import Declined from './LandingDeclined';
 import {Form} from 'formsy-react';
 import {FormsyText} from 'formsy-material-ui';
 import {ShareButtons} from 'react-share';
@@ -71,10 +72,6 @@ export default Radium(React.createClass({
         fontSize: 20,
         lineHeight: '21px',
         textAlign: 'center'
-      },
-      declineText: {
-        fontSize: 21,
-        fontWeight: 400
       },
       mainTextContainer: {
         marginBottom: 10
@@ -211,19 +208,6 @@ export default Radium(React.createClass({
     );
   },
 
-  contentFailure() {
-    const styles = this.getStyles();
-
-    return (
-      <div style={styles.content}>
-        Something went wrong...
-        <br/>
-        <br/>
-        <span style={styles.declineText}>We will contact you shortly.</span>
-      </div>
-    );
-  },
-
   renderContent() {
     const {registerState} = this.state;
 
@@ -232,7 +216,7 @@ export default Radium(React.createClass({
     }
 
     if (registerState === false) {
-      return this.contentFailure();
+      return <Declined/>;
     }
 
     return this.contentForm();
