@@ -72,6 +72,10 @@ export default Radium(React.createClass({
         lineHeight: '21px',
         textAlign: 'center'
       },
+      declineText: {
+        fontSize: 21,
+        fontWeight: 400
+      },
       mainTextContainer: {
         marginBottom: 10
       },
@@ -208,9 +212,14 @@ export default Radium(React.createClass({
   },
 
   contentFailure() {
+    const styles = this.getStyles();
+
     return (
-      <div>
-        Invitation was declined! Contact support!
+      <div style={styles.content}>
+        Something went wrong...
+        <br/>
+        <br/>
+        <span style={styles.declineText}>We will contact you shortly.</span>
       </div>
     );
   },
