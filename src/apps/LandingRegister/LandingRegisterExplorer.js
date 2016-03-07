@@ -38,7 +38,6 @@ export default Radium(React.createClass({
       },
       content: {
         maxWidth: 450,
-        fontFamily: 'Raleway',
         fontWeight: 300,
         lineHeight: 1.6,
         textAlign: 'justify',

@@ -5,7 +5,6 @@ export default Radium(() => {
   const styles = {
     content: {
       maxWidth: 450,
-      fontFamily: 'Raleway',
       fontWeight: 300,
       lineHeight: 1.6,
       textAlign: 'justify',
