@@ -7,7 +7,7 @@ import Syncano from 'syncano';
 
 export default Radium(React.createClass({
   propTypes: {
-    onChildChange: React.PropTypes.element.isRequired
+    onFormSubmit: React.PropTypes.element.isRequired
   },
 
   getInitialState() {
@@ -40,7 +40,7 @@ export default Radium(React.createClass({
     ).then((trace) => {
       const data = JSON.parse(trace.result.stdout);
 
-      this.props.onChildChange(data.status);
+      this.props.onFormSubmit(data.status);
     });
   },
 
