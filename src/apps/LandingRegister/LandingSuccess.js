@@ -6,7 +6,6 @@ import {ShareButtons} from 'react-share';
 export default Radium(() => {
   const {FacebookShareButton, TwitterShareButton} = ShareButtons;
   const pageUrl = 'http://hacklag.ninja';
-  const pageTitle = 'Hacklag';
   const styles = {
     content: {
       maxWidth: 450,
@@ -59,7 +58,8 @@ export default Radium(() => {
         </div>
         <div style={styles.socialButtons}>
           <TwitterShareButton
-            title={pageTitle}
+            title="If you have your drawer full of undone tech ideas or
+              just want to share knowledge with others, join Hacklag at"
             url={pageUrl}>
             <RaisedButton
               label="twitter"
@@ -72,7 +72,7 @@ export default Radium(() => {
               } />
           </TwitterShareButton>
           <FacebookShareButton
-            title={pageTitle}
+            title="Hacklag"
             url={pageUrl}>
             <RaisedButton
               label="facebook"
