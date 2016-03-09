@@ -28,11 +28,14 @@ export default Radium(() => {
         width: 120
       }
     },
-    iconStyle: {
+    githubStyle: {
       color: '#444444'
     },
     iconImg: {
       width: '100%'
+    },
+    facebookStyle: {
+      color: '#4965b6'
     }
   };
 
@@ -46,10 +49,16 @@ export default Radium(() => {
       </div>
       <div>
         <IconButton
+          tooltip="Hacklag Facebook"
+          tooltipPosition="bottom-center"
+          linkButton={true}
+          iconClassName="icon-facebook-box"
+          iconStyle={styles.facebookStyle}
+          href="https://www.facebook.com/Hacklag-1536319733349471/" />
+        <IconButton
           tooltip="Hacklag Discourse"
           tooltipPosition="bottom-center"
           linkButton={true}
-          style={styles.buttonStyle}
           href="https://forum.hacklag.org/"
           iconStyle={styles.iconImg}>
           <img
@@ -71,7 +80,7 @@ export default Radium(() => {
           tooltipPosition="bottom-left"
           linkButton={true}
           iconClassName="icon-github"
-          iconStyle={styles.iconStyle}
+          iconStyle={styles.githubStyle}
           href="https://github.com/hacklag/" />
       </div>
     </div>
