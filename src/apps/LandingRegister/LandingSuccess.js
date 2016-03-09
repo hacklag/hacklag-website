@@ -5,7 +5,7 @@ import {ShareButtons} from 'react-share';
 
 export default Radium(() => {
   const {FacebookShareButton, TwitterShareButton} = ShareButtons;
-  const pageUrl = 'http://hacklag.org/';
+  const pageUrl = 'http://hacklag.ninja';
   const pageTitle = 'Hacklag';
   const styles = {
     content: {
