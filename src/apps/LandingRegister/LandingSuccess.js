@@ -68,8 +68,8 @@ export default Radium(() => {
         <div style={styles.socialButtons}>
           <div style={styles.button}>
             <TwitterShareButton
-              title="If you have your drawer full of undone tech ideas or
-                just want to share knowledge with others, join Hacklag at"
+              title={`If you have your drawer full of undone tech ideas or
+                just want to share knowledge with others, join Hacklag at`}
               url={pageUrl}>
               <RaisedButton
                 label="twitter"
@@ -78,7 +78,9 @@ export default Radium(() => {
                 backgroundColor="#0693E3"
                 labelColor="#FFFFFF"
                 icon={
-                  <FontIcon className="icon-twitter" style={styles.shareIcon}/>
+                  <FontIcon
+                    className="icon-twitter"
+                    style={styles.shareIcon} />
                 } />
             </TwitterShareButton>
           </div>
@@ -93,7 +95,9 @@ export default Radium(() => {
               backgroundColor="#425CAE"
               labelColor="#FFFFFF"
               icon={
-                <FontIcon className="icon-facebook-box" style={styles.shareIcon} />
+                <FontIcon
+                  className="icon-facebook-box"
+                  style={styles.shareIcon} />
               } />
           </FacebookShareButton>
         </div>

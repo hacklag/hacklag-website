@@ -41,7 +41,7 @@ export default Radium(() => {
         href="https://forum.hacklag.org/"
         iconStyle={styles.iconImg}>
         <img
-          src={"/img/icons/discourse.png"}
+          src={require('../../assets/img/icons/discourse.png')}
           alt="Discourse logo" />
       </IconButton>
       <IconButton
@@ -51,7 +51,7 @@ export default Radium(() => {
         href="https://hacklag.slack.com/"
         iconStyle={styles.iconImg}>
         <img
-          src={"/img/icons/slack.png"}
+          src={require('../../assets/img/icons/slack.png')}
           alt="Slack logo" />
       </IconButton>
       <IconButton
