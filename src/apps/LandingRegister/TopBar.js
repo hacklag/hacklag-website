@@ -2,7 +2,6 @@ import React from 'react';
 import Radium from 'radium';
 
 export default Radium(React.createClass({
-  displayName: 'LeftBar',
 
   propTypes: {
     logo: React.PropTypes.element.isRequired
@@ -10,19 +9,17 @@ export default Radium(React.createClass({
 
   getInitialState() {
     return {
-      textFieldValue: '',
-      hover: false
+      touch: false
     };
   },
 
   getStyles() {
     return {
       logoBar: {
-        display: 'flex',
-        flexDirection: 'column',
-        maxWidth: 200,
+        display: 'none',
         '@media (max-width: 750px)': {
-          display: 'none'
+          display: 'flex',
+          flexDirection: 'column'
         }
       },
       hacklagLogo: {
@@ -30,35 +27,34 @@ export default Radium(React.createClass({
         marginLeft: 'auto'
       },
       hacklagLogoDialog: {
+        width: 78,
         position: 'relative',
-        left: -74,
-        top: -53,
-        width: 119,
-        height: 77
+        right: 128
       },
       hacklagLogoDivHidden: {
         width: 0,
         height: 0,
         visibility: 'hidden',
         opacity: 0,
-        transition: 'visibility 2s, opacity 2s linear'
+        margin: '0 auto 27px auto'
       },
       hacklagLogoDivVisible: {
         width: 0,
         height: 0,
         visibility: 'visible',
         opacity: 1,
-        transition: 'visibility 0.5s, opacity 1s linear'
+        transition: 'visibility 0.5s, opacity 1s linear',
+        margin: '0 auto 27px auto'
       }
     };
   },
 
   mouseOver() {
-    this.setState({hover: true});
+    this.setState({touch: true});
   },
 
   mouseOut() {
-    this.setState({hover: false});
+    this.setState({touch: false});
   },
 
   render() {
@@ -68,14 +64,14 @@ export default Radium(React.createClass({
     return (
       <div
         style={styles.logoBar}
-        onTouchStart={() => this.setState({hover: true})}>
-      <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
+        onTouchStart={() => this.setState({touch: true})}>
+        <div style={this.state.touch ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
           <img
             style={styles.hacklagLogoDialog}
             src={"/img/hackbat/hackbat_cloud.png"}
             alt="Hi! I`m Hackabat!" />
         </div>
-        <img
+          <img
           style={styles.hacklagLogo}
           src={img}
           onMouseOver={this.mouseOver}
