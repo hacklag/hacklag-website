@@ -38,24 +38,27 @@ export default Radium(React.createClass({
       content: {
         maxWidth: 450,
         fontWeight: 300,
-        lineHeight: 1.6,
+        lineHeight: '25px',
         textAlign: 'justify',
         fontSize: 16
       },
       headerText: {
         fontSize: 22,
-        lineHeight: 1.1,
+        lineHeight: '25px',
         marginBottom: 24
       },
       smallText: {
         fontSize: 12,
-        lineHeight: 1.8
+        lineHeight: '21px'
       },
       mainTextContainer: {
         marginBottom: 10
       },
       emailTextfield: {
         marginBottom: 24
+      },
+      semiBold: {
+        fontWeight: 500
       }
     };
   },
@@ -71,26 +74,34 @@ export default Radium(React.createClass({
       <div style={styles.content}>
         <div style={styles.mainTextContainer}>
           <div style={styles.headerText}>
-            <strong>Hacklag</strong> is a <strong>community</strong> aiming to connect developers, designers,
-            entrepreneurs and everyone interested <strong>in new technologies</strong>
+            <span style={styles.semiBold}>Hacklag</span> is an
+            <span style={styles.semiBold}> international community </span>
+             aiming to connect developers, designers, entrepreneurs
+             and everyone interested in <span style={styles.semiBold}>new technologies</span>.
             <br/>
             <br/>
-            We are also hope to start first <strong>Hackerspace</strong> in <strong>Białystok</strong>
+            We are also hope to start first <span style={styles.semiBold}>Hackerspace </span>
+            in <span style={styles.semiBold}>Białystok</span>
           </div>
-          We are <strong>working hard</strong> to make it real. To be part of this initiative
-          or just to be <strong>up to date</strong> with the progress please type in your email
-          and we will send you an invitation to our <strong>Forum</strong> and <strong>Chat</strong>.
+          We <span style={styles.semiBold}>working hard</span> to make it real. To be part of this
+          <span style={styles.semiBold}> initiative </span>
+          or just to be <span style={styles.semiBold}>up to date</span> with the progress, please type in your email
+          and we will send you an invitation to our
+          <span style={styles.semiBold}> Forum</span> and <span style={styles.semiBold}>Chat</span>.
           <br/>
           <br/>
-          Demonstrating size and <strong>engagement</strong> of the <strong>community</strong> is
-          <strong> extremely</strong> important to gather founds and start operating -
-          <strong>please sign up!</strong>
+          Demonstrating size and <span style={styles.semiBold}>engagement </span>
+          of the <span style={styles.semiBold}>community</span> is
+          <span style={styles.semiBold}> extremely</span> important to gather funds and start
+          operating -<span style={styles.semiBold}> please sign up!</span>
         </div>
         <LandingForm onFormSubmit={this.onFormSubmit} />
         <div style={styles.smallText}>
-          On our forum, you can find information for <strong>members, volunteers, partners,
-          sponsors</strong>. We are sharing there information about the potential property and the
-          whole process of adopting place for <strong>Hacklag</strong>.
+          On our forum you can find information
+          about <span style={styles.semiBold}>members, volunteers, partners </span>and
+          <span style={styles.semiBold}> sponsors.</span>
+          We are sharing there information about potential
+          property and the whole process of adopting place for <span style={styles.semiBold}>Hacklag</span>.
         </div>
       </div>
     );

@@ -38,18 +38,18 @@ export default Radium(React.createClass({
       content: {
         maxWidth: 450,
         fontWeight: 300,
-        lineHeight: 1.6,
+        lineHeight: '25px',
         textAlign: 'justify',
         fontSize: 16
       },
       headerText: {
         fontSize: 22,
-        lineHeight: 1.1,
+        lineHeight: '25px',
         marginBottom: 24
       },
       smallText: {
         fontSize: 12,
-        lineHeight: 1.8
+        lineHeight: '21px'
       },
       mainTextContainer: {
         marginBottom: 10
@@ -59,7 +59,11 @@ export default Radium(React.createClass({
       },
       explorersClubInv: {
         fontSize: 20,
-        lineHeight: '25px'
+        lineHeight: '25px',
+        marginBottom: 24
+      },
+      semiBold: {
+        fontWeight: 500
       }
     };
   },
@@ -75,18 +79,18 @@ export default Radium(React.createClass({
       <div style={styles.content}>
         <div style={styles.mainTextContainer}>
           <div style={styles.headerText}>
-            <strong>Hacklag</strong> is a <strong>community</strong> aiming to connect developers, designers,
-            entrepreneurs and everyone interested <strong>in new technologies</strong>
-            <br/>
-            <br/>
+            <span style={styles.semiBold}>Hacklag</span> is an
+            <span style={styles.semiBold}> international community </span>
+             aiming to connect developers, designers, entrepreneurs
+             and everyone interested in <span style={styles.semiBold}>new technologies</span>.
           </div>
           <div style={styles.explorersClubInv}>
-            We are happy to invite Explorers Club to join forces and be a part of Hacklag!
-            <br/>
-            <br/>
+            We are happy to invite <span style={styles.semiBold}>Explorers Club </span>
+            to <span style={styles.semiBold}>join forces</span> and be a part of
+            <span style={styles.semiBold}> Hacklag!</span>
           </div>
-          Please <strong>sign up </strong>and we will send you an invitation to
-           our <strong>Forum</strong> and <strong>Chat</strong>.
+          Please <span style={styles.semiBold}>sign up </span>and we will send you an invitation to
+           our <span style={styles.semiBold}>Forum</span> and <span style={styles.semiBold}>Chat</span>.
         </div>
         <LandingForm onFormSubmit={this.onFormSubmit} />
       </div>

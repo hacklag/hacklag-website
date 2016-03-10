@@ -20,7 +20,8 @@ export default Radium(React.createClass({
   getStyles() {
     return {
       inviteButton: {
-        width: 190
+        width: 210,
+        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.26), 0 2px 10px rgba(0, 0, 0, 0.16)'
       },
       buttonLabelStyle: {
         fontSize: 16
@@ -85,7 +86,7 @@ export default Radium(React.createClass({
             style={styles.inviteButton}
             labelStyle={styles.buttonLabelStyle}
             primary={true}
-            label="Cool, let me in!"
+            label="I want to join!"
             onClick={() => this.refs.form.validateForm()}
             type="submit" />
           <CircularProgress

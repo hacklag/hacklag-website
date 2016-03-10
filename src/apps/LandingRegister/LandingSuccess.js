@@ -57,7 +57,7 @@ export default Radium(() => {
   return (
       <div style={styles.content}>
         <div style={styles.successText}>
-          <span style={styles.successHeadlineText}>Thank you for signing up</span>
+          <span style={styles.successHeadlineText}>Thank you for signing up!</span>
           <br/>
           <br/>
           Please check your inbox to find invitation for <strong>Chat</strong> and <strong>Forum</strong>.

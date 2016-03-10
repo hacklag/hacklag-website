@@ -5,25 +5,19 @@ export default Radium(() => {
   const styles = {
     content: {
       maxWidth: 450,
-      fontWeight: 300,
+      fontWeight: 400,
       lineHeight: 1.6,
       textAlign: 'justify',
-      fontSize: 16
-    },
-    supportText: {
-      fontSize: 21,
-      fontWeight: 400
+      fontSize: 20,
+      color: 'red'
     }
   };
 
   return (
       <div style={styles.content}>
-        Something went wrong...
-        <br/>
-        <br/>
-        <span style={styles.supportText}>
-          We will contact you shortly.
-        </span>
+        Something went wrong.
+        <br />
+        We will contact you shortly.
       </div>
     );
 });
