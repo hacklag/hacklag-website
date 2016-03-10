@@ -7,7 +7,10 @@ export default Radium(() => {
       display: 'flex',
       justifyContent: 'center',
       height: 40,
-      alignItems: 'center'
+      alignItems: 'center',
+      color: '#4a4a4a',
+      fontSize: 12,
+      lineHeight: '14px'
     }
   };
 
