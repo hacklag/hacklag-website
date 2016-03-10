@@ -26,7 +26,11 @@ export default Radium(() => {
     socialButtons: {
       display: 'flex',
       justifyContent: 'space-between',
-      marginBottom: 24
+      marginBottom: 24,
+      '@media (max-width: 750px)': {
+        flexDirection: 'column',
+        alignItems: 'center'
+      }
     },
     shareButton: {
       minWidth: 210,
@@ -42,6 +46,11 @@ export default Radium(() => {
       fontSize: 20,
       lineHeight: '21px',
       textAlign: 'center'
+    },
+    button: {
+      '@media (max-width: 750px)': {
+        marginBottom: 16
+      }
     }
   };
 
@@ -57,21 +66,26 @@ export default Radium(() => {
           <br/>
         </div>
         <div style={styles.socialButtons}>
-          <TwitterShareButton
-            title="If you have your drawer full of undone tech ideas or
-              just want to share knowledge with others, join Hacklag at"
-            url={pageUrl}>
-            <RaisedButton
-              label="twitter"
-              labelStyle={styles.labelShareButton}
-              style={styles.shareButton}
-              backgroundColor="#0693E3"
-              labelColor="#FFFFFF"
-              icon={
-                <FontIcon className="icon-twitter" style={styles.shareIcon}/>
-              } />
-          </TwitterShareButton>
+          <div style={styles.button}>
+            <TwitterShareButton
+              title={`If you have your drawer full of undone tech ideas or
+                just want to share knowledge with others, join Hacklag at`}
+              url={pageUrl}>
+              <RaisedButton
+                label="twitter"
+                labelStyle={styles.labelShareButton}
+                style={styles.shareButton}
+                backgroundColor="#0693E3"
+                labelColor="#FFFFFF"
+                icon={
+                  <FontIcon
+                    className="icon-twitter"
+                    style={styles.shareIcon} />
+                } />
+            </TwitterShareButton>
+          </div>
           <FacebookShareButton
+            style={styles.button}
             title="Hacklag"
             url={pageUrl}>
             <RaisedButton
@@ -81,7 +95,9 @@ export default Radium(() => {
               backgroundColor="#425CAE"
               labelColor="#FFFFFF"
               icon={
-                <FontIcon className="icon-facebook-box" style={styles.shareIcon} />
+                <FontIcon
+                  className="icon-facebook-box"
+                  style={styles.shareIcon} />
               } />
           </FacebookShareButton>
         </div>

@@ -11,21 +11,7 @@ export default Radium(() => {
       display: 'flex',
       justifyContent: 'flex-end',
       '@media (max-width: 750px)': {
-        justifyContent: 'space-between',
-        marginBottom: 40
-      }
-    },
-    headerLogo: {
-      display: 'none',
-      '@media (max-width: 750px)': {
-        display: 'block',
-        paddingLeft: 16
-      }
-    },
-    headerLogoImg: {
-      width: 175,
-      '@media (max-width: 350px)': {
-        width: 120
+        marginBottom: 0
       }
     },
     githubStyle: {
@@ -41,48 +27,40 @@ export default Radium(() => {
 
   return (
     <div style={styles.header}>
-      <div style={styles.headerLogo}>
+      <IconButton
+        tooltip="Hacklag Facebook"
+        tooltipPosition="bottom-center"
+        linkButton={true}
+        iconClassName="icon-facebook-box"
+        iconStyle={styles.facebookStyle}
+        href="https://www.facebook.com/Hacklag-1536319733349471/" />
+      <IconButton
+        tooltip="Hacklag Discourse"
+        tooltipPosition="bottom-center"
+        linkButton={true}
+        href="https://forum.hacklag.org/"
+        iconStyle={styles.iconImg}>
         <img
-          src={"/img/hackbat/hackabt_square_bialystok.png"}
-          alt="Hacklag logo"
-          style={styles.headerLogoImg} />
-      </div>
-      <div>
-        <IconButton
-          tooltip="Hacklag Facebook"
-          tooltipPosition="bottom-center"
-          linkButton={true}
-          iconClassName="icon-facebook-box"
-          iconStyle={styles.facebookStyle}
-          href="https://www.facebook.com/Hacklag-1536319733349471/" />
-        <IconButton
-          tooltip="Hacklag Discourse"
-          tooltipPosition="bottom-center"
-          linkButton={true}
-          href="https://forum.hacklag.org/"
-          iconStyle={styles.iconImg}>
-          <img
-            src={"/img/icons/discourse.png"}
-            alt="Discourse logo" />
-        </IconButton>
-        <IconButton
-          tooltip="Hacklag Slack"
-          tooltipPosition="bottom-center"
-          linkButton={true}
-          href="https://hacklag.slack.com/"
-          iconStyle={styles.iconImg}>
-          <img
-            src={"/img/icons/slack.png"}
-            alt="Slack logo" />
-        </IconButton>
-        <IconButton
-          tooltip="Hacklag GitHub"
-          tooltipPosition="bottom-left"
-          linkButton={true}
-          iconClassName="icon-github"
-          iconStyle={styles.githubStyle}
-          href="https://github.com/hacklag/" />
-      </div>
+          src={require('../../assets/img/icons/discourse.png')}
+          alt="Discourse logo" />
+      </IconButton>
+      <IconButton
+        tooltip="Hacklag Slack"
+        tooltipPosition="bottom-center"
+        linkButton={true}
+        href="https://hacklag.slack.com/"
+        iconStyle={styles.iconImg}>
+        <img
+          src={require('../../assets/img/icons/slack.png')}
+          alt="Slack logo" />
+      </IconButton>
+      <IconButton
+        tooltip="Hacklag GitHub"
+        tooltipPosition="bottom-left"
+        linkButton={true}
+        iconClassName="icon-github"
+        iconStyle={styles.githubStyle}
+        href="https://github.com/hacklag/" />
     </div>
   );
 });
