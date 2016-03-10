@@ -10,7 +10,7 @@ export default Radium(React.createClass({
 
   getInitialState() {
     return {
-      touch: false
+      touched: false
     };
   },
 
@@ -26,19 +26,20 @@ export default Radium(React.createClass({
         display: 'none',
         '@media (max-width: 750px)': {
           display: 'flex',
-          flexDirection: 'column'
+          flexDirection: 'column',
+          marginBottom: 24
         }
       },
       hacklagLogo: {
         marginRight: 'auto',
         marginLeft: 'auto'
       },
-      hacklagLogoDialog: {
+      logoDialog: {
         width: 78,
         position: 'relative',
         right: 128
       },
-      hacklagLogoDivHidden: {
+      logoDivHidden: {
         width: 0,
         height: 0,
         visibility: 'hidden',
@@ -46,7 +47,7 @@ export default Radium(React.createClass({
         margin: '0 auto 27px auto',
         transition: 'visibility 2s, opacity 2s linear'
       },
-      hacklagLogoDivVisible: {
+      logoDivVisible: {
         width: 0,
         height: 0,
         visibility: 'visible',
@@ -57,34 +58,26 @@ export default Radium(React.createClass({
     };
   },
 
-  mouseOver() {
-    this.setState({touch: true});
-  },
-
-  mouseOut() {
-    this.setState({touch: false});
-  },
-
   render() {
     const styles = this.getStyles();
-    const img = require('../../assets/img/hackbat/' + this.props.logo);
+    const {touched} = this.state;
+    const {logo, cloud} = this.props;
 
     return (
       <div
         style={styles.logoBar}
-        onTouchStart={() => this.setState({touch: true})}>
-        <div style={(this.state.touch && this.props.cloud)
-            ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
+        onTouchStart={() => this.setState({touched: true})}>
+        <div style={(touched && cloud) ? styles.logoDivVisible : styles.logoDivHidden}>
           <img
-            style={styles.hacklagLogoDialog}
-            src={"/img/hackbat/hackbat_cloud.png"}
-            alt="Hi! I`m Hackabat!" />
+            style={styles.logoDialog}
+            src={require('../../assets/img/hackbat/hackbat_cloud.png')}
+            alt="Hi! I'm Hackabat!" />
         </div>
-          <img
+        <img
           style={styles.hacklagLogo}
-          src={img}
-          onMouseOver={this.mouseOver}
-          onMouseOut={this.mouseOut}
+          src={require(`../../assets/img/hackbat/${logo}`)}
+          onMouseOver={() => this.setState({touched: true})}
+          onMouseOut={() => this.setState({touched: false})}
           alt="Hacklag logo" />
       </div>
     );

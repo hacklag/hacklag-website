@@ -11,7 +11,7 @@ export default Radium(React.createClass({
   getInitialState() {
     return {
       textFieldValue: '',
-      hover: false
+      hovered: false
     };
   },
 
@@ -29,21 +29,21 @@ export default Radium(React.createClass({
         marginRight: 'auto',
         marginLeft: 'auto'
       },
-      hacklagLogoDialog: {
+      logoDialog: {
         position: 'relative',
         left: -74,
         top: -53,
         width: 119,
         height: 77
       },
-      hacklagLogoDivHidden: {
+      logoDivHidden: {
         width: 0,
         height: 0,
         visibility: 'hidden',
         opacity: 0,
         transition: 'visibility 2s, opacity 2s linear'
       },
-      hacklagLogoDivVisible: {
+      logoDivVisible: {
         width: 0,
         height: 0,
         visibility: 'visible',
@@ -53,33 +53,26 @@ export default Radium(React.createClass({
     };
   },
 
-  mouseOver() {
-    this.setState({hover: true});
-  },
-
-  mouseOut() {
-    this.setState({hover: false});
-  },
-
   render() {
     const styles = this.getStyles();
-    const img = require('../../assets/img/hackbat/' + this.props.logo);
+    const {hovered} = this.state;
+    const {logo} = this.props;
 
     return (
       <div
         style={styles.logoBar}
-        onTouchStart={() => this.setState({hover: true})}>
-      <div style={this.state.hover ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
+        onTouchStart={() => this.setState({hovered: true})}>
+      <div style={hovered ? styles.logoDivVisible : styles.logoDivHidden}>
           <img
-            style={styles.hacklagLogoDialog}
+            style={styles.logoDialog}
             src={"/img/hackbat/hackbat_cloud.png"}
             alt="Hi! I`m Hackabat!" />
         </div>
         <img
           style={styles.hacklagLogo}
-          src={img}
-          onMouseOver={this.mouseOver}
-          onMouseOut={this.mouseOut}
+          src={require(`../../assets/img/hackbat/${logo}`)}
+          onMouseOver={() => this.setState({hovered: true})}
+          onMouseOut={() => this.setState({hovered: false})}
           alt="Hacklag logo" />
       </div>
     );

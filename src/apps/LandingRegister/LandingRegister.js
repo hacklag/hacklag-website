@@ -32,7 +32,7 @@ export default Radium(React.createClass({
         '@media (max-width: 750px)': {
           marginLeft: 'auto',
           marginRight: 'auto',
-          padding: 16
+          padding: '0px 16px 16px 16px'
         }
       },
       content: {
