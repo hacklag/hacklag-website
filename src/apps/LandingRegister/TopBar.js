@@ -4,12 +4,19 @@ import Radium from 'radium';
 export default Radium(React.createClass({
 
   propTypes: {
-    logo: React.PropTypes.element.isRequired
+    logo: React.PropTypes.element.isRequired,
+    cloud: React.PropTypes.bool
   },
 
   getInitialState() {
     return {
       touch: false
+    };
+  },
+
+  getDefaultProps() {
+    return {
+      cloud: true
     };
   },
 
@@ -36,7 +43,8 @@ export default Radium(React.createClass({
         height: 0,
         visibility: 'hidden',
         opacity: 0,
-        margin: '0 auto 27px auto'
+        margin: '0 auto 27px auto',
+        transition: 'visibility 2s, opacity 2s linear'
       },
       hacklagLogoDivVisible: {
         width: 0,
@@ -65,7 +73,8 @@ export default Radium(React.createClass({
       <div
         style={styles.logoBar}
         onTouchStart={() => this.setState({touch: true})}>
-        <div style={this.state.touch ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
+        <div style={(this.state.touch && this.props.cloud)
+            ? styles.hacklagLogoDivVisible : styles.hacklagLogoDivHidden}>
           <img
             style={styles.hacklagLogoDialog}
             src={"/img/hackbat/hackbat_cloud.png"}

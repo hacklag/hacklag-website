@@ -4,6 +4,7 @@ import LeftBar from './LeftBar';
 import Declined from './LandingDeclined';
 import Success from './LandingSuccess';
 import LandingForm from './LandingForm';
+import TopBar from './TopBar';
 
 export default Radium(React.createClass({
   getInitialState() {
@@ -20,7 +21,11 @@ export default Radium(React.createClass({
     return {
       componentBody: {
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        '@media (max-width: 750px)': {
+          flexDirection: 'column',
+          marginTop: -12
+        }
       },
       contentBar: {
         marginLeft: 72,
@@ -110,6 +115,7 @@ export default Radium(React.createClass({
 
     return (
       <div style={styles.componentBody}>
+        <TopBar logo="hackbat_bialystok_mobile.png" />
         <LeftBar logo="hackbat_bialystok.png" />
         <div style={styles.contentBar}>
           {this.renderContent()}
