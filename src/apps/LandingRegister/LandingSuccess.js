@@ -57,7 +57,7 @@ export default Radium(() => {
   return (
       <div style={styles.content}>
         <div style={styles.successText}>
-          <span style={styles.successHeadlineText}>Thank you for signing up</span>
+          <span style={styles.successHeadlineText}>Thank you for signing up!</span>
           <br/>
           <br/>
           Please check your inbox to find invitation for <strong>Chat</strong> and <strong>Forum</strong>.
@@ -69,7 +69,7 @@ export default Radium(() => {
           <div style={styles.button}>
             <TwitterShareButton
               title={`If you have your drawer full of undone tech ideas or
-                just want to share knowledge with others, join Hacklag at`}
+just want to share knowledge with others, join Hacklag at`}
               url={pageUrl}>
               <RaisedButton
                 label="twitter"

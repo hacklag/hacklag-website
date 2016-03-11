@@ -38,14 +38,18 @@ export default Radium(React.createClass({
       content: {
         maxWidth: 450,
         fontWeight: 300,
-        lineHeight: 1.6,
+        lineHeight: '22px',
         textAlign: 'justify',
         fontSize: 16
       },
       headerText: {
         fontSize: 22,
-        lineHeight: 1.1,
-        marginBottom: 24
+        lineHeight: '25px',
+        marginBottom: 24,
+        '@media (max-width: 750px)': {
+          fontSize: 19,
+          lineHeight: '24px'
+        }
       },
       smallText: {
         fontSize: 12,
@@ -56,6 +60,9 @@ export default Radium(React.createClass({
       },
       emailTextfield: {
         marginBottom: 24
+      },
+      semiBold: {
+        fontWeight: 500
       }
     };
   },
@@ -71,18 +78,20 @@ export default Radium(React.createClass({
       <div style={styles.content}>
         <div style={styles.mainTextContainer}>
           <div style={styles.headerText}>
-            <strong>Hacklag</strong> is a <strong>community</strong> aiming to connect developers, designers,
-            entrepreneurs and everyone interested <strong>in new technologies</strong>
-            <br/>
-            <br/>
+            <span style={styles.semiBold}>Hacklag</span> is an
+            <span style={styles.semiBold}> international community </span>
+             aiming to connect developers, designers, entrepreneurs
+             and everyone interested in <span style={styles.semiBold}>new technologies</span>.
           </div>
-          Please <strong>sign up </strong>and we will send you an invitation to
-           our <strong>Forum</strong> and <strong>Chat</strong>.
+          Demonstrating size and <span style={styles.semiBold}>engagement </span>
+          of the <span style={styles.semiBold}>community</span> is
+          <span style={styles.semiBold}> extremely</span> important to gather funds and start
+           operating. If you have your drawer full of undone <span style={styles.semiBold}>tech ideas </span>
+          or just want to share knowledge with others, <span style={styles.semiBold}>join us!</span>
           <br/>
           <br/>
-          Demonstrating size and <strong>engagement</strong> of the <strong>community</strong> is
-          <strong> extremely</strong> important to gather founds and start operating -
-          <strong>please sign up!</strong>
+          Please <span style={styles.semiBold}>sign up </span>and we will send you an invitation to
+           our <span style={styles.semiBold}>Forum</span> and <span style={styles.semiBold}>Chat</span>.
         </div>
         <LandingForm onFormSubmit={this.onFormSubmit} />
       </div>
