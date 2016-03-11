@@ -100,8 +100,9 @@ export default Radium(React.createClass({
           On our forum you can find information
           about <span style={styles.semiBold}>members, volunteers, partners </span>and
           <span style={styles.semiBold}> sponsors. </span>
-          We are sharing there information about potential
-          property and the whole process of adopting place for <span style={styles.semiBold}>Hacklag</span>.
+          We are sharing information about the whole process of creating the
+          <span style={styles.semiBold}> Hacklag Hackerspace</span>.
+           Stay tuned for more news and participate in the<span style={styles.semiBold}> Hacklag</span> community.
         </div>
       </div>
     );
