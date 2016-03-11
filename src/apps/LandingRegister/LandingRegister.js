@@ -38,14 +38,18 @@ export default Radium(React.createClass({
       content: {
         maxWidth: 450,
         fontWeight: 300,
-        lineHeight: 1.6,
+        lineHeight: '22px',
         textAlign: 'justify',
         fontSize: 16
       },
       headerText: {
         fontSize: 22,
         lineHeight: '25px',
-        marginBottom: 24
+        marginBottom: 24,
+        '@media (max-width: 750px)': {
+          fontSize: 19,
+          lineHeight: '24px'
+        }
       },
       smallText: {
         fontSize: 12,
