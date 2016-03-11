@@ -2,6 +2,11 @@
 
 *, *:after, *:before
   box-sizing: border-box
+  word-break: keep-all
+  -moz-hyphens:none
+  -ms-hyphens:none
+  -webkit-hyphens: none
+  hyphens:none
 
 a,
 a:visited
@@ -14,6 +19,7 @@ p
 
 html
   +adjust-leading-to(2)
+  height: 100%
 
 body
   background-color: #fafafa
@@ -22,6 +28,3 @@ body
 
 input:-webkit-autofill
   -webkit-box-shadow: 0 0 0px 1000px white inset
-
-html
-  height: 100%

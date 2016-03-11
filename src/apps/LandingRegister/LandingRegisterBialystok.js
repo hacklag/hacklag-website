@@ -99,7 +99,7 @@ export default Radium(React.createClass({
         <div style={styles.smallText}>
           On our forum you can find information
           about <span style={styles.semiBold}>members, volunteers, partners </span>and
-          <span style={styles.semiBold}> sponsors.</span>
+          <span style={styles.semiBold}> sponsors. </span>
           We are sharing there information about potential
           property and the whole process of adopting place for <span style={styles.semiBold}>Hacklag</span>.
         </div>
