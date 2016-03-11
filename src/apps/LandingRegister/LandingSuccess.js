@@ -69,7 +69,7 @@ export default Radium(() => {
           <div style={styles.button}>
             <TwitterShareButton
               title={`If you have your drawer full of undone tech ideas or
-                just want to share knowledge with others, join Hacklag at`}
+just want to share knowledge with others, join Hacklag at`}
               url={pageUrl}>
               <RaisedButton
                 label="twitter"

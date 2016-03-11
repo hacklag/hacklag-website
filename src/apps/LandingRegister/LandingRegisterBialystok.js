@@ -80,7 +80,7 @@ export default Radium(React.createClass({
              and everyone interested in <span style={styles.semiBold}>new technologies</span>.
             <br/>
             <br/>
-            We are also hope to start first <span style={styles.semiBold}>Hackerspace </span>
+            We also hope to start first <span style={styles.semiBold}>Hackerspace </span>
             in <span style={styles.semiBold}>Białystok</span>
           </div>
           We <span style={styles.semiBold}>working hard</span> to make it real. To be part of this
