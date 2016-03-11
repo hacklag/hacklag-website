@@ -5,7 +5,7 @@ export default Radium(React.createClass({
   displayName: 'LeftBar',
 
   propTypes: {
-    logo: React.PropTypes.element.isRequired
+    logo: React.PropTypes.string.isRequired
   },
 
   getInitialState() {

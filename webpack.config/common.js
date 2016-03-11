@@ -71,7 +71,6 @@ module.exports = {
   externals: {
     'analyticsjs': 'window.analytics',
     'hellojs': 'hello',
-    'stripejs': 'Stripe',
-    'fs': 'empty'
+    'stripejs': 'Stripe'
   }
 };
