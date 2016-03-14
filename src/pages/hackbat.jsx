@@ -5,6 +5,7 @@ import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import HacklagTheme from '../common/HacklagTheme';
 
 import Hackbat from '../apps/Hackbat';
+import {Header} from '../apps/LandingRegister';
 
 export default Radium(React.createClass({
   displayName: 'Hackbat',
@@ -29,11 +30,23 @@ export default Radium(React.createClass({
     };
   },
 
+  componentDidMount() {
+    (function(data, source, id) {
+      let js = '';
+      const fjs = data.getElementsByTagName(source)[0];
+
+      if (data.getElementById(id)) return;
+      js = data.createElement(source);
+      js.id = id;
+      js.src = '//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.5';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  },
+
   getStyles() {
     return {
       mainDiv: {
         color: '#4A4A4A',
-        backgroundColor: '#FAFAFA',
         margin: 'auto auto -40px auto',
         paddingBottom: 40,
         display: 'flex',
@@ -51,7 +64,7 @@ export default Radium(React.createClass({
     return (
       <div style={{height: '100%'}}>
         <div style={styles.mainDiv}>
-          <Hackbat.Header/>
+          <Header/>
           {children}
         </div>
         <Hackbat.Footer/>

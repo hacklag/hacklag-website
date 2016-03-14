@@ -10,7 +10,6 @@ export default Radium(React.createClass({
 
   getInitialState() {
     return {
-      textFieldValue: '',
       hover: false
     };
   },
@@ -20,6 +19,7 @@ export default Radium(React.createClass({
       logoBar: {
         display: 'flex',
         flexDirection: 'column',
+        paddingTop: 112,
         '@media (max-width: 750px)': {
           display: 'none'
         }
@@ -30,8 +30,8 @@ export default Radium(React.createClass({
       },
       hacklagLogoDialog: {
         position: 'relative',
-        left: -94,
-        top: -27.5
+        right: 122,
+        bottom: 112
       },
       hacklagLogoDivHidden: {
         width: 0,
@@ -55,7 +55,7 @@ export default Radium(React.createClass({
   },
 
   mouseOut() {
-    this.setState({hover: true});
+    this.setState({hover: false});
   },
 
   render() {
