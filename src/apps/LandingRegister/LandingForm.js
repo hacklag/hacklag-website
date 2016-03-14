@@ -7,7 +7,7 @@ import Syncano from 'syncano';
 
 export default Radium(React.createClass({
   propTypes: {
-    onFormSubmit: React.PropTypes.element.isRequired
+    onFormSubmit: React.PropTypes.func.isRequired
   },
 
   getInitialState() {
