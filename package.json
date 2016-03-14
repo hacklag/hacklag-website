@@ -35,7 +35,6 @@
     "reflux": "^0.3.0",
     "syncano": "^1.0.0",
     "urijs": "1.16.1",
-    "url-loader": "^0.5.7",
     "validate.js": "^0.9.0"
   },
   "devDependencies": {
@@ -83,6 +82,7 @@
     "style-loader": "0.13.0",
     "superagent": "1.7.2",
     "through2": "2.0.0",
+    "url-loader": "^0.5.7",
     "webpack": "1.12.13",
     "webpack-dev-server": "1.14.1"
   },
