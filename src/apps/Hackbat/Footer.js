@@ -5,10 +5,7 @@ export default Radium(() => {
   const city = require('../../assets/img/hackbat/city.png');
   const styles = {
     footerDiv: {
-      display: 'flex',
-      justifyContent: 'center',
       height: 40,
-      alignItems: 'flex-end',
       color: 'whitesmoke',
       fontFamily: 'Roboto',
       fontSize: 12,
@@ -18,7 +15,9 @@ export default Radium(() => {
     },
     image: {
       width: '100%',
-      zIndex: -1
+      zIndex: -1,
+      position: 'absolute',
+      bottom: 0
     },
     text: {
       position: 'absolute',
@@ -28,7 +27,7 @@ export default Radium(() => {
 
   return (
     <div style={styles.footerDiv}>
-    <img
+      <img
         style={styles.image}
         src={city}
         alt="Hacklag logo" />

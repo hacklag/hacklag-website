@@ -1,20 +1,26 @@
 import React from 'react';
 import Radium from 'radium';
 import HackbatBar from './HackbatBar';
+import TopBar from './HackbatTopBar';
 
 export default Radium(() => {
   const styles = {
     componentBody: {
       display: 'flex',
       justifyContent: 'center',
-      minHeight: 880
+      '@media (max-width: 750px)': {
+        flexDirection: 'column',
+        marginTop: -12
+      }
     },
     contentBar: {
       marginLeft: 72,
+      minHeight: 880,
       '@media (max-width: 750px)': {
         marginLeft: 'auto',
         marginRight: 'auto',
-        padding: 16
+        padding: 16,
+        minHeight: 700
       }
     },
     content: {
@@ -40,6 +46,7 @@ export default Radium(() => {
 
   return (
       <div style={styles.componentBody}>
+        <TopBar logo="hackbat_lord.png" />
         <HackbatBar logo="hackbat_lord.png" />
         <div style={styles.contentBar}>
           <div style={styles.content}>
@@ -52,7 +59,7 @@ export default Radium(() => {
             During the day I’m guarding <span style={styles.semiBold}>Hacklag </span>
             and helping it’s members. During the night I’m usually
             <span style={styles.semiBold}> coding </span> or playing
-            <span style={styles.semiBold}> board games.</span>
+            <span style={styles.semiBold}> board games. </span>
              I’m always availabe on <span style={styles.semiBold}>Slack </span>
             and reading every post on <span style={styles.semiBold}>Hacklag Forum.</span>
             <br/>
