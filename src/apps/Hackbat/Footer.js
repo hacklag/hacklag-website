@@ -2,7 +2,6 @@ import React from 'react';
 import Radium from 'radium';
 
 export default Radium(() => {
-  const city = require('../../assets/img/hackbat/city.png');
   const styles = {
     footerDiv: {
       height: 40,
@@ -29,7 +28,7 @@ export default Radium(() => {
     <div style={styles.footerDiv}>
       <img
         style={styles.image}
-        src={city}
+        src={require('../../assets/img/hackbat/city.png')}
         alt="Hacklag logo" />
       <span style={styles.text}>2016 Hacklag Foundation</span>
     </div>

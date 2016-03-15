@@ -61,7 +61,7 @@ export default Radium(React.createClass({
       <div style={hovered ? styles.logoDivVisible : styles.logoDivHidden}>
           <img
             style={styles.logoDialog}
-            src={"/img/hackbat/hackbat_cloud_big.png"}
+            src={require('../../assets/img/hackbat/hackbat_cloud_big.png')}
             alt="Hi! I`m Hackabat!" />
         </div>
         <img
