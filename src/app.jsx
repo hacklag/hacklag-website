@@ -11,9 +11,11 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import AppPage from './pages/app';
 import LandingPage from './pages/landingpage';
 import NotFoundPage from './pages/notfound';
+import HackbatPage from './pages/hackbat';
 
 // Page components
 import LandingRegister from './apps/LandingRegister';
+import Hackbat from './apps/Hackbat';
 import {
   Home,
   About,
@@ -26,6 +28,11 @@ render(
     <Route path="/">
       <Route component={LandingPage}>
         <IndexRoute component={LandingRegister}/>
+      </Route>
+      <Route
+        path="hackbat"
+        component={HackbatPage}>
+        <IndexRoute component={Hackbat}/>
       </Route>
       <Route
         path="landing"
