@@ -28,22 +28,17 @@ render(
     <Route path="/">
       <Route component={LandingPage}>
         <IndexRoute component={LandingRegister}/>
+        <Route
+          path="bialystok"
+          component={LandingRegister.Bialystok} />
+        <Route
+          path="explorerhq"
+          component={LandingRegister.ExplorerHQ} />
       </Route>
       <Route
         path="hackbat"
         component={HackbatPage}>
         <IndexRoute component={Hackbat}/>
-      </Route>
-      <Route
-        path="landing"
-        component={LandingPage}>
-        <IndexRoute component={LandingRegister}/>
-        <Route
-          path="bialystok"
-          component={LandingRegister.Bialystok} />
-         <Route
-          path="explorerhq"
-          component={LandingRegister.ExplorerHQ} />
       </Route>
       <Route component={AppPage}>
         <Route
