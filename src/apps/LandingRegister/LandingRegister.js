@@ -5,6 +5,7 @@ import Declined from './LandingDeclined';
 import Success from './LandingSuccess';
 import LandingForm from './LandingForm';
 import TopBar from './TopBar';
+import Supporters from './Supporters';
 
 export default Radium(React.createClass({
   getInitialState() {
@@ -121,6 +122,7 @@ export default Radium(React.createClass({
         <LeftBar logo="hackbat_general.png" />
         <div style={styles.contentBar}>
           {this.renderContent()}
+          <Supporters/>
         </div>
       </div>
     );

@@ -5,6 +5,7 @@ import Declined from './LandingDeclined';
 import Success from './LandingSuccess';
 import LandingForm from './LandingForm';
 import TopBar from './TopBar';
+import Supporters from './Supporters';
 
 export default Radium(React.createClass({
   getInitialState() {
@@ -56,7 +57,8 @@ export default Radium(React.createClass({
       },
       smallText: {
         fontSize: 12,
-        lineHeight: '21px'
+        lineHeight: '21px',
+        marginBottom: 24
       },
       mainTextContainer: {
         marginBottom: 10
@@ -138,6 +140,7 @@ export default Radium(React.createClass({
         <LeftBar logo="hackbat_bialystok.png" />
         <div style={styles.contentBar}>
           {this.renderContent()}
+          <Supporters/>
         </div>
       </div>
     );
