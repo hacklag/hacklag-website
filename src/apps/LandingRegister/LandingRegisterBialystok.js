@@ -90,7 +90,7 @@ export default Radium(React.createClass({
             We also hope to start first <span style={styles.semiBold}>Hackerspace </span>
             in <span style={styles.semiBold}>Białystok</span>
           </div>
-          We <span style={styles.semiBold}>working hard</span> to make it real. To be part of this
+          We are <span style={styles.semiBold}>working hard</span> to make it real. To be part of this
           <span style={styles.semiBold}> initiative </span>
           or just to be <span style={styles.semiBold}>up to date</span> with the progress, please type in your email
           and we will send you an invitation to our
