@@ -49,7 +49,15 @@ export default () => {
           <img
             style={styles.logo}
             src={require('../../assets/img/supporters/pmb.png')}
-            alt="FMS" />
+            alt="PMB" />
+        </a>
+        <a
+          href="https://www.facebook.com/groups/bstoknet/"
+          target="_blank" >
+          <img
+            style={styles.logo}
+            src={require('../../assets/img/supporters/bstoknet.png')}
+            alt="#bstoknet" />
         </a>
       </div>
     </div>
