@@ -136,8 +136,8 @@ export default Radium(React.createClass({
 
     return (
       <div style={styles.componentBody}>
-        <TopBar logo="hackbat_bialystok_mobile.png" />
-        <LeftBar logo="hackbat_bialystok.png" />
+        <TopBar logo="hackbat_bialystok.svg" />
+        <LeftBar logo="hackbat_bialystok.svg" />
         <div style={styles.contentBar}>
           {this.renderContent()}
           <Supporters/>
