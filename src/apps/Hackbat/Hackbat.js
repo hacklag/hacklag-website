@@ -70,7 +70,7 @@ export default Radium(() => {
             <span style={styles.semiBold}> Star Wars. </span>
             My favorite album is “<span style={styles.semiBold}>Dark Side of the Moon</span>”,
              but I like also <span style={styles.semiBold}>jazz</span> and
-             <span style={styles.semiBold}> hevy guitar</span> riffs.
+             <span style={styles.semiBold}> heavy guitar</span> riffs.
             I’m not really into sports… except for flying. I really want to go to
             <span style={styles.semiBold}> Japan</span> some day.
             My favorite quote is:

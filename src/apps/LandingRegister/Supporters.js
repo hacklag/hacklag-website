@@ -16,7 +16,7 @@ export default () => {
   };
 
   return (
-    <div>
+    <div style={{maxWidth: 450}}>
       <div style={styles.text}>Our supporters:</div>
       <div style={styles.images}>
         <a
@@ -44,7 +44,7 @@ export default () => {
             alt="Syncano" />
         </a>
         <a
-          href="#d"
+          href="http://przetworniameblowa.pl/"
           target="_blank" >
           <img
             style={styles.logo}
@@ -58,6 +58,14 @@ export default () => {
             style={styles.logo}
             src={require('../../assets/img/supporters/bstoknet.png')}
             alt="#bstoknet" />
+        </a>
+        <a
+          href="https://www.facebook.com/mobilebialystok"
+          target="_blank" >
+          <img
+            style={styles.logo}
+            src={require('../../assets/img/supporters/mobileBstok.png')}
+            alt="Mobile Bilystok" />
         </a>
       </div>
     </div>
