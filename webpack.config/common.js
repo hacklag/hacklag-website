@@ -51,7 +51,7 @@ module.exports = {
       {test: /\.styl/, loader: 'style-loader!stylus-loader!autoprefixer-loader?browsers=last 2 version'},
       {
         test: /\.png$/,
-        loader: "url-loader?mimetype=image/png&limit=25000"
+        loader: "url-loader?mimetype=image/png&limit=40000"
       },
       {
         test: /\.scss$/,

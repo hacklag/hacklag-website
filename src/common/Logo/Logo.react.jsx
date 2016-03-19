@@ -1,5 +1,4 @@
 import React from 'react';
-import Isvg from 'react-inlinesvg';
 
 import './Logo.sass';
 
@@ -17,7 +16,7 @@ export default React.createClass({
   },
 
   render() {
-    let styles = this.getStyles();
+    const styles = this.getStyles();
 
     return (
       <div style={styles.text}>HACKLAG</div>

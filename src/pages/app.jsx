@@ -5,12 +5,9 @@ import Footer from '../apps/Footer';
 import SponsorsBar from '../common/SponsorsBar';
 import MainContainer from '../common/MainContainer';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import {History, State, RouteHandler} from 'react-router';
-
+import {History, State} from 'react-router';
 
 export default React.createClass({
-
-  displayName: 'App',
 
   propTypes: {
     children: React.PropTypes.element.isRequired
@@ -42,7 +39,7 @@ export default React.createClass({
   },
 
   render() {
-    let styles = this.getStyles();
+    const styles = this.getStyles();
 
     return (
       <div style={styles.mainDiv}>

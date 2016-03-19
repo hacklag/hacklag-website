@@ -24,7 +24,7 @@ export default () => {
           target="_blank" >
           <img
             style={styles.logo}
-            src={require('../../assets/img/supporters/explorerhq.png')}
+            src="/img/supporters/explorerhq.png"
             alt="ExplorerHQ" />
         </a>
         <a
@@ -32,7 +32,7 @@ export default () => {
           target="_blank" >
           <img
             style={styles.logo}
-            src={require('../../assets/img/supporters/pystok.png')}
+            src="/img/supporters/pystok.png"
             alt="Pystok" />
         </a>
         <a
@@ -40,7 +40,7 @@ export default () => {
           target="_blank" >
           <img
             style={styles.logo}
-            src={require('../../assets/img/supporters/syncano.png')}
+            src="/img/supporters/syncano.png"
             alt="Syncano" />
         </a>
         <a
@@ -48,7 +48,7 @@ export default () => {
           target="_blank" >
           <img
             style={styles.logo}
-            src={require('../../assets/img/supporters/pmb.png')}
+            src="/img/supporters/pmb.png"
             alt="PMB" />
         </a>
         <a
@@ -56,7 +56,7 @@ export default () => {
           target="_blank" >
           <img
             style={styles.logo}
-            src={require('../../assets/img/supporters/bstoknet.png')}
+            src="/img/supporters/bstoknet.png"
             alt="#bstoknet" />
         </a>
         <a
@@ -64,7 +64,7 @@ export default () => {
           target="_blank" >
           <img
             style={styles.logo}
-            src={require('../../assets/img/supporters/mobileBstok.png')}
+            src="/img/supporters/mobileBstok.png"
             alt="Mobile Bilystok" />
         </a>
       </div>

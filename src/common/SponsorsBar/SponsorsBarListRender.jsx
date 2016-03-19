@@ -1,5 +1,4 @@
 import React from 'react';
-import MUI from 'material-ui';
 
 export default React.createClass({
   displayName: 'SponsorsBarListRender',
@@ -25,7 +24,7 @@ export default React.createClass({
   },
 
   render() {
-    let styles = this.getStyles();
+    const styles = this.getStyles();
 
     return (
       <div>
