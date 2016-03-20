@@ -1,7 +1,6 @@
 import React from 'react';
 import {RaisedButton} from 'material-ui';
 import SponsorsBarListRender from './SponsorsBarListRender';
-import {Link} from 'react-router';
 import Radium from 'radium';
 
 export default Radium(React.createClass({

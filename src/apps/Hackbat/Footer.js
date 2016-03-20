@@ -28,7 +28,7 @@ export default Radium(() => {
     <div style={styles.footerDiv}>
       <img
         style={styles.image}
-        src={require('../../assets/img/hackbat/city.png')}
+        src="/img/hackbat/city.png"
         alt="Hacklag logo" />
       <span style={styles.text}>2016 Hacklag Foundation</span>
     </div>

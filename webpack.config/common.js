@@ -51,8 +51,7 @@ module.exports = {
       {test: /\.styl/, loader: 'style-loader!stylus-loader!autoprefixer-loader?browsers=last 2 version'},
       {
         test: /\.png$/,
-        loader: "url-loader",
-        query: { mimetype: "image/png" }
+        loader: "url-loader?mimetype=image/png&limit=40000"
       },
       {
         test: /\.scss$/,
@@ -74,7 +73,6 @@ module.exports = {
   },
   externals: {
     'analyticsjs': 'window.analytics',
-    'hellojs': 'hello',
     'stripejs': 'Stripe'
   }
 };

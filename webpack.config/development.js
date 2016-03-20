@@ -2,7 +2,7 @@ var webpack = require('webpack'),
     config  = require('./common');
 
 config.cache   = true;
-config.debug   = true;
+config.debug   = false;
 config.devtool = 'eval';
 
 config.entry.app.unshift(
@@ -31,8 +31,7 @@ delete config.module.loaders[1].loader;
 
 config.plugins.unshift(
   new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoErrorsPlugin(),
-  new webpack.DefinePlugin({SYNCANO_BASE_URL: ""})
+  new webpack.NoErrorsPlugin()
 );
 
 config.devServer = {
