@@ -1,7 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 
-import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import getMuiTheme from 'material-ui/lib/styles/theme-manager';
 import HacklagTheme from '../common/HacklagTheme';
 
 import Hackbat from '../apps/Hackbat';
@@ -20,7 +20,7 @@ export default Radium(React.createClass({
 
   getInitialState() {
     return {
-      muiTheme: ThemeManager.getMuiTheme(HacklagTheme)
+      muiTheme: getMuiTheme(HacklagTheme)
     };
   },
 

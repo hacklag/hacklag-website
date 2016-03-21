@@ -1,34 +1,13 @@
 import React from 'react';
-import Radium from 'radium';
-
-import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import {StyleRoot} from 'radium';
 import HacklagTheme from '../common/HacklagTheme';
-
 import LandingRegister from '../apps/LandingRegister';
 
-export default Radium(React.createClass({
-  displayName: 'LandingPage',
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import ThemeDecorator from 'material-ui/lib/styles/theme-decorator';
 
-  propTypes: {
-    children: React.PropTypes.element.isRequired
-  },
-
-  childContextTypes: {
-    muiTheme: React.PropTypes.object
-  },
-
-  getInitialState() {
-    return {
-      muiTheme: ThemeManager.getMuiTheme(HacklagTheme)
-    };
-  },
-
-  getChildContext() {
-    return {
-      muiTheme: this.state.muiTheme
-    };
-  },
-
+@ThemeDecorator(ThemeManager.getMuiTheme(HacklagTheme))
+class landingPage extends React.Component {
   getStyles() {
     return {
       mainDiv: {
@@ -42,20 +21,30 @@ export default Radium(React.createClass({
         maxWidth: 1440
       }
     };
-  },
+  }
 
   render() {
     const styles = this.getStyles();
-    const {children} = this.props;
 
     return (
-      <div style={{height: '100%'}}>
-        <div style={styles.mainDiv}>
-          <LandingRegister.Header/>
-          {children}
+      <StyleRoot>
+        <div style={{height: '100%'}}>
+          <div style={styles.mainDiv}>
+            <LandingRegister.Header/>
+            {this.props.children}
+          </div>
+          <LandingRegister.Footer/>
         </div>
-        <LandingRegister.Footer/>
-      </div>
+      </StyleRoot>
     );
   }
-}));
+}
+landingPage.propTypes = {
+  children: React.PropTypes.object.isRequired,
+  muiTheme: React.PropTypes.object
+};
+landingPage.childContextTypes = {
+  muiTheme: React.PropTypes.object
+};
+
+export default landingPage;

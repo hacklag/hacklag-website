@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardTitle, CardText} from 'material-ui';
 
-export default ({event}) => {
+export default (event) => {
   const styles = {
     cardStyle: {
       marginBottom: 24
@@ -16,8 +16,8 @@ export default ({event}) => {
     }
   };
 
-  const event_time = new Date(event.time).toLocaleString();
-  const event_desc = event.description.substring(3, event.description.length - 4);
+  const eventTime = new Date(event.time).toLocaleString();
+  const eventDesc = event.description.substring(3, event.description.length - 4);
 
   return (
     <Card style={styles.cardStyle}>
@@ -32,11 +32,11 @@ export default ({event}) => {
         }
         subtitle={
             <span style={styles.titleStyle}>
-              {event_time}
+              {eventTime}
             </span>
         } />
       <CardText>
-        {event_desc}
+        {eventDesc}
       </CardText>
     </Card>
   );

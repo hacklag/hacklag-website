@@ -1,5 +1,4 @@
-import 'babel-core/polyfill';
-import 'normalize.css';
+require('babel-polyfill');
 import './app.sass';
 import './segment';
 
