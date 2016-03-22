@@ -16,7 +16,7 @@
     "lodash": "^4.6.1",
     "material-ui": "0.15.0-alpha.2",
     "normalize.css": "3.0.3",
-    "radium": "^0.16.6",
+    "radium": "^0.15.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-flexbox-grid": "0.9.5",
