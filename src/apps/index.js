@@ -5,7 +5,7 @@ import Header from './Header';
 import LandingRegister from './LandingRegister';
 
 export default {
-  Menu
+  Menu,
   Social,
   Footer,
   Header,
