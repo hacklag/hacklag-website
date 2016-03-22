@@ -68,6 +68,14 @@ export default () => {
             alt="Mobile Bilystok" />
         </a>
         <a
+          href="https://www.facebook.com/groups/121396568034497/"
+          target="_blank" >
+          <img
+            style={styles.logo}
+            src="/img/supporters/gcc_logo_poziom.png"
+            alt="Geek Girls Carrots" />
+        </a>
+        <a
           href="http://www.nadaktywni.org/"
           target="_blank" >
           <img
