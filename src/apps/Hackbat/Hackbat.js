@@ -84,6 +84,13 @@ export default Radium(() => {
             Meet me on Facebook:
             <br/>
             <br/>
+            <div
+              className="fb-like"
+              data-href="https://www.facebook.com/HackBat-459675237557073"
+              data-width="35"
+              data-height="14"
+              data-layout="button_count"
+              data-show-faces="false" />
           </div>
         </div>
       </div>
