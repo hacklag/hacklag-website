@@ -1,33 +1,14 @@
 import React from 'react';
 import Radium from 'radium';
-
-import getMuiTheme from 'material-ui/lib/styles/theme-manager';
 import HacklagTheme from '../common/HacklagTheme';
-
 import Hackbat from '../apps/Hackbat';
-import {Header} from '../apps/LandingRegister';
+import LandingRegister from '../apps/LandingRegister';
+import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
 
 export default Radium(React.createClass({
-  displayName: 'Hackbat',
-
   propTypes: {
     children: React.PropTypes.element.isRequired
-  },
-
-  childContextTypes: {
-    muiTheme: React.PropTypes.object
-  },
-
-  getInitialState() {
-    return {
-      muiTheme: getMuiTheme(HacklagTheme)
-    };
-  },
-
-  getChildContext() {
-    return {
-      muiTheme: this.state.muiTheme
-    };
   },
 
   componentDidMount() {
@@ -62,13 +43,15 @@ export default Radium(React.createClass({
     const {children} = this.props;
 
     return (
-      <div style={{height: '100%'}}>
-        <div style={styles.mainDiv}>
-          <Header/>
-          {children}
+      <MuiThemeProvider muiTheme={getMuiTheme(HacklagTheme)}>
+        <div style={{height: '100%'}}>
+          <div style={styles.mainDiv}>
+            <LandingRegister.Header/>
+            {children}
+          </div>
+          <Hackbat.Footer/>
         </div>
-        <Hackbat.Footer/>
-      </div>
+      </MuiThemeProvider>
     );
   }
 }));

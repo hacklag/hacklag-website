@@ -2,7 +2,6 @@ import React from 'react';
 import Radium from 'radium';
 
 export default Radium(React.createClass({
-
   propTypes: {
     logo: React.PropTypes.string.isRequired
   },
