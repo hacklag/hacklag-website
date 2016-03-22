@@ -63,14 +63,14 @@ export default Radium(React.createClass({
       <div
         style={styles.logoBar}
         onTouchStart={() => this.setState({hovered: true})}>
-      <div style={hovered ? styles.logoDivVisible : styles.logoDivHidden}>
+        <div style={hovered ? styles.logoDivVisible : styles.logoDivHidden}>
           <img
             style={styles.logoDialog}
-            src={"/img/hackbat/hackbat_cloud.svg"}
+            src={'/img/hackbat/hackbat_cloud.svg'}
             alt="Hi! I`m Hackabat!" />
         </div>
         <img
-          src={'/img/hackbat/' + logo}
+          src={require('../../assets/img/hackbat/' + logo)}
           style={styles.hacklagLogo}
           onMouseOver={() => this.setState({hovered: true})}
           onMouseOut={() => this.setState({hovered: false})}
