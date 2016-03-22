@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.1",
-    "flexboxgrid": "^6.3.0",
     "formsy-material-ui": "https://github.com/enricofoschi/formsy-material-ui",
     "formsy-react": "^0.17.0",
     "lodash": "^4.6.1",
@@ -19,9 +18,7 @@
     "radium": "^0.15.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
-    "react-flexbox-grid": "0.9.5",
     "react-inline-grid": "^0.5.3",
-    "react-inlinesvg": "^0.4.2",
     "react-router": "2.0.1",
     "react-share": "^1.4.1",
     "react-tap-event-plugin": "0.2.2",
