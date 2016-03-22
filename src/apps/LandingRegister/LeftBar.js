@@ -27,7 +27,8 @@ export default Radium(React.createClass({
       },
       hacklagLogo: {
         marginRight: 'auto',
-        marginLeft: 'auto'
+        marginLeft: 'auto',
+        width: '100%'
       },
       logoDialog: {
         position: 'relative',
@@ -62,15 +63,15 @@ export default Radium(React.createClass({
       <div
         style={styles.logoBar}
         onTouchStart={() => this.setState({hovered: true})}>
-      <div style={hovered ? styles.logoDivVisible : styles.logoDivHidden}>
+        <div style={hovered ? styles.logoDivVisible : styles.logoDivHidden}>
           <img
             style={styles.logoDialog}
-            src={"/img/hackbat/hackbat_cloud.png"}
+            src={'/img/hackbat/hackbat_cloud.svg'}
             alt="Hi! I`m Hackabat!" />
         </div>
         <img
+          src={require('../../assets/img/hackbat/' + logo)}
           style={styles.hacklagLogo}
-          src={require(`../../assets/img/hackbat/${logo}`)}
           onMouseOver={() => this.setState({hovered: true})}
           onMouseOut={() => this.setState({hovered: false})}
           alt="Hacklag logo" />
