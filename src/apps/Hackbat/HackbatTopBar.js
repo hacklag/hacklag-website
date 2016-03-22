@@ -4,7 +4,7 @@ import Radium from 'radium';
 export default Radium(React.createClass({
 
   propTypes: {
-    logo: React.PropTypes.string.isRequired,
+    logo: React.PropTypes.element.isRequired,
     cloud: React.PropTypes.bool
   },
 
@@ -71,12 +71,12 @@ export default Radium(React.createClass({
         <div style={(touched && cloud) ? styles.logoDivVisible : styles.logoDivHidden}>
           <img
             style={styles.logoDialog}
-            src={require('../../assets/img/hackbat/hackbat_cloud.svg')}
+            src={'/img/hackbat/hackbat_cloud.svg'}
             alt="Hi! I'm Hackabat!" />
         </div>
         <img
           style={styles.hacklagLogo}
-          src={require('../../assets/img/hackbat/' + logo)}
+          src={require(`../../assets/img/hackbat/${logo}`)}
           onMouseOver={() => this.setState({touched: true})}
           onMouseOut={() => this.setState({touched: false})}
           alt="Hacklag logo" />
