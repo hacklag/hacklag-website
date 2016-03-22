@@ -67,6 +67,14 @@ export default () => {
             src="/img/supporters/mobileBstok.png"
             alt="Mobile Bilystok" />
         </a>
+        <a
+          href="http://www.nadaktywni.org/"
+          target="_blank" >
+          <img
+            style={styles.logo}
+            src="/img/supporters/nadaktywni.png"
+            alt="Nadaktywni" />
+        </a>
       </div>
     </div>
   );
