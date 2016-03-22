@@ -125,9 +125,9 @@ export default Radium(React.createClass({
     return (
       <div style={styles.componentBody}>
         <TopBar
-          logo="explorerHQ_mobile.svg"
+          logo="explorerHQ_mobile.png"
           cloud={false} />
-        <LeftBar logo="explorerHQ.svg" />
+        <LeftBar logo="explorerHQ.png" />
         <div style={styles.contentBar}>
           {this.renderContent()}
           <Supporters/>

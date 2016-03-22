@@ -23,7 +23,6 @@
     "react-share": "^1.4.1",
     "react-tap-event-plugin": "0.2.2",
     "syncano": "^1.0.0",
-    "urijs": "1.17.1",
     "validate.js": "^0.9.0"
   },
   "devDependencies": {

@@ -18,7 +18,8 @@ export default Radium(() => {
       color: '#444444'
     },
     iconImg: {
-      width: '100%'
+      width: '100%',
+      minWidth: 24
     },
     facebookStyle: {
       color: '#4965b6'
@@ -42,7 +43,8 @@ export default Radium(() => {
         iconStyle={styles.iconImg}>
         <img
           src="/img/icons/discourse.png"
-          alt="Discourse logo" />
+          alt="Discourse logo"
+          styles={styles.iconImg}/>
       </IconButton>
       <IconButton
         tooltip="Hacklag Slack"
@@ -51,8 +53,9 @@ export default Radium(() => {
         href="https://hacklag.slack.com/"
         iconStyle={styles.iconImg}>
         <img
-          src="/img/icons/slack.png"
-          alt="Slack logo" />
+          src="/img/icons/slack.svg"
+          alt="Slack logo"
+          styles={styles.iconImg}/>
       </IconButton>
       <IconButton
         tooltip="Hacklag GitHub"
