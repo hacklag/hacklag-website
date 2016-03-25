@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.1",
+    "es5-shim": "^4.5.7",
+    "es6-shim": "^0.35.0",
     "formsy-material-ui": "https://github.com/enricofoschi/formsy-material-ui",
     "formsy-react": "^0.17.0",
     "lodash": "^4.6.1",

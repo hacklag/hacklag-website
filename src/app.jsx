@@ -1,5 +1,7 @@
 import './app.sass';
 import './segment';
+require('es5-shim');
+require('es6-shim');
 
 import React from 'react';
 import {render} from 'react-dom';
