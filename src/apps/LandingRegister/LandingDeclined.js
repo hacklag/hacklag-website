@@ -9,7 +9,8 @@ export default Radium(() => {
       lineHeight: 1.6,
       textAlign: 'justify',
       fontSize: 20,
-      color: 'red'
+      color: 'red',
+      marginBottom: 24
     }
   };
 

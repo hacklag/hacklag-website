@@ -11,7 +11,6 @@ config.entry.app.unshift(
 );
 
 config.module.loaders[1].loaders = [
-  'react-hot',
   config.module.loaders[1].loader
 ];
 

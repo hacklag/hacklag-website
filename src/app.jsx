@@ -1,13 +1,13 @@
-require('babel-polyfill');
 import './app.sass';
 import './segment';
+require('es5-shim');
+require('es6-shim');
 
 import React from 'react';
 import {render} from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 // Pages
-import AppPage from './pages/app';
 import LandingPage from './pages/landingpage';
 import NotFoundPage from './pages/notfound';
 import HackbatPage from './pages/hackbat';
@@ -15,12 +15,6 @@ import HackbatPage from './pages/hackbat';
 // Page components
 import LandingRegister from './apps/LandingRegister';
 import Hackbat from './apps/Hackbat';
-import {
-  Home,
-  About,
-  Blog,
-  Events
-} from './apps/Pages';
 
 render(
   <Router history={browserHistory}>
@@ -38,20 +32,6 @@ render(
         path="hackbat"
         component={HackbatPage}>
         <IndexRoute component={Hackbat}/>
-      </Route>
-      <Route component={AppPage}>
-        <Route
-          path="home"
-          component={Home} />
-        <Route
-          path="about"
-          component={About} />
-        <Route
-          path="blog"
-          component={Blog} />
-        <Route
-          path="events"
-          component={Events} />
       </Route>
     </Route>
     <Route

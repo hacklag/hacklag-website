@@ -28,7 +28,7 @@ export default Radium(React.createClass({
       hacklagLogo: {
         marginRight: 'auto',
         marginLeft: 'auto',
-        width: '100%'
+        width: 165
       },
       logoDialog: {
         position: 'relative',

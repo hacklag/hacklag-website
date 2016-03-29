@@ -45,7 +45,8 @@ export default Radium(() => {
     successBottomText: {
       fontSize: 20,
       lineHeight: '21px',
-      textAlign: 'center'
+      textAlign: 'center',
+      paddingBottom: 24
     },
     button: {
       '@media (max-width: 750px)': {
