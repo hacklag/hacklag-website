@@ -50,6 +50,7 @@
     "gulp-git": "1.7.0",
     "gulp-iconfont": "6.0.0",
     "gulp-iconfont-css": "2.0.0",
+    "gulp-imagemin": "^2.4.0",
     "gulp-real-favicon": "^0.2.1",
     "gulp-rename": "1.2.2",
     "gulp-rev": "7.0.0",
