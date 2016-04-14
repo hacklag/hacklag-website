@@ -83,6 +83,14 @@ export default () => {
             src="/img/supporters/nadaktywni.png"
             alt="Nadaktywni" />
         </a>
+        <a
+          href="http://eastrobo.pl/"
+          target="_blank" >
+          <img
+            style={styles.logo}
+            src="/img/supporters/eastrobo.png"
+            alt="Eastrobo" />
+        </a>
       </div>
     </div>
   );
