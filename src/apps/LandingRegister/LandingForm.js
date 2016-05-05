@@ -60,7 +60,7 @@ export default Radium(React.createClass({
     ).then((trace) => {
       const data = JSON.parse(trace.result.stdout);
 
-      this.props.onFormSubmit(data.status);
+      this.props.onFormSubmit(data);
     });
   },
 
