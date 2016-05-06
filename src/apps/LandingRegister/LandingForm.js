@@ -45,20 +45,22 @@ export default Radium(React.createClass({
   },
 
   submitForm(model) {
-    const {Webhook} = Syncano({accountKey: SYNCANO_API_KEY});
+    const {ScriptEndpoint} = Syncano({accountKey: SYNCANO_API_KEY});
     const COMMUNITY_REGISTER_WEBHOOK = '95f37de28a7f95f07b2128677e97d116fcf8813b';
+    const COMMUNITY_REGISTER_NAME = 'communityregistration_endpoint';
     const payload = JSON.stringify({email: model.email});
 
     this.setState({progressVisible: true});
 
-    Webhook.please().runPublic({
+    ScriptEndpoint.please().runPublic({
       instanceName: SYNCANO_INSTANCE_NAME,
-      public_link: COMMUNITY_REGISTER_WEBHOOK},
+      public_link: COMMUNITY_REGISTER_WEBHOOK,
+      name: COMMUNITY_REGISTER_NAME},
       {payload}
     ).then((trace) => {
       const data = JSON.parse(trace.result.stdout);
 
-      this.props.onFormSubmit(data.status);
+      this.props.onFormSubmit(data);
     });
   },
 

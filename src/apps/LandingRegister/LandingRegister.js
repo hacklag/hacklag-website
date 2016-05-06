@@ -2,6 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import LeftBar from './LeftBar';
 import Declined from './LandingDeclined';
+import Reinvited from './LandingReinvited';
 import Success from './LandingSuccess';
 import LandingForm from './LandingForm';
 import TopBar from './TopBar';
@@ -10,7 +11,8 @@ import Supporters from './Supporters';
 export default Radium(React.createClass({
   getInitialState() {
     return {
-      registerState: null
+      registerState: null,
+      registerDate: null
     };
   },
 
@@ -69,7 +71,10 @@ export default Radium(React.createClass({
   },
 
   onFormSubmit(props) {
-    this.setState({registerState: props});
+    this.setState({
+      registerState: props.status,
+      registerDate: props.sendDate
+    });
   },
 
   contentForm() {
@@ -100,13 +105,17 @@ export default Radium(React.createClass({
   },
 
   renderContent() {
-    const {registerState} = this.state;
+    const {registerState, registerDate} = this.state;
 
-    if (registerState) {
+    if (registerState === 'true') {
       return <Success/>;
     }
 
-    if (registerState === false) {
+    if (registerState === 'reinvited') {
+      return <Reinvited sendDate={registerDate}/>;
+    }
+
+    if (registerState === 'false') {
       return <Declined/>;
     }
 
