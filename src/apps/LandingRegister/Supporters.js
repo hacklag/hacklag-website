@@ -44,12 +44,12 @@ export default () => {
             alt="Syncano" />
         </a>
         <a
-          href="http://przetworniameblowa.pl/"
+          href="https://www.facebook.com/groups/121396568034497/"
           target="_blank" >
           <img
             style={styles.logo}
-            src="/img/supporters/pmb.png"
-            alt="PMB" />
+            src="/img/supporters/gcc_logo_poziom.png"
+            alt="Geek Girls Carrots" />
         </a>
         <a
           href="https://www.facebook.com/groups/bstoknet/"
@@ -60,20 +60,12 @@ export default () => {
             alt="#bstoknet" />
         </a>
         <a
-          href="https://www.facebook.com/mobilebialystok"
+          href="http://przetworniameblowa.pl/"
           target="_blank" >
           <img
             style={styles.logo}
-            src="/img/supporters/mobileBstok.png"
-            alt="Mobile Bilystok" />
-        </a>
-        <a
-          href="https://www.facebook.com/groups/121396568034497/"
-          target="_blank" >
-          <img
-            style={styles.logo}
-            src="/img/supporters/gcc_logo_poziom.png"
-            alt="Geek Girls Carrots" />
+            src="/img/supporters/pmb.png"
+            alt="PMB" />
         </a>
         <a
           href="http://www.nadaktywni.org/"
@@ -84,12 +76,28 @@ export default () => {
             alt="Nadaktywni" />
         </a>
         <a
+          href="https://www.facebook.com/mobilebialystok"
+          target="_blank" >
+          <img
+            style={styles.logo}
+            src="/img/supporters/mobileBstok.png"
+            alt="Mobile Bilystok" />
+        </a>
+        <a
           href="http://eastrobo.pl/"
           target="_blank" >
           <img
             style={styles.logo}
             src="/img/supporters/eastrobo.png"
             alt="Eastrobo" />
+        </a>
+        <a
+          href="https://instapage.com/"
+          target="_blank" >
+          <img
+            style={styles.logo}
+            src="/img/supporters/instapage.svg"
+            alt="Instapage" />
         </a>
       </div>
     </div>
