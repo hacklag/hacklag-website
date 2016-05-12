@@ -12,11 +12,6 @@ export default () => {
       height: 60,
       marginRight: 16,
       marginBottom: 16
-    },
-    logoSvg: {
-      height: 60,
-      marginRight: 16,
-      marginBottom: 16
     }
   };
 
@@ -100,7 +95,7 @@ export default () => {
           href="https://instapage.com/"
           target="_blank" >
           <img
-            style={styles.logoSvg}
+            style={styles.logo}
             src="/img/supporters/instapage.svg"
             alt="Instapage" />
         </a>
