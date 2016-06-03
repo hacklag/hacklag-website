@@ -84,12 +84,20 @@ export default () => {
             alt="Mobile Bilystok" />
         </a>
         <a
-          href="http://eastrobo.pl/"
+          href="http://pagepro.co/"
           target="_blank" >
           <img
             style={styles.logo}
-            src="/img/supporters/eastrobo.png"
-            alt="Eastrobo" />
+            src="/img/supporters/pagepro.png"
+            alt="Pagepro" />
+        </a>
+        <a
+          href="http://www.aexol.com/"
+          target="_blank" >
+          <img
+            style={styles.logo}
+            src="/img/supporters/aexol.svg"
+            alt="Aexol" />
         </a>
         <a
           href="https://instapage.com/"
@@ -98,6 +106,14 @@ export default () => {
             style={styles.logo}
             src="/img/supporters/instapage.svg"
             alt="Instapage" />
+        </a>
+        <a
+          href="http://eastrobo.pl/"
+          target="_blank" >
+          <img
+            style={styles.logo}
+            src="/img/supporters/eastrobo.png"
+            alt="Eastrobo" />
         </a>
       </div>
     </div>
