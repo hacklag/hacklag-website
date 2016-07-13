@@ -1,9 +1,3 @@
-/*
- *
- * Landing
- *
- */
-
 import React from 'react';
 import { connect } from 'react-redux';
 import selectLanding from './selectors';
@@ -13,7 +7,6 @@ import Sponsors from 'components/Landing/Sponsors';
 import Timeline from 'components/Landing/Timeline';
 import Offices from 'components/Landing/Offices';
 import Footer from 'components/Landing/Footer';
-import styles from './styles.css';
 
 /*  eslint-disable-line react/prefer-stateless-function */
 export class Landing extends React.Component {
@@ -29,7 +22,7 @@ export class Landing extends React.Component {
 
   render() {
     return (
-      <div className={styles.landing}>
+      <div>
         <Header />
         <Sponsors />
         <Timeline />

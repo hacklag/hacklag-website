@@ -1,12 +1,5 @@
-/**
-*
-* Header
-*
-*/
-
 import React from 'react';
 import { Link } from 'react-router';
-import cx from 'classnames';
 import styles from './styles.scss';
 import HackbatImg from './img/hackbat.svg';
 import Feature1Img from './img/feature-1.png';
@@ -57,7 +50,7 @@ export default () => (
       </div>
       {/* /.Content */}
 
-      <div className={cx('grid', styles.Features)}>
+      <div className={styles.Features}>
         <div className={styles.Features__item}>
           <div className={styles.Features__image}>
             <img src={Feature1Img} role="presentation" />

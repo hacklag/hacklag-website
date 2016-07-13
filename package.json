@@ -1,16 +1,15 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.0.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "hacklag-website",
+  "version": "2.0.0",
+  "description": "Hacklag website",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxstbr/react-boilerplate.git"
+    "url": "git@github.com:hacklag/hacklag-website.git"
   },
   "engines": {
     "npm": ">=3"
   },
-  "author": "Max Stoiber",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "analyze": "node ./internals/scripts/analyze.js",
     "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
