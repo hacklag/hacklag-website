@@ -18,8 +18,7 @@ export default () => (
         <div className={styles.Timeline__section}>
           <div className={styles.Timeline__description}>
             <h2 className={styles.Section__title}>
-              Brace yourself,
-              <div>epic events are comming!</div>
+              Brace yourself, <div>epic events are comming!</div>
             </h2>
             <h3 className={styles.Section__tagline}>
               We like to actively spend our time by hosting events, working on projects or just hanging out together. Check out what’s comming.
@@ -71,8 +70,7 @@ export default () => (
             )}
           >
             <h2 className={styles.Section__title}>
-              Oh, look!
-              <div>People are talking about us</div>
+              Oh, look! <div>People are talking about us</div>
             </h2>
             <h3 className={styles.Section__tagline}>
               We like to actively spend our time by hosting events, working on projects or just hanging out together. Check out what’s comming.
