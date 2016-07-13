@@ -1,0 +1,48 @@
+:global {
+  @import "tools.maths";
+
+  /**
+   * #SETTINGS
+   */
+  @import "settings.global";
+  @import "settings.colors";
+  @import "settings.responsive";
+
+  /**
+   * #TOOLS
+   */
+   @import "tools.colors";
+   @import "tools.widths";
+   @import "tools.at";
+
+  /**
+   * #GENERIC
+   */
+  @import "generic.box-sizing";
+  @import "generic.normalize";
+  @import "generic.reset";
+
+  /**
+   * #BASE
+   */
+  @import "base.page";
+
+  /**
+   * #COMPONENTS
+   */
+  @import "components.button";
+  @import "components.list-input";
+  @import "components.input";
+
+  /**
+   * #OBJECTS
+   */
+  @import "objects.wrapper";
+  @import "objects.grid";
+
+  /**
+   * #TRUMPS
+   */
+  @import "trumps.spacing";
+  @import "trumps.widths";
+}

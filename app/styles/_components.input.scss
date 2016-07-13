@@ -1,0 +1,43 @@
+.Input {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    color: shade(lighter);
+    padding: 10px;
+    transition: .25s border, .25s box-shadow, .25s color;
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+
+    &:focus {
+        border-color: color(primary);
+        color: color(primary);
+        outline: none;
+    }
+
+    &:disabled {
+        color: shade(lightest);
+    }
+
+    &.is-invalid {
+        border: 1px solid color(negative);
+
+        &:focus {
+            box-shadow: 0 0 0 3px color(negative, .25);
+        }
+    }
+}
+
+textarea {
+    resize: vertical;
+    display: block;
+}
+
+.error {
+    color: color(negative);
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 0 7px;
+    border-left: 2px solid color(negative);
+}

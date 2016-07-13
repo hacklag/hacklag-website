@@ -1,0 +1,16 @@
+.ListInput {
+    list-style-type: none;
+
+    &__item {
+        margin-bottom: 8px;
+        position: relative;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        > .input {
+            width: 100%;
+        }
+    }
+}

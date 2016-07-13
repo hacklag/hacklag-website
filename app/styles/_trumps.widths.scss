@@ -1,0 +1,29 @@
+/**
+ * = trumps.widths - generate column widths.
+ */
+
+/*
+ * Trump namespace */
+$widths-namespace: $namespace-trumps !default;
+/*
+ * Is trump responsive */
+$widths-responsive: $responsive !default;
+/*
+ * Enabled column widths */
+$widths-enable: (1 2 3 4) !default;
+
+// Include basic enabled widths
+@each $width in $widths-enable {
+    @include widths($width);
+}
+
+// Include responsive enabled widths
+@if $widths-responsive {
+    @each $alias, $condition in $breakpoints {
+        @include at($alias) {
+            @each $width in $widths-enable {
+                @include widths($width, \@#{$alias});
+            } // end @each
+        } // end @include
+    } // end @each
+} // end @if
