@@ -35,7 +35,7 @@ const ReactBoilerplate = {
        * since a lot of our dependencies depend on them and they get picked up by webpack.
        */
       include: [
-        'core-js', 'eventsource-polyfill', 'babel-polyfill', 'lodash'
+        'core-js', 'eventsource-polyfill', 'babel-polyfill', 'lodash',
       ],
 
       // The path where the DLL manifest and bundle will get built
