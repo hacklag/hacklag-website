@@ -9,6 +9,8 @@ module.exports = {
     require.resolve('babel-preset-latest'),
     // JSX, Flow
     require.resolve('babel-preset-react'),
+    // Hot module reloading
+    require.resolve('babel-preset-react-hmre'),
   ],
   plugins: [
     // class { handleClick = () => { } }

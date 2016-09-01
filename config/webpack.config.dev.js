@@ -21,21 +21,11 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   entry: [
-    // Include WebpackDevServer client. It connects to WebpackDevServer via
-    // sockets and waits for recompile notifications. When WebpackDevServer
-    // recompiles, it sends a message to the client by socket. If only CSS
-    // was changed, the app reload just the CSS. Otherwise, it will refresh.
-    // The "?/" bit at the end tells the client to look for the socket at
-    // the root path, i.e. /sockjs-node/. Otherwise visiting a client-side
-    // route like /todos/42 would make it wrongly request /todos/42/sockjs-node.
-    // The socket server is a part of WebpackDevServer which we are using.
-    // The /sockjs-node/ path I'm referring to is hardcoded in WebpackDevServer.
-    `${require.resolve('webpack-dev-server/client')}?/`,
     // Include Webpack hot module replacement runtime. Webpack is pretty
     // low-level so we need to put all the pieces together. The runtime listens
     // to the events received by the client above, and applies updates (such as
     // new CSS) to the running application.
-    require.resolve('webpack/hot/dev-server'),
+    'webpack-hot-middleware/client',
     // We ship a few polyfills by default.
     require.resolve('./polyfills'),
     // Finally, this is your app's code:
@@ -52,7 +42,8 @@ module.exports = {
     // This does not produce a real file. It's just the virtual path that is
     // served by WebpackDevServer in development. This is the JS bundle
     // containing code from all our entry points, and the Webpack runtime.
-    filename: 'static/js/bundle.js',
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
     // In development, we always serve from the root. This makes config easier.
     publicPath: '/',
   },
