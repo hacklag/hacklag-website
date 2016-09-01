@@ -3,7 +3,7 @@ import request from 'utils/request';
 import * as actions from 'modules/landing';
 
 export function* handleFetchEvents() {
-  while (true) {
+  for (;;) {
     yield take(actions.FETCH_EVENTS);
 
     try {
@@ -16,7 +16,7 @@ export function* handleFetchEvents() {
 }
 
 export function* handleFetchTweets() {
-  while (true) {
+  for (;;) {
     yield take(actions.FETCH_TWEETS);
 
     try {

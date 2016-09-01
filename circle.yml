@@ -1,0 +1,20 @@
+machine:
+  node:
+    version: 6.3.0
+
+dependencies:
+  pre:
+    - npm install -g npm
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - NODE_ENV=production npm run-script bump
+      - NODE_ENV=production npm run-script deployment-master
+
+  staging:
+    branch: devel
+    commands:
+      - NODE_ENV=staging npm run-script deployment-devel
+
