@@ -14,6 +14,8 @@ module.exports = {
 
   settings: {
     'import/ignore': [
+      'config',
+      'scripts',
       'node_modules',
       '\\.(json|css|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$',
     ],

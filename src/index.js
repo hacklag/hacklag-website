@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Router, browserHistory } from 'react-router';
+import createRoutes from './routes';
 
 ReactDOM.render(
-  <App />,
+  <Router
+    history={browserHistory}
+    routes={{
+      childRoutes: createRoutes(),
+    }}
+  />,
   document.getElementById('root')
 );

@@ -1,3 +1,4 @@
+/* eslint-disable */
 var rl = require('readline');
 
 // Convention: "no" should be the conservative choice.

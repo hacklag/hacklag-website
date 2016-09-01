@@ -1,28 +1,29 @@
+/* eslint-disable */
 process.env.NODE_ENV = 'development';
 
-var path = require('path');
-var chalk = require('chalk');
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var historyApiFallback = require('connect-history-api-fallback');
-var httpProxyMiddleware = require('http-proxy-middleware');
-var execSync = require('child_process').execSync;
-var opn = require('opn');
-var detect = require('detect-port');
-var prompt = require('./utils/prompt');
-var config = require('../config/webpack.config.dev');
-var paths = require('../config/paths');
+const path = require('path');
+const chalk = require('chalk');
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const historyApiFallback = require('connect-history-api-fallback');
+const httpProxyMiddleware = require('http-proxy-middleware');
+const execSync = require('child_process').execSync;
+const opn = require('opn');
+const detect = require('detect-port');
+const prompt = require('./utils/prompt');
+const config = require('../config/webpack.config.dev');
+const paths = require('../config/paths');
 
 // Tools like Cloud9 rely on this.
-var DEFAULT_PORT = process.env.PORT || 3000;
+const DEFAULT_PORT = process.env.PORT || 3000;
 var compiler;
 
 // TODO: hide this behind a flag and eliminate dead code on eject.
 // This shouldn't be exposed to the user.
 var handleCompile;
-var isSmokeTest = process.argv.some(arg => arg.indexOf('--smoke-test') > -1);
+const isSmokeTest = process.argv.some(arg => arg.indexOf('--smoke-test') > -1);
 if (isSmokeTest) {
-  handleCompile = function (err, stats) {
+  handleCompile = (err, stats) => {
     if (err || stats.hasErrors() || stats.hasWarnings()) {
       process.exit(1);
     } else {
@@ -34,7 +35,7 @@ if (isSmokeTest) {
 // Some custom utilities to prettify Webpack output.
 // This is a little hacky.
 // It would be easier if webpack provided a rich error object.
-var friendlySyntaxErrorLabel = 'Syntax error:';
+const friendlySyntaxErrorLabel = 'Syntax error:';
 function isLikelyASyntaxError(message) {
   return message.indexOf(friendlySyntaxErrorLabel) !== -1;
 }
@@ -72,17 +73,17 @@ function setupCompiler(port) {
   // recompiling a bundle. WebpackDevServer takes care to pause serving the
   // bundle, so if you refresh, it'll wait instead of serving the old one.
   // "invalid" is short for "bundle invalidated", it doesn't imply any errors.
-  compiler.plugin('invalid', function() {
+  compiler.plugin('invalid', () => {
     clearConsole();
     console.log('Compiling...');
   });
 
   // "done" event fires when Webpack has finished recompiling the bundle.
   // Whether or not you have warnings or errors, you will get this event.
-  compiler.plugin('done', function(stats) {
+  compiler.plugin('done', (stats) => {
     clearConsole();
-    var hasErrors = stats.hasErrors();
-    var hasWarnings = stats.hasWarnings();
+    const hasErrors = stats.hasErrors();
+    const hasWarnings = stats.hasWarnings();
     if (!hasErrors && !hasWarnings) {
       console.log(chalk.green('Compiled successfully!'));
       console.log();
@@ -101,11 +102,11 @@ function setupCompiler(port) {
     // them in a readable focused way.
     // We use stats.toJson({}, true) to make output more compact and readable:
     // https://github.com/facebookincubator/create-react-app/issues/401#issuecomment-238291901
-    var json = stats.toJson({}, true);
-    var formattedErrors = json.errors.map(message =>
+    const json = stats.toJson({}, true);
+    const formattedErrors = json.errors.map(message =>
       'Error in ' + formatMessage(message)
     );
-    var formattedWarnings = json.warnings.map(message =>
+    const formattedWarnings = json.warnings.map(message =>
       'Warning in ' + formatMessage(message)
     );
     if (hasErrors) {
@@ -162,7 +163,7 @@ function openBrowser(port) {
 function addMiddleware(devServer) {
   // `proxy` lets you to specify a fallback server during development.
   // Every unrecognized request will be forwarded to it.
-  var proxy = require(paths.appPackageJson).proxy;
+  const proxy = require(paths.appPackageJson).proxy;
   devServer.use(historyApiFallback({
     // Allow paths with dots in them to be loaded, reference issue #387
     disableDotRule: true,
@@ -190,7 +191,7 @@ function addMiddleware(devServer) {
     // - /index.html (served as HTML5 history API fallback)
     // - /*.hot-update.json (WebpackDevServer uses this too for hot reloading)
     // - /sockjs-node/* (WebpackDevServer uses this for hot reloading)
-    var mayProxy = /^(?!\/(index\.html$|.*\.hot-update\.json$|sockjs-node\/)).*$/;
+    const mayProxy = /^(?!\/(index\.html$|.*\.hot-update\.json$|sockjs-node\/)).*$/;
     devServer.use(mayProxy,
       // Pass the scope regex both to Express and to the middleware for proxying
       // of both HTTP and WebSockets to work without false positives.
@@ -208,7 +209,7 @@ function addMiddleware(devServer) {
 }
 
 function runDevServer(port) {
-  var devServer = new WebpackDevServer(compiler, {
+  const devServer = new WebpackDevServer(compiler, {
     // Enable hot reloading server. It will provide /sockjs-node/ endpoint
     // for the WebpackDevServer client so it can learn when the files were
     // updated. The WebpackDevServer client is included as an entry point
@@ -254,7 +255,7 @@ detect(DEFAULT_PORT).then(port => {
   }
 
   clearConsole();
-  var question =
+  const question =
     chalk.yellow('Something is already running on port ' + DEFAULT_PORT + '.') +
     '\n\nWould you like to run the app on another port instead?';
 
