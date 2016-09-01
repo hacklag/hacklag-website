@@ -1,11 +1,12 @@
-var path = require('path');
-var autoprefixer = require('autoprefixer');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-var WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNodeModulesPlugin');
-var paths = require('./paths');
-var env = require('./env');
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+const WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNodeModulesPlugin');
+const paths = require('./paths');
+const env = require('./env');
+const babelQuery = require('./babel.dev');
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -29,7 +30,7 @@ module.exports = {
     // route like /todos/42 would make it wrongly request /todos/42/sockjs-node.
     // The socket server is a part of WebpackDevServer which we are using.
     // The /sockjs-node/ path I'm referring to is hardcoded in WebpackDevServer.
-    require.resolve('webpack-dev-server/client') + '?/',
+    `${require.resolve('webpack-dev-server/client')}?/`,
     // Include Webpack hot module replacement runtime. Webpack is pretty
     // low-level so we need to put all the pieces together. The runtime listens
     // to the events received by the client above, and applies updates (such as
@@ -38,7 +39,7 @@ module.exports = {
     // We ship a few polyfills by default.
     require.resolve('./polyfills'),
     // Finally, this is your app's code:
-    path.join(paths.appSrc, 'index')
+    path.join(paths.appSrc, 'index'),
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
@@ -53,7 +54,7 @@ module.exports = {
     // containing code from all our entry points, and the Webpack runtime.
     filename: 'static/js/bundle.js',
     // In development, we always serve from the root. This makes config easier.
-    publicPath: '/'
+    publicPath: '/',
   },
   resolve: {
     // These are the reasonable defaults supported by the Node ecosystem.
@@ -68,15 +69,8 @@ module.exports = {
       // a dependency in generated projects.
       // See https://github.com/facebookincubator/create-react-app/issues/255
       'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator'),
-      'react-native': 'react-native-web'
-    }
-  },
-  // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
-  // directory of `react-scripts` itself rather than the project directory.
-  // You can remove this after ejecting.
-  resolveLoader: {
-    root: paths.ownNodeModules,
-    moduleTemplates: ['*-loader']
+      'react-native': 'react-native-web',
+    },
   },
   module: {
     // First, run the linter.
@@ -84,9 +78,9 @@ module.exports = {
     preLoaders: [
       {
         test: /\.js$/,
-        loader: 'eslint',
+        loader: 'eslint-loader',
         include: paths.appSrc,
-      }
+      },
     ],
     loaders: [
       // Process JS with Babel.
@@ -94,7 +88,7 @@ module.exports = {
         test: /\.js$/,
         include: paths.appSrc,
         loader: 'babel',
-        query: require('./babel.dev')
+        query: babelQuery,
       },
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -104,14 +98,14 @@ module.exports = {
       {
         test: /\.css$/,
         include: [paths.appSrc, paths.appNodeModules],
-        loader: 'style!css!postcss'
+        loader: 'style!css!postcss',
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
       {
         test: /\.json$/,
         include: [paths.appSrc, paths.appNodeModules],
-        loader: 'json'
+        loader: 'json',
       },
       // "file" loader makes sure those assets get served by WebpackDevServer.
       // When you `import` an asset, you get its (virtual) filename.
@@ -121,8 +115,8 @@ module.exports = {
         include: [paths.appSrc, paths.appNodeModules],
         loader: 'file',
         query: {
-          name: 'static/media/[name].[hash:8].[ext]'
-        }
+          name: 'static/media/[name].[hash:8].[ext]',
+        },
       },
       // "url" loader works just like "file" loader but it also embeds
       // assets smaller than specified size as data URLs to avoid requests.
@@ -132,29 +126,27 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'static/media/[name].[hash:8].[ext]'
-        }
-      }
-    ]
+          name: 'static/media/[name].[hash:8].[ext]',
+        },
+      },
+    ],
   },
   // Point ESLint to our predefined config.
   eslint: {
     configFile: path.join(__dirname, 'eslint.js'),
-    useEslintrc: false
+    useEslintrc: false,
   },
   // We use PostCSS for autoprefixing only.
-  postcss: function() {
-    return [
-      autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
-        ]
-      }),
-    ];
-  },
+  postcss: () => [
+    autoprefixer({
+      browsers: [
+        '>1%',
+        'last 4 versions',
+        'Firefox ESR',
+        'not ie < 9', // React doesn't support IE8 anyway
+      ],
+    }),
+  ],
   plugins: [
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -176,6 +168,6 @@ module.exports = {
     // to restart the development server for Webpack to discover it. This plugin
     // makes the discovery automatic so you don't have to restart.
     // See https://github.com/facebookincubator/create-react-app/issues/186
-    new WatchMissingNodeModulesPlugin(paths.appNodeModules)
-  ]
+    new WatchMissingNodeModulesPlugin(paths.appNodeModules),
+  ],
 };

@@ -1,11 +1,12 @@
-var path = require('path');
-var autoprefixer = require('autoprefixer');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var url = require('url');
-var paths = require('./paths');
-var env = require('./env');
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const url = require('url');
+const paths = require('./paths');
+const env = require('./env');
+const babelQuery = require('./babel.prod');
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
@@ -18,8 +19,8 @@ if (env['process.env.NODE_ENV'] !== '"production"') {
 // single-page apps that may serve index.html for nested URLs like /todos/42.
 // We can't use a relative path in HTML because we don't want to load something
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
-var homepagePath = require(paths.appPackageJson).homepage;
-var publicPath = homepagePath ? url.parse(homepagePath).pathname : '/';
+const homepagePath = require(paths.appPackageJson).homepage;
+let publicPath = homepagePath ? url.parse(homepagePath).pathname : '/';
 if (!publicPath.endsWith('/')) {
   // If we don't do this, file assets will get incorrect paths.
   publicPath += '/';
@@ -37,7 +38,7 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: [
     require.resolve('./polyfills'),
-    path.join(paths.appSrc, 'index')
+    path.join(paths.appSrc, 'index'),
   ],
   output: {
     // The build folder.
@@ -48,7 +49,7 @@ module.exports = {
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
-    publicPath: publicPath
+    publicPath,
   },
   resolve: {
     // These are the reasonable defaults supported by the Node ecosystem.
@@ -63,15 +64,15 @@ module.exports = {
       // a dependency in generated projects.
       // See https://github.com/facebookincubator/create-react-app/issues/255
       'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator'),
-      'react-native': 'react-native-web'
-    }
+      'react-native': 'react-native-web',
+    },
   },
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
   // directory of `react-scripts` itself rather than the project directory.
   // You can remove this after ejecting.
   resolveLoader: {
     root: paths.ownNodeModules,
-    moduleTemplates: ['*-loader']
+    moduleTemplates: ['*-loader'],
   },
   module: {
     // First, run the linter.
@@ -80,8 +81,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'eslint',
-        include: paths.appSrc
-      }
+        include: paths.appSrc,
+      },
     ],
     loaders: [
       // Process JS with Babel.
@@ -89,7 +90,7 @@ module.exports = {
         test: /\.js$/,
         include: paths.appSrc,
         loader: 'babel',
-        query: require('./babel.prod')
+        query: babelQuery,
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
@@ -114,7 +115,7 @@ module.exports = {
         // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
         // including CSS. This is confusing and will be removed in Webpack 2:
         // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
+        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss'),
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
@@ -122,7 +123,7 @@ module.exports = {
       {
         test: /\.json$/,
         include: [paths.appSrc, paths.appNodeModules],
-        loader: 'json'
+        loader: 'json',
       },
       // "file" loader makes sure those assets end up in the `build` folder.
       // When you `import` an asset, you get its filename.
@@ -131,8 +132,8 @@ module.exports = {
         include: [paths.appSrc, paths.appNodeModules],
         loader: 'file',
         query: {
-          name: 'static/media/[name].[hash:8].[ext]'
-        }
+          name: 'static/media/[name].[hash:8].[ext]',
+        },
       },
       // "url" loader works just like "file" loader but it also embeds
       // assets smaller than specified size as data URLs to avoid requests.
@@ -142,31 +143,29 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'static/media/[name].[hash:8].[ext]'
-        }
-      }
-    ]
+          name: 'static/media/[name].[hash:8].[ext]',
+        },
+      },
+    ],
   },
   // Point ESLint to our predefined config.
   eslint: {
     // TODO: consider separate config for production,
     // e.g. to enable no-console and no-debugger only in production.
     configFile: path.join(__dirname, 'eslint.js'),
-    useEslintrc: false
+    useEslintrc: false,
   },
   // We use PostCSS for autoprefixing only.
-  postcss: function() {
-    return [
-      autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
-        ]
-      }),
-    ];
-  },
+  postcss: () => [
+    autoprefixer({
+      browsers: [
+        '>1%',
+        'last 4 versions',
+        'Firefox ESR',
+        'not ie < 9', // React doesn't support IE8 anyway
+      ],
+    }),
+  ],
   plugins: [
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -183,8 +182,8 @@ module.exports = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
-      }
+        minifyURLs: true,
+      },
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `env.js`.
@@ -199,17 +198,17 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true, // React doesn't support IE8
-        warnings: false
+        warnings: false,
       },
       mangle: {
-        screw_ie8: true
+        screw_ie8: true,
       },
       output: {
         comments: false,
-        screw_ie8: true
-      }
+        screw_ie8: true,
+      },
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin('static/css/[name].[contenthash:8].css')
-  ]
+    new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
+  ],
 };

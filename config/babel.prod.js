@@ -5,7 +5,7 @@ module.exports = {
     // Latest stable ECMAScript features
     require.resolve('babel-preset-latest'),
     // JSX, Flow
-    require.resolve('babel-preset-react')
+    require.resolve('babel-preset-react'),
   ],
   plugins: [
     // class { handleClick = () => { } }
@@ -15,15 +15,15 @@ module.exports = {
     // function* () { yield 42; yield 43; }
     [require.resolve('babel-plugin-transform-regenerator'), {
       // Async functions are converted to generators by babel-preset-latest
-      async: false
+      async: false,
     }],
     // Polyfills the runtime needed for async/await and generators
     [require.resolve('babel-plugin-transform-runtime'), {
       helpers: false,
       polyfill: false,
-      regenerator: true
+      regenerator: true,
     }],
     // Optimization: hoist JSX that never changes out of render()
-    require.resolve('babel-plugin-transform-react-constant-elements')
+    require.resolve('babel-plugin-transform-react-constant-elements'),
   ],
 };
