@@ -1,0 +1,20 @@
+machine:
+  node:
+    version: 6.3.0
+
+dependencies:
+  pre:
+    - npm install -g npm
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run build
+      - NODE_ENV=production npm run deploy
+
+  staging:
+    branch: v2.0-mobx
+    commands:
+      - npm run build
+      - NODE_ENV=development npm run deploy
