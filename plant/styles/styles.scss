@@ -1,0 +1,55 @@
+/**
+ * #SETTINGS
+ */
+$base-spacing: 30px;
+$base-color: #666;
+$base-line-height: 24px;
+$base-font-size: 16px;
+$base-font-family: 'Open Sans', Helvetica, "Helvetica Neue", Arial, sans-serif !default;
+/*
+* List of heading font sizes and line heights */
+$headings: (
+ // Extra large sizes
+ giga: 60px 60px,
+ mega: 45px 52px,
+ kilo: 36px 46px,
+ // Primary font sizes
+ alpha: 32px 42px,   // h1
+ beta: 28px 36px,    // h2
+ gamma: 24px 32px,   // h3
+ delta: 22px 30px,   // h4
+ epsilon: 18px 24px, // h5
+ zeta: 16px 24px,    // h6
+ // Extra small sizes
+ milli: 14px 20px,
+ micro: 13px 18px,
+ nano: 12px 16px,
+ pico: 10px 14px,
+);
+
+/**
+ * #TOOLS
+ */
+ @import "tools.maths";
+
+/**
+ * #GENERIC
+ */
+@import "generic.box-sizing";
+@import "generic.normalize";
+@import "generic.reset";
+
+/**
+ * #BASE
+ */
+@import "base.headings";
+@import "base.images";
+@import "base.page";
+
+:global {
+  /**
+   * #TRUMPS
+   */
+  @import "trumps.headings";
+  @import "trumps.spacing";
+}

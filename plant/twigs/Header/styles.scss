@@ -1,0 +1,44 @@
+.Header {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 15px 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    flex: 1;
+
+    &-link {
+      color: #666;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.Nav {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+
+  &__item {
+    & + * {
+      margin-left: 30px;
+    }
+
+    &-link {
+      color: #999;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
