@@ -3,20 +3,24 @@ import styles from './styles.scss';
 
 const cn = require('classnames/bind').bind(styles);
 
-export default class Button extends Component {
+export default class Join extends Component {
   static propTypes = {
     children: PropTypes.node,
+    vAlign: PropTypes.string,
+    spacing: PropTypes.string,
     className: PropTypes.string,
   }
 
   render() {
+    const {
+      spacing = 'md',
+      vAlign = 'top',
+    } = this.props;
+
     return (
-      <button
-        {...this.props}
-        className={cn('btn', this.props.className)}
-      >
+      <div className={cn('Join', this.props.className, vAlign, spacing)}>
         {this.props.children}
-      </button>
+      </div>
     );
   }
 }

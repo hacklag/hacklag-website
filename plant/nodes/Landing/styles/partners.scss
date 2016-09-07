@@ -1,0 +1,22 @@
+.Partners {
+  margin-left: -30px;
+  text-align: center;
+  margin-top: 60px;
+
+  img {
+    transition: .25s ease;
+    filter: grayscale(1);
+    opacity: .5;
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.Sponsors {
+  text-align: center;
+  margin-top: 60px;
+
+  > div {
+    margin-bottom: 60px;
+  }
+
+  img {
+    display: inline-block;
+    margin-right: 60px;
+    max-width: 100%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

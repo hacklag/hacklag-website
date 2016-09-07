@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Header, Wrapper } from 'twigs';
+import { Wrapper } from 'twigs';
 
 export default class Default extends Component {
   static propTypes = {
@@ -9,7 +9,6 @@ export default class Default extends Component {
   render() {
     return (
       <div>
-        <Header />
         <Wrapper className="pv">
           {this.props.children}
         </Wrapper>

@@ -5,27 +5,27 @@
 $base-spacing: 30px !default;
 
 $spacing-types: (
-    'p':padding,
-    'm':margin
+  'p':padding,
+  'm':margin
 );
 
 $spacing-sizes: (
-    '--':     quarter($base-spacing),
-    '-':      halve($base-spacing),
-    '':       $base-spacing,
-    '\\+':    double($base-spacing),
-    '\\+\\+': quadruple($base-spacing),
-    '0':      0,
+  '--':     quarter($base-spacing),
+  '-':      halve($base-spacing),
+  '':       $base-spacing,
+  '\\+':    double($base-spacing),
+  '\\+\\+': quadruple($base-spacing),
+  '0':      0,
 );
 
 $spacing-directions: (
-    '':'',
-    't':'-top',
-    'r':'-right',
-    'b':'-bottom',
-    'l':'-left',
-    'v':vertical,
-    'h':horizontal
+  '':'',
+  't':'-top',
+  'r':'-right',
+  'b':'-bottom',
+  'l':'-left',
+  'v':vertical,
+  'h':horizontal
 );
 
 // 'p': padding

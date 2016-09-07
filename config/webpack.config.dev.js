@@ -52,7 +52,7 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
     // In development, we always serve from the root. This makes config easier.
-    publicPath: '/',
+    publicPath: 'http://localhost:3000/',
   },
   resolve: {
     modulesDirectories: modules,

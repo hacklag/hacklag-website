@@ -3,7 +3,7 @@ import styles from './styles.scss';
 
 const cn = require('classnames/bind').bind(styles);
 
-export default class Button extends Component {
+export default class Split extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -11,12 +11,11 @@ export default class Button extends Component {
 
   render() {
     return (
-      <button
-        {...this.props}
-        className={cn('btn', this.props.className)}
-      >
-        {this.props.children}
-      </button>
+      <div>
+        <div className={cn('Split', this.props.className)}>
+          {this.props.children}
+        </div>
+      </div>
     );
   }
 }
