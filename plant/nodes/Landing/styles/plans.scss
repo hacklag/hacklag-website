@@ -13,7 +13,7 @@ $deltaColor: #101010;
     transition: opacity .25s;
     flex: 1 100%;
     padding-left: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-decoration: none;
 
     .Plans:hover & {
@@ -36,6 +36,7 @@ $deltaColor: #101010;
 
   &__item-inner {
     transition: margin .25s, padding .25s;
+    background: #fff;
     border: 2px solid #e5e5e5;
     padding: 15px;
     border-top: 0;
@@ -80,7 +81,7 @@ $deltaColor: #101010;
       content: '\F00C';
       margin-right: 5px;
       font-family: FontAwesome;
-      color: #ccc;  
+      color: #ccc;
     }
   }
 

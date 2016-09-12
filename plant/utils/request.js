@@ -41,6 +41,14 @@ function Request(url, options = {}) {
   opts.headers = new Headers(headers);
 
   if (/api\.syncano/.test(url)) {
+    if (!opts.headers.has('X-API-KEY')) {
+      opts.headers.append('X-API-KEY', process.env.HACKLAG_SYNCANO_API_KEY);
+    }
+
+    if (!opts.headers.has('X-USER-KEY')) {
+      opts.headers.append('X-USER-KEY', process.env.HACKLAG_SYNCANO_USER_KEY);
+    }
+
     if (!opts.headers.has('Content-type')) {
       opts.headers.append('Content-type', 'application/json');
     }

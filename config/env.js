@@ -10,5 +10,9 @@ module.exports = Object
   .reduce((env, key) => Object.assign({}, env, {
     [`process.env.${key}`]: JSON.stringify(process.env[key]),
   }), {
-    'process.env.NODE_ENV': NODE_ENV,
+    'process.env': {
+      NODE_ENV: JSON.stringify(NODE_ENV),
+      HACKLAG_SYNCANO_API_KEY: JSON.stringify(process.env.HACKLAG_SYNCANO_API_KEY),
+      HACKLAG_SYNCANO_USER_KEY: JSON.stringify(process.env.HACKLAG_SYNCANO_USER_KEY),
+    },
   });

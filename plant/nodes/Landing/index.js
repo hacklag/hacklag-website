@@ -1,9 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect, observer, moment } from 'utils';
 import { Link, Icon } from 'leafs';
 import { Wrapper, Nav, Join, Split } from 'twigs';
+import { Follow } from 'react-twitter-widgets';
+import FacebookProvider, { Like } from 'react-facebook';
 import styles from './styles.scss';
 
 const cn = require('classnames/bind').bind(styles);
+
+const PLAN_HOTDESK_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=f7ca61fc7a2d3d6f4b1b190858a60c56';
+const PLAN_HOTDESK_PLUS_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=d5a026465e7d82761c6e2c4f174f61f4';
+const PLAN_PERMAMENT_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=d67e8ace7b83af12dcfdc74905eb0811';
+const CALENDAR_URL = 'https://calendar.google.com/calendar/embed?src=hacklag.org_aqt391ob3q7uj2lle7d6flknvg%40group.calendar.google.com';
 
 import Feature1Img from './images/feature-1.png';
 import Feature2Img from './images/feature-2.png';
@@ -19,11 +27,26 @@ import AexolImg from './images/logo-aexol.png';
 import NadaktywniImg from './images/logo-nadaktywni.png';
 import MobileBialystokImg from './images/logo-mobile-bialystok.png';
 
-const PLAN_HOTDESK_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=f7ca61fc7a2d3d6f4b1b190858a60c56';
-const PLAN_HOTDESK_PLUS_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=d5a026465e7d82761c6e2c4f174f61f4';
-const PLAN_PERMAMENT_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=d67e8ace7b83af12dcfdc74905eb0811';
-
+@connect(({ dataRoot }) => ({
+  fetchTweets: dataRoot.fetchTweets,
+  fetchEvents: dataRoot.fetchEvents,
+  tweets: dataRoot.tweets,
+  events: dataRoot.events,
+}))
+@observer
 export default class Landing extends Component {
+  static propTypes = {
+    fetchTweets: PropTypes.func.isRequired,
+    fetchEvents: PropTypes.func.isRequired,
+    tweets: PropTypes.object.isRequired,
+    events: PropTypes.object.isRequired,
+  }
+
+  componentDidMount = () => {
+    this.props.fetchTweets();
+    this.props.fetchEvents();
+  }
+
   render() {
     return (
       <div>
@@ -31,7 +54,7 @@ export default class Landing extends Component {
           <Wrapper className={cn('Header__inner')}>
             <div className={cn('Header__bar')}>
               <Nav className={cn('Header__nav', 'Header__nav--first')}>
-                <Link className={cn('Header__nav-link')} to="/events">Events</Link>
+                <a className={cn('Header__nav-link')} href="#events">Events</a>
               </Nav>
 
               <div className={cn('Header__logo')}>
@@ -54,7 +77,7 @@ export default class Landing extends Component {
               <div className={cn('Header__content-subline')}>
                 Sounds good?
               </div>
-              <a className="Btn Btn--primary" href="#pricing">Join us!</a>
+              <a className="Btn Btn--primary" href="#offices">Join us!</a>
             </div>
             {/* ./Header__content */}
 
@@ -62,7 +85,7 @@ export default class Landing extends Component {
             <div className={cn('Features')}>
               <div className={cn('Features__item')}>
                 <div className={cn('Features__image')}>
-                  <img src={Feature1Img} role="presentation" />
+                  <img src={Feature1Img} role="presentation" width="61" height="66" />
                 </div>
                 <h2 className={cn('Features__title')}>
                   International organization
@@ -70,11 +93,11 @@ export default class Landing extends Component {
                 <p className={cn('Features__content')}>
                   Our members are from different places all over the world. We use english in our whole communication.
                 </p>
-                <Link className="Btn Btn--primary" to="/about">Learn more</Link>
+                {/* <Link className="Btn Btn--primary" to="/about">Learn more</Link> */}
               </div>
               <div className={cn('Features__item')}>
                 <div className={cn('Features__image')}>
-                  <img src={Feature2Img} role="presentation" />
+                  <img src={Feature2Img} role="presentation" width="45" height="67" />
                 </div>
                 <h2 className={cn('Features__title')}>
                   Open space offices
@@ -82,11 +105,11 @@ export default class Landing extends Component {
                 <p className={cn('Features__content')}>
                   In every workspace we have a lot of space for collaboration. Our members can choose from <b>hotdesks</b> or rent their own desk.
                 </p>
-                <Link className="Btn Btn--primary" to="/about">View offices</Link>
+                {/* <Link className="Btn Btn--primary" to="/about">View offices</Link> */}
               </div>
               <div className={cn('Features__item')}>
                 <div className={cn('Features__image')}>
-                  <img src={Feature3Img} role="presentation" />
+                  <img src={Feature3Img} role="presentation" width="58" height="58" />
                 </div>
                 <h2 className={cn('Features__title')}>
                   Epic events
@@ -94,7 +117,7 @@ export default class Landing extends Component {
                 <p className={cn('Features__content')}>
                   We support local communities by sharing our workspace for different types of events: meetups, workshops and parties ;)
                 </p>
-                <Link className="Btn Btn--primary" to="/about">Check events</Link>
+                {/* <Link className="Btn Btn--primary" to="/about">Check events</Link> */}
               </div>
             </div>
           </Wrapper>
@@ -119,7 +142,7 @@ export default class Landing extends Component {
               {/* /.Sponsors */}
 
               <Join className="ta-c" spacing="sm">
-                <Link className="Btn Btn--secondary" to="/sponsors">View all sponsors</Link>
+                {/* <Link className="Btn Btn--secondary" to="/sponsors">View all sponsors</Link> */}
                 <a className="Btn Btn--primary" href="mailto:sponsorship@hacklag.org">Become a sponsor</a>
               </Join>
 
@@ -142,7 +165,7 @@ export default class Landing extends Component {
         </div>
         {/* /.Section */}
 
-        <div className={cn('Section', 'Section--secondary')}>
+        <div className={cn('Section', 'Section--secondary')} id="events">
           <Wrapper>
             <div className={cn('Timeline')}>
               <div className={cn('Timeline__section')}>
@@ -153,25 +176,23 @@ export default class Landing extends Component {
                   <h3 className={cn('Section__tagline')}>
                     We like to actively spend our time by hosting events, working on projects or just hanging out together. Check out what’s comming.
                   </h3>
-                  <Link className="Btn Btn--primary" to="/events">View all events</Link>
+                  <a className="Btn Btn--primary" href={CALENDAR_URL}>View all events</a>
                 </div>
 
                 <div className={cn('Timeline__line')}>
-                  <div className={cn('Timeline__item', 'Timeline__item--right')}>
-                    <div className={cn('Timeline__item-point')}></div>
-                    <div className={cn('Timeline__item-title')}>Geeks Girls Carrots</div>
-                    <div className={cn('Timeline__item-date')}>12 August at 19:00</div>
-                  </div>
-                  <div className={cn('Timeline__item', 'Timeline__item--right')}>
-                    <div className={cn('Timeline__item-point')}></div>
-                    <div className={cn('Timeline__item-title')}>PyStok</div>
-                    <div className={cn('Timeline__item-date')}>24 July at 18:00</div>
-                  </div>
-                  <div className={cn('Timeline__item', 'Timeline__item--right')}>
-                    <div className={cn('Timeline__item-point')}></div>
-                    <div className={cn('Timeline__item-title')}>Girls Geeks Carrots</div>
-                    <div className={cn('Timeline__item-date')}>12 August at 18:00</div>
-                  </div>
+                  {this.props.events.items.map((item, index) => (
+                    <div key={index} className={cn('Timeline__item', 'Timeline__item--right')}>
+                      <div className={cn('Timeline__item-title')}>{item.summary}</div>
+                      <div className={cn('Timeline__item-date')}>{
+                        item.start.dateTime ?
+                          moment(item.start.dateTime).format('D MMMM [at] HH:mm') :
+                          moment(item.start.date).format('D MMMM')
+                      }</div>
+                    </div>
+                  ))}
+                  {Array.from(new Array(Math.abs(3 - this.props.events.items.length))).map((i, index) => (
+                    <div key={index} className={cn('Timeline__item', 'Timeline__item--right', 'Timeline__item--bare')} />
+                  ))}
                 </div>
               </div>
               {/* /.Timeline__section */}
@@ -184,41 +205,31 @@ export default class Landing extends Component {
                   <h3 className={cn('Section__tagline')}>
                     We like to actively spend our time by hosting events, working on projects or just hanging out together. Check out what’s comming.
                   </h3>
-                  <Link className="Btn Btn--primary" to="https://twitter.com/HacklagHQ">Check our Twitter</Link>
+                  <a className="Btn Btn--primary" href="https://twitter.com/HacklagHQ">Check our Twitter</a>
                 </div>
 
                 <div className={cn('Timeline__line')}>
-                  <div className={cn('Timeline__item', 'Timeline__item--left', 'Timeline__item--tweet')}>
-                    <div className={cn('Timeline__item-point')}></div>
-                    <img className={cn('Timeline__item-image')} src="https://s3.amazonaws.com/uifaces/faces/twitter/csswizardry/48.jpg" alt="" />
-                    <div className={cn('Timeline__item-title')}>
-                      Maciej Korsan <span className={cn('Timeline__item-meta')}>&sdot; May 23</span>
+                  {this.props.tweets.items.map((item, index) => (
+                    <div key={index} className={cn('Timeline__item', 'Timeline__item--left', 'Timeline__item--tweet')}>
+                      <a href={item.user_url}>
+                        <img className={cn('Timeline__item-image')} src={item.user_image} role="presentation" />
+                      </a>
+                      <div className={cn('Timeline__item-title')}>
+                        <a href={item.user_url} className={cn('Timeline__item-username')}>{item.user_name}</a> &sdot;
+                        <a href={item.tweet_url} className={cn('Timeline__item-meta')}>
+                          {' '}
+                          {moment(item.tweet_date.value).format('MMM D')}
+                        </a>
+                      </div>
+                      <div
+                        className={cn('Timeline__item-content')}
+                        dangerouslySetInnerHTML={{ __html: item.tweet_text }}
+                      />
                     </div>
-                    <div className={cn('Timeline__item-content')}>
-                      <a href="">#reactjsnight</a> <a href="">#hacklag</a> <a href="">@HacklagHQ</a> <a href="">#białystok</a> just started :) <a href="">@mkucharz</a>
-                    </div>
-                  </div>
-                  <div className={cn('Timeline__item', 'Timeline__item--left', 'Timeline__item--tweet')}>
-                    <div className={cn('Timeline__item-point')}></div>
-                    <img className={cn('Timeline__item-image')} src="https://s3.amazonaws.com/uifaces/faces/twitter/csswizardry/48.jpg" alt="" />
-                    <div className={cn('Timeline__item-title')}>
-                      Maciej Korsan <span className={cn('Timeline__item-meta')}>&sdot; May 23</span>
-                    </div>
-                    <div className={cn('Timeline__item-content')}>
-                      <a href="">#reactjsnight</a> <a href="">#hacklag</a> <a href="">@HacklagHQ</a> <a href="">#białystok</a> just started :) <a href="">@mkucharz</a>
-                    </div>
-                  </div>
-                  <div className={cn('Timeline__item', 'Timeline__item--left', 'Timeline__item--tweet')}>
-                    <div className={cn('Timeline__item-point')}></div>
-                    <img className={cn('Timeline__item-image')} src="https://s3.amazonaws.com/uifaces/faces/twitter/csswizardry/48.jpg" alt="" />
-                    <div className={cn('Timeline__item-title')}>
-                      Maciej Korsan <span className={cn('Timeline__item-meta')}>&sdot; May 23</span>
-                    </div>
-                    <div className={cn('Timeline__item-content')}>
-                      <a href="">#reactjsnight</a> <a href="">#hacklag</a> <a href="">@HacklagHQ</a> <a href="">#białystok</a> just started :) <a href="">@mkucharz</a>
-                      <a href="">#reactjsnight</a> <a href="">#hacklag</a> <a href="">@HacklagHQ</a> <a href="">#białystok</a> just started :) <a href="">@mkucharz</a>
-                    </div>
-                  </div>
+                  ))}
+                  {Array.from(new Array(Math.abs(3 - this.props.tweets.items.length))).map((i, index) => (
+                    <div key={index} className={cn('Timeline__item', 'Timeline__item--left', 'Timeline__item--bare')} />
+                  ))}
                 </div>
               </div>
               {/* /.Timeline__section */}
@@ -227,21 +238,21 @@ export default class Landing extends Component {
 
             <h3 className={cn('Section__social-title')}>Pssst! Want to know more about HACKLAG?</h3>
             <div className={cn('Section__social')}>
-              {/* <FacebookProvider appID="227357543966131">
-                <Like href="https://www.facebook.com/HacklagHQ" action="like" size="small" showFaces={false} share={false} layout="button" />
+              <FacebookProvider appID="1108028089293935">
+                <Like href="https://www.facebook.com/HacklagHQ" action="like" size="small" showFaces={false} share={false} layout="button" colorScheme="light" />
               </FacebookProvider>
               <Follow
                 username="HacklagHQ"
                 options={{
                   showCount: false,
                 }}
-              /> */}
+              />
             </div>
           </Wrapper>
         </div>
         {/* /.Section */}
 
-        <div className={cn('Section', 'Section--tertiary')}>
+        <div className={cn('Section', 'Section--tertiary')} id="offices">
           <Wrapper>
             <h2 className={cn('Section__title')}>We work and have fun in awesome workspace!</h2>
             <h3 className={cn('Section__tagline')}>And you can work there too.</h3>
@@ -274,7 +285,7 @@ export default class Landing extends Component {
               </div>
               <div className={cn('OfficeFeatures__item')}>
                 <h4 className={cn('OfficeFeatures__item-title')}>Meeting rooms</h4>
-                <p className={cn('OfficeFeatures__item-content')}>Sed eu quam et diam ultrices accumsan id ac magna. Praesent convallis molestie ligula a ultricies. </p>
+                <p className={cn('OfficeFeatures__item-content')}>Small and big rooms for private conversations, team meetings and client appointments.</p>
               </div>
               <div className={cn('OfficeFeatures__item')}>
                 <h4 className={cn('OfficeFeatures__item-title')}>IoT Lab</h4>
@@ -283,7 +294,7 @@ export default class Landing extends Component {
             </div>
             {/* /.OfficeFeatures */}
 
-            <div className={cn('Plans')} id="pricing">
+            <div className={cn('Plans')}>
               <a className={cn('Plans__item', 'isAlpha')} href="https://bialystok.hacklag.org" rel="noopener noreferrer" target="_blank">
                 <div className={cn('Plans__item-inner')}>
                   <h4 className={cn('Plans__item-title')}>Community Member</h4>
@@ -360,10 +371,10 @@ export default class Landing extends Component {
                 <a className={cn('Footer__social-link')} href="https://www.facebook.com/HacklagHQ">
                   <Icon className={cn('Footer__social-icon')} name="facebook-square" />
                 </a>
-                <a className={cn('Footer__social-link')} href="https://www.facebook.com/hacklaghq">
+                <a className={cn('Footer__social-link')} href="https://twitter.com/hacklaghq">
                   <Icon className={cn('Footer__social-icon')} name="twitter-square" />
                 </a>
-                <a className={cn('Footer__social-link')} href="https://www.facebook.com/hacklag">
+                <a className={cn('Footer__social-link')} href="https://github.com/hacklag">
                   <Icon className={cn('Footer__social-icon')} name="github-square" />
                 </a>
                 <a className={cn('Footer__social-link')} href="https://hacklag.slack.com">

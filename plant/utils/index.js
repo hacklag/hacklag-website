@@ -3,6 +3,8 @@ export { configureRoots, connect } from './root';
 export RootProvider from './rootProvider';
 export theme from './theme';
 export form from './form';
+export parseTweet from './parseTweet';
 export request from './request';
+export moment from 'moment';
 export { observer } from 'mobx-react';
 export { observable, action, computed, toJS } from 'mobx';

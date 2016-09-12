@@ -10,6 +10,10 @@
     box-shadow: inset 0 1px 0 #fff;
     background: url('./images/bg-office.jpg') no-repeat top;
     background-size: contain;
+
+    @media (--at-lg) {
+      background-size: cover;
+    }
   }
 
   &--tertiary,
