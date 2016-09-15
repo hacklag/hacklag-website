@@ -18,9 +18,6 @@ import Feature2Img from './images/feature-2.png';
 import Feature3Img from './images/feature-3.png';
 
 import HackbatImg from 'images/hackbat.svg';
-import InstapageImg from './images/logo-instapage.png';
-import PageProImg from './images/logo-pagepro.png';
-import SyncanoImg from './images/logo-syncano.png';
 import GGCImg from './images/logo-ggc.png';
 import PMBImg from './images/logo-pmb.png';
 import AexolImg from './images/logo-aexol.png';
@@ -28,16 +25,20 @@ import NadaktywniImg from './images/logo-nadaktywni.png';
 import MobileBialystokImg from './images/logo-mobile-bialystok.png';
 
 @connect(({ dataRoot }) => ({
+  fetchSponsors: dataRoot.fetchSponsors,
   fetchTweets: dataRoot.fetchTweets,
   fetchEvents: dataRoot.fetchEvents,
+  sponsors: dataRoot.sponsors,
   tweets: dataRoot.tweets,
   events: dataRoot.events,
 }))
 @observer
 export default class Landing extends Component {
   static propTypes = {
+    fetchSponsors: PropTypes.func.isRequired,
     fetchTweets: PropTypes.func.isRequired,
     fetchEvents: PropTypes.func.isRequired,
+    sponsors: PropTypes.object.isRequired,
     tweets: PropTypes.object.isRequired,
     events: PropTypes.object.isRequired,
   }
@@ -45,6 +46,7 @@ export default class Landing extends Component {
   componentDidMount = () => {
     this.props.fetchTweets();
     this.props.fetchEvents();
+    this.props.fetchSponsors();
   }
 
   render() {
@@ -131,13 +133,15 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We're non-profit organisation so we need your help to stay alive.</h3>
 
               <div className={cn('Sponsors')}>
-                <div>
-                  <img src={SyncanoImg} alt="Syncano" />
-                </div>
-                <div>
-                  <img src={PageProImg} alt="PagePro" />
-                  <img src={InstapageImg} alt="Instapage" />
-                </div>
+                {this.props.sponsors.items.length ? [
+                  <div>
+                    <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
+                  </div>,
+                  <div>
+                    <img src={this.props.sponsors.items[1].logo.value} alt={this.props.sponsors.items[1].name} />
+                    <img src={this.props.sponsors.items[2].logo.value} alt={this.props.sponsors.items[2].name} />
+                  </div>,
+                ] : null}
               </div>
               {/* /.Sponsors */}
 
