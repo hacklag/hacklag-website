@@ -12,6 +12,11 @@ export default () => {
       height: 60,
       marginRight: 16,
       marginBottom: 16
+    },
+    longLogo: {
+      width: 180,
+      marginRight: 16,
+      marginBottom: 16
     }
   };
 
@@ -114,6 +119,14 @@ export default () => {
             style={styles.logo}
             src="/img/supporters/eastrobo.png"
             alt="Eastrobo" />
+        </a>
+        <a
+          href="http://www.chimeraprime.com/"
+          target="_blank" >
+          <img
+            style={styles.longLogo}
+            src="/img/supporters/chimera.png"
+            alt="Chimera Prime" />
         </a>
       </div>
     </div>
