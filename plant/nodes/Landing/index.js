@@ -30,7 +30,7 @@ import pystokImg from './images/pystok.png';
 // Founders LOGOS
 import SyncanoLogo from './images/founders/syncano.png';
 import ChimeraLogo from './images/founders/Chimera.png';
-import ExplorerLogo from './images/founders/ExplorerHQLogo.svg';
+import ExplorerLogo from './images/founders/ExplorerHQ.png';
 import AdaptableLogo from './images/founders/adaptable.png';
 import ArktisLawLogo from './images/founders/ArktisLaw.png';
 import ActiveLoopLogo from './images/founders/active-loop.png';
@@ -170,9 +170,9 @@ export default class Landing extends Component {
               <div className={cn('Founders')}>
                 <img src={ActiveLoopLogo} alt="Active Loop" />
                 <img src={AdaptableLogo} alt="Adaptable" />
-                <img src={ArktisLawLogo} alt="Arktis Law" />
-                <img src={ChimeraLogo} alt="Chimera" />
                 <img src={ExplorerLogo} alt="Explorer" />
+                <img src={ChimeraLogo} alt="Chimera" />
+                <img src={ArktisLawLogo} alt="Arktis Law" />
                 <img src={EyedeaLogo} alt="Eyedea" />
                 <img src={SyncanoLogo} alt="Syncano" />
               </div>
