@@ -24,6 +24,19 @@ import AexolImg from './images/logo-aexol.png';
 import NadaktywniImg from './images/logo-nadaktywni.png';
 import MobileBialystokImg from './images/logo-mobile-bialystok.png';
 
+// Sponsorns LOGOS
+import AexolLogo from './images/sponsors/aexol.png';
+import EyedeaLogo from './images/sponsors/eyedea.png';
+import InstapageLogo from './images/sponsors/instapage.png';
+import PageproLogo from './images/sponsors/pagepro.png';
+// Founders LOGOS
+import SyncanoLogo from './images/founders/syncano.png';
+import ChimeraLogo from './images/founders/Chimera.png';
+import ExplorerLogo from './images/founders/ExplorerHQLogo.svg';
+import AdaptableLogo from './images/founders/adaptable.png';
+import ArktisLawLogo from './images/founders/ArktisLaw.png';
+import ActiveLoopLogo from './images/founders/active-loop.png';
+
 @connect(({ dataRoot }) => ({
   fetchSponsors: dataRoot.fetchSponsors,
   fetchTweets: dataRoot.fetchTweets,
@@ -133,6 +146,10 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We're non-profit organisation so we need your help to stay alive.</h3>
 
               <div className={cn('Sponsors')}>
+                <img src={AexolLogo} alt="Aexol" />
+                <img src={EyedeaLogo} alt="Eyedea" />
+                <img src={InstapageLogo} alt="Instapage" />
+                <img src={PageproLogo} alt="Pagepro" />
                 {this.props.sponsors.items.length ? [
                   <div>
                     <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
@@ -149,6 +166,22 @@ export default class Landing extends Component {
                 {/* <Link className="Btn Btn--secondary" to="/sponsors">View all sponsors</Link> */}
                 <a className="Btn Btn--primary" href="mailto:sponsorship@hacklag.org">Become a sponsor</a>
               </Join>
+
+              <div className={cn('Section__separator')}></div>
+
+              <h2 className={cn('Section__title')}>Our founders!</h2>
+              <h3 className={cn('Section__tagline')}>Together we can achieve much more!</h3>
+
+              <div className={cn('Founders')}>
+                <img src={ActiveLoopLogo} alt="Active Loop" />
+                <img src={AdaptableLogo} alt="Adaptable" />
+                <img src={ArktisLawLogo} alt="Arktis Law" />
+                <img src={ChimeraLogo} alt="Chimera" />
+                <img src={ExplorerLogo} alt="Explorer" />
+                <img src={EyedeaLogo} alt="Eyedea" />
+                <img src={SyncanoLogo} alt="Syncano" />
+              </div>
+              {/* /.Founders */}
 
               <div className={cn('Section__separator')}></div>
 
