@@ -23,6 +23,10 @@ import PMBImg from './images/logo-pmb.png';
 import AexolImg from './images/logo-aexol.png';
 import NadaktywniImg from './images/logo-nadaktywni.png';
 import MobileBialystokImg from './images/logo-mobile-bialystok.png';
+import bialQA from './images/bialQA.png';
+import bstoknetImg from './images/bstoknet.png';
+import pystokImg from './images/pystok.png';
+
 // Founders LOGOS
 import SyncanoLogo from './images/founders/syncano.png';
 import ChimeraLogo from './images/founders/Chimera.png';
@@ -160,8 +164,8 @@ export default class Landing extends Component {
 
               <div className={cn('Section__separator')}></div>
 
-              <h2 className={cn('Section__title')}>Our founders!</h2>
-              <h3 className={cn('Section__tagline')}>Together we can achieve much more!</h3>
+              <h2 className={cn('Section__title')}>Founders</h2>
+              <h3 className={cn('Section__tagline')}>We wouldn't be here if they hadn't started it!</h3>
 
               <div className={cn('Founders')}>
                 <img src={ActiveLoopLogo} alt="Active Loop" />
@@ -181,6 +185,9 @@ export default class Landing extends Component {
 
               <div className={cn('Partners')}>
                 <img src={GGCImg} alt="Girls Geeks Carrots" />
+                <img src={bialQA} alt="Bial QA" />
+                <img src={bstoknetImg} alt="bstoknet" />
+                <img src={pystokImg} alt="pystok" />
                 <img src={NadaktywniImg} alt="Nadaktywni" />
                 <img src={AexolImg} alt="Aexol" />
                 <img src={PMBImg} alt="PMB" />
