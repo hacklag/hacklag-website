@@ -23,12 +23,6 @@ import PMBImg from './images/logo-pmb.png';
 import AexolImg from './images/logo-aexol.png';
 import NadaktywniImg from './images/logo-nadaktywni.png';
 import MobileBialystokImg from './images/logo-mobile-bialystok.png';
-
-// Sponsorns LOGOS
-import AexolLogo from './images/sponsors/aexol.png';
-import EyedeaLogo from './images/sponsors/eyedea.png';
-import InstapageLogo from './images/sponsors/instapage.png';
-import PageproLogo from './images/sponsors/pagepro.png';
 // Founders LOGOS
 import SyncanoLogo from './images/founders/syncano.png';
 import ChimeraLogo from './images/founders/Chimera.png';
@@ -36,6 +30,7 @@ import ExplorerLogo from './images/founders/ExplorerHQLogo.svg';
 import AdaptableLogo from './images/founders/adaptable.png';
 import ArktisLawLogo from './images/founders/ArktisLaw.png';
 import ActiveLoopLogo from './images/founders/active-loop.png';
+import EyedeaLogo from './images/founders/eyedea.png';
 
 @connect(({ dataRoot }) => ({
   fetchSponsors: dataRoot.fetchSponsors,
@@ -146,10 +141,6 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We're non-profit organisation so we need your help to stay alive.</h3>
 
               <div className={cn('Sponsors')}>
-                <img src={AexolLogo} alt="Aexol" />
-                <img src={EyedeaLogo} alt="Eyedea" />
-                <img src={InstapageLogo} alt="Instapage" />
-                <img src={PageproLogo} alt="Pagepro" />
                 {this.props.sponsors.items.length ? [
                   <div>
                     <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
