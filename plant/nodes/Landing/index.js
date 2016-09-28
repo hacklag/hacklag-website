@@ -23,6 +23,18 @@ import PMBImg from './images/logo-pmb.png';
 import AexolImg from './images/logo-aexol.png';
 import NadaktywniImg from './images/logo-nadaktywni.png';
 import MobileBialystokImg from './images/logo-mobile-bialystok.png';
+import bialQA from './images/bialQA.png';
+import bstoknetImg from './images/bstoknet.png';
+import pystokImg from './images/pystok.png';
+
+// Founders LOGOS
+import SyncanoLogo from './images/founders/syncano.png';
+import ChimeraLogo from './images/founders/Chimera.png';
+import ExplorerLogo from './images/founders/ExplorerHQ.png';
+import AdaptableLogo from './images/founders/adaptable.png';
+import ArktisLawLogo from './images/founders/ArktisLaw.png';
+import ActiveLoopLogo from './images/founders/active-loop.png';
+import EyedeaLogo from './images/founders/eyedea.png';
 
 @connect(({ dataRoot }) => ({
   fetchSponsors: dataRoot.fetchSponsors,
@@ -152,11 +164,30 @@ export default class Landing extends Component {
 
               <div className={cn('Section__separator')}></div>
 
+              <h2 className={cn('Section__title')}>Founders</h2>
+              <h3 className={cn('Section__tagline')}>We wouldn't be here if they hadn't started it!</h3>
+
+              <div className={cn('Founders')}>
+                <img src={ActiveLoopLogo} alt="Active Loop" />
+                <img src={AdaptableLogo} alt="Adaptable" />
+                <img src={ExplorerLogo} alt="Explorer" />
+                <img src={ChimeraLogo} alt="Chimera" />
+                <img src={ArktisLawLogo} alt="Arktis Law" />
+                <img src={EyedeaLogo} alt="Eyedea" />
+                <img src={SyncanoLogo} alt="Syncano" />
+              </div>
+              {/* /.Founders */}
+
+              <div className={cn('Section__separator')}></div>
+
               <h2 className={cn('Section__title')}>And our fabulous partners</h2>
               <h3 className={cn('Section__tagline')}>Together we can achieve much more!</h3>
 
               <div className={cn('Partners')}>
                 <img src={GGCImg} alt="Girls Geeks Carrots" />
+                <img src={bialQA} alt="Bial QA" />
+                <img src={bstoknetImg} alt="bstoknet" />
+                <img src={pystokImg} alt="pystok" />
                 <img src={NadaktywniImg} alt="Nadaktywni" />
                 <img src={AexolImg} alt="Aexol" />
                 <img src={PMBImg} alt="PMB" />
