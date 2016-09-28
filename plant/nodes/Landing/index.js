@@ -20,7 +20,6 @@ import Feature3Img from './images/feature-3.png';
 import HackbatImg from 'images/hackbat.svg';
 import GGCImg from './images/logo-ggc.png';
 import PMBImg from './images/logo-pmb.png';
-import AexolImg from './images/logo-aexol.png';
 import NadaktywniImg from './images/logo-nadaktywni.png';
 import MobileBialystokImg from './images/logo-mobile-bialystok.png';
 import bialQA from './images/bialQA.png';
@@ -146,10 +145,10 @@ export default class Landing extends Component {
 
               <div className={cn('Sponsors')}>
                 {this.props.sponsors.items.length ? [
-                  <div>
+                  <div key="1">
                     <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
                   </div>,
-                  <div>
+                  <div key="2">
                     <img src={this.props.sponsors.items[1].logo.value} alt={this.props.sponsors.items[1].name} />
                     <img src={this.props.sponsors.items[2].logo.value} alt={this.props.sponsors.items[2].name} />
                   </div>,
@@ -189,7 +188,6 @@ export default class Landing extends Component {
                 <img src={bstoknetImg} alt="bstoknet" />
                 <img src={pystokImg} alt="pystok" />
                 <img src={NadaktywniImg} alt="Nadaktywni" />
-                <img src={AexolImg} alt="Aexol" />
                 <img src={PMBImg} alt="PMB" />
                 <img src={MobileBialystokImg} alt="Mobile Białystok" />
               </div>
