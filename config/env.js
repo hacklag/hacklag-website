@@ -14,5 +14,6 @@ module.exports = Object
       NODE_ENV,
       HACKLAG_SYNCANO_API_KEY: JSON.stringify(process.env.HACKLAG_SYNCANO_API_KEY),
       HACKLAG_SYNCANO_USER_KEY: JSON.stringify(process.env.HACKLAG_SYNCANO_USER_KEY),
+      HACKLAG_SEGMENT_WRITE_KEY: JSON.stringify(process.env.HACKLAG_SEGMENT_WRITE_KEY),
     },
   });
