@@ -6,5 +6,6 @@ export form from './form';
 export parseTweet from './parseTweet';
 export request from './request';
 export moment from 'moment';
+export segment from './segment';
 export { observer } from 'mobx-react';
 export { observable, action, computed, toJS } from 'mobx';

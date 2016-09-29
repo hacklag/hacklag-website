@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { connect, observer, moment } from 'utils';
+import { connect, observer, moment, segment } from 'utils';
 import { Link, Icon } from 'leafs';
 import { Wrapper, Nav, Join, Split } from 'twigs';
 import { Follow } from 'react-twitter-widgets';
@@ -34,7 +34,7 @@ import AdaptableLogo from './images/founders/adaptable.png';
 import ArktisLawLogo from './images/founders/ArktisLaw.png';
 import ActiveLoopLogo from './images/founders/active-loop.png';
 import EyedeaLogo from './images/founders/eyedea.png';
-
+@segment
 @connect(({ dataRoot }) => ({
   fetchSponsors: dataRoot.fetchSponsors,
   fetchTweets: dataRoot.fetchTweets,
