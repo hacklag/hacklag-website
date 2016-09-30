@@ -1,0 +1,53 @@
+.Modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity .25s, visibility .25s;
+
+  &.isVisible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__bg {
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    z-index: -1;
+  }
+
+  &__content {
+    border-radius: .375em;
+    padding: 30px;
+    max-width: 570px;
+    background: #fff;
+    position: relative;
+    width: 100%;
+    transform: scale(.5);
+    transition: transform .25s;
+
+    .isVisible & {
+      transform: scale(1);
+    }
+  }
+
+  &__title {
+    font-size: 28px;
+    text-align: center;
+    padding-bottom: 30px;
+    margin: 0 -30px 30px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+}
