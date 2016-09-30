@@ -1,9 +1,13 @@
 import { observable, action } from 'utils';
 
 export default class uiRoot {
-  @observable language = 'en';
+  @observable activeModal = '';
 
-  @action setLanguage = (language) => {
-    this.language = language;
+  @action toggleModal = (modalName) => {
+    this.activeModal = this.activeModal === modalName ? '' : modalName;
+  }
+
+  @action closeModal = () => {
+    this.activeModal = '';
   }
 }

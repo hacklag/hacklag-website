@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect, observer, moment, segment } from 'utils';
 import { Link, Icon } from 'leafs';
-import { Wrapper, Nav, Join, Split } from 'twigs';
+import { Wrapper, Nav, Join, Split, Modal, SignupForm } from 'twigs';
 import { Follow } from 'react-twitter-widgets';
 import FacebookProvider, { Like } from 'react-facebook';
 import styles from './styles.scss';
@@ -35,7 +35,8 @@ import ArktisLawLogo from './images/founders/ArktisLaw.png';
 import ActiveLoopLogo from './images/founders/active-loop.png';
 import EyedeaLogo from './images/founders/eyedea.png';
 @segment
-@connect(({ dataRoot }) => ({
+@connect(({ dataRoot, uiRoot }) => ({
+  toggleModal: uiRoot.toggleModal,
   fetchSponsors: dataRoot.fetchSponsors,
   fetchTweets: dataRoot.fetchTweets,
   fetchEvents: dataRoot.fetchEvents,
@@ -46,6 +47,7 @@ import EyedeaLogo from './images/founders/eyedea.png';
 @observer
 export default class Landing extends Component {
   static propTypes = {
+    toggleModal: PropTypes.func.isRequired,
     fetchSponsors: PropTypes.func.isRequired,
     fetchTweets: PropTypes.func.isRequired,
     fetchEvents: PropTypes.func.isRequired,
@@ -328,7 +330,7 @@ export default class Landing extends Component {
             {/* /.OfficeFeatures */}
 
             <div className={cn('Plans')}>
-              <a className={cn('Plans__item', 'isAlpha')} href="https://bialystok.hacklag.org" rel="noopener noreferrer" target="_blank">
+              <div className={cn('Plans__item', 'isAlpha')} onClick={() => this.props.toggleModal('CommunityMemberSignup')}>
                 <div className={cn('Plans__item-inner')}>
                   <h4 className={cn('Plans__item-title')}>Community Member</h4>
                   <div className={cn('Plans__item-price')}>Free</div>
@@ -337,9 +339,9 @@ export default class Landing extends Component {
                     <li>Slack and Forum access</li>
                     <li>Meetups invitations</li>
                   </ul>
-                  <button className={cn('Plans__item-button')}>Signup here</button>
+                  <button className={cn('Plans__item-button')}>Signup</button>
                 </div>
-              </a>
+              </div>
               {/* /.Plans__item */}
 
               <a className={cn('Plans__item', 'isBeta')} href={PLAN_HOTDESK_URL} rel="noopener noreferrer" target="_blank">
@@ -417,6 +419,10 @@ export default class Landing extends Component {
             </Split>
           </Wrapper>
         </div>
+
+        <Modal name="CommunityMemberSignup" title="Join us">
+          <SignupForm />
+        </Modal>
       </div>
     );
   }

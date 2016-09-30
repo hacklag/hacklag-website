@@ -2,7 +2,7 @@ export configureNodes from './routing';
 export { configureRoots, connect } from './root';
 export RootProvider from './rootProvider';
 export theme from './theme';
-export form from './form';
+export { formize } from './formize';
 export parseTweet from './parseTweet';
 export request from './request';
 export moment from 'moment';
