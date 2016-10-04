@@ -1,19 +1,20 @@
 .Sponsors {
   text-align: center;
   margin-top: 60px;
-
   > div {
-    margin-bottom: 60px;
-  }
-
-  img {
-    display: inline-block;
-    margin-right: 60px;
     max-width: 100%;
-    max-height: 70px;
-
-    &:last-child {
-      margin-right: 0;
+  }
+  &__goldSponsor{
+      img {
+        max-height: 80px;
+      }
+  }
+  &__logoContainer{
+    display: flex;
+    img {
+      max-height: 40px;
+      justify-content: space-between;
     }
   }
+
 }

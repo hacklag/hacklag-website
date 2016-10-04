@@ -45,7 +45,7 @@ export default class Landing extends Component {
           <Wrapper className={cn('Header__inner')}>
             <div className={cn('Header__bar')}>
               <Nav className={cn('Header__nav', 'Header__nav--first')}>
-                <a className={cn('Header__nav-link')} href="#events">Events</a>
+                <a className={cn('Header__nav-link')} href="/#events">Events</a>
               </Nav>
 
               <div className={cn('Header__logo')}>
@@ -71,15 +71,23 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We're non-profit organisation so we need your help to stay alive.</h3>
 
               <div className={cn('Sponsors')}>
-                {this.props.sponsors.items.length ? [
-                  this.props.sponsors.items.map((sponsor) =>
-                    <img src={sponsor.logo.value} alt={sponsor.name} />),
-                ] : null}
+                <div className={cn('Sponsors__goldSponsor')}>
+                  {this.props.sponsors.items.length && (
+                    <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
+                  )}
+                </div>
+                <div className={cn('Sponsors__wrapper')}>
+                {(this.props.sponsors.items.slice(1) || []).map((sponsor, key) =>
+                  <div className={cn('Sponsors__logoContainer')} key={key}>
+                    <img src={sponsor.logo.value} alt={sponsor.name} />
+                  </div>)
+                  }
+                </div>
               </div>
               {/* /.Sponsors */}
 
               <Join className="ta-c" spacing="sm">
-                {/* <Link className="Btn Btn--secondary" to="/sponsors">View all sponsors</Link> */}
+                <Link className="Btn Btn--secondary" to="/"> to main page</Link>
                 <a className="Btn Btn--primary" href="mailto:sponsorship@hacklag.org">Become a sponsor</a>
               </Join>
               {/* /.Partners */}
