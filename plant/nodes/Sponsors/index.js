@@ -71,7 +71,7 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We're non-profit organisation so we need your help to stay alive.</h3>
 
               <div className={cn('Sponsors')}>
-                <div className={cn('Sponsors__goldSponsor')}>
+                <div className={cn('Sponsors__platinum')}>
                   {this.props.sponsors.items.length && (
                     <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
                   )}
