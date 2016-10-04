@@ -9,11 +9,16 @@
         max-height: 80px;
       }
   }
+  &__sponsorsWrapper{
+    margin: 0 auto;
+    max-width: 50%;
+  }
   &__logoContainer{
-    display: flex;
+    padding: 0px 20px 20px 0px;
+    display: inline-block;
+    max-width: 20%;
     img {
-      max-height: 40px;
-      justify-content: space-between;
+      max-height: 45px;
     }
   }
 
