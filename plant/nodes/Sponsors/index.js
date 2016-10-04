@@ -1,0 +1,121 @@
+import React, { Component, PropTypes } from 'react';
+import { connect, observer, segment } from 'utils';
+import { Link, Icon } from 'leafs';
+import { Wrapper, Nav, Join, Split, Modal, SignupForm } from 'twigs';
+import styles from './styles.scss';
+
+const cn = require('classnames/bind').bind(styles);
+
+
+import HackbatImg from 'images/hackbat.svg';
+
+
+@segment
+@connect(({ dataRoot, uiRoot }) => ({
+  toggleModal: uiRoot.toggleModal,
+  fetchSponsors: dataRoot.fetchSponsors,
+  fetchTweets: dataRoot.fetchTweets,
+  fetchEvents: dataRoot.fetchEvents,
+  sponsors: dataRoot.sponsors,
+  tweets: dataRoot.tweets,
+  events: dataRoot.events,
+}))
+@observer
+export default class Landing extends Component {
+  static propTypes = {
+    toggleModal: PropTypes.func.isRequired,
+    fetchSponsors: PropTypes.func.isRequired,
+    fetchTweets: PropTypes.func.isRequired,
+    fetchEvents: PropTypes.func.isRequired,
+    sponsors: PropTypes.object.isRequired,
+    tweets: PropTypes.object.isRequired,
+    events: PropTypes.object.isRequired,
+  }
+
+  componentDidMount = () => {
+    this.props.fetchTweets();
+    this.props.fetchEvents();
+    this.props.fetchSponsors();
+  }
+
+  render() {
+    return (
+      <div>
+        <div className={cn('Header')}>
+          <Wrapper className={cn('Header__inner')}>
+            <div className={cn('Header__bar')}>
+              <Nav className={cn('Header__nav', 'Header__nav--first')}>
+                <a className={cn('Header__nav-link')} href="#events">Events</a>
+              </Nav>
+
+              <div className={cn('Header__logo')}>
+                <Link to="/" className={cn('Header__logo-link')}>
+                  <img className={cn('Header__logo-image')} src={HackbatImg} alt="HACKLAG" />
+                </Link>
+              </div>
+              {/* /.Header__logo */}
+
+              <Nav className={cn('Header__nav', 'Header__nav--last')}>
+                <a className={cn('Header__nav-link')} href="http://bialystok.hacklag.org">Members area</a>
+              </Nav>
+            </div>
+            {/* /.Header__bar */}
+          </Wrapper>
+        </div>
+        {/* ./Header */}
+
+        <div className={cn('Section', 'Section--primary')}>
+          <Wrapper>
+            <div className={cn('Section__content')}>
+              <h2 className={cn('Section__title')}>All of our awesome sponsors</h2>
+              <h3 className={cn('Section__tagline')}>We're non-profit organisation so we need your help to stay alive.</h3>
+
+              <div className={cn('Sponsors')}>
+                {this.props.sponsors.items.length ? [
+                  this.props.sponsors.items.map((sponsor) =>
+                    <img src={sponsor.logo.value} alt={sponsor.name} />),
+                ] : null}
+              </div>
+              {/* /.Sponsors */}
+
+              <Join className="ta-c" spacing="sm">
+                {/* <Link className="Btn Btn--secondary" to="/sponsors">View all sponsors</Link> */}
+                <a className="Btn Btn--primary" href="mailto:sponsorship@hacklag.org">Become a sponsor</a>
+              </Join>
+              {/* /.Partners */}
+            </div>
+            {/* /.Section__content */}
+          </Wrapper>
+        </div>
+        {/* /.Section */}
+        <div className={cn('Footer')}>
+          <Wrapper>
+            <Split>
+              <div className={cn('Footer__copyrights')}>
+                &copy; 2016 by Hacklag. All rights reserved.
+              </div>
+              <div className={cn('Footer__social')}>
+                <a className={cn('Footer__social-link')} href="https://www.facebook.com/HacklagHQ">
+                  <Icon className={cn('Footer__social-icon')} name="facebook-square" />
+                </a>
+                <a className={cn('Footer__social-link')} href="https://twitter.com/hacklaghq">
+                  <Icon className={cn('Footer__social-icon')} name="twitter-square" />
+                </a>
+                <a className={cn('Footer__social-link')} href="https://github.com/hacklag">
+                  <Icon className={cn('Footer__social-icon')} name="github-square" />
+                </a>
+                <a className={cn('Footer__social-link')} href="https://hacklag.slack.com">
+                  <Icon className={cn('Footer__social-icon')} name="slack" />
+                </a>
+              </div>
+            </Split>
+          </Wrapper>
+        </div>
+
+        <Modal name="CommunityMemberSignup" title="Join us">
+          <SignupForm />
+        </Modal>
+      </div>
+    );
+  }
+}

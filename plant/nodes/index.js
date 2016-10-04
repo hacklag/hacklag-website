@@ -3,6 +3,7 @@ import { configureNodes } from 'utils';
 // Create object with basic routes that simply map path to node
 const basicNodes = {
   '/': System.import('./Landing'),
+  '/sponsors': System.import('./Sponsors'),
   about: System.import('./About'),
   '*': System.import('./NotFound'),
 };

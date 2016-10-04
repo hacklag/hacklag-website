@@ -159,7 +159,7 @@ export default class Landing extends Component {
               {/* /.Sponsors */}
 
               <Join className="ta-c" spacing="sm">
-                {/* <Link className="Btn Btn--secondary" to="/sponsors">View all sponsors</Link> */}
+                <Link className="Btn Btn--secondary" to="/sponsors">View all sponsors</Link>
                 <a className="Btn Btn--primary" href="mailto:sponsorship@hacklag.org">Become a sponsor</a>
               </Join>
 

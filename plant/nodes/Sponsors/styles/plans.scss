@@ -1,0 +1,118 @@
+$alphaColor: #ffc700;
+$betaColor: #ff7376;
+$gammaColor: #70d0ec;
+$deltaColor: #101010;
+
+.Plans {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: -10px;
+
+  &__item {
+    transition: opacity .25s;
+    flex: 1 100%;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    cursor: pointer;
+
+    .Plans:hover & {
+      opacity: .25;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    @media (--at-md) {
+      flex: 1 50%;
+    }
+
+    @media (--at-lg) {
+      flex: 1 25%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-inner {
+    transition: margin .25s, padding .25s;
+    background: #fff;
+    border: 2px solid #e5e5e5;
+    padding: 15px;
+    border-top: 0;
+    box-shadow: 0 -4px 0 $alphaColor;
+
+    .Plans:hover &:hover {
+      padding: 27px;
+      margin-top: -12px;
+      margin-left: -12px;
+      margin-right: -12px;
+      margin-bottom: -12px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .isAlpha & { box-shadow: 0 -4px 0 $alphaColor; }
+    .isBeta  & { box-shadow: 0 -4px 0 $betaColor; }
+    .isGamma & { box-shadow: 0 -4px 0 $gammaColor; }
+    .isDelta & { box-shadow: 0 -4px 0 $deltaColor; }
+  }
+
+  &__item-title {
+    .isAlpha & { color: $alphaColor; }
+    .isBeta  & { color: $betaColor; }
+    .isGamma & { color: $gammaColor; }
+    .isDelta & { color: $deltaColor; }
+  }
+
+  &__item-price {
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  &__features {
+    font-size: 12px;
+    color: #666;
+    list-style-type: none;
+    margin-top: 15px;
+    min-height: 120px;
+
+    > *:before {
+      content: '\F00C';
+      margin-right: 5px;
+      font-family: FontAwesome;
+      color: #ccc;
+    }
+  }
+
+  &__item-button {
+    cursor: pointer;
+    background: none;
+    width: 100%;
+    font-weight: bold;
+    border: 2px solid;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: .25s ease;
+
+    .isAlpha & { color: $alphaColor; border-color: $alphaColor; }
+    .isBeta  & { color: $betaColor; border-color: $betaColor; }
+    .isGamma & { color: $gammaColor; border-color: $gammaColor; }
+    .isDelta & { color: $deltaColor; border-color: $deltaColor; }
+
+    .isAlpha:hover & { background: $alphaColor; }
+    .isBeta:hover  & { background: $betaColor; }
+    .isGamma:hover & { background: $gammaColor; }
+    .isDelta:hover & { background: $deltaColor; }
+
+    .Plans__item:hover & {
+      color: #fff;
+    }
+  }
+}
