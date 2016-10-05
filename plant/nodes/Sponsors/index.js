@@ -45,7 +45,9 @@ export default class Landing extends Component {
           <Wrapper className={cn('Header__inner')}>
             <div className={cn('Header__bar')}>
               <Nav className={cn('Header__nav', 'Header__nav--first')}>
+                <a className={cn('Header__nav-link')} href="/">Home</a>
                 <a className={cn('Header__nav-link')} href="/#events">Events</a>
+                <a className={cn('Header__nav-link')} href="/sponsors">Sponsors</a>
               </Nav>
 
               <div className={cn('Header__logo')}>
@@ -93,7 +95,6 @@ export default class Landing extends Component {
               {/* /.Sponsors */}
 
               <Join className="ta-c" spacing="sm">
-                <Link className="Btn Btn--secondary" to="/"> to main page</Link>
                 <a className="Btn Btn--primary" href="mailto:sponsorship@hacklag.org">Become a sponsor</a>
               </Join>
               {/* /.Partners */}
