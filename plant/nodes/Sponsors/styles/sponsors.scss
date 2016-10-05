@@ -17,18 +17,22 @@
 
     &--gold{
 
-      img{
+      img {
         max-height: 45px;
         margin-right: 20px;
         margin-bottom: 40px;
         max-width: 20%;
 
+        &:last-child {
+          margin-right: 0;
+        }
+        
         @media(--at-sm){
           max-width: 40%;
         }
       }
     }
-    
+
     &--wrapper {
       margin: 0 auto 30px;
     }
