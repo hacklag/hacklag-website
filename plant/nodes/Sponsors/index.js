@@ -70,7 +70,7 @@ export default class Landing extends Component {
                       <img src={this.props.sponsors.items[2].logo.value} alt={this.props.sponsors.items[2].name} />
                     </div>
                   )}
-                <div className={cn('Sponsors__wrapper')}>
+                <div className={cn('Sponsors__item--wrapper')}>
                 {(this.props.sponsors.items.slice(3) || []).map((sponsor, key) =>
                   <div className={cn('Sponsors__logoContainer')} key={key}>
                     <img src={sponsor.logo.value} alt={sponsor.name} key={key} />

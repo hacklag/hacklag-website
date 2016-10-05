@@ -28,21 +28,21 @@
         }
       }
     }
-  }
-
-  &__wrapper {
-    margin: 0 auto 30px auto;
+    
+    &--wrapper {
+      margin: 0 auto 30px;
+    }
   }
 
   &__logoContainer {
-    margin: 0px 10px 30px;
+    margin: 0 10px 30px;
     display: inline-block;
     max-width: 20%;
 
     img {
       max-height: 40px;
     }
-    
+
     @media (--at-sm){
       max-width: 40%;
     }
