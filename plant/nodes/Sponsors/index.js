@@ -9,8 +9,7 @@ const cn = require('classnames/bind').bind(styles);
 import HackbatImg from 'images/hackbat.svg';
 
 @segment
-@connect(({ dataRoot, uiRoot }) => ({
-  toggleModal: uiRoot.toggleModal,
+@connect(({ dataRoot }) => ({
   fetchSponsors: dataRoot.fetchSponsors,
   sponsors: dataRoot.sponsors,
 }))
