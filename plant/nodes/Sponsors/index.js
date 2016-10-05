@@ -6,35 +6,22 @@ import styles from './styles.scss';
 
 const cn = require('classnames/bind').bind(styles);
 
-
 import HackbatImg from 'images/hackbat.svg';
-
 
 @segment
 @connect(({ dataRoot, uiRoot }) => ({
   toggleModal: uiRoot.toggleModal,
   fetchSponsors: dataRoot.fetchSponsors,
-  fetchTweets: dataRoot.fetchTweets,
-  fetchEvents: dataRoot.fetchEvents,
   sponsors: dataRoot.sponsors,
-  tweets: dataRoot.tweets,
-  events: dataRoot.events,
 }))
 @observer
 export default class Landing extends Component {
   static propTypes = {
-    toggleModal: PropTypes.func.isRequired,
     fetchSponsors: PropTypes.func.isRequired,
-    fetchTweets: PropTypes.func.isRequired,
-    fetchEvents: PropTypes.func.isRequired,
     sponsors: PropTypes.object.isRequired,
-    tweets: PropTypes.object.isRequired,
-    events: PropTypes.object.isRequired,
   }
 
   componentDidMount = () => {
-    this.props.fetchTweets();
-    this.props.fetchEvents();
     this.props.fetchSponsors();
   }
 
@@ -72,13 +59,13 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We're non-profit organisation so we need your help to stay alive.</h3>
 
               <div className={cn('Sponsors')}>
-                <div className={cn('Sponsors__platinum')}>
+                <div className={cn('Sponsors__item--platinum')}>
                   {this.props.sponsors.items.length && (
                     <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
                   )}
                 </div>
                   {this.props.sponsors.items.length && (
-                    <div className={cn('Sponsors__goldSilver')}>
+                    <div className={cn('Sponsors__item--gold')}>
                       <img src={this.props.sponsors.items[1].logo.value} alt={this.props.sponsors.items[1].name} />
                       <img src={this.props.sponsors.items[2].logo.value} alt={this.props.sponsors.items[2].name} />
                     </div>

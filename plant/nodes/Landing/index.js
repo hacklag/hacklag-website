@@ -38,11 +38,7 @@ import EyedeaLogo from './images/founders/eyedea.png';
 @connect(({ dataRoot, uiRoot }) => ({
   toggleModal: uiRoot.toggleModal,
   fetchSponsors: dataRoot.fetchSponsors,
-  fetchTweets: dataRoot.fetchTweets,
-  fetchEvents: dataRoot.fetchEvents,
   sponsors: dataRoot.sponsors,
-  tweets: dataRoot.tweets,
-  events: dataRoot.events,
 }))
 @observer
 export default class Landing extends Component {
