@@ -161,7 +161,7 @@ export default class Landing extends Component {
               {/* /.Sponsors */}
 
               <Join className="ta-c" spacing="sm">
-                {/* <Link className="Btn Btn--secondary" to="/sponsors">View all sponsors</Link> */}
+                <Link className="Btn Btn--secondary" to="/sponsors">View all sponsors</Link>
                 <a className="Btn Btn--primary" href="mailto:sponsorship@hacklag.org">Become a sponsor</a>
               </Join>
 
@@ -182,7 +182,6 @@ export default class Landing extends Component {
               {/* /.Founders */}
 
               <div className={cn('Section__separator')}></div>
-
               <h2 className={cn('Section__title')}>And our fabulous partners</h2>
               <h3 className={cn('Section__tagline')}>Together we can achieve much more!</h3>
 
