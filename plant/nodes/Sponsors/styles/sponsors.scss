@@ -7,26 +7,33 @@
   &__platinum {
       margin-bottom: 40px;
       img {
-        max-height: 80px;
+        max-height: 100px;
       }
   }
-  &__sponsorsWrapper {
+  &__goldSilver{
+    img{
+      max-height: 45px;
+      margin-right: 20px;
+      margin-bottom: 40px;
+      max-width: 20%;
+      @media(--at-sm){
+        max-width: 40%;
+      }
+    }
+  }
+  &__wrapper {
     margin: 0 auto;
-    max-width: 50%;
+    // width: 50%;
   }
   &__logoContainer {
     margin: 0px 10px 30px;
     display: inline-block;
     max-width: 20%;
-    &:nth-child(2n+1) {
-      margin-left: 33%;
-    }
-    &:nth-child(2n) {
-      margin-right: 33%;
-    }
     img {
-      max-height: 45px;
+      max-height: 40px;
+    }
+    @media (--at-sm){
+      max-width: 40%;
     }
   }
-
 }

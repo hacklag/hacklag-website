@@ -54,7 +54,6 @@ export default class Landing extends Component {
                 </Link>
               </div>
               {/* /.Header__logo */}
-
               <Nav className={cn('Header__nav', 'Header__nav--last')}>
                 <a className={cn('Header__nav-link')} href="http://bialystok.hacklag.org">Members area</a>
               </Nav>
@@ -76,11 +75,18 @@ export default class Landing extends Component {
                     <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
                   )}
                 </div>
+                  {this.props.sponsors.items.length && (
+                    <div className={cn('Sponsors__goldSilver')}>
+                      <img src={this.props.sponsors.items[1].logo.value} alt={this.props.sponsors.items[1].name} />
+                      <img src={this.props.sponsors.items[2].logo.value} alt={this.props.sponsors.items[2].name} />
+                    </div>
+                  )}
                 <div className={cn('Sponsors__wrapper')}>
-                {(this.props.sponsors.items.slice(1) || []).map((sponsor, key) =>
+                {(this.props.sponsors.items.slice(3) || []).map((sponsor, key) =>
                   <div className={cn('Sponsors__logoContainer')} key={key}>
-                    <img src={sponsor.logo.value} alt={sponsor.name} />
-                  </div>)
+                    <img src={sponsor.logo.value} alt={sponsor.name} key={key} />
+                  </div>
+                )
                   }
                 </div>
               </div>
