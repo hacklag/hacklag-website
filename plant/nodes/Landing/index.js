@@ -147,10 +147,10 @@ export default class Landing extends Component {
 
               <div className={cn('Sponsors')}>
                 {this.props.sponsors.items.length ? [
-                  <div key="1">
+                  <div key="1" className={cn('Sponsors__item', 'Sponsors__item--platinum')}>
                     <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
                   </div>,
-                  <div key="2">
+                  <div key="2" className={cn('Sponsors__item', 'Sponsors__item--gold')}>
                     <img src={this.props.sponsors.items[1].logo.value} alt={this.props.sponsors.items[1].name} />
                     <img src={this.props.sponsors.items[2].logo.value} alt={this.props.sponsors.items[2].name} />
                   </div>,
