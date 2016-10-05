@@ -46,7 +46,7 @@ export default class Landing extends Component {
             <div className={cn('Header__bar')}>
               <Nav className={cn('Header__nav', 'Header__nav--first')}>
                 <a className={cn('Header__nav-link')} href="/">Home</a>
-                <a className={cn('Header__nav-link')} href="/#events">Events</a>
+                <a className={cn('Header__nav-link')} href="/events">Events</a>
                 <a className={cn('Header__nav-link')} href="/sponsors">Sponsors</a>
               </Nav>
 

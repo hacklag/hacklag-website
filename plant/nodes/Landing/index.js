@@ -180,7 +180,6 @@ export default class Landing extends Component {
               {/* /.Founders */}
 
               <div className={cn('Section__separator')}></div>
-
               <h2 className={cn('Section__title')}>And our fabulous partners</h2>
               <h3 className={cn('Section__tagline')}>Together we can achieve much more!</h3>
 
