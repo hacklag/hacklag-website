@@ -336,7 +336,6 @@ export default class Landing extends Component {
                   <h4 className={cn('Plans__item-title')}>Community Member</h4>
                   <div className={cn('Plans__item-price')}>Free</div>
                   <ul className={cn('Plans__features')}>
-                    <li>hacklag.me Google account</li>
                     <li>Slack and Forum access</li>
                     <li>Meetups invitations</li>
                   </ul>

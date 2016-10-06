@@ -41,7 +41,7 @@ export default class Modal extends Component {
   }
 
   render() {
-    const { children, activeModal, name, toggleModal, title, isBare = false } = this.props;
+    const { children, activeModal, name, toggleModal, closeModal, title, isBare = false } = this.props;
     const isVisible = name === activeModal;
 
     return (
@@ -49,7 +49,8 @@ export default class Modal extends Component {
         <div className={cx('Modal__bg')} onClick={() => toggleModal(name)}></div>
         <div className={cx(isBare ? null : 'Modal__content')}>
           {title && <h2 className={cx('Modal__title')}>{title}</h2>}
-          {children}
+          <div className={cx('Modal__closeBtn', 'fa fa-times-circle')} onClick={() => closeModal()}></div>
+          {isVisible ? children : null}
         </div>
       </div>
     );
