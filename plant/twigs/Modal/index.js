@@ -49,6 +49,7 @@ export default class Modal extends Component {
         <div className={cx('Modal__bg')} onClick={() => toggleModal(name)}></div>
         <div className={cx(isBare ? null : 'Modal__content')}>
           {title && <h2 className={cx('Modal__title')}>{title}</h2>}
+          <div className={cx('Modal__closeBtn', 'fa fa-times-circle')} onClick={() => toggleModal(name)}></div>
           {children}
         </div>
       </div>
