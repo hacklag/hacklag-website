@@ -13,6 +13,14 @@
   left: 0;
   transition: opacity .25s, visibility .25s;
 
+  &__closeBtn {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
   &.isVisible {
     opacity: 1;
     visibility: visible;
