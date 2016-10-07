@@ -25,6 +25,7 @@ export default class Landing extends Component {
   }
 
   render() {
+    const { sponsors } = this.props.sponsors;
     return (
       <div>
         <div className={cn('Header')}>
@@ -59,18 +60,18 @@ export default class Landing extends Component {
 
               <div className={cn('Sponsors')}>
                 <div className={cn('Sponsors__item--platinum')}>
-                  {this.props.sponsors.sponsors.length && (
-                    <a href={this.props.sponsors.sponsors[0].url} target="_blank"><img src={this.props.sponsors.sponsors[0].logo.value} alt={this.props.sponsors.sponsors[0].name} /></a>
+                  {sponsors.length && (
+                    <a href={sponsors[0].url} target="_blank"><img src={sponsors[0].logo.value} alt={sponsors[0].name} /></a>
                   )}
                 </div>
-                  {this.props.sponsors.sponsors.length && (
+                  {sponsors.length && (
                     <div className={cn('Sponsors__item--gold')}>
-                      <a href={this.props.sponsors.sponsors[1].url} target="_blank"><img src={this.props.sponsors.sponsors[1].logo.value} alt={this.props.sponsors.sponsors[1].name} /></a>
-                      <a href={this.props.sponsors.sponsors[2].url} target="_blank"><img src={this.props.sponsors.sponsors[2].logo.value} alt={this.props.sponsors.sponsors[2].name} /></a>
+                      <a href={sponsors[1].url} target="_blank"><img src={sponsors[1].logo.value} alt={sponsors[1].name} /></a>
+                      <a href={sponsors[2].url} target="_blank"><img src={sponsors[2].logo.value} alt={sponsors[2].name} /></a>
                     </div>
                   )}
                 <div className={cn('Sponsors__item--wrapper')}>
-                {(this.props.sponsors.sponsors.slice(3) || []).map((sponsor, key) =>
+                {(sponsors.slice(3) || []).map((sponsor, key) =>
                   <div className={cn('Sponsors__logoContainer')} key={key}>
                     <a href={sponsor.url} target="_blank"><img src={sponsor.logo.value} alt={sponsor.name} key={key} /></a>
                   </div>

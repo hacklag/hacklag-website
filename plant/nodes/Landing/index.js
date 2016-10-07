@@ -48,6 +48,8 @@ export default class Landing extends Component {
   }
 
   render() {
+    const { sponsors, founders, partners } = this.props.sponsors;
+
     return (
       <div>
         <div className={cn('Header')}>
@@ -133,13 +135,13 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We're non-profit organisation so we need your help to stay alive.</h3>
 
               <div className={cn('Sponsors')}>
-                {this.props.sponsors.sponsors.length ? [
+                {sponsors.length ? [
                   <div key="1" className={cn('Sponsors__item', 'Sponsors__item--platinum')}>
-                    <a href={this.props.sponsors.sponsors[0].url} target="_blank"><img src={this.props.sponsors.sponsors[0].logo.value} alt={this.props.sponsors.sponsors[0].name} /></a>
+                    <a href={sponsors[0].url} target="_blank"><img src={sponsors[0].logo.value} alt={sponsors[0].name} /></a>
                   </div>,
                   <div key="2" className={cn('Sponsors__item', 'Sponsors__item--gold')}>
-                    <a href={this.props.sponsors.sponsors[1].url} target="_blank"><img src={this.props.sponsors.sponsors[1].logo.value} alt={this.props.sponsors.sponsors[1].name} /></a>
-                    <a href={this.props.sponsors.sponsors[2].url} target="_blank"><img src={this.props.sponsors.sponsors[2].logo.value} alt={this.props.sponsors.sponsors[2].name} /></a>
+                    <a href={sponsors[1].url} target="_blank"><img src={sponsors[1].logo.value} alt={sponsors[1].name} /></a>
+                    <a href={sponsors[2].url} target="_blank"><img src={sponsors[2].logo.value} alt={sponsors[2].name} /></a>
                   </div>,
                 ] : null}
               </div>
@@ -156,8 +158,8 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We wouldn't be here if they hadn't started it!</h3>
 
               <div className={cn('Founders')}>
-                {this.props.sponsors.founders.length ? [
-                  this.props.sponsors.founders.map(founder => <a href={founder.url} target="_blank"><img src={founder.logo.value} alt={founder.name} /></a>),
+                {founders.length ? [
+                  founders.map(founder => <a href={founder.url} target="_blank"><img src={founder.logo.value} alt={founder.name} /></a>),
                 ] : null}
               </div>
               {/* /.Founders */}
@@ -167,8 +169,8 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>Together we can achieve much more!</h3>
 
               <div className={cn('Partners')}>
-              {this.props.sponsors.partners.length ? [
-                this.props.sponsors.partners.map(partner => <a href={partner.url} target="_blank"><img src={partner.logo.value} alt={partner.name} /></a>),
+              {partners.length ? [
+                partners.map(partner => <a href={partner.url} target="_blank"><img src={partner.logo.value} alt={partner.name} /></a>),
               ] : null}
               </div>
               {/* /.Partners */}
