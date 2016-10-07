@@ -18,22 +18,7 @@ import Feature2Img from './images/feature-2.png';
 import Feature3Img from './images/feature-3.png';
 
 import HackbatImg from 'images/hackbat.svg';
-// import GGCImg from './images/logo-ggc.png';
-// import PMBImg from './images/logo-pmb.png';
-// import NadaktywniImg from './images/logo-nadaktywni.png';
-// import MobileBialystokImg from './images/logo-mobile-bialystok.png';
-// import bialQA from './images/bialQA.png';
-// import bstoknetImg from './images/bstoknet.png';
-// import pystokImg from './images/pystok.png';
 
-// Founders LOGOS
-// import SyncanoLogo from './images/founders/syncano.png';
-// import ChimeraLogo from './images/founders/Chimera.png';
-// import ExplorerLogo from './images/founders/ExplorerHQ.png';
-// import AdaptableLogo from './images/founders/adaptable.png';
-// import ArktisLawLogo from './images/founders/ArktisLaw.png';
-// import ActiveLoopLogo from './images/founders/active-loop.png';
-// import EyedeaLogo from './images/founders/eyedea.png';
 @segment
 @connect(({ dataRoot, uiRoot }) => ({
   toggleModal: uiRoot.toggleModal,
