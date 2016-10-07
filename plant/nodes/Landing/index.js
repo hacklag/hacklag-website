@@ -150,11 +150,11 @@ export default class Landing extends Component {
               <div className={cn('Sponsors')}>
                 {this.props.sponsors.sponsors.length ? [
                   <div key="1" className={cn('Sponsors__item', 'Sponsors__item--platinum')}>
-                    <a href={this.props.sponsors.sponsors[0].url}><img src={this.props.sponsors.sponsors[0].logo.value} alt={this.props.sponsors.sponsors[0].name} /></a>
+                    <a href={this.props.sponsors.sponsors[0].url} target="_blank"><img src={this.props.sponsors.sponsors[0].logo.value} alt={this.props.sponsors.sponsors[0].name} /></a>
                   </div>,
                   <div key="2" className={cn('Sponsors__item', 'Sponsors__item--gold')}>
-                    <a href={this.props.sponsors.sponsors[1].url}><img src={this.props.sponsors.sponsors[1].logo.value} alt={this.props.sponsors.sponsors[1].name} /></a>
-                    <a href={this.props.sponsors.sponsors[2].url}><img src={this.props.sponsors.sponsors[2].logo.value} alt={this.props.sponsors.sponsors[2].name} /></a>
+                    <a href={this.props.sponsors.sponsors[1].url} target="_blank"><img src={this.props.sponsors.sponsors[1].logo.value} alt={this.props.sponsors.sponsors[1].name} /></a>
+                    <a href={this.props.sponsors.sponsors[2].url} target="_blank"><img src={this.props.sponsors.sponsors[2].logo.value} alt={this.props.sponsors.sponsors[2].name} /></a>
                   </div>,
                 ] : null}
               </div>
@@ -172,15 +172,8 @@ export default class Landing extends Component {
 
               <div className={cn('Founders')}>
                 {this.props.sponsors.founders.length ? [
-                  this.props.sponsors.founders.map(founder => <a href={founder.url}><img src={founder.logo.value} alt={founder.name} /></a>),
+                  this.props.sponsors.founders.map(founder => <a href={founder.url} target="_blank"><img src={founder.logo.value} alt={founder.name} /></a>),
                 ] : null}
-                {/* <img src={ActiveLoopLogo} alt="Active Loop" />
-                <img src={AdaptableLogo} alt="Adaptable" />
-                <img src={ExplorerLogo} alt="Explorer" />
-                <img src={ChimeraLogo} alt="Chimera" />
-                <img src={ArktisLawLogo} alt="Arktis Law" />
-                <img src={EyedeaLogo} alt="Eyedea" />
-                <img src={SyncanoLogo} alt="Syncano" /> */}
               </div>
               {/* /.Founders */}
 
@@ -190,15 +183,8 @@ export default class Landing extends Component {
 
               <div className={cn('Partners')}>
               {this.props.sponsors.partners.length ? [
-                this.props.sponsors.partners.map(partner => <a href={partner.url}><img src={partner.logo.value} alt={partner.name} /></a>),
+                this.props.sponsors.partners.map(partner => <a href={partner.url} target="_blank"><img src={partner.logo.value} alt={partner.name} /></a>),
               ] : null}
-                {/* <a href="https://www.facebook.com/groups/121396568034497/" target="_blank"><img src={GGCImg} alt="Girls Geeks Carrots" /></a>
-                <a href="https://www.facebook.com/groups/1662308537385983/?notif_t=group_added_to_group&notif_id=1475767219281446" target="_blank"><img src={bialQA} alt="Bial QA" /></a>
-                <a href="https://www.facebook.com/groups/bstoknet/" target="_blank"><img src={bstoknetImg} alt="bstoknet" /></a>
-                <a href="http://http://pystok.org/" target="_blank"><img src={pystokImg} alt="pystok" /></a>
-                <a href="http://www.nadaktywni.org/" target="_blank"><img src={NadaktywniImg} alt="Nadaktywni" /></a>
-                <a href="http://przetworniameblowa.pl/" target="_blank"><img src={PMBImg} alt="PMB" /></a>
-                <a href="https://www.facebook.com/mobilebialystok" target="_blank"><img src={MobileBialystokImg} alt="Mobile Białystok" /></a> */}
               </div>
               {/* /.Partners */}
             </div>

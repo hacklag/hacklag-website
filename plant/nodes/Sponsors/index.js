@@ -59,20 +59,20 @@ export default class Landing extends Component {
 
               <div className={cn('Sponsors')}>
                 <div className={cn('Sponsors__item--platinum')}>
-                  {this.props.sponsors.items.length && (
-                    <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
+                  {this.props.sponsors.sponsors.length && (
+                    <a href={this.props.sponsors.sponsors[0].url} target="_blank"><img src={this.props.sponsors.sponsors[0].logo.value} alt={this.props.sponsors.sponsors[0].name} /></a>
                   )}
                 </div>
-                  {this.props.sponsors.items.length && (
+                  {this.props.sponsors.sponsors.length && (
                     <div className={cn('Sponsors__item--gold')}>
-                      <img src={this.props.sponsors.items[1].logo.value} alt={this.props.sponsors.items[1].name} />
-                      <img src={this.props.sponsors.items[2].logo.value} alt={this.props.sponsors.items[2].name} />
+                      <a href={this.props.sponsors.sponsors[1].url} target="_blank"><img src={this.props.sponsors.sponsors[1].logo.value} alt={this.props.sponsors.sponsors[1].name} /></a>
+                      <a href={this.props.sponsors.sponsors[2].url} target="_blank"><img src={this.props.sponsors.sponsors[2].logo.value} alt={this.props.sponsors.sponsors[2].name} /></a>
                     </div>
                   )}
                 <div className={cn('Sponsors__item--wrapper')}>
-                {(this.props.sponsors.items.slice(3) || []).map((sponsor, key) =>
+                {(this.props.sponsors.sponsors.slice(3) || []).map((sponsor, key) =>
                   <div className={cn('Sponsors__logoContainer')} key={key}>
-                    <img src={sponsor.logo.value} alt={sponsor.name} key={key} />
+                    <a href={sponsor.url} target="_blank"><img src={sponsor.logo.value} alt={sponsor.name} key={key} /></a>
                   </div>
                 )
                   }

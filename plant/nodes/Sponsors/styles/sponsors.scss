@@ -23,10 +23,7 @@
         margin-bottom: 40px;
         max-width: 20%;
 
-        &:last-child {
-          margin-right: 0;
-        }
-        
+
         @media(--at-sm){
           max-width: 40%;
         }
