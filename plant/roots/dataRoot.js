@@ -1,8 +1,9 @@
 import { observable, action, request, parseTweet } from 'utils';
+import _ from 'lodash';
 
 const TWEETS_URL = 'https://api.syncano.io/v1.1/instances/silent-rain-3110/endpoints/data/fetchtweets/get/';
 const EVENTS_URL = 'https://api.syncano.io/v1.1/instances/silent-rain-3110/endpoints/scripts/p/e7f851e8f6f2e279e94566410f4e13be09b1917b/fetchevents/?template=script_json';
-const SPONSORS_URL = 'https://api.syncano.io/v1.1/instances/silent-rain-3110/endpoints/data/fetchsponsors/get/';
+const SPONSORS_URL = 'https://api.syncano.io/v1.1/instances/silent-rain-3110/endpoints/data/fetchpartners/get/';
 
 export default class dataRoot {
   @observable notice = {
@@ -22,7 +23,9 @@ export default class dataRoot {
 
   sponsors = {
     @observable loading: false,
-    @observable items: [],
+    @observable sponsors: [],
+    @observable founders: [],
+    @observable partners: [],
   };
 
   @action fetchTweets() {
@@ -55,8 +58,10 @@ export default class dataRoot {
     this.sponsors.loading = true;
 
     (async () => {
-      const response = await request.get(SPONSORS_URL);
-      this.sponsors.items = response.objects;
+      const { objects } = await request.get(SPONSORS_URL);
+      this.sponsors.sponsors = objects.filter(item => _.indexOf(item.type, 'sponsor') >= 0);
+      this.sponsors.founders = objects.filter(item => _.indexOf(item.type, 'founder') >= 0);
+      this.sponsors.partners = objects.filter(item => _.indexOf(item.type, 'partner') >= 0);
       this.sponsors.loading = false;
     })();
   }

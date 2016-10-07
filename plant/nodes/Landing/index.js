@@ -18,22 +18,22 @@ import Feature2Img from './images/feature-2.png';
 import Feature3Img from './images/feature-3.png';
 
 import HackbatImg from 'images/hackbat.svg';
-import GGCImg from './images/logo-ggc.png';
-import PMBImg from './images/logo-pmb.png';
-import NadaktywniImg from './images/logo-nadaktywni.png';
-import MobileBialystokImg from './images/logo-mobile-bialystok.png';
-import bialQA from './images/bialQA.png';
-import bstoknetImg from './images/bstoknet.png';
-import pystokImg from './images/pystok.png';
+// import GGCImg from './images/logo-ggc.png';
+// import PMBImg from './images/logo-pmb.png';
+// import NadaktywniImg from './images/logo-nadaktywni.png';
+// import MobileBialystokImg from './images/logo-mobile-bialystok.png';
+// import bialQA from './images/bialQA.png';
+// import bstoknetImg from './images/bstoknet.png';
+// import pystokImg from './images/pystok.png';
 
 // Founders LOGOS
-import SyncanoLogo from './images/founders/syncano.png';
-import ChimeraLogo from './images/founders/Chimera.png';
-import ExplorerLogo from './images/founders/ExplorerHQ.png';
-import AdaptableLogo from './images/founders/adaptable.png';
-import ArktisLawLogo from './images/founders/ArktisLaw.png';
-import ActiveLoopLogo from './images/founders/active-loop.png';
-import EyedeaLogo from './images/founders/eyedea.png';
+// import SyncanoLogo from './images/founders/syncano.png';
+// import ChimeraLogo from './images/founders/Chimera.png';
+// import ExplorerLogo from './images/founders/ExplorerHQ.png';
+// import AdaptableLogo from './images/founders/adaptable.png';
+// import ArktisLawLogo from './images/founders/ArktisLaw.png';
+// import ActiveLoopLogo from './images/founders/active-loop.png';
+// import EyedeaLogo from './images/founders/eyedea.png';
 @segment
 @connect(({ dataRoot, uiRoot }) => ({
   toggleModal: uiRoot.toggleModal,
@@ -148,13 +148,13 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We're non-profit organisation so we need your help to stay alive.</h3>
 
               <div className={cn('Sponsors')}>
-                {this.props.sponsors.items.length ? [
+                {this.props.sponsors.sponsors.length ? [
                   <div key="1" className={cn('Sponsors__item', 'Sponsors__item--platinum')}>
-                    <img src={this.props.sponsors.items[0].logo.value} alt={this.props.sponsors.items[0].name} />
+                    <a href={this.props.sponsors.sponsors[0].url}><img src={this.props.sponsors.sponsors[0].logo.value} alt={this.props.sponsors.sponsors[0].name} /></a>
                   </div>,
                   <div key="2" className={cn('Sponsors__item', 'Sponsors__item--gold')}>
-                    <img src={this.props.sponsors.items[1].logo.value} alt={this.props.sponsors.items[1].name} />
-                    <img src={this.props.sponsors.items[2].logo.value} alt={this.props.sponsors.items[2].name} />
+                    <a href={this.props.sponsors.sponsors[1].url}><img src={this.props.sponsors.sponsors[1].logo.value} alt={this.props.sponsors.sponsors[1].name} /></a>
+                    <a href={this.props.sponsors.sponsors[2].url}><img src={this.props.sponsors.sponsors[2].logo.value} alt={this.props.sponsors.sponsors[2].name} /></a>
                   </div>,
                 ] : null}
               </div>
@@ -171,13 +171,16 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>We wouldn't be here if they hadn't started it!</h3>
 
               <div className={cn('Founders')}>
-                <img src={ActiveLoopLogo} alt="Active Loop" />
+                {this.props.sponsors.founders.length ? [
+                  this.props.sponsors.founders.map(founder => <a href={founder.url}><img src={founder.logo.value} alt={founder.name} /></a>),
+                ] : null}
+                {/* <img src={ActiveLoopLogo} alt="Active Loop" />
                 <img src={AdaptableLogo} alt="Adaptable" />
                 <img src={ExplorerLogo} alt="Explorer" />
                 <img src={ChimeraLogo} alt="Chimera" />
                 <img src={ArktisLawLogo} alt="Arktis Law" />
                 <img src={EyedeaLogo} alt="Eyedea" />
-                <img src={SyncanoLogo} alt="Syncano" />
+                <img src={SyncanoLogo} alt="Syncano" /> */}
               </div>
               {/* /.Founders */}
 
@@ -186,13 +189,16 @@ export default class Landing extends Component {
               <h3 className={cn('Section__tagline')}>Together we can achieve much more!</h3>
 
               <div className={cn('Partners')}>
-                <img src={GGCImg} alt="Girls Geeks Carrots" />
-                <img src={bialQA} alt="Bial QA" />
-                <img src={bstoknetImg} alt="bstoknet" />
-                <img src={pystokImg} alt="pystok" />
-                <img src={NadaktywniImg} alt="Nadaktywni" />
-                <img src={PMBImg} alt="PMB" />
-                <img src={MobileBialystokImg} alt="Mobile Białystok" />
+              {this.props.sponsors.partners.length ? [
+                this.props.sponsors.partners.map(partner => <a href={partner.url}><img src={partner.logo.value} alt={partner.name} /></a>),
+              ] : null}
+                {/* <a href="https://www.facebook.com/groups/121396568034497/" target="_blank"><img src={GGCImg} alt="Girls Geeks Carrots" /></a>
+                <a href="https://www.facebook.com/groups/1662308537385983/?notif_t=group_added_to_group&notif_id=1475767219281446" target="_blank"><img src={bialQA} alt="Bial QA" /></a>
+                <a href="https://www.facebook.com/groups/bstoknet/" target="_blank"><img src={bstoknetImg} alt="bstoknet" /></a>
+                <a href="http://http://pystok.org/" target="_blank"><img src={pystokImg} alt="pystok" /></a>
+                <a href="http://www.nadaktywni.org/" target="_blank"><img src={NadaktywniImg} alt="Nadaktywni" /></a>
+                <a href="http://przetworniameblowa.pl/" target="_blank"><img src={PMBImg} alt="PMB" /></a>
+                <a href="https://www.facebook.com/mobilebialystok" target="_blank"><img src={MobileBialystokImg} alt="Mobile Białystok" /></a> */}
               </div>
               {/* /.Partners */}
             </div>
