@@ -10,10 +10,11 @@ deployment:
   production:
     branch: master
     commands:
-      - NODE_ENV=production npm run-script bump
-      - NODE_ENV=production npm run-script deployment-master
+      - npm run build
+      - NODE_ENV=production npm run deploy
 
   staging:
-    branch: devel
+    branch: v2.0-mobx
     commands:
-      - NODE_ENV=staging npm run-script deployment-devel
+      - npm run build
+      - NODE_ENV=development npm run deploy

@@ -1,0 +1,23 @@
+.Founders {
+  text-align: center;
+  margin-top: 60px;
+
+  > div {
+    margin-bottom: 60px;
+  }
+
+  img {
+    display: inline-block;
+    margin: 0 30px 30px;
+    max-width: 100%;
+    transition: .25s ease;
+    filter: grayscale(1);
+    opacity: .6;
+
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0);
+    }
+
+  }
+}
