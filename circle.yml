@@ -14,7 +14,7 @@ deployment:
       - NODE_ENV=production npm run deploy
 
   staging:
-    branch: v2.0-mobx
+    branch: devel
     commands:
       - npm run build
       - NODE_ENV=development npm run deploy
