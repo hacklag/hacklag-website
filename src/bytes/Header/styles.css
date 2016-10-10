@@ -1,0 +1,59 @@
+@custom-media --at-md-and-up (width >= 786px);
+
+.Header {
+  background-color: #0b0719;
+  background-size: 1600px 563px;
+  background-repeat: repeat-x;
+  background-position: center -60px;
+  padding: 30px 0;
+  background-image: url('./images/bg-header.png');
+
+
+  @media (--at-md-and-up) {
+    padding-bottom: 90px;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    flex-flow: wrap row;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    flex: 25% 0;
+
+    &--last {
+      text-align: right;
+    }
+
+    &-link {
+      font-size: 14px;
+      color: #4f4f7a;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color .25s;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__logo {
+    &-link {
+      color: #666;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-image {
+      width: 90px;
+      display: inline-block;
+    }
+  }
+}

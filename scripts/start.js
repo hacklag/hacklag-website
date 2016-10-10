@@ -1,7 +1,6 @@
 /* eslint consistent-return:0 */
 /* eslint-disable no-console */
 const express = require('express');
-const chalk = require('chalk');
 
 const argv = require('minimist')(process.argv.slice(2));
 const setup = require('./utils/serverMiddleware');

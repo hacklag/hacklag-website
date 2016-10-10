@@ -10,9 +10,11 @@ const babelQuery = require('./babel.dev');
 // PostCSS plugins
 const cssnext = require('postcss-cssnext');
 const postcssFocus = require('postcss-focus');
+const postcssImport = require('postcss-import');
+const postcssNested = require('postcss-nested');
 
 const modules = [
-  'plant',
+  'src',
   'node_modules',
 ];
 
@@ -32,13 +34,14 @@ module.exports = {
     // low-level so we need to put all the pieces together. The runtime listens
     // to the events received by the client above, and applies updates (such as
     // new CSS) to the running application.
-    'webpack-hot-middleware/client',
+    require.resolve('webpack-hot-middleware/client'),
+    require.resolve('react-hot-loader/patch'),
     // We ship a few polyfills by default.
     require.resolve('./polyfills'),
     // Finally, this is your app's code:
     path.join(paths.appSrc, 'index'),
     // We include the app code last so that if there is a runtime error during
-    // initialization, it doesn't blow up the WebpackDevServer client, and
+    // initialization, it doesn't blow up the server client, and
     // changing JS code would still trigger a refresh.
   ],
   output: {
@@ -94,9 +97,15 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
-        test: /\.s?css$/,
+        test: /\.css$/,
         include: paths.appSrc,
-        loader: 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader!sass-loader',
+        exclude: paths.stylesSrc,
+        loader: 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
+      },
+      {
+        test: /\.css$/,
+        include: paths.stylesSrc,
+        loader: 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&sourceMap!postcss-loader',
       },
       {
         // Do not transform vendor's CSS with CSS-modules
@@ -145,7 +154,12 @@ module.exports = {
     useEslintrc: false,
   },
   // We use PostCSS for autoprefixing only.
-  postcss: () => [
+  postcss: (cssLoader) => [
+    postcssNested(),
+    postcssImport({
+      path: [paths.stylesSrc],
+      addDependencyTo: cssLoader,
+    }),
     postcssFocus(), // Add a :focus to every :hover
     cssnext({ // Allow future CSS features to be used, also auto-prefixes the CSS...
       browsers: ['last 2 versions', 'IE > 10'], // ...based on this browser list

@@ -1,0 +1,45 @@
+@custom-media --at-md-and-down (width <= 786px);
+
+.Features {
+  text-align: center;
+  margin-top: 60px;
+  margin-left: -30px;
+
+  &__item {
+    width: 33.3333%;
+    display: inline-block;
+    padding-left: 30px;
+    vertical-align: top;
+
+    @media (--at-md-and-down) {
+      width: 100%;
+      margin-top: 60px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__image {
+    height: 68px;
+  }
+
+  &__title {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #fff;
+  }
+
+  &__content {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    color: rgba(255,255,255,.3);
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

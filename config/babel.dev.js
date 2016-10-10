@@ -9,8 +9,6 @@ module.exports = {
     require.resolve('babel-preset-latest'),
     // JSX, Flow
     require.resolve('babel-preset-react'),
-    // Hot module reloading
-    require.resolve('babel-preset-react-hmre'),
   ],
   plugins: [
     // @decorator class MyClass {}
@@ -21,5 +19,7 @@ module.exports = {
     require.resolve('babel-plugin-transform-class-properties'),
     // { ...todo, completed: true }
     require.resolve('babel-plugin-transform-object-rest-spread'),
+    // Hot reloading
+    require.resolve('react-hot-loader/babel'),
   ],
 };
