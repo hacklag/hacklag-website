@@ -5,8 +5,6 @@ machine:
 dependencies:
   pre:
     - npm install -g npm
-  override:
-    - NODE_ENV=development npm install
 
 deployment:
   production:
