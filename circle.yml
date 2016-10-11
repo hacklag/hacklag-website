@@ -16,5 +16,6 @@ deployment:
   staging:
     branch: devel
     commands:
+      - npm install
       - npm run build
       - NODE_ENV=development npm run deploy
