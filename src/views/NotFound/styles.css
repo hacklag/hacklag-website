@@ -1,0 +1,26 @@
+.NotFound {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__title {
+    font-size: 32px;
+    line-height: 42px;
+    color: #ccc;
+    font-weight: 300;
+  }
+
+  &__back {
+    color: #303F9F;
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 16px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

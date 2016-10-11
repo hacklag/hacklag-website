@@ -5,7 +5,8 @@ module.exports = {
   appHtml: path.resolve('index.html'),
   appFavicon: path.resolve('favicon.ico'),
   appPackageJson: path.resolve('package.json'),
-  appSrc: path.resolve('plant'),
+  appSrc: path.resolve('src'),
+  stylesSrc: path.resolve('src/styles'),
   appNodeModules: path.resolve('node_modules'),
   ownNodeModules: path.resolve('node_modules'),
 };

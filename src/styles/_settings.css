@@ -1,0 +1,22 @@
+/**
+* = settings.global
+*/
+
+:root {
+  /**
+   * Base settings */
+  --base-spacing: 30px;
+  --base-color: #666;
+  --base-heading-color: #333;
+  --base-line-height: 24px;
+  --base-font-size: 16px;
+  --base-font-family: 'Roboto', Helvetica, "Helvetica Neue", Arial, sans-serif;
+
+  /**
+   * Colors */
+  --color-primary: #1b70c7;
+  --color-secondary: #e5e5e5;
+  --color-tertiary: #97a2b1;
+  --color-positive: #00c18c;
+  --color-negative: #df3f3f;
+}
