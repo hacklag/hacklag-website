@@ -5,6 +5,8 @@ machine:
 dependencies:
   pre:
     - npm install -g npm
+  override:
+    - NODE_ENV=development npm install
 
 deployment:
   production:
@@ -16,6 +18,5 @@ deployment:
   staging:
     branch: devel
     commands:
-      - npm install
       - npm run build
       - NODE_ENV=development npm run deploy
