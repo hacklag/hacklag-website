@@ -1,3 +1,4 @@
+@custom-media --at-sm (width < 550px);
 @custom-media --at-md-and-down (width <= 786px);
 
 .Sponsors {
@@ -69,7 +70,6 @@
           margin-right: 0;
           max-width: 180px;
         }
-
       }
     }
 
