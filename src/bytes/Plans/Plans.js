@@ -53,7 +53,7 @@ const Plans = ({
           <li>Unlimited Baroque room access</li>
           <li>4 hours of meeting room access </li>
         </ul>
-        <button className={cn('Plans__item-button')}>Choose plan</button>
+        <button className={cn('Plans__item-button')}>Choose plan (comming soon)</button>
       </div>
     </a>
     {/* /.Plans__item */}
