@@ -1,0 +1,36 @@
+@custom-media --at-md (786px <= width < 1024px);
+@custom-media --at-lg (width >= 1024px);
+
+.OfficeFeatures {
+  font-weight: 0;
+  margin-left: -20px;
+  margin-top: 60px;
+
+  &__item {
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 30px;
+    vertical-align: top;
+    padding-left: 20px;
+
+    @media (--at-md) {
+      width: 50%;
+    }
+
+    @media (--at-lg) {
+      width: 25%;
+    }
+  }
+
+  &__item-title {
+    font-size: 18px;
+    color: #101010;
+    font-weight: bold;
+  }
+
+  &__item-content {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+}

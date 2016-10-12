@@ -1,0 +1,126 @@
+:root {
+  --color-alpha: #ffc700;
+  --color-beta: #ff7376;
+  --color-gamma: #70d0ec;
+  --color-delta: #101010;
+}
+
+@custom-media --at-sm (width < 550px);
+@custom-media --at-md (786px <= width < 1024px);
+@custom-media --at-md-and-down (width <= 786px);
+@custom-media --at-md-and-up (width >= 786px);
+@custom-media --at-lg (width >= 1024px);
+
+.Plans {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: -10px;
+
+  &__item {
+    transition: opacity .25s;
+    flex: 1 100%;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    cursor: pointer;
+
+    .Plans:hover & {
+      opacity: .25;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    @media (--at-md) {
+      flex: 1 50%;
+    }
+
+    @media (--at-lg) {
+      flex: 1 25%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-inner {
+    transition: margin .25s, padding .25s;
+    background: #fff;
+    border: 2px solid #e5e5e5;
+    padding: 15px;
+    border-top: 0;
+    box-shadow: 0 -4px 0 var(--color-alpha);
+
+    .Plans:hover &:hover {
+      padding: 27px;
+      margin-top: -12px;
+      margin-left: -12px;
+      margin-right: -12px;
+      margin-bottom: -12px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .isAlpha & { box-shadow: 0 -4px 0 var(--color-alpha); }
+    .isBeta  & { box-shadow: 0 -4px 0 var(--color-beta); }
+    .isGamma & { box-shadow: 0 -4px 0 var(--color-gamma); }
+    .isDelta & { box-shadow: 0 -4px 0 var(--color-delta); }
+  }
+
+  &__item-title {
+    .isAlpha & { color: var(--color-alpha); }
+    .isBeta  & { color: var(--color-beta); }
+    .isGamma & { color: var(--color-gamma); }
+    .isDelta & { color: var(--color-delta); }
+  }
+
+  &__item-price {
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  &__features {
+    font-size: 12px;
+    color: #666;
+    list-style-type: none;
+    margin-top: 15px;
+    min-height: 125px;
+
+    > *:before {
+      content: '\F00C';
+      margin-right: 5px;
+      font-family: FontAwesome;
+      color: #ccc;
+    }
+  }
+
+  &__item-button {
+    cursor: pointer;
+    background: none;
+    width: 100%;
+    font-weight: bold;
+    border: 2px solid;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: .25s ease;
+
+    .isAlpha & { color: var(--color-alpha); border-color: var(--color-alpha); }
+    .isBeta  & { color: var(--color-beta); border-color: var(--color-beta); }
+    .isGamma & { color: var(--color-gamma); border-color: var(--color-gamma); }
+    .isDelta & { color: var(--color-delta); border-color: var(--color-delta); }
+
+    .isAlpha:hover & { background: var(--color-alpha); }
+    .isBeta:hover  & { background: var(--color-beta); }
+    .isGamma:hover & { background: var(--color-gamma); }
+    .isDelta:hover & { background: var(--color-delta); }
+
+    .Plans__item:hover & {
+      color: #fff;
+    }
+  }
+}
