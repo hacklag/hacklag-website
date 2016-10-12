@@ -44,7 +44,10 @@ const Plans = ({
 
     <a className={cn('Plans__item', 'isGamma')} href={PLAN_HOTDESK_PLUS_URL} rel="noopener noreferrer" target="_blank">
       <div className={cn('Plans__item-inner')}>
-        <h4 className={cn('Plans__item-title')}>Hotdesk Plus</h4>
+        <h4 className={cn('Plans__item-title')}>
+          Hotdesk Plus
+          <div className={cn('Plans__item-badge')}>comming soon</div>
+        </h4>
         <div className={cn('Plans__item-price')}>400 PLN net per month</div>
         <ul className={cn('Plans__features')}>
           <li>24/7 access (all locations)</li>

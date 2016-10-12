@@ -27,6 +27,19 @@
     color: #101010;
     font-weight: bold;
   }
+  
+  &__item-badge {
+    font-size: 10px;
+    display: inline-block;
+    padding: 0px 5px;
+    background: #e5e5e5;
+    border-radius: 3px;
+    color: #999;
+    font-weight: bold;
+    line-height: 21px;
+    text-transform: uppercase;
+    float: right;
+  }
 
   &__item-content {
     font-size: 14px;
