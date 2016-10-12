@@ -6,7 +6,7 @@ import {
 } from 'bytes';
 import { Follow } from 'react-twitter-widgets';
 import FacebookProvider, { Like } from 'react-facebook';
-import { connect } from 'utils';
+import { connect, segment } from 'utils';
 import styles from './styles.css';
 
 const cn = require('classnames/bind').bind(styles);
@@ -102,4 +102,4 @@ Landing.propTypes = {
   services: PropTypes.object.isRequired,
 };
 
-export default connect(Landing);
+export default connect(Landing, { segment });
