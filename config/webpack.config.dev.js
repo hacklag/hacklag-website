@@ -1,4 +1,3 @@
-/* eslint-disable no-var, vars-on-top */
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -7,7 +6,6 @@ const WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNode
 const paths = require('./paths');
 const env = require('./env');
 const babelQuery = require('./babel.dev');
-const url = require('url');
 
 // PostCSS plugins
 const cssnext = require('postcss-cssnext');
@@ -19,12 +17,7 @@ const modules = [
   'src',
   'node_modules',
 ];
-const homepagePath = require(paths.appPackageJson).homepage;
-var publicPath = homepagePath ? url.parse(homepagePath).pathname : '/';
-if (!publicPath.endsWith('/')) {
-  // If we don't do this, file assets will get incorrect paths.
-  publicPath += '/';
-}
+
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -62,7 +55,7 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
     // In development, we always serve from the root. This makes config easier.
-    publicPath,
+    publicPath: 'http://localhost:3000/',
   },
   resolve: {
     modulesDirectories: modules,
