@@ -1,11 +1,6 @@
 /* eslint-disable */
 // Do this as the first thing so that any code reading it knows the right env.
-var config = 'dev';
-if (process.env.NODE_ENV === 'production') {
-  config = 'prod';
-} else {
-  process.env.NODE_ENV = 'development';
-}
+var config = process.env.NODE_ENV === 'production' ? 'prod': 'dev';
 
 var chalk = require('chalk');
 var fs = require('fs');
