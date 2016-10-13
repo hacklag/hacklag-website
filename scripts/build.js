@@ -1,6 +1,5 @@
 /* eslint-disable */
 // Do this as the first thing so that any code reading it knows the right env.
-var config = process.env.NODE_ENV === 'production' ? 'prod': 'dev';
 
 var chalk = require('chalk');
 var fs = require('fs');
@@ -9,7 +8,7 @@ var filesize = require('filesize');
 var gzipSize = require('gzip-size').sync;
 var rimrafSync = require('rimraf').sync;
 var webpack = require('webpack');
-var config = require('../config/webpack.config.' + config);
+var config = require('../config/webpack.config.prod');
 var paths = require('../config/paths');
 var recursive = require('recursive-readdir');
 var stripAnsi = require('strip-ansi');
