@@ -41,4 +41,4 @@ Landing.propTypes = {
   services: PropTypes.object.isRequired,
 };
 
-export default connect(Landing, { segment });
+export default connect(Landing, { segment: {} });
