@@ -75,6 +75,10 @@
   }
 
   &__item-badge {
+    position: relative;
+    vertical-align: middle;
+    top: -1px;
+    margin-left: 10px;
     font-size: 10px;
     display: inline-block;
     padding: 0px 5px;
@@ -84,7 +88,6 @@
     font-weight: bold;
     line-height: 21px;
     text-transform: uppercase;
-    float: right;
   }
 
   &__item-price {
