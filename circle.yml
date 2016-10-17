@@ -18,5 +18,5 @@ deployment:
     branch: devel
     commands:
       - NODE_ENV=development npm install
-      - NODE_ENV=production npm run build
-      - NODE_ENV=development npm run deploy
+      - npm run build
+      - npm run deploy
