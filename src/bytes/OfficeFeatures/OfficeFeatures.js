@@ -35,7 +35,10 @@ const Plans = () => (
       <p className={cn('OfficeFeatures__item-content')}>Small and big rooms for private conversations, team meetings and client appointments.</p>
     </div>
     <div className={cn('OfficeFeatures__item')}>
-      <h4 className={cn('OfficeFeatures__item-title')}>IoT Lab</h4>
+      <h4 className={cn('OfficeFeatures__item-title')}>
+        IoT Lab
+        <div className={cn('OfficeFeatures__item-badge')}>comming soon</div>
+      </h4>
       <p className={cn('OfficeFeatures__item-content')}>In our lab you can play with Internet of Things or 3d printing. We have all the necessery tools.</p>
     </div>
   </div>

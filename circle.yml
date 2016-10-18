@@ -10,11 +10,13 @@ deployment:
   production:
     branch: master
     commands:
-      - npm run build
+      - NODE_ENV=development npm install
+      - NODE_ENV=production npm run build
       - NODE_ENV=production npm run deploy
 
   staging:
     branch: devel
     commands:
-      - npm run build
-      - NODE_ENV=development npm run deploy
+      - NODE_ENV=development npm install
+      - NODE_ENV=development npm run build
+      - npm run deploy
