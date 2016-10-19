@@ -34,7 +34,7 @@ const Plans = ({
         <ul className={cn('Plans__features')}>
           <li>24/7 access</li>
           <li>100 Mbit/s internet connection</li>
-          <li>Coffee and snaks</li>
+          <li>Coffee and snacks</li>
           <li>Unlimited Baroque room access</li>
         </ul>
         <button className={cn('Plans__item-button')}>Choose plan</button>
@@ -52,7 +52,7 @@ const Plans = ({
         <ul className={cn('Plans__features')}>
           <li>24/7 access (all locations)</li>
           <li>200 Mbit/s internet connection</li>
-          <li>Coffee and snaks</li>
+          <li>Coffee and snacks</li>
           <li>Unlimited Baroque room access</li>
           <li>4 hours of meeting room access </li>
         </ul>
@@ -68,7 +68,7 @@ const Plans = ({
         <ul className={cn('Plans__features')}>
           <li>24/7 access (all locations)</li>
           <li>200 Mbit/s internet connection</li>
-          <li>Coffee and snaks</li>
+          <li>Coffee and snacks</li>
           <li>Unlimited Baroque room access</li>
           <li>8 hours of meeting room access</li>
         </ul>
