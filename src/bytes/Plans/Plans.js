@@ -6,7 +6,7 @@ const cn = require('classnames/bind').bind(styles);
 
 const PLAN_HOTDESK_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=f7ca61fc7a2d3d6f4b1b190858a60c56';
 const PLAN_HOTDESK_PLUS_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=d5a026465e7d82761c6e2c4f174f61f4';
-const PLAN_PERMAMENT_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=d67e8ace7b83af12dcfdc74905eb0811';
+const PLAN_PERMANENT_URL = 'https://bialystok.hacklag.org/membership_signup/new?plan_id=d67e8ace7b83af12dcfdc74905eb0811';
 
 const Plans = ({
   services: {
@@ -61,9 +61,9 @@ const Plans = ({
     </a>
     {/* /.Plans__item */}
 
-    <a className={cn('Plans__item', 'isDelta')} href={PLAN_PERMAMENT_URL} rel="noopener noreferrer" target="_blank">
+    <a className={cn('Plans__item', 'isDelta')} href={PLAN_PERMANENT_URL} rel="noopener noreferrer" target="_blank">
       <div className={cn('Plans__item-inner')}>
-        <h4 className={cn('Plans__item-title')}>Permament Desk</h4>
+        <h4 className={cn('Plans__item-title')}>Permanent Desk</h4>
         <div className={cn('Plans__item-price')}>500 PLN net per month</div>
         <ul className={cn('Plans__features')}>
           <li>24/7 access (all locations)</li>
