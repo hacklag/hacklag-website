@@ -46,11 +46,11 @@ function Request(url, options = {}) {
 
   if (/api\.syncano/.test(url)) {
     if (!opts.headers.has('X-API-KEY')) {
-      opts.headers.append('X-API-KEY', process.env.HACKLAG_SYNCANO_API_KEY);
+      opts.headers.append('X-API-KEY', SYNCANO_API_KEY);
     }
 
     if (!opts.headers.has('X-USER-KEY')) {
-      opts.headers.append('X-USER-KEY', process.env.HACKLAG_SYNCANO_USER_KEY);
+      opts.headers.append('X-USER-KEY', SYNCANO_USER_KEY);
     }
   }
 

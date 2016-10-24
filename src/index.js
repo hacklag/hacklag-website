@@ -6,7 +6,7 @@ import { AppContainer } from 'react-hot-loader';
 import App from 'views/App';
 
 if (window.analytics.load) {
-  window.analytics.load(process.env.HACKLAG_SEGMENT_WRITE_KEY);
+  window.analytics.load(SEGMENT_WRITE_KEY);
 }
 
 const $root = document.getElementById('root');
