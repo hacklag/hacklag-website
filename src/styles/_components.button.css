@@ -26,6 +26,11 @@
     box-shadow: inset 0 -10em 0 rgba(0, 0, 0, .1);
   }
 
+  &:disabled {
+    background: var(--color-disabled);
+    color: #fff;
+  }
+
   &--primary {
     background: var(--color-primary);
     color: #fff;

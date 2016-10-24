@@ -4,11 +4,14 @@ const COMMUNITY_REGISTER_URL = 'https://api.syncano.io/v1.1/instances/silent-rai
 
 export default class User {
   @action signup = async ({ email }) => {
+    this.store.pending.set('user.signup', { status: true });
     const { status, communicate } = await request.post(COMMUNITY_REGISTER_URL, { email });
 
     this.store.messages.set('user.signup', {
       status: status === 'true' ? 'success' : 'failure',
       message: status === 'true' ? 'We\'ve sent you invitation.' : communicate,
     });
+
+    this.store.pending.set('user.signup', { status: false });
   }
 }
