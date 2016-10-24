@@ -4,7 +4,7 @@ import coercer from 'coercer';
 import ZSchema from 'z-schema';
 import * as FormRules from './formize.rules';
 
-export function formize({ formName, fields, schema = {}, permament = true }) {
+export function formize({ formName, fields, schema = {}, permanent = true }) {
   const validator = new ZSchema({
     customValidator: (Report, Schema, Values) => {
       Object.keys(FormRules).forEach(rule => FormRules[rule](Report, Schema, Values));
@@ -27,7 +27,7 @@ export function formize({ formName, fields, schema = {}, permament = true }) {
       constructor(props, context) {
         super(props, context);
 
-        if (!formName && permament) {
+        if (!formName && permanent) {
           throw new Error('Property "formName" is required');
         }
 
@@ -62,7 +62,7 @@ export function formize({ formName, fields, schema = {}, permament = true }) {
             },
           }), {});
 
-        if (!context.store.forms[formName] || !permament) {
+        if (!context.store.forms[formName] || !permanent) {
           context.store.forms.set(formName, form);
         }
 
