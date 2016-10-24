@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Wrapper, Join } from 'bits';
 import { Header, Sponsors, Footer } from 'bytes';
-import { connect, segment } from 'utils';
+import { connect } from 'utils';
 import styles from './styles.css';
 
 const cn = require('classnames/bind').bind(styles);

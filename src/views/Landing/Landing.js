@@ -6,7 +6,7 @@ import {
 } from 'bytes';
 import { Follow } from 'react-twitter-widgets';
 import FacebookProvider, { Like } from 'react-facebook';
-import { connect, segment } from 'utils';
+import { connect } from 'utils';
 import styles from './styles.css';
 
 const cn = require('classnames/bind').bind(styles);
