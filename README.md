@@ -1,6 +1,5 @@
 <img src="https://scontent.fwaw3-1.fna.fbcdn.net/v/t1.0-9/14680538_1668140753500701_8794147698246241786_n.png?oh=196afd1052e5b9641ed575c3b8ad0d9e&oe=58A55654" >
 
-
 <p >
     <a href="https://circleci.com/gh/hacklag/hacklag-website/tree/master">
 <img src="https://circleci.com/gh/hacklag/hacklag-website/tree/master.svg?style=shield&circle-token=84ac81569712c36e78dc1698eff2b07e221e262d"
@@ -16,7 +15,6 @@
         <img src="https://img.shields.io/badge/chat-on_slack-blue.svg"
              alt="build status">
     </a>
-
 </p>
 
 ## What is HACKLAG?
@@ -33,7 +31,6 @@ To achieve this goal we want to build an international community and prepare too
 
 ## Requirements
 To start Hacklag website you need to install [Node](https://nodejs.org/en/) `6.3.0` with *npm* `~3.0.0`
-
 
 ## Quick start
 
