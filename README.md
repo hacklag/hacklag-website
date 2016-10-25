@@ -27,7 +27,7 @@ We strongly believe that access to the new technologies and education is necessa
 
 We want to join efforts of developers, designers, entrepreneurs, artists and everyone who are interested in new technologies. Combination of initiatives, creative people and friendly environment can result with extraordinary ideas, projects and groundbreaking solutions.
 
-To achieve this goal we want to build an international community and prepare tools and place to make things happened. We also have started building the first Hackerspace in Bialystok, placed in the centre of the city, open to everyone with head full of ideas.
+To achieve this goal we want to build an international community and prepare tools and place to make things happened. We also have started building the [first Hackerspace in Bialystok](https://www.google.pl/maps/place/HACKLAG/@53.131278,23.160315,15z/data=!4m2!3m1!1s0x0:0x893850317c376ebc?sa=X&ved=0ahUKEwia8cnn8vXPAhWMDywKHbd9BlcQ_BIIbDAK), placed in the centre of the city, open to everyone with head full of ideas.
 
 ## Requirements
 To start Hacklag website you need to install [Node](https://nodejs.org/en/) `6.3.0` with *npm* `~3.0.0`
