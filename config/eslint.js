@@ -4,6 +4,15 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   extends: 'airbnb',
+  globals: {
+    SYNCANO_API_KEY: true,
+    SYNCANO_USER_KEY: true,
+    SYNCANO_INSTANCE_NAME: true,
+    PIXEL_WRITE_KEY: true,
+    GOOGLE_WRITE_KEY: true,
+    DRIFT_WRITE_KEY: true,
+    SEGMENT_WRITE_KEY: true,
+  },
   env: {
     browser: true,
     node: true,
