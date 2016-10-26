@@ -6,6 +6,9 @@ import { AppContainer } from 'react-hot-loader';
 import App from 'views/App';
 
 const $root = document.getElementById('root');
+window.drift.load(DRIFT_WRITE_KEY);
+window.fbq('init', PIXEL_WRITE_KEY);
+window.ga('create', GOOGLE_WRITE_KEY, 'auto');
 
 render(<AppContainer children={<App />} />, $root);
 

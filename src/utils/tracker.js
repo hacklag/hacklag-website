@@ -14,6 +14,7 @@ export function tracker() {
         } else {
           window.ga('send', 'pageview');
         }
+        window.fbq('track', 'PageView');
       }
 
       render() {
