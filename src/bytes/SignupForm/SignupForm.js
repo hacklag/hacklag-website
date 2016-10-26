@@ -12,13 +12,14 @@ const SignupForm = ({
     submit, fields,
   },
   store: {
-    messages,
+    messages, pending,
   },
   services: {
     user: { signup },
   },
 }) => {
   const message = messages.get('user.signup');
+  const isLoading = pending.get('user.signup');
 
   return (
     <form className={cx('SignupForm')} onSubmit={(event) => submit(event, signup)}>
@@ -26,7 +27,13 @@ const SignupForm = ({
 
       <Split>
         <input className={cx('SignupForm__input')} {...fields.email} />
-        <Button className="Btn--primary u-ml- u-ph" type="submit">Submit</Button>
+        <Button
+          className="Btn--primary u-ml- u-ph"
+          type="submit"
+          disabled={isLoading ? isLoading.status : false}
+        >
+          Submit
+        </Button>
       </Split>
 
       {message && (

@@ -1,20 +1,23 @@
 // Grab NODE_ENV and HACKLAG_* environment variables and prepare them to be
  // injected into the application via DefinePlugin in Webpack configuration.
 
-const HACKLAG = /^HACKLAG_/i;
-const NODE_ENV = JSON.stringify(process.env.NODE_ENV || 'development');
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const plugin = { ENV: JSON.stringify(NODE_ENV) };
 
-module.exports = Object
-  .keys(process.env)
-  .filter(key => HACKLAG.test(key))
-  .reduce((env, key) => Object.assign({}, env, {
-    [`process.env.${key}`]: JSON.stringify(process.env[key]),
-  }), {
-    'process.env': {
-      NODE_ENV,
-      HACKLAG_SYNCANO_API_KEY: JSON.stringify(process.env.HACKLAG_SYNCANO_API_KEY),
-      HACKLAG_SYNCANO_USER_KEY: JSON.stringify(process.env.HACKLAG_SYNCANO_USER_KEY),
-      HACKLAG_PRODUCTION_SEGMENT_WRITE_KEY: JSON.stringify(process.env.HACKLAG_PRODUCTION_SEGMENT_WRITE_KEY),
-      HACKLAG_STAGING_SEGMENT_WRITE_KEY: JSON.stringify(process.env.HACKLAG_STAGING_SEGMENT_WRITE_KEY),
-    },
-  });
+const envVars = [
+  'SYNCANO_API_KEY',
+  'SYNCANO_USER_KEY',
+  'SYNCANO_INSTANCE_NAME',
+  'PIXEL_WRITE_KEY',
+  'GOOGLE_WRITE_KEY',
+  'DRIFT_WRITE_KEY',
+];
+
+for (let i = 0; i < envVars.length; i++) {
+  const name = envVars[i];
+  const envName = `${NODE_ENV.toUpperCase()}_${name}`;
+
+  plugin[name] = JSON.stringify(process.env[envName] || process.env[name] || '');
+}
+
+module.exports = Object.assign({}, plugin);
