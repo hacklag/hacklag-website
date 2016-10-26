@@ -6,6 +6,7 @@ import user from './user';
 export default observable({
   forms: asMap(),
   messages: asMap(),
+  pending: asMap(),
   data,
   user,
   ui,
