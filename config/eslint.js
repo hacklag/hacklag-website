@@ -11,7 +11,6 @@ module.exports = {
     PIXEL_WRITE_KEY: true,
     GOOGLE_WRITE_KEY: true,
     DRIFT_WRITE_KEY: true,
-    SEGMENT_WRITE_KEY: true,
   },
   env: {
     browser: true,

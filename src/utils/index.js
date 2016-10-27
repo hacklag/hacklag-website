@@ -1,7 +1,7 @@
 export { connect } from './connect';
 export { Provider } from './provider';
 export { formize } from './formize';
-export { segment } from './segment';
+export { tracker } from './tracker';
 export request from './request';
 export moment from 'moment';
 export parseTweet from './parseTweet';

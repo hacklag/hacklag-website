@@ -11,7 +11,6 @@ const envVars = [
   'PIXEL_WRITE_KEY',
   'GOOGLE_WRITE_KEY',
   'DRIFT_WRITE_KEY',
-  'SEGMENT_WRITE_KEY',
 ];
 
 for (let i = 0; i < envVars.length; i++) {
