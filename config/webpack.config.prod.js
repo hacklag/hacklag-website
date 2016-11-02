@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const url = require('url');
 const paths = require('./paths');
 const env = require('./env');
@@ -236,5 +237,13 @@ module.exports = {
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
+    new CopyWebpackPlugin([{
+      from: paths.assetsSrc,
+      to: 'assets',
+    }],
+      {
+        copyUnmodified: true,
+      }
+    ),
   ],
 };
