@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('../scripts/utils/WatchMissingNodeModulesPlugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const paths = require('./paths');
 const env = require('./env');
 const babelQuery = require('./babel.dev');
@@ -187,5 +188,13 @@ module.exports = {
     // makes the discovery automatic so you don't have to restart.
     // See https://github.com/facebookincubator/create-react-app/issues/186
     new WatchMissingNodeModulesPlugin(paths.appNodeModules),
+    new CopyWebpackPlugin([{
+      from: paths.assetsSrc,
+      to: 'assets',
+    }],
+      {
+        copyUnmodified: true,
+      }
+    ),
   ],
 };
