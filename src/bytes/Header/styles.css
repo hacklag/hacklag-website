@@ -21,7 +21,7 @@
   }
 
   &__nav {
-    flex: 25% 0;
+    flex: 35% 0;
 
     &--last {
       text-align: right;
