@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const SitemapPlugin = require('sitemap-webpack-plugin');
 const url = require('url');
 const paths = require('./paths');
 const env = require('./env');
@@ -18,6 +19,11 @@ const postcssNested = require('postcss-nested');
 const modules = [
   'src',
   'node_modules',
+];
+
+// Paths for a website Sitemap
+const websiteRoutes = [
+  '/',
 ];
 
 // Assert this just to be safe.
@@ -245,5 +251,7 @@ module.exports = {
         copyUnmodified: true,
       }
     ),
+    // Generate a website Sitemap
+    new SitemapPlugin('https://hacklag.org', websiteRoutes, 'sitemap.xml'),
   ],
 };
