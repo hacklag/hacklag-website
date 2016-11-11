@@ -15,6 +15,7 @@ const Header = ({
         <Nav className={cn('Header__nav', 'Header__nav--first')}>
           <Link className={cn('Header__nav-link')} to="/">Home</Link>
           <a className={cn('Header__nav-link')} href="/#events">Events</a>
+          <a className={cn('Header__nav-link')} href="https://medium.com/@hacklag">Blog</a>
           <a className={cn('Header__nav-link')} href="/#sponsors">Sponsors</a>
         </Nav>
         {/* /.Header__nav */}
