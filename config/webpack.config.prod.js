@@ -252,6 +252,6 @@ module.exports = {
       }
     ),
     // Generate a website Sitemap
-    new SitemapPlugin('http://hacklag.org', websiteRoutes, 'sitemap.xml'),
+    new SitemapPlugin('https://hacklag.org', websiteRoutes, 'sitemap.xml'),
   ],
 };
