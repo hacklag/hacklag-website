@@ -13,7 +13,7 @@ export function tracker() {
           window.ga('send', 'pageview', `404${location.pathname}`);
           window.ga('send', {
             hitType: 'event',
-            eventCategory: 'Pages',
+            eventCategory: 'ErrorPage',
             eventAction: `404${location.pathname}`,
             eventLabel: 'Route',
           });
@@ -21,7 +21,7 @@ export function tracker() {
           window.ga('send', 'pageview', location.pathname);
           window.ga('send', {
             hitType: 'event',
-            eventCategory: 'Pages',
+            eventCategory: 'Page',
             eventAction: location.pathname,
             eventLabel: 'Route',
           });
