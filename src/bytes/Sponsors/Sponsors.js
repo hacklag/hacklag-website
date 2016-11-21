@@ -5,7 +5,6 @@ import styles from './styles.css';
 const cn = require('classnames/bind').bind(styles);
 
 const Sponsors = ({
-  all = false,
   store: {
     data: {
       sponsors = [],
@@ -13,31 +12,66 @@ const Sponsors = ({
   },
 }) => (
   <div className={cn('Sponsors')}>
-    {sponsors.length ? [
-      <div key="1" className={cn('Sponsors__item', 'Sponsors__item--platinum')}>
-        <a href={sponsors[0].url} target="_blank">
-          <img src={sponsors[0].logo.value} alt={sponsors[0].name} />
-        </a>
-      </div>,
-      <div key="2" className={cn('Sponsors__item', 'Sponsors__item--gold')}>
-        <a href={sponsors[1].url} target="_blank">
-          <img src={sponsors[1].logo.value} alt={sponsors[1].name} />
-        </a>
-        <a href={sponsors[2].url} target="_blank">
-          <img src={sponsors[2].logo.value} alt={sponsors[2].name} />
-        </a>
-      </div>,
-    ] : null}
-
-    {all && (
-      <div className={cn('Sponsors__item--other')}>
-        {sponsors.slice(3).map((sponsor, key) => (
-          <a href={sponsor.url} target="_blank" key={key}>
-            <img src={sponsor.logo.value} alt={sponsor.name} key={key} />
-          </a>
-        ))}
+    <div className={cn('Sponsors__item', 'isPlatinum')}>
+      <div className={cn('Sponsors__item-content')}>
+        <div className={cn('Sponsors__item-content-wrapper')}>
+          <img
+            className={cn('Sponsors__item-logo')}
+            alt={sponsors[0] && sponsors[0].name}
+            src={sponsors[0] && sponsors[0].logo.value}
+          />
+        </div>
       </div>
-    )}
+    </div>
+    <div className={cn('Sponsors__item', 'isGold')}>
+    {
+      Array.from(Array(2).keys()).map((index) => (
+        <div key={index + 1} className={cn('Sponsors__item-content')}>
+          <div className={cn('Sponsors__item-content-wrapper')}>
+            <img
+              className={cn('Sponsors__item-logo')}
+              alt={sponsors[index + 1] && sponsors[index + 1].name}
+              src={sponsors[index + 1] && sponsors[index + 1].logo.value}
+            />
+          </div>
+        </div>
+      ))
+    }
+    </div>
+    <div className={cn('Sponsors__item', 'isSilver')}>
+    {
+      Array.from(Array(3).keys()).map((index) => (
+        <div key={index + 3} className={cn('Sponsors__item-content')}>
+          <div className={cn('Sponsors__item-content-wrapper')}>
+            {sponsors[index + 3] &&
+              <img
+                className={cn('Sponsors__item-logo')}
+                alt={sponsors[index + 3].name}
+                src={sponsors[index + 3].logo.value}
+              />
+            }
+          </div>
+        </div>
+      ))
+    }
+    </div>
+    <div className={cn('Sponsors__item', 'isBronze')}>
+    {
+      Array.from(Array(4).keys()).map((index) => (
+        <div key={index + 6} className={cn('Sponsors__item-content')}>
+          <div className={cn('Sponsors__item-content-wrapper')}>
+            {sponsors[index + 6] &&
+              <img
+                className={cn('Sponsors__item-logo')}
+                alt={sponsors[index + 6].name}
+                src={sponsors[index + 6].logo.value}
+              />
+            }
+          </div>
+        </div>
+      ))
+    }
+    </div>
   </div>
 );
 
