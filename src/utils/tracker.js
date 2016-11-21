@@ -10,7 +10,11 @@ export function tracker() {
 
       componentDidMount() {
         if (!this.props.pattern) {
-          window.ga('send', 'pageview', `404${location.pathname}`);
+          window.ga('send', {
+            hitType: 'pageview',
+            page: `404${location.pathname}`,
+          });
+
           window.ga('send', {
             hitType: 'event',
             eventCategory: 'ErrorPage',
@@ -18,7 +22,11 @@ export function tracker() {
             eventLabel: 'Route',
           });
         } else {
-          window.ga('send', 'pageview', location.pathname);
+          window.ga('send', {
+            hitType: 'pageview',
+            page: location.pathname,
+          });
+
           window.ga('send', {
             hitType: 'event',
             eventCategory: 'Page',
