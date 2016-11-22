@@ -19,6 +19,7 @@
       background-color: #FAFAFA;
       margin: 10px;
       position: relative;
+      border-radius: 5px;
 
       &:before {
       	content: "";
@@ -26,7 +27,7 @@
       	padding-top: 32%;
       }
 
-      .isBare & {
+      .isPlatinum & {
         background: none;
       }
 

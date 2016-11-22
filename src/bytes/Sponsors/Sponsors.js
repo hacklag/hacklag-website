@@ -20,7 +20,6 @@ const Sponsors = ({
         isSilver: (itemsIndex >= 2 && itemsIndex < 6),
         isBronze: itemsIndex >= 6,
         isVisible: itemsIndex < 2 || all,
-        isBare: !all,
       })}>
         {Array.from(Array(
           itemsIndex < 3 ? itemsIndex + 1 : 4
