@@ -8,36 +8,35 @@ const Sponsors = ({
   all = false,
   store: {
     data: {
-      sponsors = [],
+      sponsorsItems,
     },
   },
 }) => (
   <div className={cn('Sponsors')}>
-    {sponsors.length ? [
-      <div key="1" className={cn('Sponsors__item', 'Sponsors__item--platinum')}>
-        <a href={sponsors[0].url} target="_blank">
-          <img src={sponsors[0].logo.value} alt={sponsors[0].name} />
-        </a>
-      </div>,
-      <div key="2" className={cn('Sponsors__item', 'Sponsors__item--gold')}>
-        <a href={sponsors[1].url} target="_blank">
-          <img src={sponsors[1].logo.value} alt={sponsors[1].name} />
-        </a>
-        <a href={sponsors[2].url} target="_blank">
-          <img src={sponsors[2].logo.value} alt={sponsors[2].name} />
-        </a>
-      </div>,
-    ] : null}
-
-    {all && (
-      <div className={cn('Sponsors__item--other')}>
-        {sponsors.slice(3).map((sponsor, key) => (
-          <a href={sponsor.url} target="_blank" key={key}>
-            <img src={sponsor.logo.value} alt={sponsor.name} key={key} />
-          </a>
-        ))}
+    {sponsorsItems.map((items, itemsIndex) => (
+      <div key={itemsIndex} className={cn('Sponsors__item', {
+        isPlatinum: itemsIndex === 0,
+        isGold: (itemsIndex > 0 && itemsIndex < 2),
+        isSilver: (itemsIndex >= 2 && itemsIndex < 6),
+        isBronze: itemsIndex >= 6,
+        isVisible: itemsIndex < 2 || all,
+      })}>
+        {Array.from(Array(
+          itemsIndex < 3 ? itemsIndex + 1 : 4
+        ).keys()).map((index) => (
+          <div key={index} className={cn('Sponsors__item-content')}>
+            <div className={cn('Sponsors__item-content-wrapper')}>
+              <img
+                className={cn('Sponsors__item-logo')}
+                alt={items[index] && items[index].name}
+                src={items[index] && items[index].logo.value}
+              />
+            </div>
+          </div>
+        ))
+      }
       </div>
-    )}
+    ))}
   </div>
 );
 
