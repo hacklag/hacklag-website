@@ -10,9 +10,29 @@ export function tracker() {
 
       componentDidMount() {
         if (!this.props.pattern) {
-          window.ga('send', 'pageview', `404${location.pathname}`);
+          window.ga('send', {
+            hitType: 'pageview',
+            page: `404${location.pathname}`,
+          });
+
+          window.ga('send', {
+            hitType: 'event',
+            eventCategory: 'ErrorPage',
+            eventAction: `404${location.pathname}`,
+            eventLabel: 'Route',
+          });
         } else {
-          window.ga('send', 'pageview');
+          window.ga('send', {
+            hitType: 'pageview',
+            page: location.pathname,
+          });
+
+          window.ga('send', {
+            hitType: 'event',
+            eventCategory: 'Page',
+            eventAction: location.pathname,
+            eventLabel: 'Route',
+          });
         }
         window.fbq('track', 'PageView');
       }

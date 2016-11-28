@@ -3,91 +3,86 @@
 
 .Sponsors {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 10px;
   margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  a {
-    margin-right: 60px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  img {
-    display: inline-block;
-    margin-right: 60px;
-    max-width: 100%;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 
   &__item {
-    margin-bottom: 30px;
+    width: 100%;
+    height: 100%;
+    display: none;
 
-    &--platinum a {
-      > img {
-        max-height: 120px;
+    &.isVisible {
+      display: flex;
+    }
+
+    &-content {
+      background-color: #FAFAFA;
+      margin: 10px;
+      position: relative;
+      border-radius: 5px;
+
+      &:before {
+      	content: "";
+      	display: block;
+      	padding-top: 32%;
+      }
+
+      .isPlatinum & {
+        background: none;
+      }
+
+      &-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+      }
+
+      .isPlatinum & {
+        width: 99%;
+      }
+
+      .isGold & {
+        width: 49%;
+      }
+
+      .isSilver & {
+        width: 33%;
+      }
+
+      .isBronze & {
+        width: 24%;
+      }
+    }
+
+    &-logo {
+      padding: 20px;
+      display: block;
+      max-width: 90%;
+      max-height: 200px;
+      margin: 0 auto;
+
+      .isPlatinum & {
+        @media (--at-md-and-down) {
+          max-height: 100px;
+        }
+      }
+
+      .isGold & {
+        max-height: 150px;
 
         @media (--at-md-and-down) {
-          max-height: 75px;
-        }
-      }
-    }
-
-    &--gold {
-      @media(--at-md-and-down) {
-        margin-bottom: 0;
-      }
-    }
-
-    &--gold a {
-      > img {
-        max-height: 100px;
-        max-width: 280px;
-        height: auto;
-      }
-
-      @media (--at-md-and-down) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0;
-        margin-right: 0;
-
-        a {
-          margin-right: 0;
-        }
-
-        > img {
-          padding-bottom: 15px;
-          margin-bottom: 15px;
-          margin-right: 0;
-          max-width: 180px;
-        }
-      }
-    }
-
-    &--other {
-      margin: 0 10px 30px;
-      text-align: center;
-
-      a {
-        max-width: 20%;
-        display: inline-block;
-
-        @media (--at-sm){
-          max-width: 40%;
+          max-height: 70px;
         }
       }
 
-      img {
-        max-height: 40px;
+      .isSilver & {
+        max-height: 80px;
+      }
+
+      .isBronze & {
+        max-height: 60px;
       }
     }
   }
