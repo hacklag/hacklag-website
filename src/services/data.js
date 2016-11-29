@@ -21,7 +21,8 @@ export default class Data {
   }
 
   @action fetchConnections = async () => {
-    const { objects } = await request.get(SPONSORS_URL);
+    // eslint-disable-next-line prefer-template
+    const { objects } = await request.get(SPONSORS_URL + '?query={"location": {"_contains": ["' + this.store.data.location + '"]}}');
     this.store.data.sponsors = objects.filter(item => item.type.includes('sponsor'));
     this.store.data.founders = objects.filter(item => item.type.includes('founder'));
     this.store.data.partners = objects.filter(item => item.type.includes('partner'));

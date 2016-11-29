@@ -8,4 +8,9 @@ export default class Data {
   @action closeModal = () => {
     this.store.ui.activeModal = '';
   }
+
+  @action changeLocation = (location) => {
+    this.store.data.location = location;
+    this.services.data.fetchConnections(location);
+  }
 }

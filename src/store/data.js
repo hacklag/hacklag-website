@@ -6,6 +6,7 @@ export default {
   sponsors: [],
   partners: [],
   founders: [],
+  location: 'Białystok',
 
   @computed get sponsorsItemsCount() {
     const count = this.sponsors.length;

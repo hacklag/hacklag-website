@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link, Wrapper, Nav } from 'bits';
+import { connect } from 'utils';
 import styles from './styles.css';
 
 const cn = require('classnames/bind').bind(styles);
@@ -7,6 +8,9 @@ const cn = require('classnames/bind').bind(styles);
 import HackbatImg from 'images/hackbat.svg';
 
 const Header = ({
+  services: {
+    ui: { changeLocation },
+  },
   children,
 }) => (
   <div className={cn('Header')}>
@@ -29,6 +33,8 @@ const Header = ({
 
         <Nav className={cn('Header__nav', 'Header__nav--last')}>
           <a className={cn('Header__nav-link')} href="http://bialystok.hacklag.org">Members area</a>
+          <a role="button" className={cn('Header__nav-link')} onClick={() => changeLocation('Białystok')}>Białystok</a>
+          <a role="button" className={cn('Header__nav-link')} onClick={() => changeLocation('Warsaw')}>Warszawa</a>
         </Nav>
       </div>
       {/* /.Header__bar */}
@@ -40,6 +46,7 @@ const Header = ({
 
 Header.propTypes = {
   children: PropTypes.node,
+  services: PropTypes.object.isRequired,
 };
 
-export default Header;
+export default connect(Header);
