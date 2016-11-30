@@ -26,7 +26,7 @@ const Sponsors = ({
         ).keys()).map((index) => (
           <div key={index} className={cn('Sponsors__item-content')}>
             <div className={cn('Sponsors__item-content-wrapper')}>
-              <a href={items[index] && items[index].url} target="_blank">
+              <a href={items[index] && items[index].url} target="_blank" rel="noopener noreferrer">
                 <img
                   className={cn('Sponsors__item-logo')}
                   alt={items[index] && items[index].name}
