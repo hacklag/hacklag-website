@@ -13,8 +13,6 @@ const Footer = ({
   },
 }) => (
   <div className={cn('Footer')}>
-    {/* <img className={cn('Footer__map')} src={BG} role="presentation" /> */}
-
     <Wrapper className={cn('Footer__box')}>
       <div className={cn('Footer__items')}>
         <div className={cn('Footer__item')}>
