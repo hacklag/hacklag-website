@@ -46,7 +46,7 @@ const Plans = ({
       <div className={cn('Plans__item-inner')}>
         <h4 className={cn('Plans__item-title')}>
           Hotdesk Plus
-          <div className={cn('Plans__item-badge')}>comming soon</div>
+          <div className={cn('Plans__item-badge')}>coming soon</div>
         </h4>
         <div className={cn('Plans__item-price')}>400 PLN net per month</div>
         <ul className={cn('Plans__features')}>

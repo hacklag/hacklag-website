@@ -37,7 +37,7 @@ const Plans = () => (
     <div className={cn('OfficeFeatures__item')}>
       <h4 className={cn('OfficeFeatures__item-title')}>
         IoT Lab
-        <div className={cn('OfficeFeatures__item-badge')}>comming soon</div>
+        <div className={cn('OfficeFeatures__item-badge')}>coming soon</div>
       </h4>
       <p className={cn('OfficeFeatures__item-content')}>In our lab you can play with Internet of Things or 3D printing. We have all the necessary tools.</p>
     </div>
