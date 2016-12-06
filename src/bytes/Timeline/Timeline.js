@@ -18,10 +18,10 @@ const Timeline = ({
     <div className={cn('Timeline__section')}>
       <div className={cn('Timeline__description')}>
         <h2 className={cn('Timeline__title')}>
-          Brace yourself, <div>epic events are comming!</div>
+          Brace yourself, <div>epic events are coming!</div>
         </h2>
         <h3 className={cn('Timeline__tagline')}>
-          We like to actively spend our time by hosting events, working on projects or just hanging out together. Check out what’s comming.
+          We like to actively spend our time by hosting events, working on projects or just hanging out together. Check out what’s coming.
         </h3>
         <a className="Btn Btn--primary" href={CALENDAR_URL}>View all events</a>
       </div>
@@ -50,7 +50,7 @@ const Timeline = ({
           Oh, look! <div>People are talking about us</div>
         </h2>
         <h3 className={cn('Timeline__tagline')}>
-          We like to actively spend our time by hosting events, working on projects or just hanging out together. Check out what’s comming.
+          We like to actively spend our time by hosting events, working on projects or just hanging out together. Check out what’s coming.
         </h3>
         <a className="Btn Btn--primary" href="https://twitter.com/HacklagHQ">Check our Twitter</a>
       </div>
