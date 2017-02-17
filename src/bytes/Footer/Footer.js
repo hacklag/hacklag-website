@@ -4,7 +4,7 @@ import { connect } from 'utils';
 import { Follow } from 'react-twitter-widgets';
 import FacebookProvider, { Like } from 'react-facebook';
 import styles from './styles.css';
-
+import GoogleMap from 'google-map-react';
 const cn = require('classnames/bind').bind(styles);
 
 const Footer = ({
@@ -46,7 +46,6 @@ const Footer = ({
           </div>
         </div>
       </div>
-
       <Split>
         <div className={cn('Footer__copyrights')}>
           &copy; 2016 by Hacklag. All rights reserved.
@@ -62,6 +61,26 @@ const Footer = ({
         </div>
       </Split>
     </Wrapper>
+    <div className={cn('Footer__map')}>
+      <GoogleMap
+        bootstrapURLKeys={{
+          key: GOOGLE_MAPS_API_KEY,
+        }}
+        defaultCenter={{ lat: 53.1302151, lng: 23.1595374 }}
+        defaultZoom={17}
+      >
+        <div
+          lat={53.1311871}
+          lng={23.1581426}
+        >
+          <img
+            width={'100px'}
+            role={'presentation'}
+            src={'http://i.imgur.com/fYrxDeK.png'}
+          />
+        </div>
+      </GoogleMap>
+    </div>
   </div>
 );
 
