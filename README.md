@@ -1,4 +1,4 @@
-<img src="https://scontent.fwaw3-1.fna.fbcdn.net/v/t1.0-9/14680538_1668140753500701_8794147698246241786_n.png?oh=196afd1052e5b9641ed575c3b8ad0d9e&oe=58A55654" >
+<img src="http://i.imgur.com/pwJB2BN.png" >
 
 <p >
     <a href="https://circleci.com/gh/hacklag/hacklag-website/tree/master">
@@ -10,7 +10,7 @@
              alt="build status">
     </a>
         <img src="https://img.shields.io/github/license/mashape/apistatus.svg"
-             alt="build status">   
+             alt="build status">
         <a href="https://hacklag.org">
         <img src="https://img.shields.io/badge/chat-on_slack-blue.svg"
              alt="build status">
@@ -39,6 +39,6 @@ To start Hacklag website you need to install [Node](https://nodejs.org/en/) `6.3
 3. Run `npm start` and open `http://localhost:3000`.
 
 ## Contribute
-Everyone can contribute to Hacklag website, just fork our repo and open PR on existing issue (or if you found one feel free to give us a message on [Hacklag.org](https://hacklag.org) or hello@hacklag.org).   
+Everyone can contribute to Hacklag website, just fork our repo and open PR on existing issue (or if you found one feel free to give us a message on [Hacklag.org](https://hacklag.org) or hello@hacklag.org).
 ## License
 MIT License
