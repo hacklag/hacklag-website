@@ -2,7 +2,6 @@
 @custom-media --at-lg (width >= 1024px);
 
 .Footer {
-  /*background: #f5f5f5;*/
   position: relative;
   border-top: 1px solid #e5e5e5;
   font-size: 14px;
