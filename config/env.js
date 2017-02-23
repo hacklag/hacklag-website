@@ -20,4 +20,7 @@ for (let i = 0; i < envVars.length; i++) {
   plugin[name] = JSON.stringify(process.env[envName] || process.env[name] || '');
 }
 
-module.exports = Object.assign({}, plugin);
+module.exports = Object.assign({}, {
+  NODE_ENV: JSON.stringify(NODE_ENV),
+  'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+}, plugin);
