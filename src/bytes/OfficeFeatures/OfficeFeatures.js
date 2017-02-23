@@ -3,8 +3,8 @@ import styles from './styles.css';
 
 const cn = require('classnames/bind').bind(styles);
 
-const Plans = () => (
-  <div className={cn('OfficeFeatures')}>
+const OfficeFeatures = ({ className }) => (
+  <div className={cn('OfficeFeatures', className)}>
     <div className={cn('OfficeFeatures__item')}>
       <h4 className={cn('OfficeFeatures__item-title')}>Awesome community</h4>
       <p className={cn('OfficeFeatures__item-content')}>Meet technology enthusiasts, people willing to disrupt the status quo.  Join us to have fun by working on innovative projects.</p>
@@ -44,8 +44,9 @@ const Plans = () => (
   </div>
 );
 
-Plans.propTypes = {
+OfficeFeatures.propTypes = {
   sponsors: PropTypes.array,
+  className: PropTypes.string,
 };
 
-export default Plans;
+export default OfficeFeatures;

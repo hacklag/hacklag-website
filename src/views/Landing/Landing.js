@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Wrapper, Join, Link, Modal } from 'bits';
 import {
-  Header, Features, Sponsors, Founders, Partners, Timeline, Plans,
+  Header, Features, Sponsors, Founders, Partners, Timeline,
   OfficeFeatures, Footer, SignupForm,
 } from 'bytes';
 import { Follow } from 'react-twitter-widgets';
@@ -13,6 +13,7 @@ const cn = require('classnames/bind').bind(styles);
 
 const Landing = ({
   services: {
+    ui: { toggleModal },
     data: { fetchTweets, fetchEvents, fetchConnections },
   },
 }) => {
@@ -82,15 +83,18 @@ const Landing = ({
         <Wrapper>
           <h2 className={cn('Section__title')}>We work and have fun in awesome workspace!</h2>
           <h3 className={cn('Section__tagline')}>And you can work there too.</h3>
-          <OfficeFeatures />
-          <Plans />
+          <OfficeFeatures className="u--mb" />
+
+          <div className="u-ta-c u-mt+">
+            <a className="Btn Btn--primary" onClick={() => toggleModal('CommunityMemberSignup')}>Join community</a>
+          </div>
         </Wrapper>
       </div>
       {/* /.Section */}
 
       <Footer />
 
-      <Modal name="CommunityMemberSignup" title="Join us">
+      <Modal name="CommunityMemberSignup" title="Join our community">
         <SignupForm />
       </Modal>
     </div>
