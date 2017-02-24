@@ -5,8 +5,16 @@ import { Follow } from 'react-twitter-widgets';
 import FacebookProvider, { Like } from 'react-facebook';
 import styles from './styles.css';
 import GoogleMap from 'google-map-react';
+import hackbatMarker from './img/hackbatmarker.png';
 const cn = require('classnames/bind').bind(styles);
-
+const MARKER_SIZE = 60;
+const hackbatPosition = {
+  position: 'absolute',
+  width: MARKER_SIZE,
+  height: MARKER_SIZE,
+  left: -MARKER_SIZE / 2,
+  top: -MARKER_SIZE / 2,
+};
 const Footer = ({
   services: {
     ui: { toggleModal },
@@ -68,15 +76,16 @@ const Footer = ({
         }}
         defaultCenter={{ lat: 53.1302151, lng: 23.1595374 }}
         defaultZoom={17}
+        zoomControl={false}
       >
         <div
-          lat={53.1311871}
-          lng={23.1581426}
+          lat={53.1312518}
+          lng={23.1603008}
         >
           <img
-            width={'100px'}
+            style={hackbatPosition}
             role={'presentation'}
-            src={'http://i.imgur.com/fYrxDeK.png'}
+            src={hackbatMarker}
           />
         </div>
       </GoogleMap>
