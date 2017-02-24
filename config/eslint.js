@@ -5,6 +5,7 @@ module.exports = {
   parser: 'babel-eslint',
   extends: 'airbnb',
   globals: {
+    GOOGLE_MAPS_API_KEY: true,
     SYNCANO_API_KEY: true,
     SYNCANO_USER_KEY: true,
     SYNCANO_INSTANCE_NAME: true,

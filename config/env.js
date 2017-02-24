@@ -5,6 +5,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const plugin = { ENV: JSON.stringify(NODE_ENV) };
 
 const envVars = [
+  'GOOGLE_MAPS_API_KEY',
   'SYNCANO_API_KEY',
   'SYNCANO_USER_KEY',
   'SYNCANO_INSTANCE_NAME',
