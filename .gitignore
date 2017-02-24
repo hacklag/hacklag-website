@@ -10,3 +10,7 @@ dist
 # misc
 .DS_Store
 npm-debug.log
+
+# syncano build
+**/.bundles
+**/.dist
