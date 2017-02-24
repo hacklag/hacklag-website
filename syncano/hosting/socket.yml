@@ -3,6 +3,6 @@ description: Hosting
 
 hosting:
   staging:
-    src: build
+    src: ../build
   production:
-    src: build
+    src: ../build
