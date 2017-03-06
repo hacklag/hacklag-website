@@ -5,6 +5,8 @@
 @custom-media --at-lg (width >= 1024px);
 .Volunteers {
   &__wrapper{
+    padding: 0 90px;
+    margin: 50px 0px;
     flex-flow: row wrap;
     display: flex;
     align-items: center;
