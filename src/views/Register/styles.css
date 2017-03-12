@@ -1,0 +1,15 @@
+.Register {
+  &--form {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    justify-content: center;
+    max-width: 250px;
+    min-height: 650px;
+
+    input {
+    margin-bottom: 10px;
+    width: 100%;
+    }
+  }
+}
