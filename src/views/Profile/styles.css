@@ -1,0 +1,23 @@
+.Profile {
+  &--form {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    justify-content: center;
+    max-width: 250px;
+    min-height: 650px;
+
+    input {
+    margin-bottom: 10px;
+    width: 100%;
+    }
+  }
+  &__link {
+    color: #666;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

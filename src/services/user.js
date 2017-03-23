@@ -15,6 +15,9 @@ export default class User {
 
     this.store.pending.set('user.signup', { status: false });
   }
+  setUserKey(key) {
+    window.localStorage.setItem('userKey', key);
+  }
   pollVerify = (email) => {
     const form = new FormData();
     form.append('email', email);
@@ -25,22 +28,32 @@ export default class User {
         body: form,
       }).then(res => {
         res.json()
-          .then(data => {
-            if (data.status) {
-              console.log(data.userKey);
+          .then(user => {
+            if (user.status === 'true') {
+              this.setUserKey(user.userKey);
+              window.location.assign(`/profile/${user.id}`);
               clearInterval(promise);
             }
           });
       })
       .catch(err => {
-        console.error(err);
+        this.store.messages.set('user.register', {
+          status: status === 'true' ? 'success' : 'failure',
+          message: status === 'true' ? 'You have been registered, chcek your email' : err,
+        });
       });
     }, 4000);
-    // this.store.userKey = userKey;
-    // this.store.messages.set('user.pollverified', {
-    //   status: status === 'true' ? window.location.assign('/login') : 'Pending',
-    // });
-    // this.store.pending.set('user.register', { status: false });
+  }
+  @action login = async (email) => {
+    const { body, status } = await request.post(LOGIN_REGISTER_URL, {
+      email,
+    });
+    this.pollVerify(email);
+    this.store.messages.set('user.login', {
+      status: status === 'true' ? 'success' : 'failure',
+      message: status === 'true' ? 'Logged in' : body,
+    });
+    this.store.pending.set('user.login', { status: false });
   }
   @action register = async (form) => {
     const { email, firstname, lastname, isVolunteer } = form;
@@ -50,7 +63,6 @@ export default class User {
       lastname,
       isVolunteer,
     });
-    console.log(email);
     this.pollVerify(email);
     this.store.messages.set('user.register', {
       status: status === 'true' ? 'success' : 'failure',

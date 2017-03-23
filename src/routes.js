@@ -7,6 +7,7 @@ import Sponsors from 'views/Sponsors';
 import Volunteers from 'views/Volunteers';
 import Register from 'views/Register';
 import Login from 'views/Login';
+import Profile from 'views/Profile';
 import NotFound from 'views/NotFound';
 
 const Routes = () => (
@@ -16,6 +17,7 @@ const Routes = () => (
     <Match pattern="/volunteers" exactly component={Volunteers} />
     <Match pattern="/register" exactly component={Register} />
     <Match pattern="/login" exactly component={Login} />
+    <Match pattern="/Profile/:id" exactly component={Profile} />
     <Miss component={NotFound} />
   </div>
 );
