@@ -1,15 +1,15 @@
 import React, { PropTypes } from 'react';
 import { Wrapper } from 'bits';
-import { Header, Footer } from 'bytes';
+import { Header, Footer, Profile } from 'bytes';
 import { connect } from 'utils';
 import styles from './styles.css';
 
 const cn = require('classnames/bind').bind(styles);
 
 const Landing = ({
-  store: { user: { userKey } },
+  services: { user: { getuser } },
 }) => {
-  console.log();
+  getuser(localStorage.getItem('userKey'));
   return (
     <div className={cn('Landing')}>
       <Header />
@@ -17,9 +17,7 @@ const Landing = ({
       <div className={cn('Section', 'Section--primary')}>
         <Wrapper>
           <div className={cn('Section__content')} id="profile">
-            <div className={cn('Profile--wrapper')}>
-              {userKey}
-            </div>
+            <Profile />
           </div>
         </Wrapper>
       </div>
