@@ -9,7 +9,7 @@ const cn = require('classnames/bind').bind(styles);
 const Landing = ({
   store: { user: { userKey } },
 }) => {
-  console.log(userKey);
+  console.log();
   return (
     <div className={cn('Landing')}>
       <Header />

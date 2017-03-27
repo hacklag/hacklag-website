@@ -30,8 +30,11 @@ export default class User {
         res.json()
           .then(user => {
             if (user.status === 'true') {
+              const { userData } = user;
+              const { id } = userData;
               this.setUserKey(user.userKey);
-              window.location.assign(`/profile/${user.id}`);
+
+              window.location.assign(`/profile/${id}`);
               clearInterval(promise);
             }
           });
