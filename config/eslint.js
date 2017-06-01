@@ -9,6 +9,7 @@ module.exports = {
     SYNCANO_API_KEY: true,
     SYNCANO_USER_KEY: true,
     SYNCANO_INSTANCE_NAME: true,
+    SYNCANO_HACKLAG_LOGIC_INSTANCE_NAME: true,
     PIXEL_WRITE_KEY: true,
     GOOGLE_WRITE_KEY: true,
     DRIFT_WRITE_KEY: true,
