@@ -1,3 +1,5 @@
 hosting:
   staging:
     src: ../build
+  production:
+    src: ../build
