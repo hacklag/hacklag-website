@@ -35,10 +35,10 @@ deployment:
             NODE_ENV: production
       - syncano-cli deploy:
           environment:
-              SYNCANO_PROJECT_INSTANCE: ${PRODUCTION_SYNCANO_PROJECT_INSTANCE}
+              SYNCANO_PROJECT_INSTANCE: ${PRODUCTION_SYNCANO_INSTANCE_NAME}
       - syncano-cli hosting sync production:
           environment:
-              SYNCANO_PROJECT_INSTANCE: ${PRODUCTION_SYNCANO_PROJECT_INSTANCE}
+              SYNCANO_PROJECT_INSTANCE: ${PRODUCTION_SYNCANO_INSTANCE_NAME}
   staging:
     branch: devel
     commands:
