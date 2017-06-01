@@ -33,12 +33,8 @@ deployment:
       - yarn build:
           environment:
             NODE_ENV: production
-      - syncano-cli deploy:
-          environment:
-              SYNCANO_PROJECT_INSTANCE: ${PRODUCTION_SYNCANO_INSTANCE_NAME}
-      - syncano-cli hosting sync production:
-          environment:
-              SYNCANO_PROJECT_INSTANCE: ${PRODUCTION_SYNCANO_INSTANCE_NAME}
+      - syncano-cli deploy
+      - syncano-cli hosting sync production
   staging:
     branch: devel
     commands:
