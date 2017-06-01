@@ -1,22 +1,54 @@
 machine:
   node:
-    version: 6.3.0
+    version: 7
+  environment:
+    YARN_VERSION: 0.19.1
+    PATH: "${PATH}:${HOME}/.yarn/bin"
+
+general:
+  artifacts:
+    - "coverage/"
+    - "reports/"
 
 dependencies:
   pre:
-    - npm install -g npm
+    - |
+      if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
+        echo "Download and install Yarn."
+        curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
+      else
+        echo "The correct version of Yarn is already installed."
+      fi
+  override:
+    - yarn install
+    - yarn global add syncano-cli@beta
+  cache_directories:
+    - ~/.yarn
+    - ~/.yarn-cache
 
 deployment:
   production:
     branch: master
     commands:
-      - NODE_ENV=development npm install
-      - NODE_ENV=production npm run build
-      - NODE_ENV=production npm run deploy
-
+      - yarn build:
+          environment:
+            NODE_ENV: production
+      - syncano-cli deploy:
+          environment:
+              SYNCANO_PROJECT_INSTANCE: ${PRODUCTION_SYNCANO_PROJECT_INSTANCE}
+      - syncano-cli hosting sync production:
+          environment:
+              SYNCANO_PROJECT_INSTANCE: ${PRODUCTION_SYNCANO_PROJECT_INSTANCE}
   staging:
     branch: devel
     commands:
-      - NODE_ENV=development npm install
-      - NODE_ENV=development npm run build
-      - npm run deploy
+      - yarn build
+      - syncano-cli deploy
+      - syncano-cli hosting sync staging
+
+experimental:
+  notify:
+    branches:
+      only:
+        - master
+        - devel
