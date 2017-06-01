@@ -1,8 +1,0 @@
-name: hosting
-description: Hosting
-
-hosting:
-  staging:
-    src: ../build
-  production:
-    src: ../build
