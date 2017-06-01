@@ -35,6 +35,7 @@ deployment:
             NODE_ENV: production
       - syncano-cli deploy
       - syncano-cli hosting sync production
+      - syncano-cli hosting config production --cname www.hacklag.org
   staging:
     branch: devel
     commands:
